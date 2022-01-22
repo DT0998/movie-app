@@ -1,4 +1,4 @@
-.wrap {
+.wrap.header_content.header_img {
     padding: 20px 10px;
   }
   .header_img {
@@ -78,7 +78,7 @@
   }
   
   @media (min-width: 1440px) {
-    .wrap {
+    .wrap.header_content.header_img {
       padding: 20px 20px;
     }
   }

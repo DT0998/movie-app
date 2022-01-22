@@ -6,7 +6,7 @@ export const Feature = () => {
         <div
             className="wrap_fluid feature"
         >
-            <Container >
+        <Container >
                 <Row>
                     <Col>
                         <div className="wrap">

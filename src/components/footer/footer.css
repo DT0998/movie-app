@@ -1,7 +1,7 @@
-.wrap{
+.wrap.footer{
     padding: 20px 0px;
 }
-.wrap_fluid{
+.wrap_fluid.footer{
     padding: 20px 0px;
 }
 .footer{
@@ -56,10 +56,10 @@ background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 99%);
 }
 
 @media (min-width:1440px) {
-    .wrap{
+    .wrap.footer{
         padding: 20px 0px;
     }
-    .wrap_fluid{
+    .wrap_fluid.footer{
         padding: 20px 0px;
     }
 }

@@ -9,7 +9,7 @@ import { Tvshow } from './components/tv-show/tvshow';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header/>
       <Feature />
       <Movie />
