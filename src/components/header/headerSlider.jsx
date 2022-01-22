@@ -63,7 +63,7 @@ export const HeaderSlider = () => {
                                     <img
                                         src={IMG_URL + movie.poster_path}
                                         alt={movie.title}
-                                        className="img_header"
+                                        className="img_movie"
                                     ></img>
                                 </div>
                             </Col>

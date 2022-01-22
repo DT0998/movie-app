@@ -29,19 +29,12 @@
   border: 1px solid transparent;
 }
 
-.sticky {
-  position: fixed;
-  margin-top: 10px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.nav_fluid.sticky {
+  position: sticky;
+  top: 10px;
   background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid #eaeaea;
   z-index: 9999;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
 }
 
 @media (min-width: 1440px) {
