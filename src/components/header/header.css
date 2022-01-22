@@ -1,0 +1,20 @@
+.wrap_fluid {
+  padding: 20px 0px;
+}
+.header {
+  background-color: beige;
+  min-height: 100%;
+  min-width: 100%;
+  background-size: cover;
+}
+
+
+/* @media (min-width: 768px) {
+
+} */
+
+@media (min-width: 1440px) {
+  .wrap_fluid {
+    padding: 20px 0px;
+  }
+}
