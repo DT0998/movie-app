@@ -9,7 +9,7 @@ export const Tvshow = () => {
                     <Col>
                         <div className="wrap">
                             <h1>
-                                tvShow
+                                TVSHOW
                             </h1>
                             <img src="https://via.placeholder.com/150" alt=''></img>
                         </div>
