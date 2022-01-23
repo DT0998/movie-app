@@ -30,7 +30,7 @@ export const Feature = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title"> Trending </h1>
+                <h1 className="trending_title"> TRENDING</h1>
                 <button class="btn_view view-more">
                   <span class="circle" aria-hidden="true">
                     <span class="icon arrow"></span>

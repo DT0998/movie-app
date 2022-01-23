@@ -5,9 +5,8 @@
   padding: 20px 0px;
 }
 
-
 @media (min-width: 1440px) {
-  .wrap.movie{
+  .wrap.movie {
     padding: 20px 20px;
   }
   .wrap_fluid.movie {
