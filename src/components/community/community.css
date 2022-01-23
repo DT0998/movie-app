@@ -1,17 +1,17 @@
-.wrap{
+.wrap.community{
     padding: 20px 10px;
 }
-.wrap_fluid{
+.wrap_fluid.community{
     padding: 20px 0px;
 }
 
 
 
 @media (min-width:1440px) {
-    .wrap{
+    .wrap.community{
         padding: 20px 20px;
     }
-    .wrap_fluid{
+    .wrap_fluid.community{
         padding: 20px 0px;
     }
 }

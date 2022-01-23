@@ -30,15 +30,15 @@ export const Movie = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title"> MOVIES</h1>
-                <button class="btn_view view-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
+                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES</h1>
+                <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
+                  <span className="circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
                   </span>
-                  <span class="button-text">View More</span>
+                  <span className="button-text">View More</span>
                 </button>
               </div>
-              <div className=" d-flex flex-row gap-3">
+              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {movietoprate.map(
                   (movie, index) =>
                     index < 5 && (

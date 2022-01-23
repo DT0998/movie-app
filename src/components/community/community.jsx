@@ -3,7 +3,7 @@ import './community.css'
 
 export const Community = () => {
     return (
-        <div className="wrap_fluid">
+        <div className="wrap_fluid community">
             <Container>
                 <Row>
                     <Col>

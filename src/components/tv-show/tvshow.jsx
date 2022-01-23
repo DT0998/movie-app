@@ -31,11 +31,11 @@ export const Tvshow = () => {
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
                 <h1 className="trending_title"> TV SHOWS</h1>
-                <button class="btn_view view-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
+                <button className="btn_view view-more">
+                  <span className="circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
                   </span>
-                  <span class="button-text">View More</span>
+                  <span className="button-text">View More</span>
                 </button>
               </div>
               <div className=" d-flex flex-row gap-3">

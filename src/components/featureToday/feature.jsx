@@ -2,6 +2,8 @@ import "./feature.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 export const Feature = () => {
   // api
@@ -23,6 +25,11 @@ export const Feature = () => {
     getTrending();
   }, [API_URL]);
 
+  // use aos
+  Aos.init();
+
+
+
   return (
     <div className="wrap_fluid feature">
       <Container>
@@ -30,15 +37,18 @@ export const Feature = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title"> TRENDING</h1>
-                <button class="btn_view view-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
+                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
+                  {" "}
+                  TRENDING
+                </h1>
+                <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
+                  <span className="circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
                   </span>
-                  <span class="button-text">View More</span>
+                  <span className="button-text">View More</span>
                 </button>
               </div>
-              <div className=" d-flex flex-row gap-3">
+              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {movietrending.map(
                   (movie, index) =>
                     index < 5 && (
