@@ -39,7 +39,7 @@ export const Header = () => {
       {moviepopular.map((movie) => (
         <SwiperSlide data-swiper-autoplay="2000" key={movie.id}>
           <div
-            className="wrap_fluid header d-flex align-items-center "
+            className="wrap_fluid header d-flex align-items-center header_opacity"
             style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
           >
               <Container>

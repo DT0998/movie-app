@@ -11,14 +11,20 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  z-index: 2;
 }
-.header::before{
+.header::after{
+  content: "";
+  background-color: rgba(51,51,51,.712);
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(51,51,51,.712);
-  z-index: 1;
+  z-index: -1;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
 }
+
 .header_img {
   display: none;
 }
@@ -137,5 +143,6 @@
   .header_overview {
     width: 50%;
   }
+
 
 }
