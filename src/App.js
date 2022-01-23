@@ -13,7 +13,7 @@ function App() {
     <div>
       <Nav/>
       <Header/>
-      {/* <Feature /> */}
+      <Feature />
       <Movie />
       <Tvshow />
       <Footer />
