@@ -39,33 +39,33 @@ export const Header = () => {
       {moviepopular.map((movie) => (
         <SwiperSlide data-swiper-autoplay="2000" key={movie.id}>
           <div
-            className="wrap_fluid header"
+            className="wrap_fluid header d-flex align-items-center "
             style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
           >
-            <Container>
-              <Row className="d-flex align-items-center">
-                <Col xs={12} md={8}>
-                  <div className="wrap header_content py-5">
-                    <div className="header_article">
-                      <h1 className="header_title">{movie.title}</h1>
-                      <p className="header_overview">{movie.overview}</p>
+              <Container>
+                <Row className="d-flex align-items-center">
+                  <Col xs={12} md={8}>
+                    <div className="wrap header_content">
+                      <div className="header_article">
+                        <h1 className="header_title">{movie.title}</h1>
+                        <p className="header_overview">{movie.overview}</p>
+                      </div>
+                      <button className="btn_watch">Watch Now</button>
                     </div>
-                    <button className="btn_watch">Watch Now</button>
-                  </div>
-                </Col>
-                <Col md={4}>
-                  <div className="wrap header_img">
-                    <img
-                      src={IMG_URL + movie.poster_path}
-                      alt={movie.title}
-                      className="img_movie"
-                    ></img>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </SwiperSlide>
+                  </Col>
+                  <Col md={4}>
+                    <div className="wrap header_img">
+                      <img
+                        src={IMG_URL + movie.poster_path}
+                        alt={movie.title}
+                        className="img_movie"
+                      ></img>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+             </SwiperSlide>
       ))}
     </Swiper>
   );
