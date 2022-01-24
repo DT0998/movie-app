@@ -37,10 +37,10 @@ export const Featuredetail = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
+                <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
                   {" "}
                   MOVIE
-                </h1>
+                </h2>
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {movietrending.map(
