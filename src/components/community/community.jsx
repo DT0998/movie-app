@@ -59,16 +59,20 @@ export const Community = () => {
                 breakpoints={{
                   // when window width is >= 320px
                   320: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                   },
                   // when window width is >= 480px
-                  480: {
-                    slidesPerView: 3,
+                  425: {
+                    slidesPerView: 2,
                   },
                   // when window width is >= 640px
                   640: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                   },
+                   // when window width is >= 1024px
+                  1024:{
+                    slidesPerView: 4,
+                  }
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
