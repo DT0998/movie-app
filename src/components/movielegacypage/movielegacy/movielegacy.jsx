@@ -5,6 +5,7 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielegacy.css";
 
 export const Movielegacy = () => {
+  const [movietoprate, setMovietoprate] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -12,7 +13,6 @@ export const Movielegacy = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const [movietoprate, setMovietoprate] = useState([]);
 
   useEffect(() => {
     const getTrending = async function () {
