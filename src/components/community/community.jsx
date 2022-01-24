@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "./community.css";
 // swiper
 import "swiper/css";
@@ -9,6 +9,11 @@ SwiperCore.use([Scrollbar]);
 
 
 export const Community = () => {
+
+
+
+
+
   return (
     <div className="wrap_fluid community">
       <Container>
@@ -30,21 +35,53 @@ export const Community = () => {
 
             <div className="wrap bg_community">
               <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
-                slidesPerGroup={3}
-                loop={true}
+                slidesPerView={4}
                 scrollbar={{
                   " dragable": true,
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
                   <SwiperSlide>
-                    <div class="card_community card_detail">
-                      <div class="border">
+                    <Card className="card_community card_detail">
+                      <div className="border">
                         <h2>Ben Stiller</h2>
                       </div>
-                    </div>
+                    </Card>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Card className="card_community card_detail">
+                      <div className="border">
+                        <h2>Ben Stiller</h2>
+                      </div>
+                    </Card>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Card className="card_community card_detail">
+                      <div className="border">
+                        <h2>Ben Stiller</h2>
+                      </div>
+                    </Card>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Card className="card_community card_detail">
+                      <div className="border">
+                        <h2>Ben Stiller</h2>
+                      </div>
+                    </Card>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Card className="card_community card_detail">
+                      <div className="border">
+                        <h2>Ben Stiller</h2>
+                      </div>
+                    </Card>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Card className="card_community card_detail">
+                      <div className="border">
+                        <h2>Ben Stiller</h2>
+                      </div>
+                    </Card>
                   </SwiperSlide>
                 </div>
               </Swiper>
