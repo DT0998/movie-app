@@ -29,15 +29,15 @@ export const Community = () => {
     getTrending();
   }, [API_URL]);
 
-
-
   return (
     <div className="wrap_fluid community">
       <Container>
         <Row>
           <Col>
             <div className="d-flex justify-content-between align-items-center">
-              <h1>Community</h1>
+              <h1 data-aos="fade-right" data-aos-duration="1500">
+                Community
+              </h1>
               <button
                 className="btn_view view-more"
                 data-aos="fade-left"
@@ -50,7 +50,11 @@ export const Community = () => {
               </button>
             </div>
 
-            <div className="wrap bg_community">
+            <div
+              className="wrap bg_community"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+            >
               <Swiper
                 slidesPerView={4}
                 scrollbar={{
@@ -69,21 +73,28 @@ export const Community = () => {
                   640: {
                     slidesPerView: 3,
                   },
-                   // when window width is >= 1024px
-                  1024:{
+                  // when window width is >= 1024px
+                  1024: {
                     slidesPerView: 4,
-                  }
+                  },
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {peoples.map((poeple)=>(
-                  <SwiperSlide key={poeple.id}>
-                    <Card className="card_community card_detail" style={{backgroundImage: `url(${IMG_ORG + poeple.profile_path})`}}>
-                      <div className="border">
-                        <h2>{poeple.name}</h2>
-                      </div>
-                    </Card>
-                  </SwiperSlide>                                     
+                  {peoples.map((poeple) => (
+                    <SwiperSlide key={poeple.id}>
+                      <Card
+                        className="card_community card_detail"
+                        style={{
+                          backgroundImage: `url(${
+                            IMG_ORG + poeple.profile_path
+                          })`,
+                        }}
+                      >
+                        <div className="border">
+                          <h2>{poeple.name}</h2>
+                        </div>
+                      </Card>
+                    </SwiperSlide>
                   ))}
                 </div>
               </Swiper>
