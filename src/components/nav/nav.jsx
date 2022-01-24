@@ -20,7 +20,7 @@ export const Nav = () => {
                     <Row className="d-flex flex-row justify-content-center">
                         <Col className="col-lg-6">
                             <div className="nav_left h-100">
-                                <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-lg-3 h-100">
+                                <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
                                     <li>
                                         <a href="/">
                                             <img src={logo} className="logo" alt="logo"></img>
@@ -37,7 +37,7 @@ export const Nav = () => {
                         </Col>
                         <Col className="col-lg-6">
                             <div className="nav_right h-100">
-                                <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-lg-3 h-100">
+                                <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-3 h-100">
                                     <li>
                                         <a href="/search">Search</a>
                                     </li>

@@ -1,0 +1,38 @@
+@media (min-width:320px) {
+    .movie_sort .card_container{
+      width: 100%;
+  } 
+}
+
+@media (min-width:375px) {
+    .movie_sort .card_container{
+      width: 9.5rem;
+  } 
+}
+@media (min-width:425px) {
+    .movie_sort .card_container{
+        width: 11rem;
+    } 
+}
+@media (min-width:768px) {
+    .movie_sort .card_container{
+        width: 9rem;
+    } 
+}
+
+@media (min-width:1024px) {
+    .movie_sort .card_container{
+        width: 10rem;
+    } 
+    .trending_title{
+        padding-left: 25px;
+    }
+}
+@media (min-width:1440px) {
+    .movie_sort .card_container{
+        width: 15rem;
+    }
+    .trending_title{
+        padding-left: unset;
+    }
+}

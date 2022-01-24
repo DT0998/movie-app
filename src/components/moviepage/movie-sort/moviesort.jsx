@@ -12,7 +12,7 @@ export const Moviesort = () => {
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY + PAGE;
+  const API_URL = BASE_URL + "/movie/popular?" + API_KEY + PAGE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   console.log(API_URL)
   
@@ -22,12 +22,13 @@ export const Moviesort = () => {
       let response = await axios.get(API_URL);
       let data = response.data;
       setMovietoprate(data.results);
-      setTotalpage(data.total_pages)
+      setTotalpage(...data.total_pages)
       console.log(data);
     };
     getTrending();
   }, [API_URL]);
   
+
 
 
   // load more
@@ -38,17 +39,17 @@ export const Moviesort = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid feature">
+    <div className="wrap_fluid movie_sort">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-lg-3">
                 <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES</h1>
               </div>
-              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
-                {movietoprate.filter((_, index) => index % 5 === 0 && index !==0).map(movie=> (
-                      <Card className="card_container" key={movie.id}>
+              <div className=" d-flex flex-row flex-wrap justify-content-center" data-aos="fade-down" data-aos-duration="1500">
+                {movietoprate.map((movie,index)=> (
+                      <Card className="card_container mx-2 my-2" key={movie.id}>
                         <img
                           src={IMG_URL + movie.poster_path}
                           alt={movie.original_name}
