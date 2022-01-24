@@ -35,17 +35,11 @@ export const Moviesort = () => {
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
                 <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES</h1>
-                <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
-                  <span className="circle" aria-hidden="true">
-                    <span className="icon arrow"></span>
-                  </span>
-                  <span className="button-text">View More</span>
-                </button>
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {movietoprate.map(
                   (movie, index) =>
-                    index < 5 && (
+                    index % 5 === 0 && (
                       <Card className="card_container" key={movie.id}>
                         <img
                           src={IMG_URL + movie.poster_path}
