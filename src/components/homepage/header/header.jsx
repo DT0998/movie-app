@@ -7,7 +7,6 @@ import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 export const Header = () => {
   const [moviepopular, setMoviepopular] = useState([]);
   // api
@@ -40,30 +39,36 @@ export const Header = () => {
             className="wrap_fluid header d-flex align-items-center header_opacity"
             style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
           >
-              <Container>
-                <Row className="d-flex align-items-center">
-                  <Col xs={12} md={8}>
-                    <div className="wrap header_content">
-                      <div className="header_article">
-                        <h1 className="header_title">{movie.title}</h1>
-                        <p className="header_overview">{movie.overview}</p>
-                      </div>
-                      <button className="btn_watch">Watch Now</button>
+            <Container>
+              <Row className="d-flex align-items-center">
+                <Col xs={12} md={8}>
+                  <div className="wrap header_content">
+                    <div
+                      className="header_article"
+                      data-aos="fade-right"
+                      data-aos-offset="300"
+                      data-aos-easing="ease-in-sine"
+                    >
+                      <h1 className="header_title">{movie.title}</h1>
+                      <p className="header_overview">{movie.overview}</p>
                     </div>
-                  </Col>
-                  <Col md={4}>
-                    <div className="wrap header_img">
-                      <img
-                        src={IMG_URL + movie.poster_path}
-                        alt={movie.title}
-                        className="img_movie"
-                      ></img>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-             </SwiperSlide>
+                    <button className="btn_watch">Watch Now</button>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className="wrap header_img">
+                    <img
+                      src={IMG_URL + movie.poster_path}
+                      alt={movie.title}
+                      className="img_movie"
+                      data-aos="zoom-in"
+                    ></img>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </SwiperSlide>
       ))}
     </Swiper>
   );
