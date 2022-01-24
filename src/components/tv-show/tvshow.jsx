@@ -30,15 +30,15 @@ export const Tvshow = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title"> TV SHOWS</h1>
-                <button className="btn_view view-more">
+                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500"> TV SHOWS</h1>
+                <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
                   <span className="circle" aria-hidden="true">
                     <span className="icon arrow"></span>
                   </span>
                   <span className="button-text">View More</span>
                 </button>
               </div>
-              <div className=" d-flex flex-row gap-3">
+              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {tvshow.map(
                   (movie, index) =>
                     index < 5 && (
