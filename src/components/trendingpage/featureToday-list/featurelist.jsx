@@ -44,7 +44,7 @@ export const Featurelist = () => {
               </div>
               <div className=" d-flex flex-row flex-wrap justify-content-center" data-aos="fade-down" data-aos-duration="1500">
                 {movietrending.map(
-                  (movie, index) =>
+                  (movie) =>
                    (
                       <Card className="card_container mx-2 my-2" key={movie.id}>
                         <img

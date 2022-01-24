@@ -1,7 +1,7 @@
 
 // route homepage
 import { Nav } from '../nav/nav';
-import { Movielegacy } from './movielegacy/movielegacy';
+import { Movielegacylist } from './movielegacy-list/movielegacylist';
 import { Footer } from '../footer/footer';
 
 
@@ -9,7 +9,7 @@ export const Movielegacypage = () => {
   return (
     <div>
      <Nav/>
-     <Movielegacy/>
+     <Movielegacylist/>
       <Footer />
     </div>
   );

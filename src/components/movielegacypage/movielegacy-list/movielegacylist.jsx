@@ -2,9 +2,9 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
-import "./movielegacy.css";
+import "./movielegacylist.css";
 
-export const Movielegacy = () => {
+export const Movielegacylist = () => {
   const [movietoprate, setMovietoprate] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -28,12 +28,12 @@ export const Movielegacy = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid feature">
+    <div className="wrap_fluid movielegacy_list">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-between align-items-center justify-content-center px-lg-3">
                 <h1
                   className="trending_title"
                   data-aos="fade-right"
@@ -44,26 +44,26 @@ export const Movielegacy = () => {
                 </h1>
               </div>
               <div
-                className=" d-flex flex-row gap-3"
+                className=" d-flex flex-row flex-wrap justify-content-center"
                 data-aos="fade-down"
                 data-aos-duration="1500"
               >
                 {movietoprate.map(
-                  (movie, index) =>
-                    index < 5 && (
-                      <Card className="card_container" key={movie.id}>
-                        <img
-                          src={IMG_URL + movie.poster_path}
-                          alt={movie.original_name}
-                          className="img_feature card-img-top"
-                        />
-                        <div className="card-body card_trending">
-                          <p className="card-text">{movie.title}</p>
-                          <p className="card-text">{movie.release_date}</p>
-                          <p className="card-text">{movie.vote_average}</p>
-                        </div>
-                      </Card>
-                    )
+                  (movie) =>
+                  (
+                    <Card className="card_container mx-2 my-2" key={movie.id}>
+                      <img
+                        src={IMG_URL + movie.poster_path}
+                        alt={movie.original_name}
+                        className="img_feature card-img-top"
+                      />
+                      <div className="card-body card_trending">
+                        <p className="card-text">{movie.title}</p>
+                        <p className="card-text">{movie.release_date}</p>
+                        <p className="card-text">{movie.vote_average}</p>
+                      </div>
+                    </Card>
+                  )
                 )}
               </div>
             </div>
