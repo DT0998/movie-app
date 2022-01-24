@@ -1,3 +1,4 @@
+import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
@@ -23,6 +24,9 @@ export const Tvshowdetail = () => {
     getTvshow();
   }, [API_URL]);
 
+  // use aos
+  Aos.init();
+
   return (
     <div className="wrap_fluid feature">
       <Container>
@@ -30,9 +34,19 @@ export const Tvshowdetail = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">TV SHOWS</h2>
+                <h2
+                  className="trending_title"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+                >
+                  TV SHOWS
+                </h2>
               </div>
-              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
+              <div
+                className=" d-flex flex-row gap-3"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+              >
                 {tvshows.map(
                   (tvshow, index) =>
                     index < 5 && (
