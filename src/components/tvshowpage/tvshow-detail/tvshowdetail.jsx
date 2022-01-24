@@ -11,16 +11,16 @@ export const Tvshowdetail = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const [tvshow, setTVshow] = useState([]);
+  const [tvshows, setTVshows] = useState([]);
 
   useEffect(() => {
-    const getTrending = async function () {
+    const getTvshow = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setTVshow(data.results);
+      setTVshows(data.results);
       console.log(data);
     };
-    getTrending();
+    getTvshow();
   }, [API_URL]);
 
   return (
@@ -33,19 +33,19 @@ export const Tvshowdetail = () => {
                 <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">TV SHOWS</h2>
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
-                {tvshow.map(
-                  (movie, index) =>
+                {tvshows.map(
+                  (tvshow, index) =>
                     index < 5 && (
-                      <Card className="card_container" key={movie.id}>
+                      <Card className="card_container" key={tvshow.id}>
                         <img
-                          src={IMG_URL + movie.poster_path}
-                          alt={movie.original_name}
+                          src={IMG_URL + tvshow.poster_path}
+                          alt={tvshow.original_name}
                           className="img_feature card-img-top"
                         />
                         <div className="card-body card_trending">
-                          <p className="card-text">{movie.original_name}</p>
-                          <p className="card-text">{movie.first_air_date}</p>
-                          <p className="card-text">{movie.vote_average}</p>
+                          <p className="card-text">{tvshow.original_name}</p>
+                          <p className="card-text">{tvshow.first_air_date}</p>
+                          <p className="card-text">{tvshow.vote_average}</p>
                         </div>
                       </Card>
                     )
