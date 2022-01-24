@@ -42,13 +42,13 @@ export const Header = () => {
             <Container>
               <Row className="d-flex align-items-center">
                 <Col xs={12} md={8}>
-                  <div className="wrap header_content">
-                    <div
-                      className="header_article"
-                      data-aos="fade-right"
-                      data-aos-offset="300"
-                      data-aos-easing="ease-in-sine"
-                    >
+                  <div
+                    className="wrap header_content"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div className="header_article">
                       <h1 className="header_title">{movie.title}</h1>
                       <p className="header_overview">{movie.overview}</p>
                     </div>

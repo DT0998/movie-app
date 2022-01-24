@@ -31,22 +31,22 @@ export const Featuredetail = () => {
 
 
   return (
-    <div className="wrap_fluid feature">
+    <div className="wrap_fluid trending_detail">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-between align-items-center justify-content-center px-lg-3">
                 <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
                   {" "}
                   TRENDING
                 </h2>
               </div>
-              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
+              <div className=" d-flex flex-row flex-wrap justify-content-center" data-aos="fade-down" data-aos-duration="1500">
                 {movietrending.map(
                   (movie, index) =>
-                    index < 5 && (
-                      <Card className="card_container" key={movie.id}>
+                   (
+                      <Card className="card_container mx-2 my-2" key={movie.id}>
                         <img
                           src={IMG_URL + movie.poster_path}
                           alt={movie.original_name}
