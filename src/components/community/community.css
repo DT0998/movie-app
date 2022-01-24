@@ -16,6 +16,9 @@
   height: 379px;
   width: 300px;
 }
+.card_community h2{
+    opacity: 0;
+}
 
 @media (min-width: 1440px) {
   .wrap.community {

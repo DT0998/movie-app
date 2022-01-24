@@ -4,7 +4,6 @@ import { Row, Col, Container } from "react-bootstrap";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/scrollbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
