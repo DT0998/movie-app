@@ -3,9 +3,11 @@ import logo from "../../assets/nav/logo/logo.svg";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-// route
-import { Featuredetail } from "../featureToday-detail/featuredetail";
-import { Tvshowdetail } from "../tvshow-detail/tvshowdetail";
+// route homepage
+import {Homepage} from '../homepage/homepage'
+// route detail
+import { Moviepage } from "../moviepage/moviepage";
+import { Tvshowpage } from "../tvshowpage/tvshowpage";
 
 export const Nav = () => {
   //   sticky nav
@@ -57,8 +59,9 @@ export const Nav = () => {
           {/* route */}
           </Container>
           <Routes>
-              <Route path="/movie" element={<Featuredetail/>}></Route>
-              <Route path="/tvshow" element={<Tvshowdetail/>}></Route>
+              <Route path="/" element={<Homepage/>}></Route>
+              <Route path="/movie" element={<Moviepage/>}></Route>
+              <Route path="/tvshow" element={<Tvshowpage/>}></Route>
           </Routes>
     </div>
 

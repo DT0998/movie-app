@@ -5,7 +5,7 @@
   padding: 20px 0px;
 }
 .bg_community {
-  background-image: url("../../assets/community/bg_community.svg");
+  background-image: url("../../../assets/community/bg_community.svg");
   background-size: cover;
 }
 /* card */
