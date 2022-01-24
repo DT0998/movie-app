@@ -1,17 +1,27 @@
-.wrap.community{
-    padding: 20px 10px;
+.wrap.community {
+  padding: 20px 10px;
 }
-.wrap_fluid.community{
+.wrap_fluid.community {
+  padding: 20px 0px;
+}
+.bg_community {
+  background-image: url("../../assets/community/bg_community.svg");
+  background-size: cover;
+}
+.border {
+  height: 369px;
+  width: 290px;
+}
+.card_community {
+  height: 379px;
+  width: 300px;
+}
+
+@media (min-width: 1440px) {
+  .wrap.community {
+    padding: 20px 20px;
+  }
+  .wrap_fluid.community {
     padding: 20px 0px;
-}
-
-
-
-@media (min-width:1440px) {
-    .wrap.community{
-        padding: 20px 20px;
-    }
-    .wrap_fluid.community{
-        padding: 20px 0px;
-    }
+  }
 }
