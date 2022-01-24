@@ -1,7 +1,7 @@
 
 // route homepage
 import { Nav } from '../nav/nav';
-import {Header} from './header/header'
+import {Header} from './header/header';
 import { Feature } from '../homepage/featureToday/feature';
 import { Movie } from '../homepage/movie/movie';
 import { Tvshow } from '../homepage/tv-show/tvshow';

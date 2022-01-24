@@ -1,5 +1,5 @@
 import { Nav } from '../nav/nav';
-import { Tvshowdetail } from './tvshow-detail/tvshowdetail';
+import {Tvshowdetail} from './tvshow-detail/tvshowdetail'
 import { Footer } from '../footer/footer';
 
 
