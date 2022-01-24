@@ -46,7 +46,7 @@
 }
 .card_community:after{
   content: "";
-  background-color: rgba(51, 51, 51, 0.712);
+  background-color: rgba(51, 51, 51, 0.5);
   position: absolute;
   top: 0;
   left: 0;
