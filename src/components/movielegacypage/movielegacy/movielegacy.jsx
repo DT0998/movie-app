@@ -1,25 +1,24 @@
-import "./featuredetail.css";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Aos from "aos";
-import 'aos/dist/aos.css';
+import { Container, Col, Row, Card } from "react-bootstrap";
+import "./movielegacy.css";
 
-export const Featuredetail = () => {
+export const Movielegacy = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY;
+  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const [movietrending, setMovietrending] = useState([]);
+  const [movietoprate, setMovietoprate] = useState([]);
 
   useEffect(() => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietrending(data.results);
+      setMovietoprate(data.results);
       console.log(data);
     };
     getTrending();
@@ -28,8 +27,6 @@ export const Featuredetail = () => {
   // use aos
   Aos.init();
 
-
-
   return (
     <div className="wrap_fluid feature">
       <Container>
@@ -37,13 +34,21 @@ export const Featuredetail = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
+                <h1
+                  className="trending_title"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+                >
                   {" "}
-                  MOVIE
-                </h2>
+                  MOVIES LEGACY
+                </h1>
               </div>
-              <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
-                {movietrending.map(
+              <div
+                className=" d-flex flex-row gap-3"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+              >
+                {movietoprate.map(
                   (movie, index) =>
                     index < 5 && (
                       <Card className="card_container" key={movie.id}>

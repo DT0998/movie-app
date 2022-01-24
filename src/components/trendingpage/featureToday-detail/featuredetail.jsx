@@ -1,12 +1,11 @@
-import "./feature.css";
+import "./featuredetail.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css';
-import { Link } from "react-router-dom";
 
-export const Feature = () => {
+export const Featuredetail = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -38,18 +37,10 @@ export const Feature = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
+                <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
                   {" "}
                   TRENDING
-                </h1>
-                <Link to="/trending">
-                  <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
-                    <span className="circle" aria-hidden="true">
-                      <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text">View More</span>
-                  </button>
-                </Link>
+                </h2>
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {movietrending.map(

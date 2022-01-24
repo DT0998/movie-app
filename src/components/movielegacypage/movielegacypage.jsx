@@ -1,15 +1,15 @@
 
 // route homepage
 import { Nav } from '../nav/nav';
-import { Moviesort } from './movie-sort/moviesort';
+import { Movielegacy } from './movielegacy/movielegacy';
 import { Footer } from '../footer/footer';
 
 
-export const Moviepage = () => {
+export const Movielegacypage = () => {
   return (
     <div>
      <Nav/>
-    <Moviesort/>
+     <Movielegacy/>
       <Footer />
     </div>
   );

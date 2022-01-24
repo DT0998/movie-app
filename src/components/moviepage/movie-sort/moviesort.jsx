@@ -1,13 +1,14 @@
+import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
-import "./movie.css";
+import "./moviesort.css";
 
 export const Moviesort = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
+  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
@@ -22,6 +23,9 @@ export const Moviesort = () => {
     };
     getTrending();
   }, [API_URL]);
+
+  // use aos
+  Aos.init();
 
   return (
     <div className="wrap_fluid feature">

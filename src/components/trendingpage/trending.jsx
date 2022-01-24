@@ -1,15 +1,13 @@
-
-// route homepage
 import { Nav } from '../nav/nav';
-import { Moviesort } from './movie-sort/moviesort';
+import { Featuredetail } from '../trendingpage/featureToday-detail/featuredetail';
 import { Footer } from '../footer/footer';
 
 
-export const Moviepage = () => {
+export const Trendingpage = () => {
   return (
     <div>
      <Nav/>
-    <Moviesort/>
+      <Featuredetail/>
       <Footer />
     </div>
   );

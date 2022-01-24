@@ -38,16 +38,6 @@ export const Community = () => {
               <h1 data-aos="fade-right" data-aos-duration="1500">
                 Community
               </h1>
-              <button
-                className="btn_view view-more"
-                data-aos="fade-left"
-                data-aos-duration="1500"
-              >
-                <span className="circle" aria-hidden="true">
-                  <span className="icon arrow"></span>
-                </span>
-                <span className="button-text">View More</span>
-              </button>
             </div>
 
             <div
