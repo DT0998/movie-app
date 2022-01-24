@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./tvshow.css";
 
 export const Tvshow = () => {
+  const [tvshows, setTVshows] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -12,8 +13,6 @@ export const Tvshow = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const [tvshows, setTVshows] = useState([]);
-
   useEffect(() => {
     const getTvshow = async function () {
       let response = await axios.get(API_URL);

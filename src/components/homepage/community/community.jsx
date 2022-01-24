@@ -10,6 +10,7 @@ import axios from "axios";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {
+  const [peoples, setPeoples] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -17,8 +18,6 @@ export const Community = () => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  const [peoples, setPeoples] = useState([]);
-
   useEffect(() => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);

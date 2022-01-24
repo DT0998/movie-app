@@ -6,6 +6,7 @@ import Aos from "aos";
 import 'aos/dist/aos.css';
 
 export const Featuredetail = () => {
+  const [movietrending, setMovietrending] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -13,7 +14,6 @@ export const Featuredetail = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const [movietrending, setMovietrending] = useState([]);
 
   useEffect(() => {
     const getTrending = async function () {

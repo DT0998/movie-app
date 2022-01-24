@@ -5,25 +5,35 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import "./moviesort.css";
 
 export const Moviesort = () => {
+  const [page,setPage] = useState(1)
+  const [movietoprate, setMovietoprate] = useState([]);
+  const [totalpage,setTotalpage] = useState()
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
+  const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY;
+  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY + PAGE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
-
+  console.log(API_URL)
+  
   // fetch movie api
-  const [movietoprate, setMovietoprate] = useState([]);
-
   useEffect(() => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
       setMovietoprate(data.results);
+      setTotalpage(data.total_pages)
       console.log(data);
     };
     getTrending();
   }, [API_URL]);
+  
 
+
+  // load more
+  const load_more =()=>{
+   setPage(page + 1)
+  }
   // use aos
   Aos.init();
 
@@ -37,9 +47,7 @@ export const Moviesort = () => {
                 <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES</h1>
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
-                {movietoprate.map(
-                  (movie, index) =>
-                    index % 5 === 0 && (
+                {movietoprate.filter((_, index) => index % 5 === 0 && index !==0).map(movie=> (
                       <Card className="card_container" key={movie.id}>
                         <img
                           src={IMG_URL + movie.poster_path}
