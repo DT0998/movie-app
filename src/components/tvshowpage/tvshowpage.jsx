@@ -1,5 +1,5 @@
 import { Nav } from '../nav/nav';
-import {Tvshowdetail} from './tvshow-detail/tvshowdetail';
+import {Tvshowlist} from './tvshow-list/tvshowlist';
 import { Footer } from '../footer/footer';
 
 
@@ -7,7 +7,7 @@ export const Tvshowpage = () => {
   return (
     <div>
      <Nav/>
-      <Tvshowdetail/>
+      <Tvshowlist/>
       <Footer />
     </div>
   );

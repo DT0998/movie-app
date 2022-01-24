@@ -1,5 +1,5 @@
 import { Nav } from '../nav/nav';
-import { Featuredetail } from '../trendingpage/featureToday-detail/featuredetail';
+import { Featurelist } from './featureToday-list/featurelist';
 import { Footer } from '../footer/footer';
 
 
@@ -7,7 +7,7 @@ export const Trendingpage = () => {
   return (
     <div>
      <Nav/>
-      <Featuredetail/>
+      <Featurelist/>
       <Footer />
     </div>
   );

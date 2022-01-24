@@ -1,11 +1,11 @@
-import "./featuredetail.css";
+import "./featurelist.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
-export const Featuredetail = () => {
+export const Featurelist = () => {
   const [movietrending, setMovietrending] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -31,7 +31,7 @@ export const Featuredetail = () => {
 
 
   return (
-    <div className="wrap_fluid trending_detail">
+    <div className="wrap_fluid trending_list">
       <Container>
         <Row>
           <Col>

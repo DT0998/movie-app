@@ -2,9 +2,9 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./tvshowdetail.css";
+import "./tvshowlist.css";
 
-export const Tvshowdetail = () => {
+export const Tvshowlist = () => {
   const [tvshows, setTVshows] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -28,12 +28,12 @@ export const Tvshowdetail = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid feature">
+    <div className="wrap_fluid tvshow_list">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-between align-items-center justify-content-center px-lg-3">
                 <h2
                   className="trending_title"
                   data-aos="fade-right"
@@ -43,14 +43,14 @@ export const Tvshowdetail = () => {
                 </h2>
               </div>
               <div
-                className=" d-flex flex-row gap-3"
+                className=" d-flex flex-row flex-wrap justify-content-center"
                 data-aos="fade-down"
                 data-aos-duration="1500"
               >
                 {tvshows.map(
                   (tvshow, index) =>
-                    index < 5 && (
-                      <Card className="card_container" key={tvshow.id}>
+ (
+                      <Card className="card_container mx-2 my-2" key={tvshow.id}>
                         <img
                           src={IMG_URL + tvshow.poster_path}
                           alt={tvshow.original_name}
