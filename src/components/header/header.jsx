@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Buttonwatchnow } from "../../button-watchnow/button-watchnow";
+import { Buttonwatchnow } from "../button-watchnow/button-watchnow";
 
 export const Header = () => {
   const [moviepopular, setMoviepopular] = useState([]);

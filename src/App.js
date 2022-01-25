@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Switch, Route,BrowserRouter } from "react-router-dom";
-import { Homepage } from "./components/homepage/homepage";
-import { Moviepage } from "./components/moviepage/moviepage";
-import { Trendingpage } from "./components/trendingpage/trending";
-import { Tvshowpage } from "./components/tvshowpage/tvshowpage";
-import {Movielegacypage} from './components/movielegacypage/movielegacypage'
+import { Homepage } from "./pages/homepage/homepage";
+import { Moviepage } from "./pages/moviepage/moviepage";
+import { Trendingpage } from "./pages/trendingpage/trending";
+import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
+import {Movielegacypage} from './pages/movielegacypage/movielegacypage'
 
 function App() {
   return (

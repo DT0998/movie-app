@@ -4,8 +4,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./tvshow.css";
 // media query hook
-import useMediaQuery from "../../../hooks/useMediaquery";
-import { Buttonviewmore } from "../../button-viewmore/button-viewmore";
+import useMediaQuery from "../../hooks/useMediaquery";
+import { Buttonviewmore } from "../button-viewmore/button-viewmore";
 
 export const Tvshow = () => {
   const [tvshows, setTVshows] = useState([]);

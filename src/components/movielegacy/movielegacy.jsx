@@ -4,8 +4,8 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./movielegacy.css";
 // media query hook
-import useMediaQuery from "../../../hooks/useMediaquery";
-import { Buttonviewmore } from "../../button-viewmore/button-viewmore";
+import useMediaQuery from "../../hooks/useMediaquery";
+import { Buttonviewmore } from "../button-viewmore/button-viewmore";
 
 export const Movielegacy = () => {
   const [movielegacy, setMovielegacy] = useState([]);
