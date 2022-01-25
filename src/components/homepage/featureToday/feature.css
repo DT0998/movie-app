@@ -20,9 +20,7 @@
   width: 18rem;
   overflow: hidden;
 }
-/* .card_container:hover{
-    
-} */
+
 .card_trending {
   background: white;
   color: black;
@@ -113,6 +111,11 @@
 .btn_view:hover .button-text {
   color: #fff;
 }
+
+
+
+
+
 
 @media (min-width: 1440px) {
   .wrap.feature {

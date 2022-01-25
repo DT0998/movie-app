@@ -43,7 +43,7 @@ export const Movie = () => {
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {movietoprate.map(
                   (movie, index) =>
-                    index < 5 && (
+                    index < 2 && (
                       <Card className="card_container" key={movie.id}>
                         <img
                           src={IMG_URL + movie.poster_path}

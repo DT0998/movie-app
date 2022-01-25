@@ -43,7 +43,7 @@ export const Tvshow = () => {
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {tvshows.map(
                   (tvshow, index) =>
-                    index < 5 && (
+                    index < 2 && (
                       <Card className="card_container" key={tvshow.id}>
                         <img
                           src={IMG_URL + tvshow.poster_path}

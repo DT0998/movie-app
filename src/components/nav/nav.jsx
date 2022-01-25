@@ -18,7 +18,7 @@ export const Nav = () => {
             <div className="wrap_fluid">
                 <div className="wrap">
                     <Row className="d-flex flex-row justify-content-center">
-                        <Col className="col-lg-6">
+                        <Col className="col-6">
                             <div className="nav_left h-100">
                                 <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
                                     <li>
@@ -35,7 +35,7 @@ export const Nav = () => {
                                 </ul>
                             </div>
                         </Col>
-                        <Col className="col-lg-6">
+                        <Col className="col-6">
                             <div className="nav_right h-100">
                                 <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-3 h-100">
                                     <li>
