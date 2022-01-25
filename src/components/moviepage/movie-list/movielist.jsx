@@ -21,7 +21,7 @@ export const Movielist = () => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietoprate(data.results);
+      setMovietoprate([...movietoprate,...data.results]);
       setTotalpage(data.total_pages);
       console.log(data);
     };
