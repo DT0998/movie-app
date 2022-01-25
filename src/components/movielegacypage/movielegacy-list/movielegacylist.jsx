@@ -18,14 +18,14 @@ export const Movielegacylist = () => {
   // fetch movie api
 
   useEffect(() => {
-    const getTrending = async function () {
+    const getLegacy = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
       setMovielegacy([...movielegacy, ...data.results]);
       setTotalpage(data.total_pages);
       console.log(data);
     };
-    getTrending();
+    getLegacy();
   }, [API_URL]);
 
   // load more

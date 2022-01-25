@@ -19,13 +19,13 @@ export const Community = () => {
 
   // fetch movie api
   useEffect(() => {
-    const getTrending = async function () {
+    const getCommunity = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
       setPeoples(data.results);
       console.log(data);
     };
-    getTrending();
+    getCommunity();
   }, [API_URL]);
 
   return (
