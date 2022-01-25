@@ -5,11 +5,14 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielegacylist.css";
 
 export const Movielegacylist = () => {
-  const [movietoprate, setMovietoprate] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalpage, setTotalpage] = useState();
+  const [movielegacy, setMovielegacy] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
+  const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
+  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY + PAGE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
@@ -18,12 +21,17 @@ export const Movielegacylist = () => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietoprate(data.results);
+      setMovielegacy([...movielegacy, ...data.results]);
+      setTotalpage(data.total_pages);
       console.log(data);
     };
     getTrending();
   }, [API_URL]);
 
+  // load more
+  const loadMore = () => {
+    setPage(page + 1);
+  };
   // use aos
   Aos.init();
 
@@ -48,7 +56,7 @@ export const Movielegacylist = () => {
                 data-aos="fade-down"
                 data-aos-duration="1500"
               >
-                {movietoprate.map(
+                {movielegacy.map(
                   (movie) =>
                   (
                     <Card className="card_container mx-2 my-2" key={movie.id}>
@@ -65,7 +73,11 @@ export const Movielegacylist = () => {
                     </Card>
                   )
                 )}
-                load more
+                {page < totalpage ? (
+                  <button className="btn_loadmore" onClick={loadMore}>
+                    Load more
+                  </button>
+                ) : null}
               </div>
             </div>
           </Col>
