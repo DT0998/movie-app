@@ -22,16 +22,16 @@ export const Movielegacylist = () => {
     const getLegacy = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
+      if (isMounted) {
         setMovielegacy([...movielegacy, ...data.results]);
         setTotalpage(data.total_pages);
       }
       console.log(data);
     };
     getLegacy();
-    return ()=>{
+    return () => {
       isMounted = false;
-    }
+    };
   }, [API_URL]);
 
   // load more
@@ -62,27 +62,24 @@ export const Movielegacylist = () => {
                 data-aos="fade-down"
                 data-aos-duration="1500"
               >
-                {movielegacy.map(
-                  (movie) =>
-                  (
-                    <Card className="card_container mx-2 my-2" key={movie.id}>
-                      <img
-                        src={IMG_URL + movie.poster_path}
-                        alt={movie.original_name}
-                        className="img_feature card-img-top"
-                      />
-                      <div className="card-body card_trending">
-                        <p className="card-text">{movie.title}</p>
-                        <p className="card-text">{movie.release_date}</p>
-                        <p className="card-text">{movie.vote_average}</p>
-                      </div>
-                    </Card>
-                  )
-                )}
+                {movielegacy.map((movie) => (
+                  <Card className="card_container mx-2 my-2" key={movie.id}>
+                    <img
+                      src={IMG_URL + movie.poster_path}
+                      alt={movie.original_name}
+                      className="img_feature card-img-top"
+                    />
+                    <div className="card-body card_trending">
+                      <p className="card-text">{movie.title}</p>
+                      <p className="card-text">{movie.release_date}</p>
+                      <p className="card-text">{movie.vote_average}</p>
+                    </div>
+                  </Card>
+                ))}
                 {page < totalpage ? (
-                  <button className="btn_loadmore" onClick={loadMore}>
-                    Load more
-                  </button>
+                    <button className="btn_loadmore" onClick={loadMore}>
+                      Load more
+                    </button>
                 ) : null}
               </div>
             </div>

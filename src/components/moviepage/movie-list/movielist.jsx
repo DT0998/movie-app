@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielist.css";
+import '../../button-loadmore/button-loadmore.css'
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
@@ -22,16 +23,16 @@ export const Movielist = () => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
+      if (isMounted) {
         setMovietoprate([...movietoprate, ...data.results]);
         setTotalpage(data.total_pages);
       }
       console.log(data);
     };
     getTrending();
-    return ()=>{
+    return () => {
       isMounted = false;
-    }
+    };
   }, [API_URL]);
 
   // load more

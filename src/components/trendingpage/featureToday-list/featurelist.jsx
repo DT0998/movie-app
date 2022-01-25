@@ -3,7 +3,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Aos from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
+
 
 export const Featurelist = () => {
   const [page, setPage] = useState(1);
@@ -23,16 +24,16 @@ export const Featurelist = () => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
+      if (isMounted) {
         setMovietrending([...movietrending, ...data.results]);
         setTotalpage(data.total_pages);
       }
       console.log(data);
     };
     getTrending();
-    return ()=>{
+    return () => {
       isMounted = false;
-    }
+    };
   }, [API_URL]);
 
   // load more
@@ -42,8 +43,6 @@ export const Featurelist = () => {
   // use aos
   Aos.init();
 
-
-
   return (
     <div className="wrap_fluid trending_list">
       <Container>
@@ -51,29 +50,34 @@ export const Featurelist = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-lg-3">
-                <h2 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
+                <h2
+                  className="trending_title"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+                >
                   {" "}
                   TRENDING
                 </h2>
               </div>
-              <div className=" d-flex flex-row flex-wrap justify-content-center" data-aos="fade-down" data-aos-duration="1500">
-                {movietrending.map(
-                  (movie) =>
-                  (
-                    <Card className="card_container mx-2 my-2" key={movie.id}>
-                      <img
-                        src={IMG_URL + movie.poster_path}
-                        alt={movie.original_name}
-                        className="img_feature card-img-top"
-                      />
-                      <div className="card-body card_trending">
-                        <p className="card-text">{movie.title}</p>
-                        <p className="card-text">{movie.release_date}</p>
-                        <p className="card-text">{movie.vote_average}</p>
-                      </div>
-                    </Card>
-                  )
-                )}
+              <div
+                className=" d-flex flex-row flex-wrap justify-content-center"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+              >
+                {movietrending.map((movie) => (
+                  <Card className="card_container mx-2 my-2" key={movie.id}>
+                    <img
+                      src={IMG_URL + movie.poster_path}
+                      alt={movie.original_name}
+                      className="img_feature card-img-top"
+                    />
+                    <div className="card-body card_trending">
+                      <p className="card-text">{movie.title}</p>
+                      <p className="card-text">{movie.release_date}</p>
+                      <p className="card-text">{movie.vote_average}</p>
+                    </div>
+                  </Card>
+                ))}
                 {page < totalpage ? (
                   <button className="btn_loadmore" onClick={loadMore}>
                     Load more

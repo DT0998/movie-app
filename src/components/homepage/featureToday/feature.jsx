@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 // media query hook
 import useMediaQuery from "../../../hooks/useMediaquery";
+import { Buttonviewmore } from "../../button-viewmore/button-viewmore";
 
 export const Feature = () => {
   const [movietrending, setMovietrending] = useState([]);
@@ -27,15 +28,15 @@ export const Feature = () => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
+      if (isMounted) {
         setMovietrending(data.results);
       }
       console.log(data);
     };
     getTrending();
-    return ()=>{
+    return () => {
       isMounted = false;
-    }
+    };
   }, [API_URL]);
 
   // use aos
@@ -57,16 +58,7 @@ export const Feature = () => {
                   TRENDING
                 </h1>
                 <Link to="/trending">
-                  <button
-                    className="btn_view view-more"
-                    data-aos="fade-left"
-                    data-aos-duration="1500"
-                  >
-                    <span className="circle" aria-hidden="true">
-                      <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text">View More</span>
-                  </button>
+                  <Buttonviewmore></Buttonviewmore>
                 </Link>
               </div>
               <div
@@ -78,63 +70,72 @@ export const Feature = () => {
 
                 {isDesktop
                   ? movietrending.map(
-                    (movie, index) =>
-                      index < 5 && (
-                        <Card className="card_container isDesktop" key={movie.id}>
-                          <img
-                            src={IMG_URL + movie.poster_path}
-                            alt={movie.original_name}
-                            className="img_feature card-img-top"
-                          />
-                          <div className="card-body card_trending">
-                            <p className="card-text">{movie.title}</p>
-                            <p className="card-text">{movie.release_date}</p>
-                            <p className="card-text">{movie.vote_average}</p>
-                          </div>
-                        </Card>
-                      )
-                  )
+                      (movie, index) =>
+                        index < 5 && (
+                          <Card
+                            className="card_container isDesktop"
+                            key={movie.id}
+                          >
+                            <img
+                              src={IMG_URL + movie.poster_path}
+                              alt={movie.original_name}
+                              className="img_feature card-img-top"
+                            />
+                            <div className="card-body card_trending">
+                              <p className="card-text">{movie.title}</p>
+                              <p className="card-text">{movie.release_date}</p>
+                              <p className="card-text">{movie.vote_average}</p>
+                            </div>
+                          </Card>
+                        )
+                    )
                   : null}
 
                 {/* tablet */}
                 {isTablet
                   ? movietrending.map(
-                    (movie, index) =>
-                      index < 4 && (
-                        <Card className="card_container isTablet" key={movie.id}>
-                          <img
-                            src={IMG_URL + movie.poster_path}
-                            alt={movie.original_name}
-                            className="img_feature card-img-top"
-                          />
-                          <div className="card-body card_trending">
-                            <p className="card-text">{movie.title}</p>
-                            <p className="card-text">{movie.release_date}</p>
-                            <p className="card-text">{movie.vote_average}</p>
-                          </div>
-                        </Card>
-                      )
-                  )
+                      (movie, index) =>
+                        index < 4 && (
+                          <Card
+                            className="card_container isTablet"
+                            key={movie.id}
+                          >
+                            <img
+                              src={IMG_URL + movie.poster_path}
+                              alt={movie.original_name}
+                              className="img_feature card-img-top"
+                            />
+                            <div className="card-body card_trending">
+                              <p className="card-text">{movie.title}</p>
+                              <p className="card-text">{movie.release_date}</p>
+                              <p className="card-text">{movie.vote_average}</p>
+                            </div>
+                          </Card>
+                        )
+                    )
                   : null}
                 {/* mobile */}
                 {isMobile
                   ? movietrending.map(
-                    (movie, index) =>
-                      index < 2 && (
-                        <Card className="card_container isMobile" key={movie.id}>
-                          <img
-                            src={IMG_URL + movie.poster_path}
-                            alt={movie.original_name}
-                            className="img_feature card-img-top"
-                          />
-                          <div className="card-body card_trending">
-                            <p className="card-text">{movie.title}</p>
-                            <p className="card-text">{movie.release_date}</p>
-                            <p className="card-text">{movie.vote_average}</p>
-                          </div>
-                        </Card>
-                      )
-                  )
+                      (movie, index) =>
+                        index < 2 && (
+                          <Card
+                            className="card_container isMobile"
+                            key={movie.id}
+                          >
+                            <img
+                              src={IMG_URL + movie.poster_path}
+                              alt={movie.original_name}
+                              className="img_feature card-img-top"
+                            />
+                            <div className="card-body card_trending">
+                              <p className="card-text">{movie.title}</p>
+                              <p className="card-text">{movie.release_date}</p>
+                              <p className="card-text">{movie.vote_average}</p>
+                            </div>
+                          </Card>
+                        )
+                    )
                   : null}
               </div>
             </div>

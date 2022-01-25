@@ -13,7 +13,7 @@ export const Footer = () => {
                 <Row>
                     <Col>
                         <div className="wrap">
-                            <a href='/'><img src={logo} className="logo" alt=''></img></a>
+                            <a href='/'><img src={logo} className="logo" alt='logo'></img></a>
                         </div>
                     </Col>
                 </Row>

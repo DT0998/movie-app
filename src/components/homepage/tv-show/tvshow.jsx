@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./tvshow.css";
 // media query hook
 import useMediaQuery from "../../../hooks/useMediaquery";
+import { Buttonviewmore } from "../../button-viewmore/button-viewmore";
 
 export const Tvshow = () => {
   const [tvshows, setTVshows] = useState([]);
@@ -46,12 +47,7 @@ export const Tvshow = () => {
               <div className="d-flex justify-content-between align-items-center my-3">
                 <h1 className="introduce_title" data-aos="fade-right" data-aos-duration="1500"> TV SHOWS</h1>
                 <Link to="/tvshow">
-                  <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
-                    <span className="circle" aria-hidden="true">
-                      <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text">View More</span>
-                  </button>
+                <Buttonviewmore></Buttonviewmore>
                 </Link>
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">

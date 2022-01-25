@@ -1,11 +1,11 @@
 import "./header.css";
-
 import { Row, Col, Container } from "react-bootstrap";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Buttonwatchnow } from "../../button-watchnow/button-watchnow";
 
 export const Header = () => {
   const [moviepopular, setMoviepopular] = useState([]);
@@ -59,7 +59,7 @@ export const Header = () => {
                         <h1 className="header_title">{movie.title}</h1>
                         <p className="header_overview">{movie.overview}</p>
                       </div>
-                      <button className="btn_watch">Watch Now</button>
+                      <Buttonwatchnow></Buttonwatchnow>
                     </div>
                   </Col>
                   <Col md={4}>
