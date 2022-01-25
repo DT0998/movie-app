@@ -29,12 +29,18 @@
 }
 
 .nav_fluid.sticky {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid #eaeaea;
   z-index: 9999;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  height: auto;
 }
 
 
