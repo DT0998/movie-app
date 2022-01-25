@@ -32,9 +32,9 @@ export const Footer = () => {
             <Row>
                 <Col>
                     <div className='text-center my-lg-1'>
-                        <span className="contract">Điều khoản dịch vụ</span>
+                        <span className="contract">ĐIỀU KHOẢN DỊCH VỤ</span>
                         <span className="contract">DCMA</span>
-                        <span className="contract">Liên hệ</span>
+                        <span className="contract">LIÊN HỆ</span>
                     </div>
                 </Col>
             </Row>

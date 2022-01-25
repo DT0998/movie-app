@@ -6,8 +6,8 @@ import "./movielist.css";
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
-  const [movietoprate, setMovietoprate] = useState([]);
   const [totalpage, setTotalpage] = useState();
+  const [movietoprate, setMovietoprate] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
@@ -21,7 +21,7 @@ export const Movielist = () => {
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietoprate([...movietoprate,...data.results]);
+      setMovietoprate([...movietoprate, ...data.results]);
       setTotalpage(data.total_pages);
       console.log(data);
     };
@@ -70,11 +70,11 @@ export const Movielist = () => {
                     </div>
                   </Card>
                 ))}
-                {page < totalpage ?(
-                <button className="btn_loadmore" onClick={loadMore}>
-                  Load more
-                </button>
-                ):null}
+                {page < totalpage ? (
+                  <button className="btn_loadmore" onClick={loadMore}>
+                    Load more
+                  </button>
+                ) : null}
               </div>
             </div>
           </Col>
