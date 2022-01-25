@@ -2,9 +2,9 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
-import "./moviesort.css";
+import "./movielist.css";
 
-export const Moviesort = () => {
+export const Movielist = () => {
   const [page, setPage] = useState(1);
   const [movietoprate, setMovietoprate] = useState([]);
   const [totalpage, setTotalpage] = useState();
@@ -22,21 +22,21 @@ export const Moviesort = () => {
       let response = await axios.get(API_URL);
       let data = response.data;
       setMovietoprate(data.results);
-      setTotalpage(...data.total_pages);
+      setTotalpage(data.total_pages);
       console.log(data);
     };
     getTrending();
   }, [API_URL]);
 
   // load more
-  const load_more = () => {
+  const loadMore = () => {
     setPage(page + 1);
   };
   // use aos
   Aos.init();
 
   return (
-    <div className="wrap_fluid movie_sort">
+    <div className="wrap_fluid movie_list">
       <Container>
         <Row>
           <Col>
@@ -70,6 +70,11 @@ export const Moviesort = () => {
                     </div>
                   </Card>
                 ))}
+                {page < totalpage ?(
+                <button className="btn_loadmore" onClick={loadMore}>
+                  Load more
+                </button>
+                ):null}
               </div>
             </div>
           </Col>

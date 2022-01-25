@@ -1,7 +1,7 @@
 
-// route homepage
+// route moviepage
 import { Nav } from '../nav/nav';
-import { Moviesort } from './movie-sort/moviesort';
+import { Movielist } from './movie-list/movielist';
 import { Footer } from '../footer/footer';
 
 
@@ -9,7 +9,7 @@ export const Moviepage = () => {
   return (
     <div>
      <Nav/>
-    <Moviesort/>
+    <Movielist/>
       <Footer />
     </div>
   );
