@@ -1,7 +1,7 @@
 @media (min-width: 320px) {
     .movielegacy_list .card_container {
-      width: 100%;
-    }
+      width: 8rem;
+}
   }
   
   @media (min-width: 375px) {

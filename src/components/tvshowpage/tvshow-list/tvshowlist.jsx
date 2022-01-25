@@ -33,7 +33,7 @@ export const Tvshowlist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center justify-content-center px-lg-3">
+              <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-lg-3">
                 <h2
                   className="trending_title"
                   data-aos="fade-right"

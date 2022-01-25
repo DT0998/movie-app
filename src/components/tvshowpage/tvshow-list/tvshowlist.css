@@ -1,14 +1,15 @@
 @media (min-width: 320px) {
     .tvshow_list .card_container {
-      width: 100%;
+      width: 8rem;
     }
   }
   
   @media (min-width: 375px) {
-    .tvshow_list.card_container {
+    .tvshow_list .card_container {
       width: 9.5rem;
     }
   }
+
   @media (min-width: 425px) {
     .tvshow_list .card_container {
       width: 11rem;
