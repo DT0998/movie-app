@@ -48,6 +48,5 @@ export const Footer = () => {
                 </Row>
             </Container>
         </div>
-
     );
 };

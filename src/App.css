@@ -8,7 +8,10 @@
 
 html,
 body {
+  min-width: 100%;
+  width: 100%;
   font-family: graphik;
+  overflow-x: hidden;
 }
 
 
