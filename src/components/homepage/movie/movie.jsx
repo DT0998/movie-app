@@ -29,8 +29,8 @@ export const Movie = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES LEGACY</h1>
+              <div className="d-flex justify-content-between align-items-center my-lg-3">
+                <h1 className="introduce_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES LEGACY</h1>
                 <Link to ="/movielegacy">
                   <button className="btn_view view-more" data-aos="fade-left" data-aos-duration="1500">
                     <span className="circle" aria-hidden="true">

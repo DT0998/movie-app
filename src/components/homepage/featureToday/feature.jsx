@@ -36,8 +36,8 @@ export const Feature = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center">
-                <h1 className="trending_title" data-aos="fade-right" data-aos-duration="1500">
+              <div className="d-flex justify-content-between align-items-center my-lg-3">
+                <h1 className="introduce_title" data-aos="fade-right" data-aos-duration="1500">
                   {" "}
                   TRENDING
                 </h1>
