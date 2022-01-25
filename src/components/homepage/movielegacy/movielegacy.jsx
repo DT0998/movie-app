@@ -2,12 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./movie.css";
+import "./movielegacy.css";
 // media query hook
 import useMediaQuery from "../../../hooks/useMediaquery";
 
-export const Movie = () => {
-  const [movietoprate, setMovietoprate] = useState([]);
+export const Movielegacy = () => {
+  const [movielegacy, setMovielegacy] = useState([]);
       // media query
       const isMobile = useMediaQuery("(min-width:320px)");
       const isTablet = useMediaQuery("(min-width:768px)");
@@ -21,13 +21,13 @@ export const Movie = () => {
 
   // fetch movie api
   useEffect(() => {
-    const getTrending = async function () {
+    const getLegacy = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietoprate(data.results);
+      setMovielegacy(data.results);
       console.log(data);
     };
-    getTrending();
+    getLegacy();
   }, [API_URL]);
 
   return (
@@ -49,7 +49,7 @@ export const Movie = () => {
               </div>
               <div className=" d-flex flex-row gap-3" data-aos="fade-down" data-aos-duration="1500">
                 {/* desktop */}
-                {isDesktop ? movietoprate.map(
+                {isDesktop ? movielegacy.map(
                   (movie, index) =>
                     index < 5 && (
                       <Card className="card_container isDesktop" key={movie.id}>
@@ -67,7 +67,7 @@ export const Movie = () => {
                     )
                 ):null}
                 {/* tablet */}
-                {isTablet ? movietoprate.map(
+                {isTablet ? movielegacy.map(
                   (movie, index) =>
                     index < 4 && (
                       <Card className="card_container isTablet" key={movie.id}>
@@ -85,7 +85,7 @@ export const Movie = () => {
                     )
                 ):null}
                 {/* mobile */}
-                {isMobile ? movietoprate.map(
+                {isMobile ? movielegacy.map(
                   (movie, index) =>
                     index < 2 && (
                       <Card className="card_container isMobile" key={movie.id}>
