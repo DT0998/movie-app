@@ -18,14 +18,20 @@ export const Movielist = () => {
 
   // fetch movie api
   useEffect(() => {
+    let isMounted = true;
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietoprate([...movietoprate, ...data.results]);
-      setTotalpage(data.total_pages);
+      if(isMounted){
+        setMovietoprate([...movietoprate, ...data.results]);
+        setTotalpage(data.total_pages);
+      }
       console.log(data);
     };
     getTrending();
+    return ()=>{
+      isMounted = false;
+    }
   }, [API_URL]);
 
   // load more
@@ -36,7 +42,7 @@ export const Movielist = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid movie_list">
+    <div className="wrap_fluid movie_list w-100">
       <Container>
         <Row>
           <Col>

@@ -18,14 +18,20 @@ export const Movielegacylist = () => {
   // fetch movie api
 
   useEffect(() => {
+    let isMounted = true;
     const getLegacy = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovielegacy([...movielegacy, ...data.results]);
-      setTotalpage(data.total_pages);
+      if(isMounted){
+        setMovielegacy([...movielegacy, ...data.results]);
+        setTotalpage(data.total_pages);
+      }
       console.log(data);
     };
     getLegacy();
+    return ()=>{
+      isMounted = false;
+    }
   }, [API_URL]);
 
   // load more
@@ -36,7 +42,7 @@ export const Movielegacylist = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid movielegacy_list">
+    <div className="wrap_fluid movielegacy_list w-100">
       <Container>
         <Row>
           <Col>

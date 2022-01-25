@@ -21,13 +21,19 @@ export const Movielegacy = () => {
 
   // fetch movie api
   useEffect(() => {
+    let isMounted = true;
     const getLegacy = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovielegacy(data.results);
+      if(isMounted){
+        setMovielegacy(data.results);
+      }
       console.log(data);
     };
     getLegacy();
+    return ()=>{
+      isMounted = false;
+    }
   }, [API_URL]);
 
   return (

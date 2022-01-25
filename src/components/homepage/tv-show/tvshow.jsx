@@ -22,13 +22,19 @@ export const Tvshow = () => {
 
   // fetch movie api
   useEffect(() => {
+    let isMounted = true;
     const getTvshow = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setTVshows(data.results);
+      if(isMounted){
+        setTVshows(data.results);
+      }
       console.log(data);
     };
     getTvshow();
+    return ()=>{
+      isMounted = false;
+    }
   }, [API_URL]);
 
   return (

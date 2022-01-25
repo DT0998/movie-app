@@ -18,14 +18,20 @@ export const Tvshowlist = () => {
   // fetch movie api
 
   useEffect(() => {
+    let isMounted = true;
     const getTvshow = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setTVshows([...tvshows, ...data.results]);
-      setTotalpage(data.total_pages);
+      if(isMounted){
+        setTVshows([...tvshows, ...data.results]);
+        setTotalpage(data.total_pages);
+      }
       console.log(data);
     };
     getTvshow();
+    return ()=>{
+      isMounted = false;
+    }
   }, [API_URL]);
 
   // load more
@@ -37,7 +43,7 @@ export const Tvshowlist = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid tvshow_list">
+    <div className="wrap_fluid tvshow_list w-100">
       <Container>
         <Row>
           <Col>

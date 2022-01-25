@@ -19,14 +19,20 @@ export const Featurelist = () => {
   // fetch movie api
 
   useEffect(() => {
+    let isMounted = true;
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      setMovietrending([...movietrending, ...data.results]);
-      setTotalpage(data.total_pages);
+      if(isMounted){
+        setMovietrending([...movietrending, ...data.results]);
+        setTotalpage(data.total_pages);
+      }
       console.log(data);
     };
     getTrending();
+    return ()=>{
+      isMounted = false;
+    }
   }, [API_URL]);
 
   // load more
