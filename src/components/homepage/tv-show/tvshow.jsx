@@ -9,11 +9,11 @@ import useMediaQuery from "../../../hooks/useMediaquery";
 export const Tvshow = () => {
   const [tvshows, setTVshows] = useState([]);
 
-    // media query
-    const isMobile = useMediaQuery("(min-width:320px)");
-    const isTablet = useMediaQuery("(min-width:768px)");
-    const isDesktop = useMediaQuery("(min-width:1024px)");
-  
+  // media query
+  const isMobile = useMediaQuery("(min-width:320px)");
+  const isTablet = useMediaQuery("(min-width:768px)");
+  const isDesktop = useMediaQuery("(min-width:1024px)");
+
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -66,7 +66,7 @@ export const Tvshow = () => {
                         </div>
                       </Card>
                     )
-                ):null}
+                ) : null}
                 {/* tablet */}
                 {isTablet ? tvshows.map(
                   (tvshow, index) =>
@@ -84,7 +84,7 @@ export const Tvshow = () => {
                         </div>
                       </Card>
                     )
-                ):null}
+                ) : null}
                 {/* mobile */}
                 {isMobile ? tvshows.map(
                   (tvshow, index) =>
@@ -102,7 +102,7 @@ export const Tvshow = () => {
                         </div>
                       </Card>
                     )
-                ):null}
+                ) : null}
               </div>
             </div>
           </Col>
