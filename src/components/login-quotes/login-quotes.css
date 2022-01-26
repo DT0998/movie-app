@@ -1,5 +1,31 @@
-.login_quotes{
-    background-color: palegreen;
-    min-height: 100%;
-    min-width: 100%;
+.login_img{
+background-size: cover;
+min-height: 700px;
+min-width: 700px;
+background-repeat: no-repeat;
+background-position: center;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+
+.login_img{
+    display: none;
+}
+
+@media (min-width:768px) {
+    .login_img{
+        display: none;
+    }
+    
+}
+@media (min-width:1024px) {
+    .login_img{
+        display: none;
+    }
+}
+
+@media (min-width:1440px) {
+    .login_img{
+        display: block;
+    }
 }

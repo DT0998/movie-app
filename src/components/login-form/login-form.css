@@ -1,0 +1,36 @@
+.login_form{
+    padding: 55px;
+}
+.form_container{
+    width: 100%;
+}
+.form_shadow{
+    box-shadow: -5px -5px 0px 5px rgba(255, 255, 255, 0.4), 0px 4px 20px rgba(0, 0, 0, 0.92);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.login-form-title{
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 20px 0;
+}
+.gg_button{
+  min-width: 400px;
+  justify-content:center;
+  border-radius:20px !important;
+  -webkit-border-radius:20px !important;
+  -moz-border-radius:20px !important;
+  -ms-border-radius:20px !important;
+  -o-border-radius:20px !important;
+}
+
+@media (min-width:1024px) {
+    .login_form{
+        width: 100%;
+    }
+}
