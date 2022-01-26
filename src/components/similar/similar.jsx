@@ -32,7 +32,6 @@ export const Similar = () => {
 
   }, [id]);
 
-
   return (
     <div className="wrap_fluid cast w-100">
       <Container>
