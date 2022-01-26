@@ -6,6 +6,8 @@ import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
+// import { AOS } from "aos";
+
 
 export const Header = () => {
   const [moviepopular, setMoviepopular] = useState([]);
@@ -36,7 +38,8 @@ export const Header = () => {
   const addAos = ()=>{
     
   }
-
+ 
+  
 
 
   return (
@@ -44,7 +47,7 @@ export const Header = () => {
       autoplay={{
         delay: 2000,
       }}
-      slideChangeTransitionStart={{}}
+      slideChangeTransitionStart={{addAos}}
       slideChangeTransitionEnd={{}}
       className="header_slider w-100"
       >
