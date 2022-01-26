@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./tvshow.css";
 // media query hook
 import useMediaQuery from "../../hooks/useMediaquery";
-import { Buttonviewmore } from "../button-viewmore/button-viewmore";
+import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
 
 export const Tvshow = () => {
   const [tvshows, setTVshows] = useState([]);

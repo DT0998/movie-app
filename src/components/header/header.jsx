@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Buttonwatchnow } from "../button-watchnow/button-watchnow";
+import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
 
 export const Header = () => {
   const [moviepopular, setMoviepopular] = useState([]);
@@ -32,11 +32,20 @@ export const Header = () => {
     }
   }, [API_URL]);
 
+  // add aos swiper
+  const addAos = ()=>{
+    
+  }
+
+
+
   return (
     <Swiper
       autoplay={{
         delay: 2000,
       }}
+      slideChangeTransitionStart={{}}
+      slideChangeTransitionEnd={{}}
       className="header_slider w-100"
       >
       

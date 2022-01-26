@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 // media query hook
 import useMediaQuery from "../../hooks/useMediaquery";
-import { Buttonviewmore } from "../button-viewmore/button-viewmore";
+import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
 
 export const Feature = () => {
   const [movietrending, setMovietrending] = useState([]);

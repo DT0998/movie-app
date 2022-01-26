@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielist.css";
-import '../../components/button-loadmore/button-loadmore.css'
+import '../../components/buttons/button-loadmore/button-loadmore.css'
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
