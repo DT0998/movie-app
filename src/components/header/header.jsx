@@ -35,9 +35,9 @@ export const Header = () => {
   }, [API_URL]);
 
   // add aos swiper
-  const addAos = ()=>{
+  // const addAos = ()=>{
     
-  }
+  // }
  
   
 
@@ -47,8 +47,8 @@ export const Header = () => {
       autoplay={{
         delay: 2000,
       }}
-      slideChangeTransitionStart={{addAos}}
-      slideChangeTransitionEnd={{}}
+      // slideChangeTransitionStart={{addAos}}
+      // slideChangeTransitionEnd={{}}
       className="header_slider w-100"
       >
       

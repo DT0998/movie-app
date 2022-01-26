@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaquery";
 import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
 
+
 export const Feature = () => {
   const [movietrending, setMovietrending] = useState([]);
   // media query
@@ -76,7 +77,8 @@ export const Feature = () => {
                               className="card_container isDesktop"
                               key={movie.id}
                             >
-                          <Link to="/details">
+                          <Link to={`/details/${movie.id}`}>
+                          {/* <Link to={`/details`}> */}
                               <img
                                 src={IMG_URL + movie.poster_path}
                                 alt={movie.original_name}
