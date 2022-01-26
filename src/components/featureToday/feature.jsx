@@ -77,16 +77,16 @@ export const Feature = () => {
                               className="card_container isDesktop"
                               key={movie.id}
                             >
-                          <Link to={`/details/${movie.id}`}>
-                          {/* <Link to={`/details`}> */}
+                          {/* <Link to={`/details/${movie.id}`}> */}
+                          <Link to={`/details`}>
                               <img
                                 src={IMG_URL + movie.poster_path}
                                 alt={movie.original_name}
                                 className="img_feature card-img-top"
                               />
                               <div className="card-body card_trending">
-                                <p className="card-text">{movie.title}</p>
-                                <p className="card-text">{movie.release_date}</p>
+                                <p className="card-text">{movie.title || movie.original_name}</p>
+                                <p className="card-text">{movie.release_date || movie.first_air_date}</p>
                                 <p className="card-text">{movie.vote_average}</p>
                               </div>
                           </Link>

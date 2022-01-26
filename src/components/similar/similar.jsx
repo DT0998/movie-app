@@ -29,13 +29,13 @@ export const Similar = () => {
         if(isMounted){
           setSimilar(data.id);
         }
-        console.log(data);
+        console.log(data.id);
       };
       getSimilar();
       return ()=>{
         isMounted = false;
       }
-    }, [API_URL]);
+    }, [id,API_URL]);
 
  
   return (
