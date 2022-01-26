@@ -73,20 +73,22 @@ export const Feature = () => {
                       (movie, index) =>
                         index < 5 && (
                           <Card
-                            className="card_container isDesktop"
-                            key={movie.id}
-                          >
-                            <img
-                              src={IMG_URL + movie.poster_path}
-                              alt={movie.original_name}
-                              className="img_feature card-img-top"
-                            />
-                            <div className="card-body card_trending">
-                              <p className="card-text">{movie.title}</p>
-                              <p className="card-text">{movie.release_date}</p>
-                              <p className="card-text">{movie.vote_average}</p>
-                            </div>
-                          </Card>
+                              className="card_container isDesktop"
+                              key={movie.id}
+                            >
+                          <Link to="/details">
+                              <img
+                                src={IMG_URL + movie.poster_path}
+                                alt={movie.original_name}
+                                className="img_feature card-img-top"
+                              />
+                              <div className="card-body card_trending">
+                                <p className="card-text">{movie.title}</p>
+                                <p className="card-text">{movie.release_date}</p>
+                                <p className="card-text">{movie.vote_average}</p>
+                              </div>
+                          </Link>
+                            </Card>
                         )
                     )
                   : null}

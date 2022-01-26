@@ -7,6 +7,7 @@ import { Trendingpage } from "./pages/trendingpage/trending";
 import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
 import {Movielegacypage} from './pages/movielegacypage/movielegacypage'
 import { Loginpage } from "./pages/loginpage/login";
+import { Detailspage } from "./pages/detailspage/detailspage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/tvshow" component={Tvshowpage} />
         <Route exact path="/movielegacy" component={Movielegacypage} />
         <Route exact path="/account" component={Loginpage} />
+        <Route exact path="/details" component={Detailspage} />
       </Switch>
       </BrowserRouter>
     </div>

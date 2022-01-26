@@ -1,3 +1,10 @@
+.card_container{
+  cursor: pointer;
+}
+h1{
+  cursor: default;
+}
+
 @media (min-width: 320px) {
     .trending_list .card_container {
       width: 8rem;
