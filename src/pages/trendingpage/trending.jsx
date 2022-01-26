@@ -8,8 +8,8 @@ import { Footer } from '../../components/footer/footer';
 export const Trendingpage = () => {
   return (
     <div>
-     <Nav/>
-      <Featurelist/>
+      <Nav />
+      <Featurelist />
       <Footer />
     </div>
   );
