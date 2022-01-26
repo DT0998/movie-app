@@ -14,7 +14,7 @@ export const Loginform = () => {
     <div className="form_container">
       <Container>
           <div className="form_shadow d-flex justify-content-center align-items-center my-5">
-              <Col className="d-flex justify-content-center text-center col-md-12 col-lg-6">
+              <Col className="d-flex justify-content-center text-center col-md-12 col-lg-12 col-xl-6">
                 <form className="login_form">
                   <div className="text-start my-4 px-5 w-100">
                       <span className="login-form-title">LOG IN</span><br/>

@@ -29,6 +29,18 @@
   -o-border-radius:20px !important;
 }
 
+@media (min-width:320px) {
+    .gg_button{
+        min-width: 250px;
+    }
+}
+
+@media (min-width:768px) {
+    .gg_button{
+        min-width: 450px;
+    }
+}
+
 @media (min-width:1024px) {
     .login_form{
         width: 100%;
