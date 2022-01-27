@@ -18,7 +18,8 @@ export const Similar = () => {
     // api
     const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
     const BASE_URL = "https://api.themoviedb.org/3";
-    const API_URL = BASE_URL + `/movie/${id}/recommendations` + API_KEY;
+    const media_type = "tv" && "movie"
+    const API_URL = BASE_URL + `/${media_type}/${id}/recommendations?` + API_KEY;
     const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   
     // fetch movie api
@@ -80,7 +81,7 @@ export const Similar = () => {
               }}
             >
               <div className="d-flex flex-column justify-content-around">
-                {Similar.map((similar) => (
+                {/* {Similar.map((similar) => (
                   <SwiperSlide key={similar.id}>
                     <Card
                       className="card_cast card_detail"
@@ -95,7 +96,7 @@ export const Similar = () => {
                       </div>
                     </Card>
                   </SwiperSlide>
-                ))}
+                ))} */}
               </div>
             </Swiper>
           </div>

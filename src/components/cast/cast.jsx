@@ -10,29 +10,29 @@ SwiperCore.use([Scrollbar]);
 
 
 export const Cast = () => {
-    const [cast, setCast] = useState([]);
+    // const [cast, setCast] = useState([]);
     // api
-    const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-    const BASE_URL = "https://api.themoviedb.org/3";
-    const API_URL = BASE_URL + "/person/popular?" + API_KEY;
-    const IMG_ORG = "https://image.tmdb.org/t/p/original/";
+    // const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
+    // const BASE_URL = "https://api.themoviedb.org/3";
+    // const API_URL = BASE_URL + "/person/popular?" + API_KEY;
+    // const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   
     // fetch movie api
-    useEffect(() => {
-      let isMounted = true;
-      const getCast = async function () {
-        let response = await axios.get(API_URL);
-        let data = response.data;
-        if(isMounted){
-          setCast(data.results);
-        }
-        console.log(data);
-      };
-      getCast();
-      return ()=>{
-        isMounted = false;
-      }
-    }, [API_URL]);
+    // useEffect(() => {
+    //   let isMounted = true;
+    //   const getCast = async function () {
+    //     let response = await axios.get(API_URL);
+    //     let data = response.data;
+    //     if(isMounted){
+    //       setCast(data.results);
+    //     }
+    //     console.log(data);
+    //   };
+    //   getCast();
+    //   return ()=>{
+    //     isMounted = false;
+    //   }
+    // }, [API_URL]);
 
  
   return (
@@ -76,7 +76,7 @@ export const Cast = () => {
               }}
             >
               <div className="d-flex flex-column justify-content-around">
-                {cast.map((cast) => (
+                {/* {cast.map((cast) => (
                   <SwiperSlide key={cast.id}>
                     <Card
                       className="card_cast card_detail"
@@ -91,7 +91,7 @@ export const Cast = () => {
                       </div>
                     </Card>
                   </SwiperSlide>
-                ))}
+                ))} */}
               </div>
             </Swiper>
           </div>
