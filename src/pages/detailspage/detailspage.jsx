@@ -8,10 +8,6 @@ export const Detailspage = () => {
   const { id } = useParams();
 
   return (
-    <div>
-      <Nav />
-      <Details id={id} />
-      <Footer />
-    </div>
+    <Details id={id} />
   );
 };

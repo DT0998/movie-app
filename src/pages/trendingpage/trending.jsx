@@ -6,10 +6,6 @@ import { Footer } from '../../components/footer/footer';
 
 export const Trendingpage = () => {
   return (
-    <div>
-      <Nav />
-      <Featurelist />
-      <Footer />
-    </div>
+    <Featurelist />
   );
 };
