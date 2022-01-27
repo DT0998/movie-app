@@ -66,7 +66,7 @@ export const Tvshowlist = () => {
                   (tvshow) =>
                   (<Card className="card_container mx-2 my-2" key={tvshow.id}>
                     <img
-                      src={IMG_URL + tvshow.poster_path}
+                      src={IMG_URL + tvshow.poster_path || tvshow.backdrop_path}
                       alt={tvshow.original_name}
                       className="img_feature card-img-top"
                     />

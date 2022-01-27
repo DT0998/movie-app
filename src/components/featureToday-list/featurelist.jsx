@@ -56,7 +56,7 @@ export const Featurelist = () => {
                   data-aos-duration="1500"
                 >
                   {" "}
-                  TRENDING
+                  TRENDING 
                 </h2>
               </div>
               <div
@@ -72,8 +72,8 @@ export const Featurelist = () => {
                       className="img_feature card-img-top"
                     />
                     <div className="card-body card_trending">
-                      <p className="card-text">{movie.title}</p>
-                      <p className="card-text">{movie.release_date}</p>
+                      <p className="card-text">{movie.title || movie.original_name}</p>
+                      <p className="card-text">{movie.release_date || movie.first_air_date}</p>
                       <p className="card-text">{movie.vote_average}</p>
                     </div>
                   </Card>

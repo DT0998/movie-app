@@ -14,6 +14,7 @@ export const Similar = () => {
     const param = useParams();
     const {id} = param;
     const [Similar, setSimilar] = useState([]);
+    console.log('useParams', useParams())
     // api
     const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
     const BASE_URL = "https://api.themoviedb.org/3";
