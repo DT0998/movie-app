@@ -8,13 +8,15 @@ import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
 import { Movielegacypage } from './pages/movielegacypage/movielegacypage'
 import { Loginpage } from "./pages/loginpage/login";
 import { Detailspage } from "./pages/detailspage/detailspage";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Footer } from "./components/footer/footer";
+import { Nav } from "./components/nav/nav";
 
 function App() {
   // const {id} = useParams()
   return (
     <div>
       <BrowserRouter>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/trending" component={Trendingpage} />
@@ -24,6 +26,7 @@ function App() {
           <Route exact path="/account" component={Loginpage} />
           <Route exact path={`/details/:id`} component={Detailspage} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

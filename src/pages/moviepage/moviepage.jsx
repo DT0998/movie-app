@@ -7,10 +7,6 @@ import { Footer } from '../../components/footer/footer';
 
 export const Moviepage = () => {
   return (
-    <div>
-     <Nav/>
-    <Movielist/>
-      <Footer />
-    </div>
+    <Movielist />
   );
 };
