@@ -6,11 +6,10 @@ background-repeat: no-repeat;
 background-position: center;
 border-top-right-radius: 20px;
 border-bottom-right-radius: 20px;
+display: none;
 }
 
-.login_img{
-    display: none;
-}
+
 
 @media (min-width:768px) {
     .login_img{

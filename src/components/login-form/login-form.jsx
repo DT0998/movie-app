@@ -1,5 +1,5 @@
 import "./login-form.css";
-import { Container,Col } from "react-bootstrap";
+import { Container,Col, Row } from "react-bootstrap";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -12,26 +12,30 @@ export const Loginform = () => {
 
   return (
     <div className="form_container">
-      <Container>
-          <div className="form_shadow d-flex justify-content-center align-items-center my-5">
-              <Col className="d-flex justify-content-center text-center col-md-12 col-lg-12 col-xl-6">
-                <form className="login_form">
-                  <div className="text-start my-4 px-5 w-100">
-                      <span className="login-form-title">LOG IN</span><br/>
-                      <span className="login-form-title">Login to your account to watch movie and chill.</span>
-                  </div>
-                  <GoogleLogin
-                    buttonText="Login"
-                    cookiePolicy={"single_host_origin"}
-                    style={{ marginTop: "100px" }}
-                    isSignedIn={true}
-                    className="gg_button"
-                  />
-                </form>
-              </Col>
-              <Col className="d-flex justify-content-center">
-                <Loginquotes />
-              </Col>
+      <Container className="form_shadow px-5">
+          <div className="my-5">
+              <Row className="d-flex flex-nowrap justify-content-center align-items-center">
+                <Col xs={12} className="text-center col-md-12 col-xl-6">
+                  <form className="login_form px-md-5">
+                    <div className="text-xl-start text-md-center my-4 px-md-5">
+                    <div><label className="login-form-title" >Login</label></div>
+                    <div><label className="login-form-title">Login watch and chill movie</label></div>
+                    <div>
+                      <GoogleLogin
+                        buttonText="Login"
+                        cookiePolicy={"single_host_origin"}
+                        style={{ marginTop: "100px" }}
+                        isSignedIn={true}
+                        className="gg_button"
+                      />
+                    </div>
+                    </div>
+                  </form>
+                </Col>
+                <Col xs={0} className="d-flex justify-content-center login_quotes col-md-0">
+                  <Loginquotes />
+                </Col>
+              </Row>
           </div>
       </Container>
     </div>

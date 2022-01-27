@@ -28,11 +28,10 @@ export const Loginquotes = () => {
       isMounted = false;
     };
   }, [API_URL]);
-  // use aos
-  Aos.init();
+
 
   return (
-    <div className="login_quotes">
+    <div>
         {loginquotes.map((image,index)=> index < 1 &&(
             <div style={{ backgroundImage: `url(${IMG_ORG + image.backdrop_path})` }} className="login_img" key={image.id}></div>
         ))}

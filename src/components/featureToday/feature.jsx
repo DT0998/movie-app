@@ -77,8 +77,8 @@ export const Feature = () => {
                               className="card_container isDesktop"
                               key={movie.id}
                             >
-                          {/* <Link to={`/details/${movie.id}`}> */}
-                          <Link to={`/details`}>
+                          <Link to={`/details/${movie.id}`}>
+                          {/* <Link to={`/details`}> */}
                               <img
                                 src={IMG_URL + movie.poster_path}
                                 alt={movie.original_name}

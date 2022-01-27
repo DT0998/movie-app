@@ -8,8 +8,10 @@ import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
 import {Movielegacypage} from './pages/movielegacypage/movielegacypage'
 import { Loginpage } from "./pages/loginpage/login";
 import { Detailspage } from "./pages/detailspage/detailspage";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
+  // const {id} = useParams()
   return (
     <div>
       <BrowserRouter>
@@ -20,7 +22,7 @@ function App() {
         <Route exact path="/tvshow" component={Tvshowpage} />
         <Route exact path="/movielegacy" component={Movielegacypage} />
         <Route exact path="/account" component={Loginpage} />
-        <Route exact path="/details" component={Detailspage} />
+        <Route exact path={`/details/:id`} component={Detailspage} />
       </Switch>
       </BrowserRouter>
     </div>
