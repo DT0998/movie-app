@@ -19,19 +19,13 @@ export const Cast = () => {
   
     // fetch movie api
     // useEffect(() => {
-    //   let isMounted = true;
     //   const getCast = async function () {
     //     let response = await axios.get(API_URL);
     //     let data = response.data;
-    //     if(isMounted){
     //       setCast(data.results);
-    //     }
     //     console.log(data);
     //   };
     //   getCast();
-    //   return ()=>{
-    //     isMounted = false;
-    //   }
     // }, [API_URL]);
 
  
