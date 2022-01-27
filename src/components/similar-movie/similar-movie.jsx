@@ -3,22 +3,18 @@ import { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import './similar.css'
+import './similar-movie.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { useParams } from 'react-router-dom';
 SwiperCore.use([Scrollbar]);
 
 
-export const Similar = () => {
-  const param = useParams();
-  let { id, media_type } = param;
+export const Similarmovie = ({id}) => {
   const [Similar, setSimilar] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  media_type = "tv" && "movie"
-  const API_URL = BASE_URL + `/${media_type}/${id}/recommendations?` + API_KEY;
+  const API_URL = BASE_URL + `/movie/${id}/recommendations?` + API_KEY;
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
@@ -29,7 +25,7 @@ export const Similar = () => {
         setSimilar(data.id);
     };
     getSimilar();
-  }, [id, API_URL, media_type]);
+  }, [id, API_URL]);
 
 
   return (

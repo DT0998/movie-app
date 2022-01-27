@@ -15,7 +15,7 @@ export const Featurelist = () => {
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY + PAGE;
+  const API_URL = BASE_URL + "/trending/movie/week?" + API_KEY + PAGE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api

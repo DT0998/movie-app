@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";

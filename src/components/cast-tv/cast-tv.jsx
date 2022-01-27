@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import './cast-movie.css'
+import './cast-tv.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
 
 
-export const Castmovie = () => {
+export const Casttv = () => {
     // const [cast, setCast] = useState([]);
     // api
     // const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";

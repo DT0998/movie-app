@@ -17,15 +17,15 @@ export const Tvshowlist = () => {
 
   // fetch movie api
 
+  const getTvshow = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setTVshows([...tvshows, ...data.results]);
+    setTotalpage(data.total_pages);
+    console.log(data);
+  };
+  getTvshow()
   useEffect(() => {
-    const getTvshow = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setTVshows([...tvshows, ...data.results]);
-        setTotalpage(data.total_pages);
-      console.log(data);
-    };
-    getTvshow();
   }, [API_URL]);
 
   // load more

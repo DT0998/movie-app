@@ -2,8 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Cast } from "../cast-movie/cast-movie";
-import { Similar } from "../similar/similar";
+import { Casttv } from "../cast-tv/cast-tv";
+import { Similartv } from "../similar-tvshow/similar-tvshow";
 import "./details-tvshow.css";
 
 export const Detailstvshow = ({ id }) => {
@@ -43,8 +43,8 @@ export const Detailstvshow = ({ id }) => {
               </Col>
             </div>
           </div>
-          <Cast />
-          <Similar />
+          <Casttv />
+          <Similartv />
         </Row>
       </Container>
     </div>
