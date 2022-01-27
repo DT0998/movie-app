@@ -7,10 +7,9 @@ import { Similar } from "../similar/similar";
 import "./details.css";
 
 export const Details = ({ id }) => {
-  // const [movie, setMovie] = useState([])
   const [movie, setMovie] = useState({})
   // api
-  const media_type = "tv" && "movie"
+  const media_type =  "tv" ? "movie" : 'tv';
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL = BASE_URL + `/${media_type}/${id}?` + API_KEY;
@@ -18,12 +17,11 @@ export const Details = ({ id }) => {
 
   // fetch movie api
   useEffect(() => {
-    const getTrending = async function () {
+    const getTrending = async function (media_type) {
       let response = await axios.get(API_URL);
       console.log("response by Details", response.data);
       setMovie(response.data);
-      // let data = response.data;
-      //   setMovie(data.result || data);
+      
     };
     getTrending(media_type, id);
   }, [API_URL, media_type, id]);

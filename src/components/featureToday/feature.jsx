@@ -84,7 +84,6 @@ export const Feature = () => {
                               <p className="card-text">{movie.vote_average}</p>
                             </div>
                           </Link>
-                          dasdasdkdjasghdjgjask
                         </Card>
                       )
                   )
