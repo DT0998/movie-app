@@ -12,13 +12,13 @@ SwiperCore.use([Scrollbar]);
 
 export const Similar = () => {
     const param = useParams();
-    const {id} = param;
+    let {id,media_type} = param;
     const [Similar, setSimilar] = useState([]);
     console.log('useParams', useParams())
     // api
     const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
     const BASE_URL = "https://api.themoviedb.org/3";
-    const media_type = "tv" && "movie"
+    media_type = "tv" && "movie"
     const API_URL = BASE_URL + `/${media_type}/${id}/recommendations?` + API_KEY;
     const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   
@@ -31,13 +31,12 @@ export const Similar = () => {
         if(isMounted){
           setSimilar(data.id);
         }
-        console.log(data.id);
       };
       getSimilar();
       return ()=>{
         isMounted = false;
       }
-    }, [id,API_URL]);
+    }, [id,API_URL,media_type]);
 
  
   return (
