@@ -71,75 +71,75 @@ export const Feature = () => {
 
                 {isDesktop
                   ? movietrending.map(
-                      (movie, index) =>
-                        index < 5 && (
-                          <Card
-                              className="card_container isDesktop"
-                              key={movie.id}
-                            >
+                    (movie, index) =>
+                      index < 5 && (
+                        <Card
+                          className="card_container isDesktop"
+                          key={movie.id}
+                        >
                           <Link to={`/details/${movie.id}`}>
-                          {/* <Link to={`/details`}> */}
-                              <img
-                                src={IMG_URL + movie.poster_path}
-                                alt={movie.original_name}
-                                className="img_feature card-img-top"
-                              />
-                              <div className="card-body card_trending">
-                                <p className="card-text">{movie.title || movie.original_name}</p>
-                                <p className="card-text">{movie.release_date || movie.first_air_date}</p>
-                                <p className="card-text">{movie.vote_average}</p>
-                              </div>
+                            <img
+                              src={IMG_URL + movie.poster_path}
+                              alt={movie.original_name}
+                              className="img_feature card-img-top"
+                            />
+                            <div className="card-body card_trending">
+                              <p className="card-text">{movie.title || movie.original_name}</p>
+                              <p className="card-text">{movie.release_date || movie.first_air_date}</p>
+                              <p className="card-text">{movie.vote_average}</p>
+                            </div>
                           </Link>
-                            </Card>
-                        )
-                    )
+                          dasdasdkdjasghdjgjask
+                        </Card>
+                      )
+                  )
                   : null}
 
                 {/* tablet */}
                 {isTablet
                   ? movietrending.map(
-                      (movie, index) =>
-                        index < 4 && (
-                          <Card
-                            className="card_container isTablet"
-                            key={movie.id}
-                          >
-                            <img
-                              src={IMG_URL + movie.poster_path}
-                              alt={movie.original_name}
-                              className="img_feature card-img-top"
-                            />
-                            <div className="card-body card_trending">
-                              <p className="card-text">{movie.title}</p>
-                              <p className="card-text">{movie.release_date}</p>
-                              <p className="card-text">{movie.vote_average}</p>
-                            </div>
-                          </Card>
-                        )
-                    )
+                    (movie, index) =>
+                      index < 4 && (
+                        <Card
+                          className="card_container isTablet"
+                          key={movie.id}
+                        >
+                          <img
+                            src={IMG_URL + movie.poster_path}
+                            alt={movie.original_name}
+                            className="img_feature card-img-top"
+                          />
+                          <div className="card-body card_trending">
+                            <p className="card-text">{movie.title}</p>
+                            <p className="card-text">{movie.release_date}</p>
+                            <p className="card-text">{movie.vote_average}</p>
+                          </div>
+                        </Card>
+                      )
+                  )
                   : null}
                 {/* mobile */}
                 {isMobile
                   ? movietrending.map(
-                      (movie, index) =>
-                        index < 2 && (
-                          <Card
-                            className="card_container isMobile"
-                            key={movie.id}
-                          >
-                            <img
-                              src={IMG_URL + movie.poster_path}
-                              alt={movie.original_name}
-                              className="img_feature card-img-top"
-                            />
-                            <div className="card-body card_trending">
-                              <p className="card-text">{movie.title}</p>
-                              <p className="card-text">{movie.release_date}</p>
-                              <p className="card-text">{movie.vote_average}</p>
-                            </div>
-                          </Card>
-                        )
-                    )
+                    (movie, index) =>
+                      index < 2 && (
+                        <Card
+                          className="card_container isMobile"
+                          key={movie.id}
+                        >
+                          <img
+                            src={IMG_URL + movie.poster_path}
+                            alt={movie.original_name}
+                            className="img_feature card-img-top"
+                          />
+                          <div className="card-body card_trending">
+                            <p className="card-text">{movie.title}</p>
+                            <p className="card-text">{movie.release_date}</p>
+                            <p className="card-text">{movie.vote_average}</p>
+                          </div>
+                        </Card>
+                      )
+                  )
                   : null}
               </div>
             </div>

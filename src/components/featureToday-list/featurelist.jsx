@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 
 export const Featurelist = () => {
@@ -28,7 +29,7 @@ export const Featurelist = () => {
         setMovietrending([...movietrending, ...data.results]);
         setTotalpage(data.total_pages);
       }
-      console.log(data);
+      console.log("data in Featurelist", data);
     };
     getTrending();
     return () => {
@@ -56,7 +57,7 @@ export const Featurelist = () => {
                   data-aos-duration="1500"
                 >
                   {" "}
-                  TRENDING 
+                  TRENDING
                 </h2>
               </div>
               <div
@@ -66,16 +67,18 @@ export const Featurelist = () => {
               >
                 {movietrending.map((movie) => (
                   <Card className="card_container mx-2 my-2" key={movie.id}>
-                    <img
-                      src={IMG_URL + movie.poster_path}
-                      alt={movie.original_name}
-                      className="img_feature card-img-top"
-                    />
-                    <div className="card-body card_trending">
-                      <p className="card-text">{movie.title || movie.original_name}</p>
-                      <p className="card-text">{movie.release_date || movie.first_air_date}</p>
-                      <p className="card-text">{movie.vote_average}</p>
-                    </div>
+                    <Link to={`/details/${movie.id}`} >
+                      <img
+                        src={IMG_URL + movie.poster_path}
+                        alt={movie.original_name}
+                        className="img_feature card-img-top"
+                      />
+                      <div className="card-body card_trending">
+                        <p className="card-text">{movie.title || movie.original_name}</p>
+                        <p className="card-text">{movie.release_date || movie.first_air_date}</p>
+                        <p className="card-text">{movie.vote_average}</p>
+                      </div>
+                    </Link>
                   </Card>
                 ))}
                 {page < totalpage ? (
