@@ -18,20 +18,14 @@ export const Tvshowlist = () => {
   // fetch movie api
 
   useEffect(() => {
-    let isMounted = true;
     const getTvshow = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
         setTVshows([...tvshows, ...data.results]);
         setTotalpage(data.total_pages);
-      }
       console.log(data);
     };
     getTvshow();
-    return ()=>{
-      isMounted = false;
-    }
   }, [API_URL]);
 
   // load more

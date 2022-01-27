@@ -18,20 +18,14 @@ export const Movielegacylist = () => {
   // fetch movie api
 
   useEffect(() => {
-    let isMounted = true;
     const getLegacy = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if (isMounted) {
         setMovielegacy([...movielegacy, ...data.results]);
         setTotalpage(data.total_pages);
-      }
       console.log(data);
     };
     getLegacy();
-    return () => {
-      isMounted = false;
-    };
   }, [API_URL]);
 
   // load more

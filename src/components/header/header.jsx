@@ -20,18 +20,12 @@ export const Header = () => {
 
   // fetch movie api
   useEffect(() => {
-    let isMounted = true;
     const getPopular = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
         setMoviepopular(data.results);
-      }
     };
     getPopular();
-    return ()=>{
-      isMounted = false;
-    }
   }, [API_URL]);
 
   // add aos swiper

@@ -19,19 +19,14 @@ export const Community = () => {
 
   // fetch movie api
   useEffect(() => {
-    let isMounted = true;
     const getCommunity = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if(isMounted){
         setPeoples(data.results);
-      }
+      
       console.log(data);
     };
     getCommunity();
-    return ()=>{
-      isMounted = false;
-    }
   }, [API_URL]);
 
   return (

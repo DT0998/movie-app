@@ -25,19 +25,14 @@ export const Feature = () => {
 
   // fetch movie api
   useEffect(() => {
-    let isMounted = true;
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if (isMounted) {
         setMovietrending(data.results);
-      }
       console.log(data);
     };
     getTrending();
-    return () => {
-      isMounted = false;
-    };
+
   }, [API_URL]);
 
   // use aos

@@ -23,18 +23,12 @@ export const Similar = () => {
 
   // fetch movie api
   useEffect(() => {
-    let isMounted = true;
     const getSimilar = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if (isMounted) {
         setSimilar(data.id);
-      }
     };
     getSimilar();
-    return () => {
-      isMounted = false;
-    }
   }, [id, API_URL, media_type]);
 
 

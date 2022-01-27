@@ -14,19 +14,13 @@ export const Loginquotes = () => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
  // fetch movie api
  useEffect(() => {
-    let isMounted = true;
     const getQuotes = async function () {
       let response = await axios.get(API_URL);
       let data = response.data;
-      if (isMounted) {
         setLoginquotes(data.results);
-      }
       console.log(data);
     };
     getQuotes();
-    return () => {
-      isMounted = false;
-    };
   }, [API_URL]);
 
 

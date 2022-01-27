@@ -18,20 +18,14 @@ export const Details = ({ id }) => {
 
   // fetch movie api
   useEffect(() => {
-    let isMounted = true;
     const getTrending = async function () {
       let response = await axios.get(API_URL);
       console.log("response by Details", response.data);
       setMovie(response.data);
       // let data = response.data;
-      // if (isMounted) {
       //   setMovie(data.result || data);
-      // }
     };
     getTrending(media_type, id);
-    return () => {
-      isMounted = false;
-    };
   }, [API_URL, media_type, id]);
 
 
