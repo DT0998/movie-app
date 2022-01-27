@@ -2,29 +2,28 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Cast } from "../cast/cast";
+import { Cast } from "../cast-movie/cast-movie";
 import { Similar } from "../similar/similar";
-import "./details.css";
+import "./details-tvshow.css";
 
-export const Details = ({ id }) => {
-  const [movie, setMovie] = useState({})
+export const Detailstvshow = ({ id }) => {
+  const [tvshow, setTvshow] = useState({})
   // api
-  const media_type =  "tv" ? "movie" : 'tv';
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + `/${media_type}/${id}?` + API_KEY;
+  const API_URL = BASE_URL + `/tv/${id}?` + API_KEY;
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
   useEffect(() => {
-    const getTrending = async function (media_type) {
+    const getTrending = async function (path) {
       let response = await axios.get(API_URL);
       console.log("response by Details", response.data);
-      setMovie(response.data);
+      setTvshow(response.data);
       
     };
-    getTrending(media_type, id);
-  }, [API_URL, media_type, id]);
+    getTrending();
+  }, [API_URL]);
 
 
 
@@ -35,27 +34,13 @@ export const Details = ({ id }) => {
           <div className="details_bg">
             <div className="d-flex justify-content-center align-items-center flex-md-row flex-column">
               <Col>
-                <img src={`${IMG_ORG + movie?.backdrop_path}`} alt={movie?.name}></img>
+                <img src={`${IMG_ORG + tvshow?.backdrop_path}`} alt={tvshow?.name}></img>
               </Col>
               <Col>
                 <p>title</p>
                 <p>content</p>
                 <p>release</p>
               </Col>
-              {/* {movie && movie.map((movie) => {
-                (
-                  <div>
-                    <Col>
-                      <img src={`${IMG_ORG + movie.backdrop_path}`} alt={movie.name}></img>
-                    </Col>
-                    <Col>
-                      <p>title</p>
-                      <p>content</p>
-                      <p>release</p>
-                    </Col>
-                  </div>
-                )
-              })} */}
             </div>
           </div>
           <Cast />

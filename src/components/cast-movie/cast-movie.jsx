@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import './cast.css'
+import './cast-movie.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);

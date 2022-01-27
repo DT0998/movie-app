@@ -7,9 +7,10 @@ import { Trendingpage } from "./pages/trendingpage/trending";
 import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
 import { Movielegacypage } from './pages/movielegacypage/movielegacypage'
 import { Loginpage } from "./pages/loginpage/login";
-import { Detailspage } from "./pages/detailspage/detailspage";
 import { Footer } from "./components/footer/footer";
 import { Nav } from "./components/nav/nav";
+import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
+import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
 function App() {
   // const {id} = useParams()
@@ -24,7 +25,8 @@ function App() {
           <Route exact path="/tvshow" component={Tvshowpage} />
           <Route exact path="/movielegacy" component={Movielegacypage} />
           <Route exact path="/account" component={Loginpage} />
-          <Route exact path={`/details/:id`} component={Detailspage} />
+          <Route exact path={`/details/movie/:id`} component={Detailspagemovie} />
+          <Route exact path={`/details/tv/:id`} component={Detailspagetvshow} />
         </Switch>
         <Footer />
       </BrowserRouter>

@@ -20,7 +20,7 @@ export const Feature = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/all/day?" + API_KEY;
+  const API_URL = BASE_URL + "/trending/movie/day?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
@@ -72,7 +72,7 @@ export const Feature = () => {
                           className="card_container isDesktop"
                           key={movie.id}
                         >
-                          <Link to={`/details/${movie.id}`}>
+                          <Link to={`/details/movie/${movie.id}`}>
                             <img
                               src={IMG_URL + movie.poster_path}
                               alt={movie.original_name}
