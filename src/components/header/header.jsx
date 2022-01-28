@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
+import {Buttonviewinfo} from '../buttons/button-viewinfo/button-viewinfo'
 // import { AOS } from "aos";
 
 export const Header = () => {
@@ -60,7 +60,7 @@ export const Header = () => {
                       <h1 className="header_title">{movie.title}</h1>
                       <p className="header_overview">{movie.overview}</p>
                     </div>
-                    <Buttonwatchnow></Buttonwatchnow>
+                    <Buttonviewinfo></Buttonviewinfo>
                   </div>
                 </Col>
                 <Col md={4}>

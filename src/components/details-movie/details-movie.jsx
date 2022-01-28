@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Castmovie } from "../cast-movie/cast-movie";
 import { Similarmovie } from "../similar-movie/similar-movie";
+import {Buttonwatchnow} from '../buttons/button-watchnow/button-watchnow';
 import "./details-movie.css";
 
 export const Detailsmovie = ({ id }) => {
@@ -49,6 +50,7 @@ export const Detailsmovie = ({ id }) => {
                   <p>{movie.overview}</p>
                   <p>Release day: {movie.release_date}</p>
                 </div>
+              <Buttonwatchnow></Buttonwatchnow>
               </Col>
           </Row>
         </Container>

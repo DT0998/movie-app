@@ -36,7 +36,7 @@ export const Castmovie = () => {
         <Col>
           <div className="d-flex justify-content-between align-items-center">
             <h1 data-aos="fade-right" data-aos-duration="1500">
-             Cast
+             Cast 
             </h1>
           </div>
 
