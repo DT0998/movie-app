@@ -21,14 +21,14 @@ export const Movielegacy = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
+  const getLegacy = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+      setMovielegacy(data.results);
+    console.log(data);
+  };
+  getLegacy();
   useEffect(() => {
-    const getLegacy = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setMovielegacy(data.results);
-      console.log(data);
-    };
-    getLegacy();
   }, [API_URL]);
 
   return (

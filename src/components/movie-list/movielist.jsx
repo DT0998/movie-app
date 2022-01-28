@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielist.css";
-import '../../components/buttons/button-loadmore/button-loadmore.css'
+import "../../components/buttons/button-loadmore/button-loadmore.css";
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
@@ -19,16 +19,15 @@ export const Movielist = () => {
   console.log(API_URL);
 
   // fetch movie api
-  useEffect(() => {
-    const getTrending = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setMovietoprate([...movietoprate, ...data.results]);
-        setTotalpage(data.total_pages);
-      console.log(data);
-    };
-    getTrending();
-  }, [API_URL]);
+  const getTrending = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setMovietoprate([...movietoprate, ...data.results]);
+    setTotalpage(data.total_pages);
+    console.log(data);
+  };
+  getTrending();
+  useEffect(() => {}, [API_URL]);
 
   // load more
   const loadMore = () => {

@@ -1,15 +1,14 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import './similar-movie.css'
+import "./similar-movie.css";
 import "swiper/css";
 import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
 
-
-export const Similarmovie = ({id}) => {
+export const Similarmovie = ({ id }) => {
   const [Similar, setSimilar] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -18,15 +17,13 @@ export const Similarmovie = ({id}) => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  useEffect(() => {
-    const getSimilar = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setSimilar(data.id);
-    };
-    getSimilar();
-  }, [id, API_URL]);
-
+  const getSimilar = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setSimilar(data.id);
+  };
+  getSimilar();
+  useEffect(() => {}, [id, API_URL]);
 
   return (
     <div className="wrap_fluid cast w-100">

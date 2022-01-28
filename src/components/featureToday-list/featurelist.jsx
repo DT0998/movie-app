@@ -6,7 +6,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
-
 export const Featurelist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
@@ -19,18 +18,16 @@ export const Featurelist = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
+  const getTrending = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setMovietrending([...movietrending, ...data.results]);
+    setTotalpage(data.total_pages);
+    console.log("data in Featurelist", data);
+  };
+  getTrending();
 
-  useEffect(() => {
-    const getTrending = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setMovietrending([...movietrending, ...data.results]);
-        setTotalpage(data.total_pages);
-      console.log("data in Featurelist", data);
-    };
-    getTrending();
-
-  }, [API_URL]);
+  useEffect(() => {}, [API_URL]);
 
   // load more
   const loadMore = () => {
@@ -62,15 +59,19 @@ export const Featurelist = () => {
               >
                 {movietrending.map((movie) => (
                   <Card className="card_container mx-2 my-2" key={movie.id}>
-                    <Link to={`/details/${movie.id}`} >
+                    <Link to={`/details/${movie.id}`}>
                       <img
                         src={IMG_URL + movie.poster_path}
                         alt={movie.original_name}
                         className="img_feature card-img-top"
                       />
                       <div className="card-body card_trending">
-                        <p className="card-text">{movie.title || movie.original_name}</p>
-                        <p className="card-text">{movie.release_date || movie.first_air_date}</p>
+                        <p className="card-text">
+                          {movie.title || movie.original_name}
+                        </p>
+                        <p className="card-text">
+                          {movie.release_date || movie.first_air_date}
+                        </p>
                         <p className="card-text">{movie.vote_average}</p>
                       </div>
                     </Link>

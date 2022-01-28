@@ -18,16 +18,14 @@ export const Community = () => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  useEffect(() => {
-    const getCommunity = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setPeoples(data.results);
-      
-      console.log(data);
-    };
-    getCommunity();
-  }, [API_URL]);
+  const getCommunity = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setPeoples(data.results);
+    console.log(data);
+  };
+  getCommunity();
+  useEffect(() => {}, [API_URL]);
 
   return (
     <div className="wrap_fluid community w-100">

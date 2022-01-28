@@ -17,17 +17,16 @@ export const Movielegacylist = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
+  const getLegacy = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setMovielegacy([...movielegacy, ...data.results]);
+    setTotalpage(data.total_pages);
+    console.log(data);
+  };
+  getLegacy();
 
-  useEffect(() => {
-    const getLegacy = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-        setMovielegacy([...movielegacy, ...data.results]);
-        setTotalpage(data.total_pages);
-      console.log(data);
-    };
-    getLegacy();
-  }, [API_URL]);
+  useEffect(() => {}, [API_URL]);
 
   // load more
   const loadMore = () => {
@@ -72,9 +71,9 @@ export const Movielegacylist = () => {
                   </Card>
                 ))}
                 {page < totalpage ? (
-                    <button className="btn_loadmore" onClick={loadMore}>
-                      Load more
-                    </button>
+                  <button className="btn_loadmore" onClick={loadMore}>
+                    Load more
+                  </button>
                 ) : null}
               </div>
             </div>

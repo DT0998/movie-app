@@ -22,15 +22,14 @@ export const Tvshow = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  useEffect(() => {
-    const getTvshow = async function () {
-      let response = await axios.get(API_URL);
-      let data = response.data;
-      setTVshows(data.results);
-      console.log(data);
-    };
-    getTvshow();
-  }, [API_URL]);
+  const getTvshow = async function () {
+    let response = await axios.get(API_URL);
+    let data = response.data;
+    setTVshows(data.results);
+    console.log(data);
+  };
+  getTvshow();
+  useEffect(() => {}, [API_URL]);
 
   return (
     <div className="wrap_fluid feature w-100">
