@@ -12,6 +12,7 @@ export const Detailsmovie = ({ id }) => {
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL = BASE_URL + `/movie/${id}?` + API_KEY;
+  const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
@@ -20,48 +21,40 @@ export const Detailsmovie = ({ id }) => {
     console.log("response by Details", response.data);
     setMovie(response.data);
   };
-  
+
   useEffect(() => {
     getTrending();
   }, [API_URL]);
 
   return (
     <div>
-      <Container>
-        <Row>
-          <div className="details_bg">
-            <div className="d-flex justify-content-center align-items-center flex-md-row flex-column">
-              <Col>
-                <img
-                  src={`${IMG_ORG + movie?.backdrop_path}`}
-                  alt={movie?.name}
-                ></img>
+      <div
+        className="wrap_fluid details"
+        style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
+      >
+        <Container>
+          <Row className="d-flex justify-content-center align-items-center flex-md-row flex-column">
+              <Col className="d-flex justify-content-center" md={4}>
+                <div className="wrap details_img">
+                  <img
+                    src={`${IMG_URL + movie.poster_path}`}
+                    alt={movie.name}
+                    className="details_img"
+                  />
+                </div>
               </Col>
-              <Col>
-                <p>title</p>
-                <p>content</p>
-                <p>release</p>
+              <Col md={8}>
+                <div className="wrap details_content">
+                  <p className="details_title">{movie.original_title}</p>
+                  <p>{movie.overview}</p>
+                  <p>Release day: {movie.release_date}</p>
+                </div>
               </Col>
-              {/* {movie && movie.map((movie) => {
-                (
-                  <div>
-                    <Col>
-                      <img src={`${IMG_ORG + movie.backdrop_path}`} alt={movie.name}></img>
-                    </Col>
-                    <Col>
-                      <p>title</p>
-                      <p>content</p>
-                      <p>release</p>
-                    </Col>
-                  </div>
-                )
-              })} */}
-            </div>
-          </div>
-          <Castmovie />
-          <Similarmovie />
-        </Row>
-      </Container>
+          </Row>
+        </Container>
+      </div>
+      <Castmovie/>
+      <Similarmovie />
     </div>
   );
 };
