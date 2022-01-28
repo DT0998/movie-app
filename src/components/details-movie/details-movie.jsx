@@ -35,7 +35,7 @@ export const Detailsmovie = ({ id }) => {
       >
         <Container>
           <Row className="d-flex justify-content-center align-items-center flex-md-row flex-column">
-              <Col className="d-flex justify-content-center" md={4}>
+              <Col className="d-flex justify-content-center align-items-center" md={4}>
                 <div className="wrap details_img">
                   <img
                     src={`${IMG_URL + movie.poster_path}`}
