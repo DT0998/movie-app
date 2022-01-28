@@ -28,8 +28,9 @@ export const Tvshow = () => {
     setTVshows(data.results);
     console.log(data);
   };
-  getTvshow();
-  useEffect(() => {}, [API_URL]);
+  useEffect(() => {
+    getTvshow();
+  }, [API_URL]);
 
   return (
     <div className="wrap_fluid feature w-100">

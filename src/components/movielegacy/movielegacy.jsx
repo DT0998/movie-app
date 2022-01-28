@@ -27,8 +27,8 @@ export const Movielegacy = () => {
       setMovielegacy(data.results);
     console.log(data);
   };
-  getLegacy();
   useEffect(() => {
+    getLegacy();
   }, [API_URL]);
 
   return (

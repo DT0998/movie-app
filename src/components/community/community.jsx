@@ -24,8 +24,9 @@ export const Community = () => {
     setPeoples(data.results);
     console.log(data);
   };
-  getCommunity();
-  useEffect(() => {}, [API_URL]);
+  useEffect(() => {
+    getCommunity();
+  }, [API_URL]);
 
   return (
     <div className="wrap_fluid community w-100">

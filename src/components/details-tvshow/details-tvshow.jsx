@@ -20,8 +20,9 @@ export const Detailstvshow = ({ id }) => {
     console.log("response by Details", response.data);
     setTvshow(response.data);
   };
-  getTrending();
-  useEffect(() => {}, [API_URL]);
+  useEffect(() => { 
+    getTrending();
+  }, [API_URL]);
 
   return (
     <div>

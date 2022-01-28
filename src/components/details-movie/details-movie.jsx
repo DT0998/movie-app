@@ -15,14 +15,15 @@ export const Detailsmovie = ({ id }) => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  const getTrending = async function (path) {
+  const getTrending = async function () {
     let response = await axios.get(API_URL);
     console.log("response by Details", response.data);
     setMovie(response.data);
   };
-  getTrending();
-
-  useEffect(() => {}, [API_URL]);
+  
+  useEffect(() => {
+    getTrending();
+  }, [API_URL]);
 
   return (
     <div>

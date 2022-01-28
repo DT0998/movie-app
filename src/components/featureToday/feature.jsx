@@ -29,8 +29,9 @@ export const Feature = () => {
     setMovietrending(data.results);
     console.log(data);
   };
-  getTrending();
-  useEffect(() => {}, [API_URL]);
+  useEffect(() => {
+    getTrending();
+  }, [API_URL]);
 
   // use aos
   Aos.init();

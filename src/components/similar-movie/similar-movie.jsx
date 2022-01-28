@@ -22,8 +22,9 @@ export const Similarmovie = ({ id }) => {
     let data = response.data;
     setSimilar(data.id);
   };
-  getSimilar();
-  useEffect(() => {}, [id, API_URL]);
+  useEffect(() => {
+    getSimilar();
+  }, [id, API_URL]);
 
   return (
     <div className="wrap_fluid cast w-100">

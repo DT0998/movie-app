@@ -18,13 +18,13 @@ export const Castmovie = () => {
     // const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   
     // fetch movie api
-    // useEffect(() => {
     //   const getCast = async function () {
     //     let response = await axios.get(API_URL);
     //     let data = response.data;
     //       setCast(data.results);
     //     console.log(data);
     //   };
+    // useEffect(() => {
     //   getCast();
     // }, [API_URL]);
 

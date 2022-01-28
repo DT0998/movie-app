@@ -23,8 +23,9 @@ export const Header = () => {
     let data = response.data;
     setMoviepopular(data.results);
   };
-  getPopular();
-  useEffect(() => {}, [API_URL]);
+  useEffect(() => {
+    getPopular();
+  }, [API_URL]);
 
   // add aos swiper
   // const addAos = ()=>{

@@ -24,8 +24,8 @@ export const Tvshowlist = () => {
     setTotalpage(data.total_pages);
     console.log(data);
   };
-  getTvshow()
   useEffect(() => {
+    getTvshow()
   }, [API_URL]);
 
   // load more

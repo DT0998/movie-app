@@ -24,9 +24,10 @@ export const Movielegacylist = () => {
     setTotalpage(data.total_pages);
     console.log(data);
   };
-  getLegacy();
-
-  useEffect(() => {}, [API_URL]);
+  
+  useEffect(() => {
+    getLegacy();
+  }, [API_URL]);
 
   // load more
   const loadMore = () => {

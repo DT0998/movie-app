@@ -25,9 +25,10 @@ export const Featurelist = () => {
     setTotalpage(data.total_pages);
     console.log("data in Featurelist", data);
   };
-  getTrending();
-
-  useEffect(() => {}, [API_URL]);
+  
+  useEffect(() => {
+    getTrending();
+  }, [API_URL]);
 
   // load more
   const loadMore = () => {
