@@ -1,11 +1,7 @@
-
 // route moviepage
-import { Movielist } from '../../components/movie-list/movielist';
-
-
-
+import { Movielist } from "../../components/movie-list/movielist";
 export const Moviepage = () => {
-  return (
-    <Movielist />
-  );
+  // change title
+  document.title = "Movie";
+  return <Movielist />;
 };

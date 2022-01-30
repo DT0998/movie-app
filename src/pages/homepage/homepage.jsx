@@ -7,6 +7,8 @@ import { Community } from '../../components/community/community';
 
 
 export const Homepage = () => {
+    // change title
+    document.title = "Home";
   return (
     <div>
       <Header />
