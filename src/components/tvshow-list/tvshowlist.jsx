@@ -74,7 +74,7 @@ export const Tvshowlist = () => {
                   )
                 )}
                 {page < totalpage ? (
-                        <button className="btn_loadmore" onClick={loadMore}>
+                        <button className="btn_loadmore" onClick={()=>loadMore}>
                         Load more
                       </button>
                 ) : null}

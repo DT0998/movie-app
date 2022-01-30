@@ -27,10 +27,10 @@ export const Featurelist = () => {
   };
   
   useEffect(() => {
-    loadMore();
     getTrending();
   }, [API_URL]);
-
+  
+  
   // load more
   const loadMore = () => {
     setPage(page + 1);

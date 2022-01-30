@@ -27,7 +27,6 @@ export const Movielist = () => {
     console.log(data);
   };
   useEffect(() => {
-    loadMore();
     getTrending();
   }, [API_URL]);
 
