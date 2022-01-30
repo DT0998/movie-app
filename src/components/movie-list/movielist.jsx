@@ -7,6 +7,9 @@ import "./movielist.css";
 import "../../components/buttons/button-loadmore/button-loadmore.css";
 
 export const Movielist = () => {
+  // change title
+  document.title = "Movie List";
+
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [movietoprate, setMovietoprate] = useState([]);

@@ -13,7 +13,6 @@ import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
 function App() {
-  // const {id} = useParams()
   return (
     <div>
       <BrowserRouter>
