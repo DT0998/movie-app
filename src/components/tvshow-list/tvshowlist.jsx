@@ -25,7 +25,6 @@ export const Tvshowlist = () => {
     console.log(data);
   };
   useEffect(() => {
-    loadMore();
     getTvshow();
   }, [API_URL]);
 
@@ -74,7 +73,7 @@ export const Tvshowlist = () => {
                   )
                 )}
                 {page < totalpage ? (
-                        <button className="btn_loadmore" onClick={()=>loadMore}>
+                        <button className="btn_loadmore" onClick={loadMore}>
                         Load more
                       </button>
                 ) : null}
