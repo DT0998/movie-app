@@ -5,6 +5,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import "./tvshowlist.css";
 
 export const Tvshowlist = () => {
+  // change title
+  document.title = "TV Show";
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [tvshows, setTVshows] = useState([]);

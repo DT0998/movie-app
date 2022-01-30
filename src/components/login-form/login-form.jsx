@@ -7,6 +7,8 @@ import { Loginquotes } from "../login-quotes/login-quotes";
 import GoogleLogin from "react-google-login";
 
 export const Loginform = () => {
+   // change title
+   document.title = "Login";
   // use aos
   Aos.init();
 

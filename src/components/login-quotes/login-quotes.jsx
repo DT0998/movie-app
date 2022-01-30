@@ -18,8 +18,9 @@ export const Loginquotes = () => {
     setLoginquotes(data.results);
     console.log(data);
   };
-  getQuotes();
-  useEffect(() => {}, [API_URL]);
+  useEffect(() => {
+    getQuotes();
+  }, [API_URL]);
 
   return (
     <div>
