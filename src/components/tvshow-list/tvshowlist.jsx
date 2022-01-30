@@ -25,7 +25,8 @@ export const Tvshowlist = () => {
     console.log(data);
   };
   useEffect(() => {
-    getTvshow()
+    loadMore();
+    getTvshow();
   }, [API_URL]);
 
   // load more

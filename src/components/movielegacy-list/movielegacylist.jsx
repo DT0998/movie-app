@@ -26,6 +26,7 @@ export const Movielegacylist = () => {
   };
   
   useEffect(() => {
+    loadMore();
     getLegacy();
   }, [API_URL]);
 

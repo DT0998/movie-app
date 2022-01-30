@@ -27,6 +27,7 @@ export const Featurelist = () => {
   };
   
   useEffect(() => {
+    loadMore();
     getTrending();
   }, [API_URL]);
 
