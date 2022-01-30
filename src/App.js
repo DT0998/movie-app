@@ -14,7 +14,6 @@ import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
 function App() {
   return (
-    <div>
       <BrowserRouter>
         <Nav />
         <Switch>
@@ -29,7 +28,6 @@ function App() {
         </Switch>
         <Footer />
       </BrowserRouter>
-    </div>
   );
 }
 
