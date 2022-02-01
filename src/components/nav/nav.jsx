@@ -27,11 +27,9 @@ export const Nav = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        {/* <a href="/movie">Movie</a> */}
                                         <Link to="/movie"> Movie </Link>
                                     </li>
                                     <li>
-                                        {/* <a href="/tvshow">TV Show</a> */}
                                         <Link to="/tvshow"> TV Show </Link>
                                     </li>
                                 </ul>
@@ -41,11 +39,9 @@ export const Nav = () => {
                             <div className="nav_right h-100">
                                 <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-3 h-100">
                                     <li>
-                                        {/* <a href="/search">Search</a> */}
                                         <Link to="/search"> Search </Link>
                                     </li>
                                     <li>
-                                        {/* <a href="/account">My Account</a> */}
                                         <Link to="/account"> My Account </Link>
                                     </li>
                                 </ul>

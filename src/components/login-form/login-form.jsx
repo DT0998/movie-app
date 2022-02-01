@@ -11,7 +11,6 @@ export const Loginform = () => {
   Aos.init();
 
   return (
-    <div className="form_container">
       <Container className="form_shadow px-5">
           <div className="my-5">
               <Row className="d-flex flex-nowrap justify-content-center align-items-center">
@@ -38,6 +37,5 @@ export const Loginform = () => {
               </Row>
           </div>
       </Container>
-    </div>
   );
 };
