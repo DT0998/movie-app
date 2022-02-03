@@ -22,7 +22,6 @@ export const Tvshowlist = () => {
     let data = response.data;
     setTVshows([...tvshows, ...data.results]);
     setTotalpage(data.total_pages);
-    console.log(data);
   };
   useEffect(() => {
     getTvshow();

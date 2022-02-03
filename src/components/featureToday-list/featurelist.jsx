@@ -23,7 +23,6 @@ export const Featurelist = () => {
     let data = response.data;
     setMovietrending([...movietrending, ...data.results]);
     setTotalpage(data.total_pages);
-    console.log("data in Featurelist", data);
   };
   
   useEffect(() => {

@@ -16,7 +16,6 @@ export const Loginquotes = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setLoginquotes(data.results);
-    console.log(data);
   };
   useEffect(() => {
     getQuotes();

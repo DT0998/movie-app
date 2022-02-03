@@ -26,7 +26,6 @@ export const Tvshow = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setTVshows(data.results);
-    console.log(data);
   };
   useEffect(() => {
     getTvshow();

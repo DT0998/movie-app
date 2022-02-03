@@ -16,7 +16,6 @@ export const Movielist = () => {
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL = BASE_URL + "/movie/popular?" + API_KEY + PAGE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
-  console.log(API_URL);
 
   // fetch movie api
   const getTrending = async function () {
@@ -24,7 +23,6 @@ export const Movielist = () => {
     let data = response.data;
     setMovietoprate([...movietoprate, ...data.results]);
     setTotalpage(data.total_pages);
-    console.log(data);
   };
   useEffect(() => {
     getTrending();

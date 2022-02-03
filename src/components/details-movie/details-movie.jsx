@@ -19,7 +19,6 @@ export const Detailsmovie = ({ id }) => {
   // fetch movie api
   const getTrending = async function () {
     let response = await axios.get(API_URL);
-    console.log("response by Details", response.data);
     setMovie(response.data);
   };
 

@@ -22,7 +22,6 @@ export const Community = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setPeoples(data.results);
-    console.log(data);
   };
   useEffect(() => {
     getCommunity();

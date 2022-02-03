@@ -25,7 +25,6 @@ export const Movielegacy = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
       setMovielegacy(data.results);
-    console.log(data);
   };
   useEffect(() => {
     getLegacy();

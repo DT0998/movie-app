@@ -22,7 +22,6 @@ export const Movielegacylist = () => {
     let data = response.data;
     setMovielegacy([...movielegacy, ...data.results]);
     setTotalpage(data.total_pages);
-    console.log(data);
   };
   
   useEffect(() => {

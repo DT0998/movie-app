@@ -17,7 +17,6 @@ export const Detailstvshow = ({ id }) => {
   // fetch movie api
   const getTrending = async function (path) {
     let response = await axios.get(API_URL);
-    console.log("response by Details", response.data);
     setTvshow(response.data);
   };
   useEffect(() => { 

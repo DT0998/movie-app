@@ -27,7 +27,6 @@ export const Feature = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setMovietrending(data.results);
-    console.log(data);
   };
   useEffect(() => {
     getTrending();
