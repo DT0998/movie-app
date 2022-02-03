@@ -24,7 +24,7 @@ export const Similarmovie = ({ id }) => {
   };
   useEffect(() => {
     getSimilar();
-  }, [id, API_URL]);
+  }, [API_URL]);
 
   return (
     <div className="wrap_fluid cast w-100">
