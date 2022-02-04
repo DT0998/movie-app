@@ -61,7 +61,7 @@ export const Featurelist = () => {
               >
                 {movietrending.map((movie) => (
                   <Card className="card_container mx-2 my-2" key={movie.id}>
-                    <Link to={`/details/${movie.id}`}>
+                    <Link to={`/details/movie/${movie.id}`}>
                       <img
                         src={IMG_URL + movie.poster_path}
                         alt={movie.original_name}
