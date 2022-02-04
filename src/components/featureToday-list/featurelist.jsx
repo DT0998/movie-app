@@ -21,6 +21,7 @@ export const Featurelist = () => {
   const getTrending = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
+    console.log(data);
     setMovietrending([...movietrending, ...data.results]);
     setTotalpage(data.total_pages);
   };
