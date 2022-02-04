@@ -101,6 +101,7 @@ export const Feature = () => {
                             className="card_container isTablet"
                             key={movie.id}
                           >
+                            <Link to={`/details/movie/${movie.id}`}>
                             <img
                               src={IMG_URL + movie.poster_path}
                               alt={movie.original_name}
@@ -111,6 +112,7 @@ export const Feature = () => {
                               <p className="card-text">{movie.release_date}</p>
                               <p className="card-text">{movie.vote_average}</p>
                             </div>
+                            </Link>
                           </Card>
                         )
                     )
@@ -124,6 +126,7 @@ export const Feature = () => {
                             className="card_container isMobile"
                             key={movie.id}
                           >
+                            <Link to={`/details/movie/${movie.id}`}>
                             <img
                               src={IMG_URL + movie.poster_path}
                               alt={movie.original_name}
@@ -134,6 +137,7 @@ export const Feature = () => {
                               <p className="card-text">{movie.release_date}</p>
                               <p className="card-text">{movie.vote_average}</p>
                             </div>
+                            </Link>
                           </Card>
                         )
                     )
