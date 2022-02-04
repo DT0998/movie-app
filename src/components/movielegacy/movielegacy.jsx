@@ -48,6 +48,7 @@ export const Movielegacy = () => {
                   (movie, index) =>
                     index < 5 && (
                       <Card className="card_container isDesktop" key={movie.id}>
+                        <Link to={`/details/movie/${movie.id}`}>
                         <img
                           src={IMG_URL + movie.poster_path}
                           alt={movie.original_name}
@@ -58,6 +59,7 @@ export const Movielegacy = () => {
                           <p className="card-text">{movie.release_date}</p>
                           <p className="card-text">{movie.vote_average}</p>
                         </div>
+                        </Link>
                       </Card>
                     )
                 ):null}
@@ -66,6 +68,7 @@ export const Movielegacy = () => {
                   (movie, index) =>
                     index < 4 && (
                       <Card className="card_container isTablet" key={movie.id}>
+                        <Link to={`/details/movie/${movie.id}`}>
                         <img
                           src={IMG_URL + movie.poster_path}
                           alt={movie.original_name}
@@ -76,6 +79,7 @@ export const Movielegacy = () => {
                           <p className="card-text">{movie.release_date}</p>
                           <p className="card-text">{movie.vote_average}</p>
                         </div>
+                        </Link>
                       </Card>
                     )
                 ):null}
@@ -84,6 +88,7 @@ export const Movielegacy = () => {
                   (movie, index) =>
                     index < 2 && (
                       <Card className="card_container isMobile" key={movie.id}>
+                        <Link to={`/details/movie/${movie.id}`}>
                         <img
                           src={IMG_URL + movie.poster_path}
                           alt={movie.original_name}
@@ -94,6 +99,7 @@ export const Movielegacy = () => {
                           <p className="card-text">{movie.release_date}</p>
                           <p className="card-text">{movie.vote_average}</p>
                         </div>
+                        </Link>
                       </Card>
                     )
                 ):null}
