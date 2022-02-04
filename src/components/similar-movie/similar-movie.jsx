@@ -68,21 +68,22 @@ export const Similarmovie = ({ id }) => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  <SwiperSlide key={similar.id}>
+                  {similar.map((similars)=>(
+                  <SwiperSlide key={similars.id}>
                     <Card
                       className="card_cast card_detail"
                       style={{
                         backgroundImage: `url(${
-                          IMG_ORG + similar.backdrop_path
+                          IMG_ORG + similars.backdrop_path
                         })`,
                       }}
                     >
                       <div className="border">
-                        <h2>{similar.original_title}</h2>
+                        <h2>{similars.original_title}</h2>
                       </div>
                     </Card>
                   </SwiperSlide>
-                ))
+                  ))}
                 </div>
               </Swiper>
             </div>
