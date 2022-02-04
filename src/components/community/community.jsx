@@ -34,7 +34,7 @@ export const Community = () => {
           <Col>
             <div className="d-flex justify-content-between align-items-center">
               <h1 data-aos="fade-right" data-aos-duration="1500">
-                Community
+                COMMUNITY
               </h1>
             </div>
 
