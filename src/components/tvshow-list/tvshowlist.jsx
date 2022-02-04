@@ -2,6 +2,7 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./tvshowlist.css";
 
 export const Tvshowlist = () => {
@@ -58,6 +59,7 @@ export const Tvshowlist = () => {
                 {tvshows.map(
                   (tvshow) =>
                   (<Card className="card_container mx-2 my-2" key={tvshow.id}>
+                    <Link to={`/details/tv/${tvshow.id}`}>
                     <img
                       src={IMG_URL + tvshow.poster_path || tvshow.backdrop_path}
                       alt={tvshow.original_name}
@@ -68,6 +70,7 @@ export const Tvshowlist = () => {
                       <p className="card-text">{tvshow.first_air_date}</p>
                       <p className="card-text">{tvshow.vote_average}</p>
                     </div>
+                    </Link>
                   </Card>
                   )
                 )}
