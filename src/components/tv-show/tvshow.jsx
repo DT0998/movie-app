@@ -95,6 +95,7 @@ export const Tvshow = () => {
                             className="card_container isTablet"
                             key={tvshow.id}
                           >
+                            <Link to={`/details/tv/${tvshow.id}`}>
                             <img
                               src={IMG_URL + tvshow.poster_path}
                               alt={tvshow.original_name}
@@ -109,6 +110,7 @@ export const Tvshow = () => {
                               </p>
                               <p className="card-text">{tvshow.vote_average}</p>
                             </div>
+                            </Link>
                           </Card>
                         )
                     )
@@ -122,6 +124,7 @@ export const Tvshow = () => {
                             className="card_container isMobile"
                             key={tvshow.id}
                           >
+                            <Link to={`/details/tv/${tvshow.id}`}>
                             <img
                               src={IMG_URL + tvshow.poster_path}
                               alt={tvshow.original_name}
@@ -136,6 +139,7 @@ export const Tvshow = () => {
                               </p>
                               <p className="card-text">{tvshow.vote_average}</p>
                             </div>
+                            </Link>
                           </Card>
                         )
                     )
