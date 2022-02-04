@@ -4,12 +4,11 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Castmovie } from "../cast-movie/cast-movie";
 import { Similarmovie } from "../similar-movie/similar-movie";
-import {Buttonwatchnow} from '../buttons/button-watchnow/button-watchnow';
+import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
+import Aos from "aos";
 import "./details-movie.css";
 
-
-
-export const Detailsmovie = ({id}) => {
+export const Detailsmovie = ({ id }) => {
   const [movie, setMovie] = useState({});
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -28,6 +27,9 @@ export const Detailsmovie = ({id}) => {
     getTrending();
   }, [API_URL]);
 
+  // use aos
+  Aos.init();
+
   return (
     <div>
       <div
@@ -36,28 +38,31 @@ export const Detailsmovie = ({id}) => {
       >
         <Container>
           <Row className="d-flex justify-content-center align-items-center flex-md-row flex-column">
-              <Col className="d-flex justify-content-center align-items-center" md={4}>
-                <div className="wrap details_img">
-                  <img
-                    src={`${IMG_URL + movie.poster_path}`}
-                    alt={movie.name}
-                    className="details_img"
-                  />
-                </div>
-              </Col>
-              <Col md={8}>
-                <div className="wrap details_content">
-                  <p className="details_title">{movie.original_title}</p>
-                  <p>{movie.overview}</p>
-                  <p>Release day: {movie.release_date}</p>
-                </div>
+            <Col
+              className="d-flex justify-content-center align-items-center"
+              md={4}
+            >
+              <div className="wrap details_img">
+                <img
+                  src={`${IMG_URL + movie.poster_path}`}
+                  alt={movie.name}
+                  className="details_img"
+                />
+              </div>
+            </Col>
+            <Col md={8}>
+              <div className="wrap details_content">
+                <p className="details_title">{movie.original_title}</p>
+                <p>{movie.overview}</p>
+                <p>Release day: {movie.release_date}</p>
+              </div>
               <Buttonwatchnow></Buttonwatchnow>
-              </Col>
+            </Col>
           </Row>
         </Container>
       </div>
-      <Castmovie id={id}/>
-      <Similarmovie id={id}/>
+      <Castmovie id={id} />
+      <Similarmovie id={id} />
     </div>
   );
 };

@@ -4,6 +4,7 @@
   background-size: cover;
   position: relative;
   z-index: 2;
+  background-attachment: fixed;
 }
 .bg_recommend::after {
   position: absolute;

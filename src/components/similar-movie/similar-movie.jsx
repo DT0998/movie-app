@@ -21,11 +21,12 @@ export const Similarmovie = ({ id }) => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setSimilar(data.results);
-    console.log(data);
   };
   useEffect(() => {
     getSimilar();
   }, [API_URL]);
+
+
 
   return (
     <div className="wrap_fluid cast w-100">
