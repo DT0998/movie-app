@@ -39,7 +39,7 @@ export const Similarmovie = ({ id }) => {
             </div>
 
             <div
-              className="wrap bg_cast"
+              className="wrap bg_recommend"
               data-aos="fade-down"
               data-aos-duration="1500"
             >
