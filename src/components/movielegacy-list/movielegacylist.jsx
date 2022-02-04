@@ -3,6 +3,7 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./movielegacylist.css";
 
 export const Movielegacylist = () => {
@@ -58,6 +59,7 @@ export const Movielegacylist = () => {
               >
                 {movielegacy.map((movie) => (
                   <Card className="card_container mx-2 my-2" key={movie.id}>
+                    <Link to={`/details/movie/${movie.id}`}>
                     <img
                       src={IMG_URL + movie.poster_path}
                       alt={movie.original_name}
@@ -68,6 +70,7 @@ export const Movielegacylist = () => {
                       <p className="card-text">{movie.release_date}</p>
                       <p className="card-text">{movie.vote_average}</p>
                     </div>
+                    </Link>
                   </Card>
                 ))}
                 {page < totalpage ? (
