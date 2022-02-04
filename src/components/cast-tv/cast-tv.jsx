@@ -9,24 +9,23 @@ import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
 
 
-export const Casttv = () => {
-    // const [cast, setCast] = useState([]);
+export const Casttv = ({id}) => {
+    const [cast, setCast] = useState([]);
     // api
-    // const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-    // const BASE_URL = "https://api.themoviedb.org/3";
-    // const API_URL = BASE_URL + "/person/popular?" + API_KEY;
-    // const IMG_ORG = "https://image.tmdb.org/t/p/original/";
+    const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
+    const BASE_URL = "https://api.themoviedb.org/3";
+    const API_URL = BASE_URL + `/tv/${id}/credits?` + API_KEY;
+    const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   
     // fetch movie api
-    //   const getCast = async function () {
-    //     let response = await axios.get(API_URL);
-    //     let data = response.data;
-    //       setCast(data.results);
-    //     console.log(data);
-    //   };
-    // useEffect(() => {
-    //   getCast();
-    // }, [API_URL]);
+      const getCast = async function () {
+        let response = await axios.get(API_URL);
+        let data = response.data;
+          setCast(data.cast);
+      };
+    useEffect(() => {
+      getCast();
+    }, [API_URL]);
 
  
   return (
@@ -70,7 +69,7 @@ export const Casttv = () => {
               }}
             >
               <div className="d-flex flex-column justify-content-around">
-                {/* {cast.map((cast) => (
+              {cast.map((cast) => (
                   <SwiperSlide key={cast.id}>
                     <Card
                       className="card_cast card_detail"
@@ -85,7 +84,7 @@ export const Casttv = () => {
                       </div>
                     </Card>
                   </SwiperSlide>
-                ))} */}
+                ))}
               </div>
             </Swiper>
           </div>
