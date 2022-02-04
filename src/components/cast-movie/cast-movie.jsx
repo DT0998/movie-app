@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
 
 
-export const Castmovie = ({ id }) => {
+export const Castmovie = ({id}) => {
     const [cast, setCast] = useState([]);
     // api
     const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -22,7 +22,6 @@ export const Castmovie = ({ id }) => {
         let response = await axios.get(API_URL);
         let data = response.data;
           setCast(data.cast);
-        console.log(data);
       };
     useEffect(() => {
       getCast();

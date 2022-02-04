@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
 
 export const Similarmovie = ({ id }) => {
-  const [Similar, setSimilar] = useState([]);
+  const [similar, setSimilar] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -20,7 +20,8 @@ export const Similarmovie = ({ id }) => {
   const getSimilar = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setSimilar(data.id);
+    setSimilar(data.results);
+    console.log(data);
   };
   useEffect(() => {
     getSimilar();
@@ -67,22 +68,21 @@ export const Similarmovie = ({ id }) => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {/* {Similar.map((similar) => (
                   <SwiperSlide key={similar.id}>
                     <Card
                       className="card_cast card_detail"
                       style={{
                         backgroundImage: `url(${
-                          IMG_ORG + similar.profile_path
+                          IMG_ORG + similar.backdrop_path
                         })`,
                       }}
                     >
                       <div className="border">
-                        <h2>{similar.name}</h2>
+                        <h2>{similar.original_title}</h2>
                       </div>
                     </Card>
                   </SwiperSlide>
-                ))} */}
+                ))
                 </div>
               </Swiper>
             </div>

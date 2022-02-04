@@ -7,7 +7,9 @@ import { Similarmovie } from "../similar-movie/similar-movie";
 import {Buttonwatchnow} from '../buttons/button-watchnow/button-watchnow';
 import "./details-movie.css";
 
-export const Detailsmovie = ({ id }) => {
+
+
+export const Detailsmovie = ({id}) => {
   const [movie, setMovie] = useState({});
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
@@ -54,8 +56,8 @@ export const Detailsmovie = ({ id }) => {
           </Row>
         </Container>
       </div>
-      <Castmovie/>
-      <Similarmovie />
+      <Castmovie id={id}/>
+      <Similarmovie id={id}/>
     </div>
   );
 };
