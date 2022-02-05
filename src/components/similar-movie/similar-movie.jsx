@@ -6,6 +6,7 @@ import SwiperCore, { Scrollbar } from "swiper";
 import "./similar-movie.css";
 import "swiper/css";
 import "swiper/css/scrollbar";
+import { Link } from "react-router-dom";
 SwiperCore.use([Scrollbar]);
 
 export const Similarmovie = ({ id }) => {
@@ -24,6 +25,12 @@ export const Similarmovie = ({ id }) => {
   };
   useEffect(() => {
     getSimilar();
+       // after click movie
+       window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
   }, [API_URL]);
 
 
@@ -70,19 +77,21 @@ export const Similarmovie = ({ id }) => {
               >
                 <div className="d-flex flex-column justify-content-around">
                   {similar.map((similars)=>(
-                  <SwiperSlide key={similars.id}>
-                    <Card
-                      className="card_cast card_detail"
-                      style={{
-                        backgroundImage: `url(${
-                          IMG_ORG + similars.backdrop_path
-                        })`,
-                      }}
-                    >
-                      <div className="border">
-                        <h2>{similars.original_title}</h2>
-                      </div>
-                    </Card>
+                  <SwiperSlide key={similars.id}> 
+                    <Link to={`/details/movie/${similars.id}`}>
+                      <Card
+                        className="card_cast card_detail"
+                        style={{
+                          backgroundImage: `url(${
+                            IMG_ORG + similars.backdrop_path
+                          })`,
+                        }}
+                      >
+                        <div className="border">
+                          <h2>{similars.original_title}</h2>
+                        </div>
+                      </Card>
+                    </Link>
                   </SwiperSlide>
                   ))}
                 </div>
