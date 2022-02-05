@@ -25,10 +25,13 @@ export const Detailsmovie = ({ id }) => {
 
   useEffect(() => {
     getTrending();
+    // use aos
+    Aos.init();
   }, [API_URL]);
 
-  // use aos
-  Aos.init();
+  // change title
+  document.title = movie.original_title;
+
 
   return (
     <div>

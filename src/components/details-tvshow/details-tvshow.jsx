@@ -17,7 +17,7 @@ export const Detailstvshow = ({ id }) => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   
-
+  
   // fetch movie api
   const getTrending = async function (path) {
     let response = await axios.get(API_URL);
@@ -28,7 +28,9 @@ export const Detailstvshow = ({ id }) => {
     // use aos
     Aos.init();
   }, [API_URL]);
-
+  
+  // change title
+  document.title = tvshow.name;
 
   return (
     <div>
