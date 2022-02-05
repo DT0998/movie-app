@@ -6,6 +6,7 @@ import "./tvshow.css";
 // media query hook
 import useMediaQuery from "../../hooks/useMediaquery";
 import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
+import Aos from "aos";
 
 export const Tvshow = () => {
   const [tvshows, setTVshows] = useState([]);
@@ -29,6 +30,8 @@ export const Tvshow = () => {
   };
   useEffect(() => {
     getTvshow();
+    // use aos
+    Aos.init();
   }, [API_URL]);
 
   return (
@@ -96,20 +99,22 @@ export const Tvshow = () => {
                             key={tvshow.id}
                           >
                             <Link to={`/details/tv/${tvshow.id}`}>
-                            <img
-                              src={IMG_URL + tvshow.poster_path}
-                              alt={tvshow.original_name}
-                              className="img_feature card-img-top"
-                            />
-                            <div className="card-body card_trending">
-                              <p className="card-text">
-                                {tvshow.original_name}
-                              </p>
-                              <p className="card-text">
-                                {tvshow.first_air_date}
-                              </p>
-                              <p className="card-text">{tvshow.vote_average}</p>
-                            </div>
+                              <img
+                                src={IMG_URL + tvshow.poster_path}
+                                alt={tvshow.original_name}
+                                className="img_feature card-img-top"
+                              />
+                              <div className="card-body card_trending">
+                                <p className="card-text">
+                                  {tvshow.original_name}
+                                </p>
+                                <p className="card-text">
+                                  {tvshow.first_air_date}
+                                </p>
+                                <p className="card-text">
+                                  {tvshow.vote_average}
+                                </p>
+                              </div>
                             </Link>
                           </Card>
                         )
@@ -125,20 +130,22 @@ export const Tvshow = () => {
                             key={tvshow.id}
                           >
                             <Link to={`/details/tv/${tvshow.id}`}>
-                            <img
-                              src={IMG_URL + tvshow.poster_path}
-                              alt={tvshow.original_name}
-                              className="img_feature card-img-top"
-                            />
-                            <div className="card-body card_trending">
-                              <p className="card-text">
-                                {tvshow.original_name}
-                              </p>
-                              <p className="card-text">
-                                {tvshow.first_air_date}
-                              </p>
-                              <p className="card-text">{tvshow.vote_average}</p>
-                            </div>
+                              <img
+                                src={IMG_URL + tvshow.poster_path}
+                                alt={tvshow.original_name}
+                                className="img_feature card-img-top"
+                              />
+                              <div className="card-body card_trending">
+                                <p className="card-text">
+                                  {tvshow.original_name}
+                                </p>
+                                <p className="card-text">
+                                  {tvshow.first_air_date}
+                                </p>
+                                <p className="card-text">
+                                  {tvshow.vote_average}
+                                </p>
+                              </div>
                             </Link>
                           </Card>
                         )

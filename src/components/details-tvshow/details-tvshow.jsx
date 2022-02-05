@@ -25,10 +25,10 @@ export const Detailstvshow = ({ id }) => {
   };
   useEffect(() => { 
     getTrending();
+    // use aos
+    Aos.init();
   }, [API_URL]);
 
-  // use aos
-  Aos.init();
 
   return (
     <div>

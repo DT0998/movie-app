@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Aos from "aos";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {
@@ -25,6 +26,8 @@ export const Community = () => {
   };
   useEffect(() => {
     getCommunity();
+    // use aos
+    Aos.init();
   }, [API_URL]);
 
   return (

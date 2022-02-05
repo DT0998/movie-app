@@ -6,6 +6,7 @@ import "./movielegacy.css";
 // media query hook
 import useMediaQuery from "../../hooks/useMediaquery";
 import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
+import Aos from "aos";
 
 export const Movielegacy = () => {
   const [movielegacy, setMovielegacy] = useState([]);
@@ -28,6 +29,8 @@ export const Movielegacy = () => {
   };
   useEffect(() => {
     getLegacy();
+       // use aos
+      Aos.init();
   }, [API_URL]);
 
   return (

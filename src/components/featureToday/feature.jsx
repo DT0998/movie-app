@@ -30,10 +30,10 @@ export const Feature = () => {
   };
   useEffect(() => {
     getTrending();
+    // use aos
+    Aos.init();
   }, [API_URL]);
 
-  // use aos
-  Aos.init();
 
   return (
     <div className="wrap_fluid feature w-100">
