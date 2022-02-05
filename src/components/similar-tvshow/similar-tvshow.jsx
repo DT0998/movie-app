@@ -22,7 +22,6 @@ export const Similartv = ({ id }) => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setSimilar(data.results);
-    console.log(data.results)
   };
   useEffect(() => {
     getSimilar();

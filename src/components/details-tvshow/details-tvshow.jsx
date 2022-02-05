@@ -10,6 +10,7 @@ import Aos from "aos";
 
 export const Detailstvshow = ({ id }) => {
   const [tvshow, setTvshow] = useState({});
+  const [genres,setGenres] = useState([])
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -22,6 +23,7 @@ export const Detailstvshow = ({ id }) => {
   const getTrending = async function (path) {
     let response = await axios.get(API_URL);
     setTvshow(response.data);
+    setGenres(response.data.genres)
   };
   useEffect(() => { 
     getTrending();
@@ -56,6 +58,11 @@ export const Detailstvshow = ({ id }) => {
             <div className="wrap details_content">
               <p className="details_title">{tvshow.name}</p>
               <p>{tvshow.overview}</p>
+              <ul className="d-flex">
+                  {genres.map((genre)=>(
+                    <li className="border-genres">{genre.name}</li>
+                  ))}
+                </ul>
               <p>Release day: {tvshow.first_air_date}</p>
             </div>
             <Buttonwatchnow></Buttonwatchnow>

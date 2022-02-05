@@ -10,6 +10,7 @@ import "./details-movie.css";
 
 export const Detailsmovie = ({ id }) => {
   const [movie, setMovie] = useState({});
+  const [genres,setGenres] = useState([])
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -21,6 +22,7 @@ export const Detailsmovie = ({ id }) => {
   const getTrending = async function () {
     let response = await axios.get(API_URL);
     setMovie(response.data);
+    setGenres(response.data.genres)
   };
 
   useEffect(() => {
@@ -57,6 +59,11 @@ export const Detailsmovie = ({ id }) => {
               <div className="wrap details_content">
                 <p className="details_title">{movie.original_title}</p>
                 <p>{movie.overview}</p>
+                <ul className="d-flex">
+                  {genres.map((genre)=>(
+                    <li className="border-genres">{genre.name}</li>
+                  ))}
+                </ul>
                 <p>Release day: {movie.release_date}</p>
               </div>
               <Buttonwatchnow></Buttonwatchnow>
