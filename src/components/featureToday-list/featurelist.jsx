@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import {BsChevronCompactRight} from 'react-icons/bs'
+
 
 export const Featurelist = () => {
   const [page, setPage] = useState(1);
@@ -21,20 +23,23 @@ export const Featurelist = () => {
   const getTrending = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    console.log(data);
+    console.log(data)
     setMovietrending([...movietrending, ...data.results]);
     setTotalpage(data.total_pages);
   };
-  
+
   useEffect(() => {
     getTrending();
   }, [API_URL]);
-  
-  
+
   // load more
   const loadMore = () => {
     setPage(page + 1);
   };
+  // search release_date
+  const handlesortReleasedate = ()=>{
+
+  }
   // use aos
   Aos.init();
 
@@ -44,7 +49,7 @@ export const Featurelist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-lg-3">
+              <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
                 <h2
                   className="trending_title"
                   data-aos="fade-right"
@@ -54,37 +59,55 @@ export const Featurelist = () => {
                   TRENDING
                 </h2>
               </div>
-              <div
-                className=" d-flex flex-row flex-wrap justify-content-center"
-                data-aos="fade-down"
-                data-aos-duration="1500"
-              >
-                {movietrending.map((movie) => (
-                  <Card className="card_container mx-2 my-2" key={movie.id}>
-                    <Link to={`/details/movie/${movie.id}`}>
-                      <img
-                        src={IMG_URL + movie.poster_path}
-                        alt={movie.original_name}
-                        className="img_feature card-img-top"
-                      />
-                      <div className="card-body card_trending">
-                        <p className="card-text">
-                          {movie.title || movie.original_name}
-                        </p>
-                        <p className="card-text">
-                          {movie.release_date || movie.first_air_date}
-                        </p>
-                        <p className="card-text">{movie.vote_average}</p>
-                      </div>
-                    </Link>
-                  </Card>
-                ))}
-                {page < totalpage ? (
-                  <button className="btn_loadmore" onClick={loadMore}>
-                    Load more
-                  </button>
-                ) : null}
-              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row className="d-flex">
+          <Col xs={12} md={2}>
+            <div className="wrap">
+             <div className="filter_panel">
+               <div className="name d-flex justify-content-between align-items">
+                 <p>Sort</p>
+                 <BsChevronCompactRight/>
+               </div>
+               <div className="filter"></div>
+             </div>
+             <div className="search_btn d-flex justify-content-center" >
+               Search
+             </div>
+            </div>
+          </Col>
+          <Col xs={12} md={10}>
+            <div
+              className=" d-flex flex-row flex-wrap justify-content-center"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+            >
+              {movietrending.map((movie,index) => (
+                <Card className="card_container mx-2 my-2" key={index}>
+                  <Link to={`/details/movie/${movie.id}`}>
+                    <img
+                      src={IMG_URL + movie.poster_path}
+                      alt={movie.original_name}
+                      className="img_feature card-img-top"
+                    />
+                    <div className="card-body card_trending">
+                      <p className="card-text">
+                        {movie.title || movie.original_name}
+                      </p>
+                      <p className="card-text">
+                        {movie.release_date || movie.first_air_date}
+                      </p>
+                      <p className="card-text">{movie.vote_average}</p>
+                    </div>
+                  </Link>
+                </Card>
+              ))}
+              {page < totalpage ? (
+                <button className="btn_loadmore" onClick={loadMore}>
+                  Load more
+                </button>
+              ) : null}
             </div>
           </Col>
         </Row>

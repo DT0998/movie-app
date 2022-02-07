@@ -32,7 +32,7 @@ export const Detailsmovie = ({ id }) => {
   }, [API_URL]);
 
   // change title
-  document.title = movie.original_title;
+  document.title = movie?.original_title;
 
 
   return (
@@ -61,7 +61,7 @@ export const Detailsmovie = ({ id }) => {
                 <p>{movie.overview}</p>
                 <ul className="d-flex">
                   {genres.map((genre)=>(
-                    <li className="border-genres">{genre.name}</li>
+                    <li className="border-genres" key={genre.id}>{genre.name}</li>
                   ))}
                 </ul>
                 <p>Release day: {movie.release_date}</p>

@@ -4,6 +4,17 @@
 h1{
   cursor: default;
 }
+.search_btn{
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  background-color: #01b4e4;
+  color: white;
+}
 
 @media (min-width: 320px) {
     .trending_list .card_container {
@@ -37,7 +48,7 @@ h1{
   }
   @media (min-width: 1440px) {
     .trending_list .card_container {
-      width: 15rem;
+      width: 12rem;
     }
     .trending_title {
       padding-left: unset;
