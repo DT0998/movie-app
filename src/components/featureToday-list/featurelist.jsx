@@ -63,7 +63,7 @@ export const Featurelist = () => {
           </Col>
         </Row>
         <Row className="d-flex">
-          <Col xs={12} md={2}>
+          <Col xs={12} md={3} lg={2}>
             <div className="wrap">
              <div className="filter_panel">
                <div className="name d-flex justify-content-between align-items">
@@ -77,7 +77,7 @@ export const Featurelist = () => {
              </div>
             </div>
           </Col>
-          <Col xs={12} md={10}>
+          <Col xs={12} md={9} lg={10}>
             <div
               className=" d-flex flex-row flex-wrap justify-content-center"
               data-aos="fade-down"
