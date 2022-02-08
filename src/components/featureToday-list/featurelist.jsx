@@ -23,7 +23,6 @@ export const Featurelist = () => {
   const getTrending = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    console.log(data)
     setMovietrending([...movietrending, ...data.results]);
     setTotalpage(data.total_pages);
   };
@@ -37,8 +36,14 @@ export const Featurelist = () => {
     setPage(page + 1);
   };
   // search release_date
-  const handlesortReleasedate = ()=>{
-
+  const handlesortReleasedate = async function(){
+   try {
+     let response = await axios.get(`${API_URL}&query=No`)
+     let data = response.data;
+     console.log(data)
+   } catch (error) {
+     
+   }
   }
   // use aos
   Aos.init();
@@ -48,36 +53,35 @@ export const Featurelist = () => {
       <Container>
         <Row>
           <Col>
-            <div className="wrap">
               <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
                 <h2
-                  className="trending_title"
                   data-aos="fade-right"
                   data-aos-duration="1500"
                 >
-                  {" "}
                   TRENDING
                 </h2>
               </div>
-            </div>
           </Col>
         </Row>
         <Row className="d-flex">
-          <Col xs={12} md={3} lg={2}>
+          <Col xs={12} md={4} lg={3}>
             <div className="wrap">
-             <div className="filter_panel">
-               <div className="name d-flex justify-content-between align-items">
-                 <p>Sort</p>
-                 <BsChevronCompactRight/>
+             <div className="filter_panel my-3">
+               <div className="name d-flex justify-content-between align-items-center">
+                 <span>Sort</span>
+                 <BsChevronCompactRight className="chevron active"/>
                </div>
-               <div className="filter"></div>
+               <div className="filter">
+                 <span>Sort Results By</span>
+
+               </div>
              </div>
-             <div className="search_btn d-flex justify-content-center" >
+             <div className="search_btn d-flex justify-content-center" onClick={handlesortReleasedate} >
                Search
              </div>
             </div>
           </Col>
-          <Col xs={12} md={9} lg={10}>
+          <Col xs={12} md={8} lg={9}>
             <div
               className=" d-flex flex-row flex-wrap justify-content-center"
               data-aos="fade-down"

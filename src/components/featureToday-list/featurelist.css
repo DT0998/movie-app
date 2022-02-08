@@ -15,6 +15,21 @@ h1{
   background-color: #01b4e4;
   color: white;
 }
+.filter_panel{
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 12px 16px;
+  min-width:100%;
+  border: 1px solid #e3e3e3;
+  background-color: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+.chevron{
+  transform: rotate(0deg);
+}
+.active{
+  transform: rotate(90deg);
+}
 
 @media (min-width: 320px) {
     .trending_list .card_container {
@@ -34,24 +49,20 @@ h1{
   }
   @media (min-width: 768px) {
     .trending_list .card_container {
-      width: 9rem;
+      width: 12rem;
     }
   }
   
   @media (min-width: 1024px) {
     .trending_list .card_container {
-      width: 10rem;
+      width: 9rem;
     }
-    .trending_title {
-      padding-left: 25px;
-    }
+  
   }
   @media (min-width: 1440px) {
     .trending_list .card_container {
-      width: 12rem;
+      width: 11rem;
     }
-    .trending_title {
-      padding-left: unset;
-    }
+   
   }
   
