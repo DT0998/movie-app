@@ -43,7 +43,7 @@ export const Movielegacylist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-lg-3">
+              <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
                 <h1
                   className="trending_title"
                   data-aos="fade-right"
