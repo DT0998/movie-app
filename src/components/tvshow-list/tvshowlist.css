@@ -17,24 +17,18 @@
   }
   @media (min-width: 768px) {
     .tvshow_list .card_container {
-      width: 9rem;
+      width: 12rem;
     }
   }
   
   @media (min-width: 1024px) {
     .tvshow_list .card_container {
-      width: 10rem;
-    }
-    .trending_title {
-      padding-left: 25px;
+      width: 9rem;
     }
   }
   @media (min-width: 1440px) {
     .tvshow_list .card_container {
-      width: 15rem;
-    }
-    .trending_title {
-      padding-left: unset;
+      width: 11rem;
     }
   }
   

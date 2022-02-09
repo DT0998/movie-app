@@ -6,6 +6,7 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielist.css";
 import "../../components/buttons/button-loadmore/button-loadmore.css";
 import { Link } from "react-router-dom";
+import { BsChevronCompactRight } from "react-icons/bs";
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
@@ -52,14 +53,41 @@ export const Movielist = () => {
                   MOVIES
                 </h1>
               </div>
-              <div
-                className=" d-flex flex-row flex-wrap justify-content-center"
-                data-aos="fade-down"
-                data-aos-duration="1500"
-              >
-                {movietoprate.map((movie) => (
-                  <Card className="card_container mx-2 my-2" key={movie.id}>
-                    <Link to={`/details/movie/${movie.id}`}>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={4} lg={3}>
+            <div className="wrap">
+              <div className="filter_panel my-3">
+                <div className="name d-flex justify-content-between align-items-center">
+                  <span>Sort</span>
+                  <BsChevronCompactRight className="chevron active" />
+                </div>
+                <div className="filter d-flex flex-column">
+                  <span>Sort Results By</span>
+                  <select id="size" className="my-2 box_select">
+                    <option>Popularity Descending</option>
+                    <option>Popularity Ascending</option>
+                    <option>Rating Descending</option>
+                    <option>Rating Ascending</option>
+                  </select>
+                </div>
+              </div>
+              <div className="search_btn d-flex justify-content-center">
+                Search
+              </div>
+            </div>
+          </Col>
+          <Col xs={12} md={8} lg={9}>
+            <div
+              className=" d-flex flex-row flex-wrap justify-content-center"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+            >
+              {movietoprate.map((movie) => (
+                <Card className="card_container mx-2 my-2" key={movie.id}>
+                  <Link to={`/details/movie/${movie.id}`}>
                     <img
                       src={IMG_URL + movie.poster_path}
                       alt={movie.original_name}
@@ -70,15 +98,14 @@ export const Movielist = () => {
                       <p className="card-text">{movie.release_date}</p>
                       <p className="card-text">{movie.vote_average}</p>
                     </div>
-                    </Link>
-                  </Card>
-                ))}
-                {page < totalpage ? (
-                  <button className="btn_loadmore" onClick={loadMore}>
-                    Load more
-                  </button>
-                ) : null}
-              </div>
+                  </Link>
+                </Card>
+              ))}
+              {page < totalpage ? (
+                <button className="btn_loadmore" onClick={loadMore}>
+                  Load more
+                </button>
+              ) : null}
             </div>
           </Col>
         </Row>

@@ -3,6 +3,7 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
+import { BsChevronCompactRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "./movielegacylist.css";
 
@@ -52,6 +53,35 @@ export const Movielegacylist = () => {
                   MOVIES LEGACY
                 </h1>
               </div>
+              </div>
+              </Col>
+              </Row>
+              <Row>
+                <Col xs={12} md={4} lg={3}>
+                  <div className="wrap">
+                    <div className="filter_panel my-3">
+                      <div className="name d-flex justify-content-between align-items-center">
+                        <span>Sort</span>
+                        <BsChevronCompactRight className="chevron active" />
+                      </div>
+                      <div className="filter d-flex flex-column">
+                        <span>Sort Results By</span>
+                        <select id="size" className="my-2 box_select">
+                          <option>Popularity Descending</option>
+                          <option>Popularity Ascending</option>
+                          <option>Rating Descending</option>
+                          <option>Rating Ascending</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div
+                      className="search_btn d-flex justify-content-center"
+                    >
+                      Search
+                    </div>
+                  </div>
+                </Col>
+                <Col xs={12} md={8} lg={9}>
               <div
                 className=" d-flex flex-row flex-wrap justify-content-center"
                 data-aos="fade-down"
@@ -79,7 +109,6 @@ export const Movielegacylist = () => {
                   </button>
                 ) : null}
               </div>
-            </div>
           </Col>
         </Row>
       </Container>

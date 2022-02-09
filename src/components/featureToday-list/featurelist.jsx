@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import {BsChevronCompactRight} from 'react-icons/bs'
-
+import { BsChevronCompactRight } from "react-icons/bs";
 
 export const Featurelist = () => {
   const [page, setPage] = useState(1);
@@ -36,15 +35,13 @@ export const Featurelist = () => {
     setPage(page + 1);
   };
   // search release_date
-  const handlesortReleasedate = async function(){
-   try {
-     let response = await axios.get(`${API_URL}&query=No`)
-     let data = response.data;
-     console.log(data)
-   } catch (error) {
-     
-   }
-  }
+  const handlesortReleasedate = async function () {
+    try {
+      let response = await axios.get(`${API_URL}&query=No`);
+      let data = response.data;
+      console.log(data);
+    } catch (error) {}
+  };
   // use aos
   Aos.init();
 
@@ -53,32 +50,37 @@ export const Featurelist = () => {
       <Container>
         <Row>
           <Col>
-              <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
-                <h2
-                  data-aos="fade-right"
-                  data-aos-duration="1500"
-                >
-                  TRENDING
-                </h2>
-              </div>
+            <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
+              <h2 data-aos="fade-right" data-aos-duration="1500">
+                TRENDING
+              </h2>
+            </div>
           </Col>
         </Row>
         <Row className="d-flex">
           <Col xs={12} md={4} lg={3}>
             <div className="wrap">
-             <div className="filter_panel my-3">
-               <div className="name d-flex justify-content-between align-items-center">
-                 <span>Sort</span>
-                 <BsChevronCompactRight className="chevron active"/>
-               </div>
-               <div className="filter">
-                 <span>Sort Results By</span>
-
-               </div>
-             </div>
-             <div className="search_btn d-flex justify-content-center" onClick={handlesortReleasedate} >
-               Search
-             </div>
+              <div className="filter_panel my-3">
+                <div className="name d-flex justify-content-between align-items-center">
+                  <span>Sort</span>
+                  <BsChevronCompactRight className="chevron active" />
+                </div>
+                <div className="filter d-flex flex-column">
+                  <span>Sort Results By</span>
+                  <select id="size" className="my-2 box_select" >
+                    <option>Popularity Descending</option>
+                    <option>Popularity Ascending</option>
+                    <option>Rating Descending</option>
+                    <option>Rating Ascending</option>
+                  </select>
+                </div>
+              </div>
+              <div
+                className="search_btn d-flex justify-content-center"
+                onClick={handlesortReleasedate}
+              >
+                Search
+              </div>
             </div>
           </Col>
           <Col xs={12} md={8} lg={9}>
@@ -87,7 +89,7 @@ export const Featurelist = () => {
               data-aos="fade-down"
               data-aos-duration="1500"
             >
-              {movietrending.map((movie,index) => (
+              {movietrending.map((movie, index) => (
                 <Card className="card_container mx-2 my-2" key={index}>
                   <Link to={`/details/movie/${movie.id}`}>
                     <img
