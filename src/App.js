@@ -14,7 +14,7 @@ import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename="/movie-app">
         <Nav />
         <Switch>
           <Route exact path="/" component={Homepage} />

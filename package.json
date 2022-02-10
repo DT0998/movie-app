@@ -1,7 +1,7 @@
 {
   "name": "movie-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://dt0998.github.io/movie-app/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
