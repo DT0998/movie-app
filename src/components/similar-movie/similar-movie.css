@@ -1,0 +1,19 @@
+.bg_recommend {
+  background: url("../../assets/recommend/bg_recommend.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  background-attachment: fixed;
+}
+.bg_recommend::after {
+  position: absolute;
+  content: "";
+  background-color:rgba(51, 51, 51, 30%);
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: -1;
+}
