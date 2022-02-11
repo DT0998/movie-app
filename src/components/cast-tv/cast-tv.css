@@ -56,13 +56,14 @@
     min-height: 100%;
   }
   .card_cast h2 {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 1s;
     margin: 20px;
     color: white;
   }
   .card_cast:hover h2 {
     opacity: 1;
+    font-size: 1rem;
   }
   .cast .swiper-horizontal > .swiper-scrollbar {
     cursor: pointer;
@@ -73,6 +74,10 @@
     }
     .wrap_fluid.cast {
       padding: 20px 0px;
+    }
+    .card_cast h2 {
+      opacity: 0;
+      font-size: 2rem;
     }
   }
   
