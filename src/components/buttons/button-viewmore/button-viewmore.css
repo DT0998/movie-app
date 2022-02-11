@@ -13,7 +13,7 @@
   font-family: inherit;
 }
 .btn_view.view-more {
-  width: 12rem;
+  width: 4rem;
   height: auto;
 }
 .btn_view.view-more .circle {
@@ -76,4 +76,17 @@
 }
 .btn_view:hover .button-text {
   color: #fff;
+}
+.button-text{
+  display: none;
+}
+
+@media (min-width:768px) {
+  .btn_view.view-more {
+    width: 12rem;
+    height: auto;
+  }
+  .button-text{
+    display: block;
+  }
 }
