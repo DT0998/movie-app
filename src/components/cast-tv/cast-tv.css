@@ -61,9 +61,21 @@
     margin: 20px;
     color: white;
   }
+  .card_cast h3{
+    transition: opacity 1s;
+    margin: 20px;
+    color: white;
+    display: none;
+  }
   .card_cast:hover h2 {
+    display: none;
     opacity: 1;
     font-size: 1rem;
+  }
+  .card_cast:hover h3 {
+    display: none;
+    opacity: 1;
+    font-size: 2rem;
   }
   .cast .swiper-horizontal > .swiper-scrollbar {
     cursor: pointer;
@@ -75,9 +87,16 @@
     .wrap_fluid.cast {
       padding: 20px 0px;
     }
-    .card_cast h2 {
+    .card_cast h3 {
+      display: block;
       opacity: 0;
       font-size: 2rem;
+    }
+    .card_cast:hover h3{
+      display: block;
+    }
+    .card_cast h2{
+      display: none;
     }
   }
   

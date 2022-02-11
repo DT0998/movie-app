@@ -89,6 +89,7 @@ export const Similarmovie = ({ id }) => {
                       >
                         <div className="border">
                           <h2>{similars.original_title}</h2>
+                          <h3>{similars.original_title}</h3>
                         </div>
                       </Card>
                     </Link>

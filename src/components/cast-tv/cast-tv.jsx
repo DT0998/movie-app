@@ -81,6 +81,7 @@ export const Casttv = ({id}) => {
                     >
                       <div className="border">
                         <h2>{cast.name}</h2>
+                        <h3>{cast.name}</h3>
                       </div>
                     </Card>
                   </SwiperSlide>

@@ -87,6 +87,7 @@ export const Similartv = ({ id }) => {
                       >
                         <div className="border">
                           <h2>{similars.original_name}</h2>
+                          <h3>{similars.original_name}</h3>
                         </div>
                       </Card>
                     </Link>
