@@ -8,6 +8,13 @@
   width: 100%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  transition: all .4s ease-in-out;
+}
+.img_feature:hover{
+  transform: scale(1.1);
+}
+.card-text.card-title{
+  font-weight: 700;
 }
 .card_container {
   cursor: default;

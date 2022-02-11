@@ -74,7 +74,7 @@ export const Tvshow = () => {
                                 className="img_feature card-img-top"
                               />
                               <div className="card-body card_trending">
-                                <p className="card-text">
+                                <p className="card-text card-title">
                                   {tvshow.original_name}
                                 </p>
                                 <p className="card-text">
@@ -105,7 +105,7 @@ export const Tvshow = () => {
                                 className="img_feature card-img-top"
                               />
                               <div className="card-body card_trending">
-                                <p className="card-text">
+                                <p className="card-text card-title">
                                   {tvshow.original_name}
                                 </p>
                                 <p className="card-text">
@@ -136,7 +136,7 @@ export const Tvshow = () => {
                                 className="img_feature card-img-top"
                               />
                               <div className="card-body card_trending">
-                                <p className="card-text">
+                                <p className="card-text card-title">
                                   {tvshow.original_name}
                                 </p>
                                 <p className="card-text">

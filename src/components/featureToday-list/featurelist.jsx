@@ -98,7 +98,7 @@ export const Featurelist = () => {
                       className="img_feature card-img-top"
                     />
                     <div className="card-body card_trending">
-                      <p className="card-text">
+                      <p className="card-text card-title">
                         {movie.title || movie.original_name}
                       </p>
                       <p className="card-text">

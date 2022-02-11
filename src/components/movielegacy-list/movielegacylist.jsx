@@ -96,7 +96,7 @@ export const Movielegacylist = () => {
                       className="img_feature card-img-top"
                     />
                     <div className="card-body card_trending">
-                      <p className="card-text">{movie.title}</p>
+                      <p className="card-text card-title">{movie.title}</p>
                       <p className="card-text">{movie.release_date}</p>
                       <p className="card-text">{movie.vote_average}</p>
                     </div>

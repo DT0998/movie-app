@@ -76,7 +76,7 @@ export const Feature = () => {
                                 className="img_feature card-img-top"
                               />
                               <div className="card-body card_trending">
-                                <p className="card-text">
+                                <p className="card-text card-title">
                                   {movie.title || movie.original_name}
                                 </p>
                                 <p className="card-text">
@@ -108,7 +108,7 @@ export const Feature = () => {
                               className="img_feature card-img-top"
                             />
                             <div className="card-body card_trending">
-                              <p className="card-text">{movie.title}</p>
+                              <p className="card-text card-title">{movie.title}</p>
                               <p className="card-text">{movie.release_date}</p>
                               <p className="card-text">{movie.vote_average}</p>
                             </div>
@@ -133,7 +133,7 @@ export const Feature = () => {
                               className="img_feature card-img-top"
                             />
                             <div className="card-body card_trending">
-                              <p className="card-text">{movie.title}</p>
+                              <p className="card-text card-title">{movie.title}</p>
                               <p className="card-text">{movie.release_date}</p>
                               <p className="card-text">{movie.vote_average}</p>
                             </div>

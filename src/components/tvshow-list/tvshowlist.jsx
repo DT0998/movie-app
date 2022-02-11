@@ -98,7 +98,7 @@ export const Tvshowlist = () => {
                             className="img_feature card-img-top"
                           />
                           <div className="card-body card_trending">
-                            <p className="card-text">{tvshow.original_name}</p>
+                            <p className="card-text card-title">{tvshow.original_name}</p>
                             <p className="card-text">{tvshow.first_air_date}</p>
                             <p className="card-text">{tvshow.vote_average}</p>
                           </div>
