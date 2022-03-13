@@ -83,10 +83,10 @@ export const Tvshowlist = () => {
                     data-aos="fade-down"
                     data-aos-duration="1500"
                   >
-                    {tvshows.map((tvshow) => (
+                    {tvshows.map((tvshow,index) => (
                       <Card
                         className="card_container mx-2 my-2"
-                        key={tvshow.id}
+                        key={tvshow.index}
                       >
                         <Link to={`/details/tv/${tvshow.id}`}>
                           <img

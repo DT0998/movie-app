@@ -20,7 +20,7 @@ export const Detailstvshow = ({ id }) => {
   
   
   // fetch movie api
-  const getTrending = async function (path) {
+  const getTrending = async function () {
     let response = await axios.get(API_URL);
     setTvshow(response.data);
     setGenres(response.data.genres)
@@ -39,6 +39,7 @@ export const Detailstvshow = ({ id }) => {
     <div
       className="wrap_fluid details"
       style={{ backgroundImage: `url(${IMG_ORG + tvshow.backdrop_path})` }}
+      
     >
       <Container>
         <Row className="d-flex justify-content-center align-items-center flex-md-row flex-column">
@@ -60,7 +61,9 @@ export const Detailstvshow = ({ id }) => {
               <p>{tvshow.overview}</p>
               <ul className="d-flex">
                   {genres.map((genre)=>(
-                    <li className="border-genres">{genre.name}</li>
+                    <div>
+                      <li className="border-genres">{genre.name}</li>
+                    </div>
                   ))}
                 </ul>
               <p>Release day: {tvshow.first_air_date}</p>
@@ -70,7 +73,7 @@ export const Detailstvshow = ({ id }) => {
         </Row>
       </Container>
     </div>
-    <Casttv  id={id} />
+    <Casttv id={id} />
     <Similartv id={id} />
   </div>
   );
