@@ -4,7 +4,7 @@ import { Feature } from '../../components/featureToday/feature';
 import { Movielegacy } from '../../components/movielegacy/movielegacy';
 import { Tvshow } from '../../components/tv-show/tvshow';
 import { Community } from '../../components/community/community';
-import { Loading } from '../../components/loading/loading';
+// import { Loading } from '../../components/loading/loading';
 
 
 export const Homepage = () => {

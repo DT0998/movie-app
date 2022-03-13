@@ -14,6 +14,16 @@ h1{
   -o-border-radius: 20px;
   background-color: #01b4e4;
   color: white;
+  transition: all .2s ease-in-out;
+}
+.search_btn:hover{
+  background-color: #032541;
+  color: white;
+}
+.search_btn.disable{
+  background-color: rgba(228,228,228,0.7);
+  backdrop-filter: blur(10px);
+  color: rgba(0,0,0,0.5);
 }
 .filter_panel{
   cursor: pointer;

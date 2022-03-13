@@ -36,6 +36,10 @@ export const Movielist = () => {
   };
   // use aos
   Aos.init();
+  // option movie sort
+  
+
+  
 
   return (
     <div className="wrap_fluid movie_list w-100">
@@ -66,7 +70,7 @@ export const Movielist = () => {
                 </div>
                 <div className="filter d-flex flex-column">
                   <span>Sort Results By</span>
-                  <select id="size" className="my-2 box_select">
+                  <select id="sort" className="my-2 box_select">
                     <option>Popularity Descending</option>
                     <option>Popularity Ascending</option>
                     <option>Rating Descending</option>
@@ -74,7 +78,7 @@ export const Movielist = () => {
                   </select>
                 </div>
               </div>
-              <div className="search_btn d-flex justify-content-center">
+              <div className="search_btn disable d-flex justify-content-center" >
                 Search
               </div>
             </div>
