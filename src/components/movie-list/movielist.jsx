@@ -6,12 +6,22 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielist.css";
 import "../../components/buttons/button-loadmore/button-loadmore.css";
 import { Link } from "react-router-dom";
+import Select from 'react-select';
 import { BsChevronCompactRight } from "react-icons/bs";
+
+const options = [
+  { value: 'Popularity Descending', label: "Popularity Descending" },
+  { value: 'Popularity Ascending', label: "Popularity Ascending" },
+  { value: 'Rating Descending', label: "Rating Descending" },
+  { value: 'Rating Ascending', label: "Rating Ascending" },
+];
+
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [movietoprate, setMovietoprate] = useState([]);
+  const [Selected, setSelected] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
@@ -37,9 +47,9 @@ export const Movielist = () => {
   // use aos
   Aos.init();
   // option movie sort
-  
 
-  
+
+
 
   return (
     <div className="wrap_fluid movie_list w-100">
@@ -70,15 +80,15 @@ export const Movielist = () => {
                 </div>
                 <div className="filter d-flex flex-column">
                   <span>Sort Results By</span>
-                  <select id="sort" className="my-2 box_select">
-                    <option>Popularity Descending</option>
-                    <option>Popularity Ascending</option>
-                    <option>Rating Descending</option>
-                    <option>Rating Ascending</option>
-                  </select>
+                  <Select className="my-2"
+                    defaultValue={Selected} onChange={setSelected}
+                    options={options}>
+                  </Select>
                 </div>
               </div>
-              <div className="search_btn disable d-flex justify-content-center" >
+              <div
+                className={`d-flex justify-content-center ${Selected ? "search_btn" : "disable search_btn"}`}
+              >
                 Search
               </div>
             </div>
@@ -89,7 +99,7 @@ export const Movielist = () => {
               data-aos="fade-down"
               data-aos-duration="1500"
             >
-              {movietoprate.map((movie,index) => (
+              {movietoprate.map((movie, index) => (
                 <Card className="card_container mx-2 my-2" key={movie.index}>
                   <Link to={`/details/movie/${movie.id}`}>
                     <img

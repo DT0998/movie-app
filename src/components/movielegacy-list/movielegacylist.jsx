@@ -5,12 +5,24 @@ import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Select from 'react-select';
 import "./movielegacylist.css";
+
+
+
+
+const options = [
+  { value: 'Popularity Descending', label: "Popularity Descending" },
+  { value: 'Popularity Ascending', label: "Popularity Ascending" },
+  { value: 'Rating Descending', label: "Rating Descending" },
+  { value: 'Rating Ascending', label: "Rating Ascending" },
+];
 
 export const Movielegacylist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [movielegacy, setMovielegacy] = useState([]);
+  const [Selected, setSelected] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
@@ -57,30 +69,28 @@ export const Movielegacylist = () => {
               </Col>
               </Row>
               <Row>
-                <Col xs={12} md={4} lg={3}>
-                  <div className="wrap">
-                    <div className="filter_panel my-3">
-                      <div className="name d-flex justify-content-between align-items-center">
-                        <span>Sort</span>
-                        <BsChevronCompactRight className="chevron active" />
-                      </div>
-                      <div className="filter d-flex flex-column">
-                        <span>Sort Results By</span>
-                        <select id="size" className="my-2 box_select">
-                          <option>Popularity Descending</option>
-                          <option>Popularity Ascending</option>
-                          <option>Rating Descending</option>
-                          <option>Rating Ascending</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div
-                      className="search_btn d-flex justify-content-center"
-                    >
-                      Search
-                    </div>
-                  </div>
-                </Col>
+              <Col xs={12} md={4} lg={3}>
+            <div className="wrap">
+              <div className="filter_panel my-3">
+                <div className="name d-flex justify-content-between align-items-center">
+                  <span>Sort</span>
+                  <BsChevronCompactRight className="chevron active" />
+                </div>
+                <div className="filter d-flex flex-column">
+                  <span>Sort Results By</span>
+                  <Select className="my-2"
+                    defaultValue={Selected} onChange={setSelected}
+                    options={options}>
+                  </Select>
+                </div>
+              </div>
+              <div
+                className={`d-flex justify-content-center ${Selected ? "search_btn" : "disable search_btn"}`}
+              >
+                Search
+              </div>
+            </div>
+          </Col>
                 <Col xs={12} md={8} lg={9}>
               <div
                 className=" d-flex flex-row flex-wrap justify-content-center"
