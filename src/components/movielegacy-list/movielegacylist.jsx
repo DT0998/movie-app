@@ -37,7 +37,7 @@ export const Movielegacylist = () => {
     setMovielegacy([...movielegacy, ...data.results]);
     setTotalpage(data.total_pages);
   };
-  
+
   useEffect(() => {
     getLegacy();
   }, [API_URL]);
@@ -65,11 +65,11 @@ export const Movielegacylist = () => {
                   MOVIES LEGACY
                 </h1>
               </div>
-              </div>
-              </Col>
-              </Row>
-              <Row>
-              <Col xs={12} md={4} lg={3}>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={4} lg={3}>
             <div className="wrap">
               <div className="filter_panel my-3">
                 <div className="name d-flex justify-content-between align-items-center">
@@ -91,15 +91,15 @@ export const Movielegacylist = () => {
               </div>
             </div>
           </Col>
-                <Col xs={12} md={8} lg={9}>
-              <div
-                className=" d-flex flex-row flex-wrap justify-content-center"
-                data-aos="fade-down"
-                data-aos-duration="1500"
-              >
-                {movielegacy.map((movie) => (
-                  <Card className="card_container mx-2 my-2" key={movie.id}>
-                    <Link to={`/details/movie/${movie.id}`}>
+          <Col xs={12} md={8} lg={9}>
+            <div
+              className=" d-flex flex-row flex-wrap justify-content-center"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+            >
+              {movielegacy.map((movie) => (
+                <Card className="card_container mx-2 my-2" key={movie.id}>
+                  <Link to={`/details/movie/${movie.id}`}>
                     <img
                       src={IMG_URL + movie.poster_path}
                       alt={movie.original_name}
@@ -110,15 +110,15 @@ export const Movielegacylist = () => {
                       <p className="card-text">{movie.release_date}</p>
                       <p className="card-text">{movie.vote_average}</p>
                     </div>
-                    </Link>
-                  </Card>
-                ))}
-                {page < totalpage ? (
-                  <button className="btn_loadmore" onClick={loadMore}>
-                    Load more
-                  </button>
-                ) : null}
-              </div>
+                  </Link>
+                </Card>
+              ))}
+              {page < totalpage ? (
+                <button className="btn_loadmore" onClick={loadMore}>
+                  Load more
+                </button>
+              ) : null}
+            </div>
           </Col>
         </Row>
       </Container>

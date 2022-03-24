@@ -5,7 +5,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
-import "./tvshowlist.css";
+import "./watchtrailer.css";
 
 
 const options = [
@@ -15,33 +15,24 @@ const options = [
   { value: 'Rating Ascending',label:"Rating Ascending" },
 ];
 
-export const Tvshowlist = () => {
-  const [page, setPage] = useState(1);
-  const [totalpage, setTotalpage] = useState();
-  const [tvshows, setTVshows] = useState([]);
-  const [Selected, setSelected] = useState(false);
+export const Tvshowlist = ({id}) => {
+  const [Trailer, setTrailer] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-  const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/tv/popular?" + API_KEY + PAGE;
-  const IMG_URL = "http://image.tmdb.org/t/p/w500/";
+  const API_URL = BASE_URL + `/${id}/videos?` + API_KEY;
 
   // fetch movie api
   const getTvshow = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setTVshows([...tvshows, ...data.results]);
-    setTotalpage(data.total_pages);
+    console.log(data);
   };
   useEffect(() => {
     getTvshow();
   }, [API_URL]);
 
-  // load more
-  const loadMore = () => {
-    setPage(page + 1);
-  };
+
 
   // use aos
   Aos.init();
@@ -65,11 +56,6 @@ export const Tvshowlist = () => {
                   TV SHOWS
                 </h2>
               </div>
-              </div>
-              </Col>
-            </Row>
-
-
               <Row>
                 <Col xs={12} md={4} lg={3}>
                   <div className="wrap">
@@ -129,7 +115,10 @@ export const Tvshowlist = () => {
                   </div>
                 </Col>
               </Row>
+            </div>
+          </Col>
+        </Row>
       </Container>
-      </div>
+    </div>
   );
 };

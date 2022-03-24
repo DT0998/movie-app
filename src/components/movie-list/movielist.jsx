@@ -100,7 +100,7 @@ export const Movielist = () => {
               data-aos-duration="1500"
             >
               {movietoprate.map((movie, index) => (
-                <Card className="card_container mx-2 my-2" key={movie.index}>
+                <Card className="card_container mx-2 my-2" key={index}>
                   <Link to={`/details/movie/${movie.id}`}>
                     <img
                       src={IMG_URL + movie.poster_path}

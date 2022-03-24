@@ -9,10 +9,10 @@ import Select from 'react-select';
 import { BsChevronCompactRight } from "react-icons/bs";
 
 const options = [
-  { value: 'Popularity Descending',label:"Popularity Descending"},
-  { value: 'Popularity Ascending',label:"Popularity Ascending" },
-  { value: 'Rating Descending',label:"Rating Descending" },
-  { value: 'Rating Ascending',label:"Rating Ascending" },
+  { value: 'Popularity Descending', label: "Popularity Descending" },
+  { value: 'Popularity Ascending', label: "Popularity Ascending" },
+  { value: 'Rating Descending', label: "Rating Descending" },
+  { value: 'Rating Ascending', label: "Rating Ascending" },
 ];
 export const Featurelist = () => {
   const [page, setPage] = useState(1);
@@ -23,7 +23,9 @@ export const Featurelist = () => {
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
+  const SORT_TYPE = "&sort_by=popularity.desc"
   const API_URL = BASE_URL + "/trending/movie/week?" + API_KEY + PAGE;
+  const API_SORT = BASE_URL + "/discover/movie?" + API_KEY + SORT_TYPE
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
@@ -44,11 +46,9 @@ export const Featurelist = () => {
   };
   // search release_date
   const handlesortReleasedate = async function () {
-    try {
-      let response = await axios.get(`${API_URL}&query=No`);
-      let data = response.data;
-      console.log(data);
-    } catch (error) {}
+    let response = await axios.get(`${API_SORT}`);
+    let data = response.data;
+    console.log(data);
   };
   // use aos
   Aos.init();
@@ -66,28 +66,29 @@ export const Featurelist = () => {
           </Col>
         </Row>
         <Row className="d-flex">
-        <Col xs={12} md={4} lg={3}>
-                  <div className="wrap">
-                    <div className="filter_panel my-3">
-                      <div className="name d-flex justify-content-between align-items-center">
-                        <span>Sort</span>
-                        <BsChevronCompactRight className="chevron active" />
-                      </div>
-                      <div className="filter d-flex flex-column">
-                        <span>Sort Results By</span>
-                        <Select className="my-2"
-                          defaultValue={Selected} onChange={setSelected}
-                          options={options}>
-                        </Select>
-                      </div>
-                    </div>
-                    <div
-                      className={`d-flex justify-content-center ${Selected ? "search_btn" : "disable search_btn" }`}
-                    >
-                      Search
-                    </div>
-                  </div>
-                </Col>
+          <Col xs={12} md={4} lg={3}>
+            <div className="wrap">
+              <div className="filter_panel my-3">
+                <div className="name d-flex justify-content-between align-items-center">
+                  <span>Sort</span>
+                  <BsChevronCompactRight className="chevron active" />
+                </div>
+                <div className="filter d-flex flex-column">
+                  <span>Sort Results By</span>
+                  <Select className="my-2"
+                    defaultValue={Selected} onChange={setSelected}
+                    options={options}>
+                  </Select>
+                </div>
+              </div>
+              <div
+                className={`d-flex justify-content-center ${Selected ? "search_btn" : "disable search_btn"}`}
+                onClick={handlesortReleasedate}
+              >
+                Search
+              </div>
+            </div>
+          </Col>
           <Col xs={12} md={8} lg={9}>
             <div
               className=" d-flex flex-row flex-wrap justify-content-center"
