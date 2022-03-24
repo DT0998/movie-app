@@ -7,10 +7,11 @@ import { Similartv } from "../similar-tvshow/similar-tvshow";
 import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
 import "./details-tvshow.css";
 import Aos from "aos";
+import { Trailer } from "../watchtrailer/watchtrailer";
 
-export const Detailstvshow = ({ id }) => {
+export const Detailstvshow = ({id}) => {
   const [tvshow, setTvshow] = useState({});
-  const [genres,setGenres] = useState([])
+  const [genres,setGenres] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -68,7 +69,8 @@ export const Detailstvshow = ({ id }) => {
                 </ul>
               <p>Release day: {tvshow.first_air_date}</p>
             </div>
-            <Buttonwatchnow></Buttonwatchnow>
+              <Buttonwatchnow/>
+                <Trailer id={id} />
           </Col>
         </Row>
       </Container>

@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+// import { useState } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { Homepage } from "./pages/homepage/homepage";
 import { Moviepage } from "./pages/moviepage/moviepage";
@@ -12,7 +13,8 @@ import { Nav } from "./components/nav/nav";
 import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
-function App() {
+function App(props) {
+  // const [isActive, setIsActive] = useState(false);
   return (
       <BrowserRouter basename="/movie-app">
         <Nav />
@@ -25,6 +27,7 @@ function App() {
           <Route exact path="/account" component={Loginpage} />
           <Route exact path={`/details/movie/:id`} component={Detailspagemovie} />
           <Route exact path={`/details/tv/:id`} component={Detailspagetvshow} />
+          {/* <Route exact path={`/details/tv/:id`} component={()=><Detailspagetvshow setIsActive={setIsActive} isActive={props.isActive} />} /> */}
         </Switch>
         <Footer />
       </BrowserRouter>
