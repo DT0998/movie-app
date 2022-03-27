@@ -4,10 +4,8 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Casttv } from "../cast-tv/cast-tv";
 import { Similartv } from "../similar-tvshow/similar-tvshow";
-import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
 import "./details-tvshow.css";
 import Aos from "aos";
-import { Trailer } from "../watchtrailer/watchtrailer";
 
 export const Detailstvshow = ({ id }) => {
   const [tvshow, setTvshow] = useState({});
@@ -68,7 +66,7 @@ export const Detailstvshow = ({ id }) => {
                 </ul>
                 <p>Release day: {tvshow.first_air_date}</p>
               </div>
-              <Trailer id={id}/>
+              {/* <Trailer id={id}/> */}
             </Col>
           </Row>
         </Container>

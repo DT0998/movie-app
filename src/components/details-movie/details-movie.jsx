@@ -4,10 +4,9 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Castmovie } from "../cast-movie/cast-movie";
 import { Similarmovie } from "../similar-movie/similar-movie";
-import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
 import Aos from "aos";
 import "./details-movie.css";
-import { Trailer } from "../watchtrailer/watchtrailer";
+import {TrailerMovie } from "../watchtrailermovie/watchtrailermovie";
 
 export const Detailsmovie = ({ id }) => {
   const [movie, setMovie] = useState({});
@@ -67,7 +66,7 @@ export const Detailsmovie = ({ id }) => {
                 </ul>
                 <p>Release day: {movie.release_date}</p>
               </div>
-              <Trailer id={id}/>
+              <TrailerMovie id={id}/>
             </Col>
           </Row>
         </Container>
