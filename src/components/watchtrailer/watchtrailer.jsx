@@ -3,11 +3,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./watchtrailer.css";
 import Aos from "aos";
-import Modal from "react-bootstrap/Modal";
-import ModalHeader from "react-bootstrap/esm/ModalHeader";
-import { Col, Container, Row } from "react-bootstrap";
+import { Modal} from "react-bootstrap";
+import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
 
-export const Trailer = ({ id, props }) => {
+export const Trailer = ({ id }, props) => {
   const [lgShow, setLgShow] = useState(false);
   const [trailer, setTrailer] = useState({});
   // api
@@ -18,8 +17,8 @@ export const Trailer = ({ id, props }) => {
   // fetch movie api
   const getTrailer = async function () {
     let response = await axios.get(API_URL);
-    console.log(response.data);
     setTrailer(response.data);
+    console.log(response.data);
   };
   useEffect(() => {
     getTrailer();
@@ -27,28 +26,25 @@ export const Trailer = ({ id, props }) => {
     Aos.init();
   }, [API_URL]);
 
-  // change title
-  //   document.title = tvshow?.name;
 
   return (
+    <>
+    <Buttonwatchnow onOpenModal={()=>setLgShow(true)}/>
     <div>
-      <div className="wrap_fluid">
-        <Container>
-          <Row className="d-flex justify-content-center align-items-center flex-md-row flex-column">
-            <Col className="d-flex justify-content-center align-items-center">
-              <Modal size="lg" show={lgShow}
-                onHide={() => setLgShow(false)} >
-                <Modal.Header closeButton>
-                  <Modal.Title id="example-modal-sizes-title-lg">
-                    Large Modal
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>video</Modal.Body>
-              </Modal>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={()=> setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+           Play Trailer
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Video</Modal.Body>
+      </Modal>
     </div>
+    </>
   );
 };

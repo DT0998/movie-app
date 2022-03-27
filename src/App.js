@@ -14,7 +14,6 @@ import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
 function App(props) {
-  // const [isActive, setIsActive] = useState(false);
   return (
       <BrowserRouter basename="/movie-app">
         <Nav />
@@ -27,7 +26,6 @@ function App(props) {
           <Route exact path="/account" component={Loginpage} />
           <Route exact path={`/details/movie/:id`} component={Detailspagemovie} />
           <Route exact path={`/details/tv/:id`} component={Detailspagetvshow} />
-          {/* <Route exact path={`/details/tv/:id`} component={()=><Detailspagetvshow setIsActive={setIsActive} isActive={props.isActive} />} /> */}
         </Switch>
         <Footer />
       </BrowserRouter>

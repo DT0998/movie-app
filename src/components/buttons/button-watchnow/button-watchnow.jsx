@@ -1,10 +1,7 @@
 import "./button-watchnow.css";
 
-export const Buttonwatchnow = ({props}) => {
+export const Buttonwatchnow = (props) => {
   return (
-    // <div onClick={props.onClickModal}>
-      <div>
-      <button className="btn_watch">Watch Now</button>
-    </div>
+      <button className="btn_watch" onClick={props.onOpenModal}>Watch Now</button>
   );
 };
