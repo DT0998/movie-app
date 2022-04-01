@@ -34,7 +34,7 @@ export const Similarmovie = ({ id }) => {
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid cast w-100">
+    <div className="wrap_fluid cast-community-similar w-100">
       <Container>
         <Row>
           <Col>

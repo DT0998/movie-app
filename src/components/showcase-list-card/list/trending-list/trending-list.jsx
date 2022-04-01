@@ -54,7 +54,7 @@ export const Trendinglist = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid trending_list">
+    <div className="wrap_fluid list w-100">
       <Container>
         <Row>
           <Col>

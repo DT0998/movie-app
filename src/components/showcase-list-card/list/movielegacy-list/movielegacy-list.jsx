@@ -7,6 +7,8 @@ import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
 import { CardBody } from "../../cardbody";
 import ListTitle from "../../list-title";
+import '../../cardbody.css';
+import '../../list.css';
 
 export const Movielegacylist = () => {
   const [page, setPage] = useState(1);
@@ -39,7 +41,7 @@ export const Movielegacylist = () => {
   Aos.init();
 
   return (
-    <div className="wrap_fluid movielegacy_list w-100">
+    <div className="wrap_fluid list w-100">
       <Container>
         <Row>
           <Col>
@@ -77,6 +79,7 @@ export const Movielegacylist = () => {
                   title={movie.title}
                   classNameText="card-text"
                   first_air_date={movie.first_air_date}
+                  release_date={movie.release_date}
                   vote_average={movie.vote_average}
                 />
               ))}

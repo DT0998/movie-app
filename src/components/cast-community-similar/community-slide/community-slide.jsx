@@ -32,7 +32,7 @@ export const Community = () => {
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid community w-100">
+    <div className="wrap_fluid cast-community-similar w-100">
       <Container>
         <Row>
           <Col>

@@ -51,7 +51,7 @@ export const Movielist = () => {
 
 
   return (
-    <div className="wrap_fluid movie_list w-100">
+    <div className="wrap_fluid list w-100">
       <Container>
         <Row>
           <Col>

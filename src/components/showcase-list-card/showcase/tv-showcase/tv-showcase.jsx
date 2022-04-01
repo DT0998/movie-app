@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import { CardBody} from "../../cardbody";
+import { CardBody } from "../../cardbody";
 import ShowcaseTitle from "../../showcasetitle";
 
 export const Tvshowcase = () => {
@@ -49,73 +49,80 @@ export const Tvshowcase = () => {
               {/* desktop */}
               {isDesktop
                 ? tvshows.map(
-                    (tvshow, index) =>
-                      index < 5 && (
-                        <CardBody
-                          classNameCard="card_container isDesktop"
-                          key={tvshow.id}
-                          type="tv"
-                          id={tvshow.id}
-                          img_url={IMG_URL}
-                          poster_path={tvshow.poster_path}
-                          originalalt={tvshow.original_name}
-                          classNameImg="img_showcase card-img-top"
-                          classNameCardBody="card-body card_showcase"
-                          classNameTitle="card-text card-title"
-                          originaltitle={tvshow.original_name}
-                          title={tvshow.title}
-                          classNameText="card-text"
-                          first_air_date={tvshow.first_air_date}
-                          vote_average={tvshow.vote_average}
-                        />
-                      )
-                  )
+                  (tvshow, index) =>
+                    index < 5 && (
+                      <CardBody
+                        classNameCard="card_container isDesktop"
+                        key={tvshow.id}
+                        type="tv"
+                        id={tvshow.id}
+                        img_url={IMG_URL}
+                        poster_path={tvshow.poster_path}
+                        originalalt={tvshow.original_name}
+                        classNameImg="img_showcase card-img-top"
+                        classNameCardBody="card-body card_showcase"
+                        classNameTitle="card-text card-title"
+                        originaltitle={tvshow.original_name}
+                        title={tvshow.title}
+                        classNameText="card-text"
+                        first_air_date={tvshow.first_air_date}
+                        release_date={tvshow.release_date}
+                        vote_average={tvshow.vote_average}
+                      />
+                    )
+                )
                 : null}
               {/* tablet */}
               {isTablet
                 ? tvshows.map(
-                    (tvshow, index) =>
-                      index < 4 && (
-                        <CardBody
-                          classNameCard="card_container isTablet"
-                          key={tvshow.id}
-                          type="tv"
-                          id={tvshow.id}
-                          img_url={IMG_URL}
-                          poster_path={tvshow.poster_path}
-                          originalalt={tvshow.original_name}
-                          classNameImg="img_showcase card-img-top"
-                          classNameCardBody="card-body card_showcase"
-                          classNameTitle="card-text card-title"
-                          originaltitle={tvshow.original_name}
-                          title={tvshow.title}
-                          classNameText="card-text"
-                        />
-                      )
-                  )
+                  (tvshow, index) =>
+                    index < 4 && (
+                      <CardBody
+                        classNameCard="card_container isTablet"
+                        key={tvshow.id}
+                        type="tv"
+                        id={tvshow.id}
+                        img_url={IMG_URL}
+                        poster_path={tvshow.poster_path}
+                        originalalt={tvshow.original_name}
+                        classNameImg="img_showcase card-img-top"
+                        classNameCardBody="card-body card_showcase"
+                        classNameTitle="card-text card-title"
+                        originaltitle={tvshow.original_name}
+                        title={tvshow.title}
+                        classNameText="card-text"
+                        first_air_date={tvshow.first_air_date}
+                        release_date={tvshow.release_date}
+                        vote_average={tvshow.vote_average}
+                      />
+                    )
+                )
                 : null}
               {/* mobile */}
               {isMobile
                 ? tvshows.map(
-                    (tvshow, index) =>
-                      index < 2 && (
-                        <CardBody
-                          classNameCard="card_container isMobile"
-                          key={tvshow.id}
-                          type="tv"
-                          id={tvshow.id}
-                          img_url={IMG_URL}
-                          poster_path={tvshow.poster_path}
-                          originalalt={tvshow.original_name}
-                          classNameImg="img_showcase card-img-top"
-                          classNameCardBody="card-body card_showcase"
-                          classNameTitle="card-text card-title"
-                          originaltitle={tvshow.original_name}
-                          title={tvshow.title}
-                          classNameText="card-text"
-                        />
-                      )
-                  )
+                  (tvshow, index) =>
+                    index < 2 && (
+                      <CardBody
+                        classNameCard="card_container isMobile"
+                        key={tvshow.id}
+                        type="tv"
+                        id={tvshow.id}
+                        img_url={IMG_URL}
+                        poster_path={tvshow.poster_path}
+                        originalalt={tvshow.original_name}
+                        classNameImg="img_showcase card-img-top"
+                        classNameCardBody="card-body card_showcase"
+                        classNameTitle="card-text card-title"
+                        originaltitle={tvshow.original_name}
+                        title={tvshow.title}
+                        classNameText="card-text"
+                        first_air_date={tvshow.first_air_date}
+                        release_date={tvshow.release_date}
+                        vote_average={tvshow.vote_average}
+                      />
+                    )
+                )
                 : null}
             </div>
           </Col>
