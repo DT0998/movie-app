@@ -1,15 +1,15 @@
-import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import Aos from "aos";
-import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../../hooks/useMediaquery";
-import ShowcaseTitle from "../showcasetitle";
 import { ShowcaseBody } from "../showcasebody";
+import ShowcaseTitle from "../showcasetitle";
 
-export const Trendingshowcase = () => {
-  const [movietrending, setMovietrending] = useState([]);
+export const Tvshowcase = () => {
+  const [tvshows, setTVshows] = useState([]);
+
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
@@ -18,17 +18,17 @@ export const Trendingshowcase = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/movie/day?" + API_KEY;
+  const API_URL = BASE_URL + "/tv/popular?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const getTrending = async function () {
+  const getTvshow = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setMovietrending(data.results);
+    setTVshows(data.results);
   };
   useEffect(() => {
-    getTrending();
+    getTvshow();
     // use aos
     Aos.init();
   }, [API_URL]);
@@ -39,7 +39,7 @@ export const Trendingshowcase = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ShowcaseTitle titlemain="TRENDING" linkto="/trending" />
+              <ShowcaseTitle titlemain="TV SHOWS" linkto="/tvshow" />
             </div>
             <div
               className=" d-flex flex-row gap-3"
@@ -48,78 +48,71 @@ export const Trendingshowcase = () => {
             >
               {/* desktop */}
               {isDesktop
-                ? movietrending.map(
-                    (movie, index) =>
+                ? tvshows.map(
+                    (tvshow, index) =>
                       index < 5 && (
                         <ShowcaseBody
                           classNameCard="card_container isDesktop"
-                          key={movie.id}
-                          type="movie"
-                          id={movie.id}
+                          key={tvshow.id}
+                          type="tv"
+                          id={tvshow.id}
                           img_url={IMG_URL}
-                          poster_path={movie.poster_path}
-                          originalalt={movie.title}
+                          poster_path={tvshow.poster_path}
+                          originalalt={tvshow.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
-                          originaltitle={movie.original_name}
-                          title={movie.title}
+                          originaltitle={tvshow.original_name}
+                          title={tvshow.title}
                           classNameText="card-text"
-                          first_air_date={movie.first_air_date}
-                          release_date={movie.release_date}
-                          vote_average={movie.vote_average}
+                          first_air_date={tvshow.first_air_date}
+                          vote_average={tvshow.vote_average}
                         />
                       )
                   )
                 : null}
               {/* tablet */}
               {isTablet
-                ? movietrending.map(
-                    (movie, index) =>
+                ? tvshows.map(
+                    (tvshow, index) =>
                       index < 4 && (
                         <ShowcaseBody
                           classNameCard="card_container isTablet"
-                          key={movie.id}
+                          key={tvshow.id}
                           type="tv"
-                          id={movie.id}
+                          id={tvshow.id}
                           img_url={IMG_URL}
-                          poster_path={movie.poster_path}
-                          originalalt={movie.title}
+                          poster_path={tvshow.poster_path}
+                          originalalt={tvshow.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
-                          originaltitle={movie.original_name}
-                          title={movie.title}
+                          originaltitle={tvshow.original_name}
+                          title={tvshow.title}
                           classNameText="card-text"
-                          first_air_date={movie.first_air_date}
-                          release_date={movie.release_date}
-                          vote_average={movie.vote_average}
                         />
                       )
                   )
                 : null}
               {/* mobile */}
               {isMobile
-                ? movietrending.map(
-                    (movie, index) =>
+                ? tvshows.map(
+                    (tvshow, index) =>
                       index < 2 && (
                         <ShowcaseBody
                           classNameCard="card_container isMobile"
-                          key={movie.id}
+                          key={tvshow.id}
                           type="tv"
-                          id={movie.id}
+                          id={tvshow.id}
                           img_url={IMG_URL}
-                          poster_path={movie.poster_path}
-                          originalalt={movie.title}
+                          poster_path={tvshow.poster_path}
+                          originalalt={tvshow.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
-                          originaltitle={movie.original_name}
-                          title={movie.title}
+                          originaltitle={tvshow.original_name}
+                          title={tvshow.title}
                           classNameText="card-text"
-                          first_air_date={movie.first_air_date}
-                          release_date={movie.release_date}
-                          vote_average={movie.vote_average}
                         />
                       )
                   )

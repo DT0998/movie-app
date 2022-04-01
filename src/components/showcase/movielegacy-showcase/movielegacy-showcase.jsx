@@ -1,15 +1,14 @@
-import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import { Container, Col, Row } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../../hooks/useMediaquery";
+import Aos from "aos";
 import ShowcaseTitle from "../showcasetitle";
 import { ShowcaseBody } from "../showcasebody";
 
-export const Trendingshowcase = () => {
-  const [movietrending, setMovietrending] = useState([]);
+export const Movielegacyshowcase = () => {
+  const [movielegacy, setMovielegacy] = useState([]);
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
@@ -18,17 +17,17 @@ export const Trendingshowcase = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/trending/movie/day?" + API_KEY;
+  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const getTrending = async function () {
+  const getLegacy = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setMovietrending(data.results);
+    setMovielegacy(data.results);
   };
   useEffect(() => {
-    getTrending();
+    getLegacy();
     // use aos
     Aos.init();
   }, [API_URL]);
@@ -39,7 +38,7 @@ export const Trendingshowcase = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ShowcaseTitle titlemain="TRENDING" linkto="/trending" />
+              <ShowcaseTitle titlemain="MOVIE LEGACY" linkto="/movielegacy" />
             </div>
             <div
               className=" d-flex flex-row gap-3"
@@ -48,7 +47,7 @@ export const Trendingshowcase = () => {
             >
               {/* desktop */}
               {isDesktop
-                ? movietrending.map(
+                ? movielegacy.map(
                     (movie, index) =>
                       index < 5 && (
                         <ShowcaseBody
@@ -58,7 +57,7 @@ export const Trendingshowcase = () => {
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
-                          originalalt={movie.title}
+                          originalalt={movie.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
@@ -74,7 +73,7 @@ export const Trendingshowcase = () => {
                 : null}
               {/* tablet */}
               {isTablet
-                ? movietrending.map(
+                ? movielegacy.map(
                     (movie, index) =>
                       index < 4 && (
                         <ShowcaseBody
@@ -84,7 +83,7 @@ export const Trendingshowcase = () => {
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
-                          originalalt={movie.title}
+                          originalalt={movie.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
@@ -100,7 +99,7 @@ export const Trendingshowcase = () => {
                 : null}
               {/* mobile */}
               {isMobile
-                ? movietrending.map(
+                ? movielegacy.map(
                     (movie, index) =>
                       index < 2 && (
                         <ShowcaseBody
@@ -110,7 +109,7 @@ export const Trendingshowcase = () => {
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
-                          originalalt={movie.title}
+                          originalalt={movie.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
