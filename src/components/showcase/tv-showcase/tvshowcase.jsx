@@ -3,11 +3,11 @@ import Aos from "aos";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 // media query hook
-import useMediaQuery from "../../hooks/useMediaquery";
-import { ShowcaseBody } from "../showcase/showcasebody";
-import ShowcaseTitle from "../showcase/showcasetitle";
+import useMediaQuery from "../../../hooks/useMediaquery";
+import { ShowcaseBody } from "../showcasebody";
+import ShowcaseTitle from "../showcasetitle";
 
-export const Tvshow = () => {
+export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
 
   // media query
@@ -51,7 +51,7 @@ export const Tvshow = () => {
                 ? tvshows.map(
                   (tvshow, index) =>
                     index < 5 && (
-                      <ShowcaseBody classNameCard="card_container isDesktop" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_trending" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} classNameText="card-text" first_air_date={tvshow.first_air_date} vote_average={tvshow.vote_average} />
+                      <ShowcaseBody classNameCard="card_container isDesktop" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_showcase" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} title={tvshow.title} classNameText="card-text" first_air_date={tvshow.first_air_date} vote_average={tvshow.vote_average}  />
                     )
                 )
                 : null}
@@ -60,7 +60,7 @@ export const Tvshow = () => {
                 ? tvshows.map(
                   (tvshow, index) =>
                     index < 4 && (
-                      <ShowcaseBody classNameCard="card_container isTablet" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_trending" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} classNameText="card-text" />
+                      <ShowcaseBody classNameCard="card_container isTablet" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_showcase" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} title={tvshow.title} classNameText="card-text" />
                     )
                 )
                 : null}
@@ -69,7 +69,7 @@ export const Tvshow = () => {
                 ? tvshows.map(
                   (tvshow, index) =>
                     index < 2 && (
-                      <ShowcaseBody classNameCard="card_container isMobile" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_trending" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} classNameText="card-text" />
+                      <ShowcaseBody classNameCard="card_container isMobile" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_showcase" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} title={tvshow.title} classNameText="card-text" />
                     )
                 )
                 : null}

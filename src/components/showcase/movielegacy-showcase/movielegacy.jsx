@@ -2,10 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./movielegacy.css";
 // media query hook
-import useMediaQuery from "../../hooks/useMediaquery";
-import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
+import useMediaQuery from "../../../hooks/useMediaquery";
+import { Buttonviewmore } from "../../buttons/button-viewmore/button-viewmore";
 import Aos from "aos";
 
 export const Movielegacy = () => {
