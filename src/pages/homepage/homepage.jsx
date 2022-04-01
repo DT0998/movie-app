@@ -1,6 +1,6 @@
 // route homepage
 import { Header } from '../../components/header/header';
-import { Community } from '../../components/community/community';
+import { Community } from '../../components/cast-community/community-slide/community';
 import Showcase from '../../components/showcase/showcase';
 // import { Loading } from '../../components/loading/loading';
 

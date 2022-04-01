@@ -1,4 +1,4 @@
-
+import './button-square.css';
 
 export const Buttonsquare = (props) => {
   return (

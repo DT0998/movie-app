@@ -1,48 +1,41 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
-import "./community.css";
-// swiper
-import "swiper/css";
-import "swiper/css/scrollbar";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import {Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Aos from "aos";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import CastCommunityBody from "../cast-community-body";
+import CastCommunityTitle from "../cast-community-title";
 SwiperCore.use([Scrollbar]);
 
-export const Community = () => {
-  const [peoples, setPeoples] = useState([]);
+export const CastTv = ({ id }) => {
+  const [Casts, setCasts] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/person/popular?" + API_KEY;
+  const API_URL = BASE_URL + `/tv/${id}/credits?` + API_KEY;
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  const getCommunity = async function () {
+  const getCast = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setPeoples(data.results);
+    setCasts(data.cast);
   };
   useEffect(() => {
-    getCommunity();
-    // use aos
-    Aos.init();
+    getCast();
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid community w-100">
+    <div className="wrap_fluid cast w-100">
       <Container>
         <Row>
           <Col>
-            <div className="d-flex justify-content-between align-items-center">
-              <h1 data-aos="fade-right" data-aos-duration="1500">
-                COMMUNITY
-              </h1>
-            </div>
+          <CastCommunityTitle titlemain="Cast"/>
 
             <div
-              className="wrap bg_community"
+              className="wrap bg_cast"
               data-aos="fade-down"
               data-aos-duration="1500"
             >
@@ -71,20 +64,15 @@ export const Community = () => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {peoples.map((poeple) => (
-                    <SwiperSlide key={poeple.id}>
-                      <Card
-                        className="card_community card_detail"
-                        style={{
-                          backgroundImage: `url(${
-                            IMG_ORG + poeple.profile_path
-                          })`,
-                        }}
-                      >
-                        <div className="border">
-                          <h2>{poeple.name}</h2>
-                        </div>
-                      </Card>
+                  {Casts.map((Cast) => (
+                    <SwiperSlide key={Cast.id}>
+                      <CastCommunityBody
+                        classNameCard="card_cast-community card_detail"
+                        img_url={IMG_ORG}
+                        profile_path={Cast.profile_path}
+                        classNamepeople="border"
+                        peoplename={Cast.name}
+                      />
                     </SwiperSlide>
                   ))}
                 </div>

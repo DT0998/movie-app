@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Castmovie } from "../cast-movie/cast-movie";
+import { CastMovie } from "../cast-community/cast-movie/cast-movie";
 import { Similarmovie } from "../similar-movie/similar-movie";
 import Aos from "aos";
 import "./details-movie.css";
@@ -71,7 +71,7 @@ export const Detailsmovie = ({ id }) => {
           </Row>
         </Container>
       </div>
-      <Castmovie id={id} />
+      <CastMovie id={id} />
       <Similarmovie id={id} />
     </div>
   );

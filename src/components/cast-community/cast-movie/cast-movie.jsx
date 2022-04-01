@@ -1,16 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import {Col, Container, Row } from 'react-bootstrap';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import './cast-movie.css'
 import "swiper/css";
 import "swiper/css/scrollbar";
+import CastCommunityBody from '../cast-community-body';
+import CastCommunityTitle from '../cast-community-title';
 SwiperCore.use([Scrollbar]);
 
 
-export const Castmovie = ({id}) => {
-    const [cast, setCast] = useState([]);
+export const CastMovie = ({id}) => {
+    const [Casts, setCasts] = useState([]);
     // api
     const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
     const BASE_URL = "https://api.themoviedb.org/3";
@@ -21,7 +22,7 @@ export const Castmovie = ({id}) => {
       const getCast = async function () {
         let response = await axios.get(API_URL);
         let data = response.data;
-          setCast(data.cast);
+          setCasts(data.cast);
       };
     useEffect(() => {
       getCast();
@@ -33,12 +34,7 @@ export const Castmovie = ({id}) => {
     <Container>
       <Row>
         <Col>
-          <div className="d-flex justify-content-between align-items-center">
-            <h1 data-aos="fade-right" data-aos-duration="1500">
-             Cast 
-            </h1>
-          </div>
-
+        <CastCommunityTitle titlemain="Cast"/>
           <div
             className="wrap bg_cast"
             data-aos="fade-down"
@@ -69,21 +65,15 @@ export const Castmovie = ({id}) => {
               }}
             >
               <div className="d-flex flex-column justify-content-around">
-                {cast.map((cast) => (
-                  <SwiperSlide key={cast.id}>
-                    <Card
-                      className="card_cast card_detail"
-                      style={{
-                        backgroundImage: `url(${
-                          IMG_ORG + cast.profile_path
-                        })`,
-                      }}
-                    >
-                      <div className="border">
-                        <h2>{cast.name}</h2>
-                        <h3>{cast.name}</h3>
-                      </div>
-                    </Card>
+                {Casts.map((Cast) => (
+                  <SwiperSlide key={Cast.id}>
+                    <CastCommunityBody
+                        classNameCard="card_cast-community card_detail"
+                        img_url={IMG_ORG}
+                        profile_path={Cast.profile_path}
+                        classNamepeople="border"
+                        peoplename={Cast.name}
+                      />
                   </SwiperSlide>
                 ))}
               </div>

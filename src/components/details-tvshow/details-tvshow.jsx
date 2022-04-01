@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Casttv } from "../cast-tv/cast-tv";
+import { CastTv } from "../cast-community/cast-tv/cast-tv";
 import { Similartv } from "../similar-tvshow/similar-tvshow";
 import "./details-tvshow.css";
 import Aos from "aos";
@@ -71,7 +71,7 @@ export const Detailstvshow = ({ id }) => {
           </Row>
         </Container>
       </div>
-      <Casttv id={id} />
+      <CastTv id={id} />
       <Similartv id={id} />
     </div>
   );
