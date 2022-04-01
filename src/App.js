@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import '../src/components/buttons/button-square/button-square.css'
 import "./App.css";
-// import { useState } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { Homepage } from "./pages/homepage/homepage";
 import { Moviepage } from "./pages/moviepage/moviepage";
@@ -13,7 +13,7 @@ import { Nav } from "./components/nav/nav";
 import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
-function App(props) {
+function App() {
   return (
       <BrowserRouter basename="/movie-app">
         <Nav />

@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
 import { BsChevronCompactRight } from "react-icons/bs";
+import { Buttonsquare } from "../buttons/button-square/button-square";
 
 const options = [
   { value: 'Popularity Descending', label: "Popularity Descending" },
@@ -116,9 +117,7 @@ export const Featurelist = () => {
                 </Card>
               ))}
               {page < totalpage ? (
-                <button className="btn_loadmore" onClick={loadMore}>
-                  Load more
-                </button>
+             <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
               ) : null}
             </div>
           </Col>

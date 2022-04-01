@@ -6,6 +6,7 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
+import { Buttonsquare } from "../buttons/button-square/button-square";
 import "./movielegacylist.css";
 
 
@@ -114,9 +115,7 @@ export const Movielegacylist = () => {
                 </Card>
               ))}
               {page < totalpage ? (
-                <button className="btn_loadmore" onClick={loadMore}>
-                  Load more
-                </button>
+              <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
               ) : null}
             </div>
           </Col>

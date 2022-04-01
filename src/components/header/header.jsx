@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Buttonviewinfo } from "../buttons/button-viewinfo/button-viewinfo";
 import { Link } from "react-router-dom";
+import { Buttonsquare } from "../buttons/button-square/button-square";
 // import { AOS } from "aos";
 
 export const Header = () => {
@@ -62,7 +62,7 @@ export const Header = () => {
                       <p className="header_overview">{movie.overview}</p>
                     </div>
                     <Link to={`/details/movie/${movie.id}`}>
-                      <Buttonviewinfo></Buttonviewinfo>
+                     <Buttonsquare className="btn_info_watch" title="view info"/>
                     </Link>
                   </div>
                 </Col>

@@ -4,10 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import "./movielist.css";
-import "../../components/buttons/button-loadmore/button-loadmore.css";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
 import { BsChevronCompactRight } from "react-icons/bs";
+import { Buttonsquare } from "../buttons/button-square/button-square";
 
 const options = [
   { value: 'Popularity Descending', label: "Popularity Descending" },
@@ -116,9 +116,7 @@ export const Movielist = () => {
                 </Card>
               ))}
               {page < totalpage ? (
-                <button className="btn_loadmore" onClick={loadMore}>
-                  Load more
-                </button>
+                <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
               ) : null}
             </div>
           </Col>

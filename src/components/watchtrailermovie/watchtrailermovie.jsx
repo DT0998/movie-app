@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import "./watchtrailermovie.css";
 import Aos from "aos";
 import { Modal } from "react-bootstrap";
-import { Buttonwatchnow } from "../buttons/button-watchnow/button-watchnow";
+import { Buttonsquare } from "../buttons/button-square/button-square";
 
 export const TrailerMovie = ({ id }) => {
   const [lgShow, setLgShow] = useState(false);
@@ -29,7 +29,7 @@ export const TrailerMovie = ({ id }) => {
 
   return (
     <>
-      <Buttonwatchnow onOpenModal={() => setLgShow(true)} />
+      <Buttonsquare onClick={() => setLgShow(true)} className="btn_info_watch" title="watch now" />
       <div>
         <Modal
           size="lg"
