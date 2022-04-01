@@ -43,7 +43,6 @@ export const Feature = () => {
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center my-3">
                 <h1
-                  className="introduce_title"
                   data-aos="fade-right"
                   data-aos-duration="1500"
                 >
@@ -51,7 +50,7 @@ export const Feature = () => {
                   TRENDING
                 </h1>
                 <Link to="/trending">
-                  <Buttonviewmore></Buttonviewmore>
+                  <Buttonviewmore/>
                 </Link>
               </div>
               <div

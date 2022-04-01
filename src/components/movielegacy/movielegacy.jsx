@@ -40,7 +40,7 @@ export const Movielegacy = () => {
           <Col>
             <div className="wrap">
               <div className="d-flex justify-content-between align-items-center my-3">
-                <h1 className="introduce_title" data-aos="fade-right" data-aos-duration="1500"> MOVIES LEGACY</h1>
+                <h1 data-aos="fade-right" data-aos-duration="1500"> MOVIES LEGACY</h1>
                 <Link to ="/movielegacy">
                 <Buttonviewmore></Buttonviewmore>
                 </Link>

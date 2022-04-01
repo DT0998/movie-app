@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../src/components/buttons/button-square/button-square.css'
+import '../src/components/showcase/showcasebody.css'
 import "./App.css";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { Homepage } from "./pages/homepage/homepage";

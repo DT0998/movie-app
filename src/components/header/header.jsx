@@ -62,7 +62,7 @@ export const Header = () => {
                       <p className="header_overview">{movie.overview}</p>
                     </div>
                     <Link to={`/details/movie/${movie.id}`}>
-                     <Buttonsquare className="btn_info_watch" title="view info"/>
+                     <Buttonsquare className="btn_info_watch" title="View info"/>
                     </Link>
                   </div>
                 </Col>

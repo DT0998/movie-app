@@ -1,12 +1,11 @@
 import axios from "axios";
+import Aos from "aos";
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "./tvshow.css";
+import { Container, Row, Col } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../hooks/useMediaquery";
-import { Buttonviewmore } from "../buttons/button-viewmore/button-viewmore";
-import Aos from "aos";
+import { ShowcaseBody } from "../showcase/showcasebody";
+import ShowcaseTitle from "../showcase/showcasetitle";
 
 export const Tvshow = () => {
   const [tvshows, setTVshows] = useState([]);
@@ -35,127 +34,49 @@ export const Tvshow = () => {
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid feature w-100">
+    <div className="wrap_fluid showcase w-100">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-between align-items-center my-3">
-                <h1
-                  className="introduce_title"
-                  data-aos="fade-right"
-                  data-aos-duration="1500"
-                >
-                  {" "}
-                  TV SHOWS
-                </h1>
-                <Link to="/tvshow">
-                  <Buttonviewmore></Buttonviewmore>
-                </Link>
-              </div>
-              <div
-                className=" d-flex flex-row gap-3"
-                data-aos="fade-down"
-                data-aos-duration="1500"
-              >
-                {/* desktop */}
-                {isDesktop
-                  ? tvshows.map(
-                      (tvshow, index) =>
-                        index < 5 && (
-                          <Card
-                            className="card_container isDesktop"
-                            key={tvshow.id}
-                          >
-                            <Link to={`/details/tv/${tvshow.id}`}>
-                              <img
-                                src={IMG_URL + tvshow.poster_path}
-                                alt={tvshow.original_name}
-                                className="img_feature card-img-top"
-                              />
-                              <div className="card-body card_trending">
-                                <p className="card-text card-title">
-                                  {tvshow.original_name}
-                                </p>
-                                <p className="card-text">
-                                  {tvshow.first_air_date}
-                                </p>
-                                <p className="card-text">
-                                  {tvshow.vote_average}
-                                </p>
-                              </div>
-                            </Link>
-                          </Card>
-                        )
+              <ShowcaseTitle titlemain="TV SHOWS" linkto="/tvshow" />
+            </div>
+            <div
+              className=" d-flex flex-row gap-3"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+            >
+              {/* desktop */}
+              {isDesktop
+                ? tvshows.map(
+                  (tvshow, index) =>
+                    index < 5 && (
+                      <ShowcaseBody classNameCard="card_container isDesktop" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_trending" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} classNameText="card-text" first_air_date={tvshow.first_air_date} vote_average={tvshow.vote_average} />
                     )
-                  : null}
-                {/* tablet */}
-                {isTablet
-                  ? tvshows.map(
-                      (tvshow, index) =>
-                        index < 4 && (
-                          <Card
-                            className="card_container isTablet"
-                            key={tvshow.id}
-                          >
-                            <Link to={`/details/tv/${tvshow.id}`}>
-                              <img
-                                src={IMG_URL + tvshow.poster_path}
-                                alt={tvshow.original_name}
-                                className="img_feature card-img-top"
-                              />
-                              <div className="card-body card_trending">
-                                <p className="card-text card-title">
-                                  {tvshow.original_name}
-                                </p>
-                                <p className="card-text">
-                                  {tvshow.first_air_date}
-                                </p>
-                                <p className="card-text">
-                                  {tvshow.vote_average}
-                                </p>
-                              </div>
-                            </Link>
-                          </Card>
-                        )
+                )
+                : null}
+              {/* tablet */}
+              {isTablet
+                ? tvshows.map(
+                  (tvshow, index) =>
+                    index < 4 && (
+                      <ShowcaseBody classNameCard="card_container isTablet" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_trending" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} classNameText="card-text" />
                     )
-                  : null}
-                {/* mobile */}
-                {isMobile
-                  ? tvshows.map(
-                      (tvshow, index) =>
-                        index < 2 && (
-                          <Card
-                            className="card_container isMobile"
-                            key={tvshow.id}
-                          >
-                            <Link to={`/details/tv/${tvshow.id}`}>
-                              <img
-                                src={IMG_URL + tvshow.poster_path}
-                                alt={tvshow.original_name}
-                                className="img_feature card-img-top"
-                              />
-                              <div className="card-body card_trending">
-                                <p className="card-text card-title">
-                                  {tvshow.original_name}
-                                </p>
-                                <p className="card-text">
-                                  {tvshow.first_air_date}
-                                </p>
-                                <p className="card-text">
-                                  {tvshow.vote_average}
-                                </p>
-                              </div>
-                            </Link>
-                          </Card>
-                        )
+                )
+                : null}
+              {/* mobile */}
+              {isMobile
+                ? tvshows.map(
+                  (tvshow, index) =>
+                    index < 2 && (
+                      <ShowcaseBody classNameCard="card_container isMobile" key={tvshow.id} type="tv" id={tvshow.id} img_url={IMG_URL} poster_path={tvshow.poster_path} originalalt={tvshow.original_name} classNameImg="img_showcase card-img-top" classNameCardBody="card-body card_trending" classNameTitle="card-text card-title" originaltitle={tvshow.original_name} classNameText="card-text" />
                     )
-                  : null}
-              </div>
+                )
+                : null}
             </div>
           </Col>
         </Row>
       </Container>
-    </div>
+    </div >
   );
 };

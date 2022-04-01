@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import React from 'react'
 import "./watchtrailermovie.css";
 import Aos from "aos";
 import { Modal } from "react-bootstrap";
@@ -28,8 +29,8 @@ export const TrailerMovie = ({ id }) => {
 
 
   return (
-    <>
-      <Buttonsquare onClick={() => setLgShow(true)} className="btn_info_watch" title="watch now" />
+    <React.Fragment>
+      <Buttonsquare onClick={() => setLgShow(true)} className="btn_info_watch" title="Watch now" />
       <div>
         <Modal
           size="lg"
@@ -50,6 +51,6 @@ export const TrailerMovie = ({ id }) => {
             </Modal.Body>
         </Modal>
       </div>
-    </>
+    </React.Fragment>
   );
 };
