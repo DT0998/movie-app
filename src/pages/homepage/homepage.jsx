@@ -1,7 +1,7 @@
 // route homepage
 import { Community } from '../../components/cast-community-similar/community-slide/community-slide';
 import { Header } from '../../components/header/header';
-import Showcase from '../../components/showcase/showcase';
+import Showcase from '../../components/showcase-list-card/showcase';
 // import { Loading } from '../../components/loading/loading';
 
 

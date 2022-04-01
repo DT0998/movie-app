@@ -5,8 +5,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
-import { Buttonsquare } from "../buttons/button-square/button-square";
-import "./tvshowlist.css";
+import { Buttonsquare } from "../../../buttons/button-square/button-square";
 
 
 const options = [

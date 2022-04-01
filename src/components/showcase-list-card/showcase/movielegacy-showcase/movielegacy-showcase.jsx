@@ -1,15 +1,14 @@
 import axios from "axios";
-import Aos from "aos";
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 // media query hook
-import useMediaQuery from "../../../hooks/useMediaquery";
-import { ShowcaseBody } from "../showcasebody";
-import ShowcaseTitle from "../showcasetitle";
+import useMediaQuery from "../../../../hooks/useMediaquery";
+import Aos from "aos";
+import ShowcaseTitle from "../../showcasetitle";
+import { CardBody} from "../../cardbody";
 
-export const Tvshowcase = () => {
-  const [tvshows, setTVshows] = useState([]);
-
+export const Movielegacyshowcase = () => {
+  const [movielegacy, setMovielegacy] = useState([]);
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
@@ -18,17 +17,17 @@ export const Tvshowcase = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/tv/popular?" + API_KEY;
+  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const getTvshow = async function () {
+  const getLegacy = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setTVshows(data.results);
+    setMovielegacy(data.results);
   };
   useEffect(() => {
-    getTvshow();
+    getLegacy();
     // use aos
     Aos.init();
   }, [API_URL]);
@@ -39,7 +38,7 @@ export const Tvshowcase = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ShowcaseTitle titlemain="TV SHOWS" linkto="/tvshow" />
+              <ShowcaseTitle titlemain="MOVIE LEGACY" linkto="/movielegacy" />
             </div>
             <div
               className=" d-flex flex-row gap-3"
@@ -48,71 +47,78 @@ export const Tvshowcase = () => {
             >
               {/* desktop */}
               {isDesktop
-                ? tvshows.map(
-                    (tvshow, index) =>
+                ? movielegacy.map(
+                    (movie, index) =>
                       index < 5 && (
-                        <ShowcaseBody
+                        <CardBody
                           classNameCard="card_container isDesktop"
-                          key={tvshow.id}
-                          type="tv"
-                          id={tvshow.id}
+                          key={movie.id}
+                          type="movie"
+                          id={movie.id}
                           img_url={IMG_URL}
-                          poster_path={tvshow.poster_path}
-                          originalalt={tvshow.original_name}
+                          poster_path={movie.poster_path}
+                          originalalt={movie.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
-                          originaltitle={tvshow.original_name}
-                          title={tvshow.title}
+                          originaltitle={movie.original_name}
+                          title={movie.title}
                           classNameText="card-text"
-                          first_air_date={tvshow.first_air_date}
-                          vote_average={tvshow.vote_average}
+                          first_air_date={movie.first_air_date}
+                          release_date={movie.release_date}
+                          vote_average={movie.vote_average}
                         />
                       )
                   )
                 : null}
               {/* tablet */}
               {isTablet
-                ? tvshows.map(
-                    (tvshow, index) =>
+                ? movielegacy.map(
+                    (movie, index) =>
                       index < 4 && (
-                        <ShowcaseBody
+                        <CardBody
                           classNameCard="card_container isTablet"
-                          key={tvshow.id}
+                          key={movie.id}
                           type="tv"
-                          id={tvshow.id}
+                          id={movie.id}
                           img_url={IMG_URL}
-                          poster_path={tvshow.poster_path}
-                          originalalt={tvshow.original_name}
+                          poster_path={movie.poster_path}
+                          originalalt={movie.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
-                          originaltitle={tvshow.original_name}
-                          title={tvshow.title}
+                          originaltitle={movie.original_name}
+                          title={movie.title}
                           classNameText="card-text"
+                          first_air_date={movie.first_air_date}
+                          release_date={movie.release_date}
+                          vote_average={movie.vote_average}
                         />
                       )
                   )
                 : null}
               {/* mobile */}
               {isMobile
-                ? tvshows.map(
-                    (tvshow, index) =>
+                ? movielegacy.map(
+                    (movie, index) =>
                       index < 2 && (
-                        <ShowcaseBody
+                        <CardBody
                           classNameCard="card_container isMobile"
-                          key={tvshow.id}
+                          key={movie.id}
                           type="tv"
-                          id={tvshow.id}
+                          id={movie.id}
                           img_url={IMG_URL}
-                          poster_path={tvshow.poster_path}
-                          originalalt={tvshow.original_name}
+                          poster_path={movie.poster_path}
+                          originalalt={movie.original_name}
                           classNameImg="img_showcase card-img-top"
                           classNameCardBody="card-body card_showcase"
                           classNameTitle="card-text card-title"
-                          originaltitle={tvshow.original_name}
-                          title={tvshow.title}
+                          originaltitle={movie.original_name}
+                          title={movie.title}
                           classNameText="card-text"
+                          first_air_date={movie.first_air_date}
+                          release_date={movie.release_date}
+                          vote_average={movie.vote_average}
                         />
                       )
                   )

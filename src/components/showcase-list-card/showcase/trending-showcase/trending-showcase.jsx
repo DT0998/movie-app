@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 // media query hook
-import useMediaQuery from "../../../hooks/useMediaquery";
-import ShowcaseTitle from "../showcasetitle";
-import { ShowcaseBody } from "../showcasebody";
+import useMediaQuery from "../../../../hooks/useMediaquery";
+import ShowcaseTitle from "../../showcasetitle";
+import {CardBody} from "../../cardbody";
 
 export const Trendingshowcase = () => {
   const [movietrending, setMovietrending] = useState([]);
@@ -51,7 +51,7 @@ export const Trendingshowcase = () => {
                 ? movietrending.map(
                     (movie, index) =>
                       index < 5 && (
-                        <ShowcaseBody
+                        <CardBody
                           classNameCard="card_container isDesktop"
                           key={movie.id}
                           type="movie"
@@ -77,7 +77,7 @@ export const Trendingshowcase = () => {
                 ? movietrending.map(
                     (movie, index) =>
                       index < 4 && (
-                        <ShowcaseBody
+                        <CardBody
                           classNameCard="card_container isTablet"
                           key={movie.id}
                           type="tv"
@@ -103,7 +103,7 @@ export const Trendingshowcase = () => {
                 ? movietrending.map(
                     (movie, index) =>
                       index < 2 && (
-                        <ShowcaseBody
+                        <CardBody
                           classNameCard="card_container isMobile"
                           key={movie.id}
                           type="tv"

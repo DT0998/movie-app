@@ -3,14 +3,10 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
-import { BsChevronCompactRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
-import { Buttonsquare } from "../buttons/button-square/button-square";
-import "./movielegacylist.css";
-
-
-
+import { BsChevronCompactRight } from "react-icons/bs";
+import { Buttonsquare } from "../../../buttons/button-square/button-square";
 
 const options = [
   { value: 'Popularity Descending', label: "Popularity Descending" },
@@ -19,28 +15,28 @@ const options = [
   { value: 'Rating Ascending', label: "Rating Ascending" },
 ];
 
-export const Movielegacylist = () => {
+
+export const Movielist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
-  const [movielegacy, setMovielegacy] = useState([]);
+  const [movietoprate, setMovietoprate] = useState([]);
   const [Selected, setSelected] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY + PAGE;
+  const API_URL = BASE_URL + "/movie/popular?" + API_KEY + PAGE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const getLegacy = async function () {
+  const getTrending = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setMovielegacy([...movielegacy, ...data.results]);
+    setMovietoprate([...movietoprate, ...data.results]);
     setTotalpage(data.total_pages);
   };
-
   useEffect(() => {
-    getLegacy();
+    getTrending();
   }, [API_URL]);
 
   // load more
@@ -49,9 +45,13 @@ export const Movielegacylist = () => {
   };
   // use aos
   Aos.init();
+  // option movie sort
+
+
+
 
   return (
-    <div className="wrap_fluid movielegacy_list w-100">
+    <div className="wrap_fluid movie_list w-100">
       <Container>
         <Row>
           <Col>
@@ -63,7 +63,7 @@ export const Movielegacylist = () => {
                   data-aos-duration="1500"
                 >
                   {" "}
-                  MOVIES LEGACY
+                  MOVIES
                 </h1>
               </div>
             </div>
@@ -98,8 +98,8 @@ export const Movielegacylist = () => {
               data-aos="fade-down"
               data-aos-duration="1500"
             >
-              {movielegacy.map((movie) => (
-                <Card className="card_container mx-2 my-2" key={movie.id}>
+              {movietoprate.map((movie, index) => (
+                <Card className="card_container mx-2 my-2" key={index}>
                   <Link to={`/details/movie/${movie.id}`}>
                     <img
                       src={IMG_URL + movie.poster_path}
@@ -115,7 +115,7 @@ export const Movielegacylist = () => {
                 </Card>
               ))}
               {page < totalpage ? (
-              <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
+                <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
               ) : null}
             </div>
           </Col>
