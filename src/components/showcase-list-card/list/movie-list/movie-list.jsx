@@ -2,25 +2,18 @@
 import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Container, Col, Row, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Select from 'react-select';
-import { BsChevronCompactRight } from "react-icons/bs";
+import { Container, Col, Row} from "react-bootstrap";
+import ListTitle from "../../list-title";
+import "../../cardbody.css";
+import "../../list.css";
+import SortTable from "../../../sortTable/sortTable";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
-
-const options = [
-  { value: 'Popularity Descending', label: "Popularity Descending" },
-  { value: 'Popularity Ascending', label: "Popularity Ascending" },
-  { value: 'Rating Descending', label: "Rating Descending" },
-  { value: 'Rating Ascending', label: "Rating Ascending" },
-];
-
+import { CardBody } from "../../cardbody";
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [movietoprate, setMovietoprate] = useState([]);
-  const [Selected, setSelected] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
@@ -47,50 +40,19 @@ export const Movielist = () => {
   Aos.init();
   // option movie sort
 
-
-
-
   return (
     <div className="wrap_fluid list w-100">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
-              <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
-                <h1
-                  className="trending_title"
-                  data-aos="fade-right"
-                  data-aos-duration="1500"
-                >
-                  {" "}
-                  MOVIES
-                </h1>
-              </div>
+              <ListTitle classNameTitle="title_content" titlemain="MOVIE" />
             </div>
           </Col>
         </Row>
         <Row>
           <Col xs={12} md={4} lg={3}>
-            <div className="wrap">
-              <div className="filter_panel my-3">
-                <div className="name d-flex justify-content-between align-items-center">
-                  <span>Sort</span>
-                  <BsChevronCompactRight className="chevron active" />
-                </div>
-                <div className="filter d-flex flex-column">
-                  <span>Sort Results By</span>
-                  <Select className="my-2"
-                    defaultValue={Selected} onChange={setSelected}
-                    options={options}>
-                  </Select>
-                </div>
-              </div>
-              <div
-                className={`d-flex justify-content-center ${Selected ? "search_btn" : "disable search_btn"}`}
-              >
-                Search
-              </div>
-            </div>
+            <SortTable />
           </Col>
           <Col xs={12} md={8} lg={9}>
             <div
@@ -98,24 +60,32 @@ export const Movielist = () => {
               data-aos="fade-down"
               data-aos-duration="1500"
             >
-              {movietoprate.map((movie, index) => (
-                <Card className="card_container mx-2 my-2" key={index}>
-                  <Link to={`/details/movie/${movie.id}`}>
-                    <img
-                      src={IMG_URL + movie.poster_path}
-                      alt={movie.original_name}
-                      className="img_feature card-img-top"
-                    />
-                    <div className="card-body card_trending">
-                      <p className="card-text card-title">{movie.title}</p>
-                      <p className="card-text">{movie.release_date}</p>
-                      <p className="card-text">{movie.vote_average}</p>
-                    </div>
-                  </Link>
-                </Card>
+              {movietoprate.map((movie) => (
+                <CardBody
+                  classNameCard="card_container mx-2 my-2"
+                  key={movie.id}
+                  type="movie"
+                  id={movie.id}
+                  img_url={IMG_URL}
+                  poster_path={movie.poster_path}
+                  originalalt={movie.original_name}
+                  classNameImg="img_showcase card-img-top"
+                  classNameCardBody="card-body card_showcase"
+                  classNameTitle="card-text card-title"
+                  originaltitle={movie.original_name}
+                  title={movie.title}
+                  classNameText="card-text"
+                  first_air_date={movie.first_air_date}
+                  release_date={movie.release_date}
+                  vote_average={movie.vote_average}
+                />
               ))}
               {page < totalpage ? (
-                <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
+                <Buttonsquare
+                  onClick={loadMore}
+                  className="btn_loadmore"
+                  title="load more"
+                />
               ) : null}
             </div>
           </Col>

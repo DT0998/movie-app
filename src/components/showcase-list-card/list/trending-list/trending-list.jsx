@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import Select from 'react-select';
-import { BsChevronCompactRight } from "react-icons/bs";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
+import SortTable from "../../../sortTable/sortTable";
 
 const options = [
   { value: 'Popularity Descending', label: "Popularity Descending" },
@@ -67,27 +66,7 @@ export const Trendinglist = () => {
         </Row>
         <Row className="d-flex">
           <Col xs={12} md={4} lg={3}>
-            <div className="wrap">
-              <div className="filter_panel my-3">
-                <div className="name d-flex justify-content-between align-items-center">
-                  <span>Sort</span>
-                  <BsChevronCompactRight className="chevron active" />
-                </div>
-                <div className="filter d-flex flex-column">
-                  <span>Sort Results By</span>
-                  <Select className="my-2"
-                    defaultValue={Selected} onChange={setSelected}
-                    options={options}>
-                  </Select>
-                </div>
-              </div>
-              <div
-                className={`d-flex justify-content-center ${Selected ? "search_btn" : "disable search_btn"}`}
-                onClick={handlesortReleasedate}
-              >
-                Search
-              </div>
-            </div>
+          <SortTable />
           </Col>
           <Col xs={12} md={8} lg={9}>
             <div
