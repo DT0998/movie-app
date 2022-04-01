@@ -7,8 +7,8 @@ import SwiperCore, { Scrollbar } from "swiper";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Aos from "aos";
-import CastCommunityTitle from "../cast-community-title";
 import CastCommunityBody from "../cast-community-body";
+import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {
@@ -36,9 +36,9 @@ export const Community = () => {
       <Container>
         <Row>
           <Col>
-            <CastCommunityTitle titlemain="Community" />
+            <CastCommunitySimilarTitle titlemain="Community" />
             <div
-              className="wrap bg_community"
+              className="wrap bg_cast-community-similar"
               data-aos="fade-down"
               data-aos-duration="1500"
             >
@@ -70,7 +70,7 @@ export const Community = () => {
                   {Peoples.map((People) => (
                     <SwiperSlide key={People.id}>
                       <CastCommunityBody
-                        classNameCard="card_cast-community card_detail"
+                        classNameCard="card_cast-community-similar"
                         img_url={IMG_ORG}
                         profile_path={People.profile_path}
                         classNamepeople="border"

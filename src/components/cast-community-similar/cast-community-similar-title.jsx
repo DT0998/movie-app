@@ -1,6 +1,6 @@
 import React from "react";
 
-function CastCommunityTitle(props) {
+function CastCommunitySimilarTitle(props) {
   return (
     <React.Fragment>
       <div className="d-flex justify-content-between align-items-center">
@@ -12,4 +12,4 @@ function CastCommunityTitle(props) {
   );
 }
 
-export default CastCommunityTitle;
+export default CastCommunitySimilarTitle;

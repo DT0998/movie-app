@@ -1,51 +1,44 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import "./similar-movie.css";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { Link } from "react-router-dom";
+import SimilarBody from "../similar-body";
+import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
-export const Similarmovie = ({ id }) => {
-  const [similar, setSimilar] = useState([]);
+export const Similartv = ({ id }) => {
+  const [Similars, setSimilars] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + `/movie/${id}/recommendations?` + API_KEY;
+  const API_URL = BASE_URL + `/tv/${id}/recommendations?` + API_KEY;
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
   const getSimilar = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setSimilar(data.results);
+    setSimilars(data.results);
   };
   useEffect(() => {
     getSimilar();
-       // after click movie
-       window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-      });
+    // after click movie
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
   }, [API_URL]);
-
-
 
   return (
     <div className="wrap_fluid cast w-100">
       <Container>
         <Row>
           <Col>
-            <div className="d-flex justify-content-between align-items-center">
-              <h1 data-aos="fade-right" data-aos-duration="1500">
-                Recommendations
-              </h1>
-            </div>
-
+            <CastCommunitySimilarTitle titlemain="Recommend" />
             <div
               className="wrap bg_recommend"
               data-aos="fade-down"
@@ -76,24 +69,18 @@ export const Similarmovie = ({ id }) => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {similar.map((similars)=>(
-                  <SwiperSlide key={similars.id}> 
-                    <Link to={`/details/movie/${similars.id}`}>
-                      <Card
-                        className="card_cast card_detail"
-                        style={{
-                          backgroundImage: `url(${
-                            IMG_ORG + similars.backdrop_path
-                          })`,
-                        }}
-                      >
-                        <div className="border">
-                          <h2>{similars.original_title}</h2>
-                          <h3>{similars.original_title}</h3>
-                        </div>
-                      </Card>
-                    </Link>
-                  </SwiperSlide>
+                  {Similars.map((Similar) => (
+                    <SwiperSlide key={Similar.id}>
+                      <SimilarBody
+                        type="tv"
+                        linkto={Similar.id}
+                        classNameCard="card_cast-community-similar"
+                        img_org={IMG_ORG}
+                        backdrop_path={Similar.backdrop_path}
+                        classNameTitle="border"
+                        original_title={Similar.original_name}
+                      />
+                    </SwiperSlide>
                   ))}
                 </div>
               </Swiper>

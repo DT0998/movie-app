@@ -2,10 +2,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { CastTv } from "../cast-community/cast-tv/cast-tv";
-import { Similartv } from "../similar-tvshow/similar-tvshow";
 import "./details-tvshow.css";
 import Aos from "aos";
+import { CastTv } from "../cast-community-similar/cast-tv-slide/cast-tv-slide";
+import { Similartv } from "../cast-community-similar/similar-tvshow-slide/similar-tvshow";
 
 export const Detailstvshow = ({ id }) => {
   const [tvshow, setTvshow] = useState({});

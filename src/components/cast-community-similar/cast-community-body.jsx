@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import './cast-community-body.css'
+import './cast-community-similar-body.css'
 function CastCommunityBody(props) {
   return (
     <React.Fragment>

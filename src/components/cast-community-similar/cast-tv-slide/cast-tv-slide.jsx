@@ -6,7 +6,7 @@ import SwiperCore, { Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import CastCommunityBody from "../cast-community-body";
-import CastCommunityTitle from "../cast-community-title";
+import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const CastTv = ({ id }) => {
@@ -28,14 +28,14 @@ export const CastTv = ({ id }) => {
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid cast w-100">
+    <div className="wrap_fluid cast-community-similar w-100">
       <Container>
         <Row>
           <Col>
-          <CastCommunityTitle titlemain="Cast"/>
+          <CastCommunitySimilarTitle titlemain="Cast"/>
 
             <div
-              className="wrap bg_cast"
+              className="wrap bg_cast-community-similar"
               data-aos="fade-down"
               data-aos-duration="1500"
             >
@@ -67,7 +67,7 @@ export const CastTv = ({ id }) => {
                   {Casts.map((Cast) => (
                     <SwiperSlide key={Cast.id}>
                       <CastCommunityBody
-                        classNameCard="card_cast-community card_detail"
+                        classNameCard="card_cast-community-similar"
                         img_url={IMG_ORG}
                         profile_path={Cast.profile_path}
                         classNamepeople="border"
