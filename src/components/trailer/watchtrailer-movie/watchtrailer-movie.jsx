@@ -2,10 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import React from "react";
-import "./watchtrailermovie.css";
-import Aos from "aos";
+import "../trailer.css";
 import { Modal } from "react-bootstrap";
-import { Buttonsquare } from "../buttons/button-square/button-square";
+import { Buttonsquare } from "../../buttons/button-square/button-square";
 
 export const TrailerMovie = ({ id }) => {
   const [lgShow, setLgShow] = useState(false);
@@ -15,7 +14,7 @@ export const TrailerMovie = ({ id }) => {
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL = BASE_URL + `/movie/${id}/videos?` + API_KEY;
 
-  // fetch movie api
+  // fetch movie trailer api
   const getTrailer = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
@@ -23,8 +22,6 @@ export const TrailerMovie = ({ id }) => {
   };
   useEffect(() => {
     getTrailer();
-    // use aos
-    Aos.init();
   }, [API_URL]);
 
   return (
