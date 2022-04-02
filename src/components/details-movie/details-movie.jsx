@@ -1,16 +1,17 @@
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Aos from "aos";
 import "./details-movie.css";
-import {TrailerMovie } from "../watchtrailermovie/watchtrailermovie";
+import { TrailerMovie } from "../watchtrailermovie/watchtrailermovie";
 import { CastMovie } from "../cast-community-similar/cast-movie-slide/cast-movie-slide";
 import { Similarmovie } from "../cast-community-similar/similar-movie-slide/similar-movie";
+import Details from "../details/details";
 
 export const Detailsmovie = ({ id }) => {
   const [movie, setMovie] = useState({});
-  const [genres,setGenres] = useState([])
+  const [genres, setGenres] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -22,7 +23,7 @@ export const Detailsmovie = ({ id }) => {
   const getTrending = async function () {
     let response = await axios.get(API_URL);
     setMovie(response.data);
-    setGenres(response.data.genres)
+    setGenres(response.data.genres);
   };
 
   useEffect(() => {
@@ -34,10 +35,9 @@ export const Detailsmovie = ({ id }) => {
   // change title
   document.title = movie?.original_title;
 
-
   return (
-    <div>
-      <div
+    <React.Fragment>
+      {/* <div
         className="wrap_fluid details"
         style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
       >
@@ -72,7 +72,27 @@ export const Detailsmovie = ({ id }) => {
         </Container>
       </div>
       <CastMovie id={id} />
-      <Similarmovie id={id} />
-    </div>
+      <Similarmovie id={id} /> */}
+      <Details
+        classNameDetails="wrap_fluid details"
+        img_org={IMG_ORG}
+        backdrop_path={movie.backdrop_path}
+        classNameDetailsImgContainer="wrap details_img"
+        img_url={IMG_URL}
+        poster_path={movie.poster_path}
+        alt={movie.name}
+        classNameDetailsImg="details_img"
+        classNameDetailsContent="wrap details_content"
+        classNameDetailsTitle="details_title"
+        original_title={movie.original_title}
+        overview={movie.overview}
+        genres={genres}
+        classNameGenres="border-genres"
+        genresid={genres.id}
+        genresname={genres.name}
+        release_date={movie.release_date}
+        id={id}
+      />
+    </React.Fragment>
   );
 };

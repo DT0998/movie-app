@@ -66,7 +66,7 @@ export const Detailstvshow = ({ id }) => {
                 </ul>
                 <p>Release day: {tvshow.first_air_date}</p>
               </div>
-              {/* <Trailer id={id}/> */}
+              {/* <TrailerMovie id={id}/> */}
             </Col>
           </Row>
         </Container>
