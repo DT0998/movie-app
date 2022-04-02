@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Detailstvshow } from '../../components/details-tvshow/details-tvshow';
+import { Detailstvshow } from '../../components/details/details-tvshow/details-tvshow';
 
 
 export const Detailspagetvshow = () => {

@@ -29,35 +29,42 @@ export const TrailerMovie = ({ id }) => {
 
   return (
     <React.Fragment>
-      <Buttonsquare
-        onClick={() => setLgShow(true)}
-        className="btn_info_watch"
-        title="Watch now"
-      />
+      {!Trailers.length === 0 ? null : (
+        <React.Fragment>
+          <Buttonsquare
+            onClick={() => setLgShow(true)}
+            className="btn_info_watch"
+            title="Watch now"
+          />
           <Modal
             size="lg"
             show={lgShow}
             onHide={() => setLgShow(false)}
             aria-labelledby="example-modal-sizes-title-lg"
             className="d-flex align-items-center justify-content-center"
-            >
+          >
             <Modal.Header closeButton>
               <Modal.Title id="example-modal-sizes-title-lg">
                 Play Trailer
               </Modal.Title>
             </Modal.Header>
-            {Trailers.map((trailer,index) => index  === 6 && (
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${trailer.key}`}
-                title={trailer.name}
-                key={trailer.id}
-                frameBorder="0"
-                allowFullscreen
-              />
-              ))}
+            {Trailers.map(
+              (trailer, index) =>
+                index === 6 && (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${trailer.key}`}
+                    title={trailer.name}
+                    key={trailer.id}
+                    frameBorder="0"
+                    allowFullscreen
+                  />
+                )
+            )}
           </Modal>
+        </React.Fragment>
+      )}
     </React.Fragment>
   );
 };

@@ -39,16 +39,5 @@
     font-weight: 700;
   }
   
-  .border-genres{
-    color: black;
-    padding: 5px 15px;
-    margin-right: 0.5rem;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;
-  }
+
   
