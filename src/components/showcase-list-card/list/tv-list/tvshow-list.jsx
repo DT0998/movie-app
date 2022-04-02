@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
-import { CardBody } from "../../cardbody";
 import ListTitle from "../../list-title";
-import "../../cardbody.css";
+import "../../card.css";
 import "../../list.css";
+import { Cards } from "../../card";
 
 
 export const Tvshowlist = () => {
@@ -63,7 +63,7 @@ export const Tvshowlist = () => {
               data-aos-duration="1500"
             >
               {tvshows.map((tvshow) => (
-                <CardBody
+                <Cards
                   classNameCard="card_container mx-2 my-2"
                   key={tvshow.id}
                   type="tv"

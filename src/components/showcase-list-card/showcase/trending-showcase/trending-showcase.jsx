@@ -5,8 +5,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import ShowcaseTitle from "../../showcasetitle";
-import {CardBody} from "../../cardbody";
+import ShowcaseTitle from "../../showcase-title";
+import { Cards } from "../../card";
 
 export const Trendingshowcase = () => {
   const [movietrending, setMovietrending] = useState([]);
@@ -51,7 +51,7 @@ export const Trendingshowcase = () => {
                 ? movietrending.map(
                     (movie, index) =>
                       index < 5 && (
-                        <CardBody
+                        <Cards
                           classNameCard="card_container isDesktop"
                           key={movie.id}
                           type="movie"
@@ -77,7 +77,7 @@ export const Trendingshowcase = () => {
                 ? movietrending.map(
                     (movie, index) =>
                       index < 4 && (
-                        <CardBody
+                        <Cards
                           classNameCard="card_container isTablet"
                           key={movie.id}
                           type="tv"
@@ -103,7 +103,7 @@ export const Trendingshowcase = () => {
                 ? movietrending.map(
                     (movie, index) =>
                       index < 2 && (
-                        <CardBody
+                        <Cards
                           classNameCard="card_container isMobile"
                           key={movie.id}
                           type="tv"

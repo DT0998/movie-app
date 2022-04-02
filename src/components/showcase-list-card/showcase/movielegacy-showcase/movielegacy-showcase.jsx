@@ -4,8 +4,8 @@ import { Container, Col, Row } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import Aos from "aos";
-import ShowcaseTitle from "../../showcasetitle";
-import { CardBody} from "../../cardbody";
+import ShowcaseTitle from "../../showcase-title";
+import { Cards } from "../../card";
 
 export const Movielegacyshowcase = () => {
   const [movielegacy, setMovielegacy] = useState([]);
@@ -50,7 +50,7 @@ export const Movielegacyshowcase = () => {
                 ? movielegacy.map(
                     (movie, index) =>
                       index < 5 && (
-                        <CardBody
+                        <Cards
                           classNameCard="card_container isDesktop"
                           key={movie.id}
                           type="movie"
@@ -76,7 +76,7 @@ export const Movielegacyshowcase = () => {
                 ? movielegacy.map(
                     (movie, index) =>
                       index < 4 && (
-                        <CardBody
+                        <Cards
                           classNameCard="card_container isTablet"
                           key={movie.id}
                           type="tv"
@@ -102,7 +102,7 @@ export const Movielegacyshowcase = () => {
                 ? movielegacy.map(
                     (movie, index) =>
                       index < 2 && (
-                        <CardBody
+                        <Cards
                           classNameCard="card_container isMobile"
                           key={movie.id}
                           type="tv"

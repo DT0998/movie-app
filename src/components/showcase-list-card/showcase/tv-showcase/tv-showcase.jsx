@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import { CardBody } from "../../cardbody";
-import ShowcaseTitle from "../../showcasetitle";
+import ShowcaseTitle from "../../showcase-title";
+import { Cards } from "../../card";
 
 export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
@@ -51,7 +51,7 @@ export const Tvshowcase = () => {
                 ? tvshows.map(
                   (tvshow, index) =>
                     index < 5 && (
-                      <CardBody
+                      <Cards
                         classNameCard="card_container isDesktop"
                         key={tvshow.id}
                         type="tv"
@@ -77,7 +77,7 @@ export const Tvshowcase = () => {
                 ? tvshows.map(
                   (tvshow, index) =>
                     index < 4 && (
-                      <CardBody
+                      <Cards
                         classNameCard="card_container isTablet"
                         key={tvshow.id}
                         type="tv"
@@ -103,7 +103,7 @@ export const Tvshowcase = () => {
                 ? tvshows.map(
                   (tvshow, index) =>
                     index < 2 && (
-                      <CardBody
+                      <Cards
                         classNameCard="card_container isMobile"
                         key={tvshow.id}
                         type="tv"

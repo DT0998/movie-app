@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { Container, Col, Row} from "react-bootstrap";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
-import { CardBody } from "../../cardbody";
 import ListTitle from "../../list-title";
-import '../../cardbody.css';
+import '../../card.css';
 import '../../list.css';
+import { Cards } from "../../card";
 
 export const Movielegacylist = () => {
   const [page, setPage] = useState(1);
@@ -64,7 +64,7 @@ export const Movielegacylist = () => {
               data-aos-duration="1500"
             >
               {movielegacy.map((movie) => (
-                <CardBody
+                <Cards
                   classNameCard="card_container mx-2 my-2"
                   key={movie.id}
                   type="movie"

@@ -1,9 +1,9 @@
 import {Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./cardbody.css";
+import "./card.css";
 // media query hook
 
-export const CardBody = (props) => {
+export const Cards = (props) => {
   return (
       <Card className={props.classNameCard}>
         <Link to={`/details/${props.type}/${props.id}`}>

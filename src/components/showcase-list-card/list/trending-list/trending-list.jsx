@@ -6,25 +6,22 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
+import ListTitle from "../../list-title";
+import "../../card.css";
+import "../../list.css";
+import { Cards } from "../../card";
 
-const options = [
-  { value: 'Popularity Descending', label: "Popularity Descending" },
-  { value: 'Popularity Ascending', label: "Popularity Ascending" },
-  { value: 'Rating Descending', label: "Rating Descending" },
-  { value: 'Rating Ascending', label: "Rating Ascending" },
-];
 export const Trendinglist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [movietrending, setMovietrending] = useState([]);
-  const [Selected, setSelected] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const SORT_TYPE = "&sort_by=popularity.desc"
+  const SORT_TYPE = "&sort_by=popularity.desc";
   const API_URL = BASE_URL + "/trending/movie/week?" + API_KEY + PAGE;
-  const API_SORT = BASE_URL + "/discover/movie?" + API_KEY + SORT_TYPE
+  const API_SORT = BASE_URL + "/discover/movie?" + API_KEY + SORT_TYPE;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
@@ -57,16 +54,14 @@ export const Trendinglist = () => {
       <Container>
         <Row>
           <Col>
-            <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
-              <h2 data-aos="fade-right" data-aos-duration="1500">
-                TRENDING
-              </h2>
+            <div className="wrap">
+              <ListTitle classNameTitle="title_content" titlemain="TRENDING" />
             </div>
           </Col>
         </Row>
         <Row className="d-flex">
           <Col xs={12} md={4} lg={3}>
-          <SortTable />
+            <SortTable />
           </Col>
           <Col xs={12} md={8} lg={9}>
             <div
@@ -74,28 +69,32 @@ export const Trendinglist = () => {
               data-aos="fade-down"
               data-aos-duration="1500"
             >
-              {movietrending.map((movie, index) => (
-                <Card className="card_container mx-2 my-2" key={index}>
-                  <Link to={`/details/movie/${movie.id}`}>
-                    <img
-                      src={IMG_URL + movie.poster_path}
-                      alt={movie.original_name}
-                      className="img_feature card-img-top"
-                    />
-                    <div className="card-body card_trending">
-                      <p className="card-text card-title">
-                        {movie.title || movie.original_name}
-                      </p>
-                      <p className="card-text">
-                        {movie.release_date || movie.first_air_date}
-                      </p>
-                      <p className="card-text">{movie.vote_average}</p>
-                    </div>
-                  </Link>
-                </Card>
+              {movietrending.map((movie) => (
+                <Cards
+                  classNameCard="card_container mx-2 my-2"
+                  key={movie.id}
+                  type="movie"
+                  id={movie.id}
+                  img_url={IMG_URL}
+                  poster_path={movie.poster_path}
+                  originalalt={movie.original_name}
+                  classNameImg="img_showcase card-img-top"
+                  classNameCardBody="card-body card_showcase"
+                  classNameTitle="card-text card-title"
+                  originaltitle={movie.original_name}
+                  title={movie.title}
+                  classNameText="card-text"
+                  first_air_date={movie.first_air_date}
+                  release_date={movie.release_date}
+                  vote_average={movie.vote_average}
+                />
               ))}
               {page < totalpage ? (
-             <Buttonsquare onClick={loadMore} className="btn_loadmore" title="load more"/>
+                <Buttonsquare
+                  onClick={loadMore}
+                  className="btn_loadmore"
+                  title="load more"
+                />
               ) : null}
             </div>
           </Col>

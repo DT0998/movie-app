@@ -4,11 +4,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row} from "react-bootstrap";
 import ListTitle from "../../list-title";
-import "../../cardbody.css";
+import "../../card.css";
 import "../../list.css";
 import SortTable from "../../../sortTable/sortTable";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
-import { CardBody } from "../../cardbody";
+import { Cards } from "../../card";
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
@@ -61,7 +61,7 @@ export const Movielist = () => {
               data-aos-duration="1500"
             >
               {movietoprate.map((movie) => (
-                <CardBody
+                <Cards
                   classNameCard="card_container mx-2 my-2"
                   key={movie.id}
                   type="movie"
