@@ -40,7 +40,7 @@ function Details(props) {
                 {<GenresMovie id={props.id} /> || <GenresTV id={props.id} />}
                 <p>Release day: {props.release_date || props.first_air_date}</p>
               </div>
-              {/* <TrailerMovie id={props.id} /> */}
+              <TrailerMovie id={props.id} />
               <TrailerTV id={props.id} />
             </Col>
           </Row>

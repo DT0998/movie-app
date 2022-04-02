@@ -26,7 +26,7 @@ export const TrailerTV = ({ id }) => {
 
   return (
     <React.Fragment>
-      {!Trailers.length === 0 ? null : (
+      {Trailers.length === 0 ? null : (
         <React.Fragment>
           <Buttonsquare
             onClick={() => setLgShow(true)}
@@ -47,7 +47,7 @@ export const TrailerTV = ({ id }) => {
             </Modal.Header>
             {Trailers.map(
               (trailer, index) =>
-                index === 1 && (
+                (index === 1 || index === 0) && (
                   <iframe
                     width="100%"
                     height="100%"
