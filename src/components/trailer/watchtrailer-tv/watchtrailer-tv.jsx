@@ -47,7 +47,7 @@ export const TrailerTV = ({ id }) => {
             </Modal.Header>
             {Trailers.map(
               (trailer, index) =>
-                index === 6 && (
+                index === 1 && (
                   <iframe
                     width="100%"
                     height="100%"

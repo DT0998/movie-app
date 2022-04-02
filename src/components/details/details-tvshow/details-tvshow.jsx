@@ -41,7 +41,7 @@ export const Detailstvshow = ({ id }) => {
         classNameDetailsImg="details_img"
         classNameDetailsContent="wrap details_content"
         classNameDetailsTitle="details_title"
-        original_title={tvshow.original_title}
+        original_title={tvshow.name}
         overview={tvshow.overview}
         first_air_date={tvshow.first_air_date}
       />
