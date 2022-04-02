@@ -55,7 +55,7 @@ export const TrailerTV = ({ id }) => {
                     title={trailer.name}
                     key={trailer.id}
                     frameBorder="0"
-                    allowFullscreen
+                    allowFullScreen
                   />
                 )
             )}

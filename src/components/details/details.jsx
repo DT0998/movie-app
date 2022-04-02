@@ -5,7 +5,7 @@ import { Similarmovie } from "../cast-community-similar/similar-movie-slide/simi
 import { TrailerMovie } from "../trailer/watchtrailer-movie/watchtrailer-movie";
 import GenresMovie from "./genres/genres-movie";
 import GenresTV from "./genres/genres-tv";
-import './details.css'
+import "./details.css";
 import { TrailerTV } from "../trailer/watchtrailer-tv/watchtrailer-tv";
 
 function Details(props) {
@@ -37,10 +37,11 @@ function Details(props) {
                   {props.original_title}
                 </p>
                 <p>{props.overview}</p>
-                {<GenresMovie id={props.id} /> || <GenresTV id={props.id}/>}
+                {<GenresMovie id={props.id} /> || <GenresTV id={props.id} />}
                 <p>Release day: {props.release_date || props.first_air_date}</p>
               </div>
-              {<TrailerMovie id={props.id} /> || <TrailerTV id={props.id}/>}
+              {/* <TrailerMovie id={props.id} /> */}
+              <TrailerTV id={props.id} />
             </Col>
           </Row>
         </Container>
