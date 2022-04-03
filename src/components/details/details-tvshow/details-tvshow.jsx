@@ -31,6 +31,7 @@ export const Detailstvshow = ({ id }) => {
     <React.Fragment>
       <Details
         id={id}
+        type="tv"
         classNameDetails="wrap_fluid details"
         img_org={IMG_ORG}
         backdrop_path={tvshow.backdrop_path}

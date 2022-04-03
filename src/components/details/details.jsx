@@ -37,11 +37,10 @@ function Details(props) {
                   {props.original_title}
                 </p>
                 <p>{props.overview}</p>
-                {<GenresMovie id={props.id} /> || <GenresTV id={props.id} />}
+                {props.type === "movie" ? <GenresMovie id={props.id} /> : props.type === "tv" ? <GenresTV id={props.id} /> : null}
                 <p>Release day: {props.release_date || props.first_air_date}</p>
               </div>
-              <TrailerMovie id={props.id} />
-              <TrailerTV id={props.id} />
+              {props.type === "movie" ? <TrailerMovie id={props.id} />: props.type ==="tv" ? <TrailerTV id={props.id} /> : null}
             </Col>
           </Row>
         </Container>

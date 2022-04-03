@@ -12,6 +12,7 @@ function GenresTV({ id }) {
   const getGenres = async function () {
     let response = await axios.get(API_URL);
     setGenres(response.data.genres);
+    console.log(response.data.genres);
   };
 
   useEffect(() => {

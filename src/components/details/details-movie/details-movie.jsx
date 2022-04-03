@@ -32,6 +32,7 @@ export const Detailsmovie = ({ id }) => {
     <React.Fragment>
       <Details
         id={id}
+        type="movie"
         classNameDetails="wrap_fluid details"
         img_org={IMG_ORG}
         backdrop_path={movie.backdrop_path}
