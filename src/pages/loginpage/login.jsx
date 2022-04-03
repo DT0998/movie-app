@@ -1,11 +1,11 @@
-import { Loginform } from '../../components/login-form/login-form';
-import './login.css'
+import React from "react";
+import Login from "../../components/login/login";
 export const Loginpage = () => {
-     // change title
-     document.title = "Login";
+  // change title
+  document.title = "Login";
   return (
-    <div className='login'>
-      <Loginform/>
-    </div>
+    <React.Fragment>
+      <Login />
+    </React.Fragment>
   );
 };

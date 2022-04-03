@@ -1,6 +1,3 @@
-import "./login-quotes.css";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
