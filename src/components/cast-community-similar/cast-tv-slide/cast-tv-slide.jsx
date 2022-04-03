@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
 import "swiper/css";
@@ -22,6 +22,7 @@ export const CastTv = ({ id }) => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setCasts(data.cast);
+    console.log(data.cast);
   };
   useEffect(() => {
     getCast();
@@ -30,56 +31,57 @@ export const CastTv = ({ id }) => {
   return (
     <div className="wrap_fluid cast-community-similar w-100">
       <Container>
-        <Row>
-          <Col>
-          <CastCommunitySimilarTitle titlemain="Cast"/>
-
-            <div
-              className="wrap bg_cast-community-similar"
-              data-aos="fade-down"
-              data-aos-duration="1500"
-            >
-              <Swiper
-                slidesPerView={4}
-                scrollbar={{
-                  " dragable": true,
-                }}
-                breakpoints={{
-                  // when window width is >= 320px
-                  320: {
-                    slidesPerView: 1,
-                  },
-                  // when window width is >= 480px
-                  425: {
-                    slidesPerView: 2,
-                  },
-                  // when window width is >= 640px
-                  640: {
-                    slidesPerView: 3,
-                  },
-                  // when window width is >= 1024px
-                  1024: {
-                    slidesPerView: 4,
-                  },
-                }}
+        {Casts.length === 0 ? null : (
+          <Row>
+            <Col>
+              <CastCommunitySimilarTitle titlemain="Cast" />
+              <div
+                className="wrap bg_cast-community-similar"
+                data-aos="fade-down"
+                data-aos-duration="1500"
               >
-                <div className="d-flex flex-column justify-content-around">
-                  {Casts.map((Cast) => (
-                    <SwiperSlide key={Cast.id}>
-                      <CastCommunityBody
-                        classNameCard="card_cast-community-similar"
-                        img_url={IMG_ORG}
-                        profile_path={Cast.profile_path}
-                        classNamepeople="border"
-                        peoplename={Cast.name}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </div>
-              </Swiper>
-            </div>
-          </Col>
-        </Row>
+                <Swiper
+                  slidesPerView={4}
+                  scrollbar={{
+                    " dragable": true,
+                  }}
+                  breakpoints={{
+                    // when window width is >= 320px
+                    320: {
+                      slidesPerView: 1,
+                    },
+                    // when window width is >= 480px
+                    425: {
+                      slidesPerView: 2,
+                    },
+                    // when window width is >= 640px
+                    640: {
+                      slidesPerView: 3,
+                    },
+                    // when window width is >= 1024px
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                  }}
+                >
+                  <div className="d-flex flex-column justify-content-around">
+                    {Casts.map((Cast) => (
+                      <SwiperSlide key={Cast.id}>
+                        <CastCommunityBody
+                          classNameCard="card_cast-community-similar"
+                          img_url={IMG_ORG}
+                          profile_path={Cast.profile_path}
+                          classNamepeople="border"
+                          peoplename={Cast.name}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </div>
+                </Swiper>
+              </div>
+            </Col>
+          </Row>
+        )}
       </Container>
     </div>
   );
