@@ -43,6 +43,7 @@ export const Detailsmovie = ({ id }) => {
         classNameDetailsImg="details_img"
         classNameDetailsContent="wrap details_content"
         classNameDetailsTitle="details_title"
+        classNameDay="release_day"
         original_title={movie.original_title}
         overview={movie.overview}
         release_date={movie.release_date}

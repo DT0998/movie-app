@@ -18,7 +18,7 @@ function GenresTV({ id }) {
     getGenres();
   }, [API_URL]);
   return (
-    <ul className="d-flex">
+    <ul className="d-flex flex-wrap">
       {genres.map((genre) => (
         <li className="border-genres" key={genre.id}>
           {genre.name}
