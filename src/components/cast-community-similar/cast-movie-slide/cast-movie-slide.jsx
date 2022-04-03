@@ -22,7 +22,6 @@ export const CastMovie = ({ id }) => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setCastsMovie(data.cast);
-    console.log(response.data.cast);
   };
   useEffect(() => {
     getCast();
