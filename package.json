@@ -1,0 +1,57 @@
+{
+  "name": "movie-app",
+  "version": "0.1.0",
+  "private": false,
+  "homepage": "https://dt0998.github.io/movie-app/",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
+    "gh-pages": "^3.2.3",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.1.0",
+    "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "5.0.0",
+    "react-select": "^5.2.2",
+    "swiper": "^7.4.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "eslint": "8.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start && set PORT=6060",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
