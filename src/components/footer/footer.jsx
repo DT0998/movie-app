@@ -1,12 +1,6 @@
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./footer.css";
 import logo from "../../assets/footer/logo.svg";
-import {
-    faFacebook,
-    faDiscord,
-    faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { FaDiscord,FaGithub,FaFacebook } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
 
 export const Footer = () => {
@@ -26,21 +20,18 @@ export const Footer = () => {
                 <Row>
                     <Col>
                         <div className="text-center">
-                            <FontAwesomeIcon
-                                icon={faGithub}
-                                alt=""
+                            <FaGithub
+                                alt="github"
                                 className="logo_social logo_github"
-                            ></FontAwesomeIcon>
-                            <FontAwesomeIcon
-                                icon={faDiscord}
-                                alt=""
+                            />
+                            <FaDiscord
+                                alt="discord"
                                 className="logo_social logo_discord"
-                            ></FontAwesomeIcon>
-                            <FontAwesomeIcon
-                                icon={faFacebook}
-                                alt=""
+                            />
+                            <FaFacebook
+                                alt="facebook"
                                 className="logo_social logo_facebook"
-                            ></FontAwesomeIcon>
+                            />
                         </div>
                     </Col>
                 </Row>

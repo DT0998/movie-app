@@ -41,9 +41,14 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   height: auto;
+  width: 98%;
 }
 
-
+@media (min-width:768px) {
+  .nav_fluid.sticky {
+  width: 100%;
+  }
+}
 @media (min-width: 1440px) {
   .wrap.nav {
     padding: 5px 10px;
