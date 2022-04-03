@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
@@ -10,7 +10,7 @@ import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const CastTv = ({ id }) => {
-  const [Casts, setCasts] = useState([]);
+  const [CastsTV, setCastsTV] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -21,68 +21,70 @@ export const CastTv = ({ id }) => {
   const getCast = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setCasts(data.cast);
-    console.log(data.cast);
+    setCastsTV(data.cast);
+    console.log(response.data.cast);
   };
   useEffect(() => {
     getCast();
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid cast-community-similar w-100">
-      <Container>
-        {Casts.length === 0 ? null : (
-          <Row>
-            <Col>
-              <CastCommunitySimilarTitle titlemain="Cast" />
-              <div
-                className="wrap bg_cast-community-similar"
-                data-aos="fade-down"
-                data-aos-duration="1500"
-              >
-                <Swiper
-                  slidesPerView={4}
-                  scrollbar={{
-                    " dragable": true,
-                  }}
-                  breakpoints={{
-                    // when window width is >= 320px
-                    320: {
-                      slidesPerView: 1,
-                    },
-                    // when window width is >= 480px
-                    425: {
-                      slidesPerView: 2,
-                    },
-                    // when window width is >= 640px
-                    640: {
-                      slidesPerView: 3,
-                    },
-                    // when window width is >= 1024px
-                    1024: {
-                      slidesPerView: 4,
-                    },
-                  }}
+    <React.Fragment>
+      {CastsTV.length === 0 ? null : (
+        <div className="wrap_fluid cast-community-similar w-100">
+          <Container>
+            <Row>
+              <Col>
+                <CastCommunitySimilarTitle titlemain="Cast" />
+                <div
+                  className="wrap bg_cast-community-similar"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
                 >
-                  <div className="d-flex flex-column justify-content-around">
-                    {Casts.map((Cast) => (
-                      <SwiperSlide key={Cast.id}>
-                        <CastCommunityBody
-                          classNameCard="card_cast-community-similar"
-                          img_url={IMG_ORG}
-                          profile_path={Cast.profile_path}
-                          classNamepeople="border"
-                          peoplename={Cast.name}
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </div>
-                </Swiper>
-              </div>
-            </Col>
-          </Row>
-        )}
-      </Container>
-    </div>
+                  <Swiper
+                    slidesPerView={4}
+                    scrollbar={{
+                      " dragable": true,
+                    }}
+                    breakpoints={{
+                      // when window width is >= 320px
+                      320: {
+                        slidesPerView: 1,
+                      },
+                      // when window width is >= 480px
+                      425: {
+                        slidesPerView: 2,
+                      },
+                      // when window width is >= 640px
+                      640: {
+                        slidesPerView: 3,
+                      },
+                      // when window width is >= 1024px
+                      1024: {
+                        slidesPerView: 4,
+                      },
+                    }}
+                  >
+                    <div className="d-flex flex-column justify-content-around">
+                      {CastsTV.map((Cast) => (
+                        <SwiperSlide key={Cast.id}>
+                          <CastCommunityBody
+                            classNameCard="card_cast-community-similar"
+                            img_url={IMG_ORG}
+                            profile_path={Cast.profile_path}
+                            classNamepeople="border"
+                            peoplename={Cast.name}
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </div>
+                  </Swiper>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )}
+    </React.Fragment>
   );
 };

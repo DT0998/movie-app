@@ -7,6 +7,8 @@ import GenresMovie from "./genres/genres-movie";
 import GenresTV from "./genres/genres-tv";
 import "./details.css";
 import { TrailerTV } from "../trailer/watchtrailer-tv/watchtrailer-tv";
+import { CastTv } from "../cast-community-similar/cast-tv-slide/cast-tv-slide";
+import { Similartv } from "../cast-community-similar/similar-tvshow-slide/similar-tvshow";
 
 function Details(props) {
   return (
@@ -45,8 +47,8 @@ function Details(props) {
           </Row>
         </Container>
       </div>
-      <CastMovie id={props.id} />
-      <Similarmovie id={props.id} />
+      {props.type === "movie" ? <CastMovie id={props.id} /> : props.type === "tv" ? <CastTv id={props.id}/> : null}
+     {props.type === "movie" ? <Similarmovie id={props.id} /> : props.type === "tv" ? <Similartv id={props.id}/> : null}
     </React.Fragment>
   );
 }
