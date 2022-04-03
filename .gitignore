@@ -17,8 +17,7 @@
 .DS_Store
 *.pem
 asset-manifest.json
-favicon.png
-index.html
+
 
 # debug
 npm-debug.log*
