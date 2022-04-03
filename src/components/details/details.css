@@ -44,7 +44,7 @@
 .release_day {
   color: black;
 }
-@media (min-width:1440px) {
+@media (min-width:768px) {
   .release_day {
     color: white;
   }
