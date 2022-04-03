@@ -79,7 +79,7 @@ export const Movielegacyshowcase = () => {
                         <Cards
                           classNameCard="card_container isTablet"
                           key={movie.id}
-                          type="tv"
+                          type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
@@ -105,7 +105,7 @@ export const Movielegacyshowcase = () => {
                         <Cards
                           classNameCard="card_container isMobile"
                           key={movie.id}
-                          type="tv"
+                          type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
