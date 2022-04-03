@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
@@ -34,6 +34,8 @@ export const Similarmovie = ({ id }) => {
   }, [API_URL]);
 
   return (
+    <React.Fragment>
+      {Similars.length === 0 ? null : (
     <div className="wrap_fluid cast-community-similar w-100">
       <Container>
         <Row>
@@ -89,5 +91,7 @@ export const Similarmovie = ({ id }) => {
         </Row>
       </Container>
     </div>
+      )}
+    </React.Fragment>
   );
 };

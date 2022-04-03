@@ -10,7 +10,7 @@ import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const CastTv = ({ id }) => {
-  const [CastsTV, setCastsTV] = useState([]);
+  const [Casts, setCasts] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -21,7 +21,7 @@ export const CastTv = ({ id }) => {
   const getCast = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setCastsTV(data.cast);
+    setCasts(data.cast);
   };
   useEffect(() => {
     getCast();
@@ -29,7 +29,7 @@ export const CastTv = ({ id }) => {
 
   return (
     <React.Fragment>
-      {CastsTV.length === 0 ? null : (
+      {Casts.length === 0 ? null : (
         <div className="wrap_fluid cast-community-similar w-100">
           <Container>
             <Row>
@@ -65,7 +65,7 @@ export const CastTv = ({ id }) => {
                     }}
                   >
                     <div className="d-flex flex-column justify-content-around">
-                      {CastsTV.map((Cast) => (
+                      {Casts.map((Cast) => (
                         <SwiperSlide key={Cast.id}>
                           <CastCommunityBody
                             classNameCard="card_cast-community-similar"

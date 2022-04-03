@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
@@ -10,7 +10,7 @@ import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const CastMovie = ({ id }) => {
-  const [CastsMovie, setCastsMovie] = useState([]);
+  const [Casts, setCasts] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -21,13 +21,15 @@ export const CastMovie = ({ id }) => {
   const getCast = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setCastsMovie(data.cast);
+    setCasts(data.cast);
   };
   useEffect(() => {
     getCast();
   }, [API_URL]);
 
   return (
+    <React.Fragment>
+    {Casts.length === 0 ? null : (
     <div className="wrap_fluid cast-community-similar w-100">
       <Container>
         <Row>
@@ -63,7 +65,7 @@ export const CastMovie = ({ id }) => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {CastsMovie.map((Cast) => (
+                  {Casts.map((Cast) => (
                     <SwiperSlide key={Cast.id}>
                       <CastCommunityBody
                         classNameCard="card_cast-community-similar"
@@ -81,5 +83,7 @@ export const CastMovie = ({ id }) => {
         </Row>
       </Container>
     </div>
+    )}
+    </React.Fragment>
   );
 };
