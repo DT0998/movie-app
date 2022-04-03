@@ -1,17 +1,14 @@
+import React from "react";
 import GoogleLogin from "react-google-login";
 
 export const Loginform = () => {
   return (
     <form className="login_form px-md-5">
-      <div className="text-xl-start text-md-center my-4 px-md-5">
-        <div>
+      <div className="text-xxl-start text-xl-center text-lg-center my-4 px-md-5 d-flex flex-column">
           <label className="login-form-title">Login</label>
-        </div>
-        <div>
-          <label className="login-form-title">
+          <label className="login-form-content">
             Login watch and chill movie
           </label>
-        </div>
         <div>
           <GoogleLogin
             buttonText="Login"
