@@ -19,7 +19,6 @@ export const TrailerTV = ({ id }) => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setTrailers(data.results);
-    console.log(data.results);
   };
   useEffect(() => {
     getTrailer();
@@ -48,7 +47,7 @@ export const TrailerTV = ({ id }) => {
             </Modal.Header>
             {Trailers.map(
               (trailer, index) =>
-                (index === 1) && (
+                (index === 0) && (
                   <iframe
                     width="100%"
                     height="100%"
