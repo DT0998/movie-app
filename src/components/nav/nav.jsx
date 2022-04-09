@@ -23,7 +23,7 @@ export const Nav = (props) => {
   // scroll nav
   const handlescroll = () => {
     const offset = window.scrollY;
-    if (offset > 100) {
+    if (offset > 20) {
       setScroll(true);
     } else {
       setScroll(false);
