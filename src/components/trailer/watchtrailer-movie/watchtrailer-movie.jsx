@@ -5,8 +5,9 @@ import React from "react";
 import "../trailer.css";
 import { Modal } from "react-bootstrap";
 import { Buttonsquare } from "../../buttons/button-square/button-square";
+import { Nav } from "../../nav/nav";
 
-export const TrailerMovie = ({ id }) => {
+export const TrailerMovie = ({ id }, props) => {
   const [lgShow, setLgShow] = useState(false);
   const [Trailers, setTrailers] = useState([]);
   // api
@@ -24,12 +25,15 @@ export const TrailerMovie = ({ id }) => {
     getTrailer();
   }, [API_URL]);
 
+
+
+
   return (
     <React.Fragment>
       {Trailers.length === 0 ? null : (
         <React.Fragment>
           <Buttonsquare
-            onClick={() => setLgShow(true)}
+            onClick={() => {setLgShow(true)}}
             className="btn_info_watch"
             title="Watch now"
           />
@@ -47,7 +51,7 @@ export const TrailerMovie = ({ id }) => {
             </Modal.Header>
             {Trailers.map(
               (trailer, index) =>
-                (index === 2) && (
+                index === 2 && (
                   <iframe
                     width="100%"
                     height="100%"

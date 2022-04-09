@@ -39,16 +39,34 @@ function Details(props) {
                   {props.original_title}
                 </p>
                 <p>{props.overview}</p>
-                {props.type === "movie" ? <GenresMovie id={props.id} /> : props.type === "tv" ? <GenresTV id={props.id} /> : null}
-                <p className={props.classNameDay}>Release day: {props.release_date || props.first_air_date}</p>
+                {props.type === "movie" ? (
+                  <GenresMovie id={props.id} />
+                ) : props.type === "tv" ? (
+                  <GenresTV id={props.id} />
+                ) : null}
+                <p className={props.classNameDay}>
+                  Release day: {props.release_date || props.first_air_date}
+                </p>
               </div>
-              {props.type === "movie" ? <TrailerMovie id={props.id} />: props.type ==="tv" ? <TrailerTV id={props.id} /> : null}
+              {props.type === "movie"  ? (
+                <TrailerMovie id={props.id} />
+              ) : props.type === "tv"  ? (
+                <TrailerTV id={props.id} />
+              ) : null}
             </Col>
           </Row>
         </Container>
       </div>
-      {props.type === "movie" ? <CastMovie id={props.id} /> : props.type === "tv" ? <CastTv id={props.id}/> : null}
-     {props.type === "movie" ? <Similarmovie id={props.id} /> : props.type === "tv" ? <Similartv id={props.id}/> : null}
+      {props.type === "movie" ? (
+        <CastMovie id={props.id} />
+      ) : props.type === "tv" ? (
+        <CastTv id={props.id} />
+      ) : null}
+      {props.type === "movie" ? (
+        <Similarmovie id={props.id} />
+      ) : props.type === "tv" ? (
+        <Similartv id={props.id} />
+      ) : null}
     </React.Fragment>
   );
 }

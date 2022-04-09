@@ -13,6 +13,8 @@ import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 
 function App() {
+ 
+
   return (
       <BrowserRouter basename="/movie-app">
         <Nav />

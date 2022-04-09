@@ -7,22 +7,33 @@ import useMediaQuery from "../../hooks/useMediaquery";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
-export const Nav = () => {
+export const Nav = (props) => {
   const isTablet = useMediaQuery("(min-width:768px)");
   const [isActive, setIsActive] = useState(false);
   //   sticky nav
   const [scroll, setScroll] = useState(false);
+  const [isShowModal, setIsShowModal] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY >= 100);
-    });
-  });
+    // scroll nav
+    window.addEventListener("scroll", handlescroll);
+    return () => window.removeEventListener("scroll", handlescroll);
+  },[]);
+  // scroll nav
+  const handlescroll = () => {
+    const offset = window.scrollY;
+    if (offset > 100) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
   // open menu mobile
   const handleClick = () => setIsActive(!isActive);
   const closeMobileMenu = () => setIsActive(false);
 
   return (
-    <Container className={`nav_fluid ${scroll ? "sticky" : "nav_fluid"}`}>
+    <Container className={`nav_fluid ${scroll && "sticky"} `} >
       {isTablet ? (
         //  desktop
         <div className="wrap_fluid">
@@ -80,8 +91,8 @@ export const Nav = () => {
                 <div className="nav_right h-100">
                   <ul className="container__list d-flex flex-row justify-content-end align-items-center gap-3 h-100">
                     <li>
-                     <MdClose onClick={()=>setIsActive(true)} />  
-                     <FaBars onClick={()=>setIsActive(false)} />
+                      <MdClose onClick={() => setIsActive(true)} />
+                      <FaBars onClick={() => setIsActive(false)} />
                     </li>
                   </ul>
                 </div>
