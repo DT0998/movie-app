@@ -1,7 +1,6 @@
 import {Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./card.css";
-// media query hook
 
 export const Cards = (props) => {
   return (

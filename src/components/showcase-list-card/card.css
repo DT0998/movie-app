@@ -45,6 +45,11 @@
   .isTablet{
     display: none;
   }
+  .card-text.card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   /* tablet */
   @media (min-width:768px) {
     .isTablet{
