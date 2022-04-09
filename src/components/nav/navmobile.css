@@ -1,0 +1,16 @@
+.dropdown{
+    /* position: absolute; */
+    width: 100%;
+    right: 0;
+    z-index: 20;
+}
+.dropdown_title{
+    border-top: 1px solid rgba(128, 128, 128, 0.301);
+    padding: 12px 12px;
+}
+.dropdown a{
+    color: black;
+}
+ul{
+    margin-bottom: 0 !important;
+}

@@ -5,7 +5,6 @@ import React from "react";
 import "../trailer.css";
 import { Modal } from "react-bootstrap";
 import { Buttonsquare } from "../../buttons/button-square/button-square";
-import { Nav } from "../../nav/nav";
 
 export const TrailerMovie = ({ id }, props) => {
   const [lgShow, setLgShow] = useState(false);

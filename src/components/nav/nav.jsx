@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaquery";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import NavMobile from "./navmobile";
 
 export const Nav = (props) => {
   const isTablet = useMediaQuery("(min-width:768px)");
-  const [isActive, setIsActive] = useState(false);
   //   sticky nav
   const [scroll, setScroll] = useState(false);
   const [isShowModal, setIsShowModal] = useState(false);
+  // nav mobile
+  const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   useEffect(() => {
     // scroll nav
     window.addEventListener("scroll", handlescroll);
     return () => window.removeEventListener("scroll", handlescroll);
-  },[]);
+  }, []);
   // scroll nav
   const handlescroll = () => {
     const offset = window.scrollY;
@@ -28,17 +30,13 @@ export const Nav = (props) => {
     }
   };
 
-  // open menu mobile
-  const handleClick = () => setIsActive(!isActive);
-  const closeMobileMenu = () => setIsActive(false);
-
   return (
-    <Container className={`nav_fluid ${scroll && "sticky"} `} >
+    <Container className={`nav_fluid ${scroll && "sticky"} `}>
       {isTablet ? (
         //  desktop
         <div className="wrap_fluid">
           <div className="wrap">
-            <Row className="d-flex flex-row justify-content-center">
+            <Row className="d-flex flex-row justify-content-center nav_container">
               <Col className="col-6">
                 <div className="nav_left h-100">
                   <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
@@ -75,7 +73,7 @@ export const Nav = (props) => {
         // mobile
         <div className="wrap_fluid">
           <div className="wrap">
-            <Row className="d-flex flex-row justify-content-center">
+            <Row className="d-flex flex-row justify-content-center nav_container">
               <Col className="col-6">
                 <div className="nav_left h-100">
                   <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
@@ -90,14 +88,26 @@ export const Nav = (props) => {
               <Col className="col-6">
                 <div className="nav_right h-100">
                   <ul className="container__list d-flex flex-row justify-content-end align-items-center gap-3 h-100">
-                    <li>
-                      <MdClose onClick={() => setIsActive(true)} />
-                      <FaBars onClick={() => setIsActive(false)} />
-                    </li>
+                    {!isOpenNavMobile ? (
+                      <FaBars
+                        onClick={() => {
+                          setIsOpenNavMobile(!isOpenNavMobile);
+                        }}
+                      />
+                    ) : (
+                      <MdClose
+                        onClick={() => {
+                          setIsOpenNavMobile(!isOpenNavMobile);
+                        }}
+                      />
+                    )}
                   </ul>
                 </div>
               </Col>
             </Row>
+                      {isOpenNavMobile && (
+                        <NavMobile setIsOpenNav={setIsOpenNavMobile} />
+                      )}
           </div>
         </div>
       )}

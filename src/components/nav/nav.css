@@ -16,6 +16,9 @@
   color: black;
   cursor: pointer;
 }
+.nav_container{
+  padding: 12px 12px;
+}
 
 .nav_fluid {
   transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -26,6 +29,7 @@
   background-color: transparent;
   border: 1px solid transparent;
   height: 100%;
+  padding: 0;
 }
 
 .nav_fluid.sticky {
@@ -42,12 +46,17 @@
   -o-transform: translateX(-50%);
   height: auto;
   width: 98%;
+  padding: 0;
 }
 
 
 @media (min-width:768px) {
   .nav_fluid.sticky {
   width: 100%;
+  padding: 0 12px;
+  }
+  .nav_fluid{
+    padding: 0 12px;
   }
 }
 @media (min-width: 1440px) {
