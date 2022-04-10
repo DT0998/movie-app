@@ -18,8 +18,9 @@ function SortTable() {
         <div className="filter_panel my-3">
           <div className="name d-flex justify-content-between align-items-center">
             <span>Sort</span>
-            <FaChevronRight className="chevron active" />
+          <FaChevronRight className="chevron active"/>
           </div>
+          
           <div className="filter d-flex flex-column">
             <span>Sort Results By</span>
             <Select className="my-2"
