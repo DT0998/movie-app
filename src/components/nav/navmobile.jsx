@@ -14,7 +14,7 @@ function NavMobile(props) {
             <li className="dropdown_title">TV Shows</li>
           </Link>
           <Link to="/search">
-            <li className="dropdown_title d-flex justify-content-between">
+            <li className="dropdown_title d-flex justify-content-between align-items-center">
               <div>Search</div>
               <FaSearch />
             </li>
