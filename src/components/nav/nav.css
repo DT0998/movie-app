@@ -52,6 +52,7 @@
   width: 25px;
 }
 
+
 @media (min-width:768px) {
   .nav_fluid.sticky {
   width: 100%;
