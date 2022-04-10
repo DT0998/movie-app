@@ -10,6 +10,7 @@ import { Loginpage } from "./pages/loginpage/login";
 import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 import Layout from "./components/layout/layout";
+import Search from "./pages/search/search";
 
 function App() {
  
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/tvshow" component={Tvshowpage} />
           <Route exact path="/movielegacy" component={Movielegacypage} />
           <Route exact path="/account" component={Loginpage} />
+          <Route exact path="/search" component={Search} />
           <Route exact path={`/details/movie/:id`} component={Detailspagemovie} />
           <Route exact path={`/details/tv/:id`} component={Detailspagetvshow} />
         </Switch>
