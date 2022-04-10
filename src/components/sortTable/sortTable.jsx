@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BsChevronCompactRight } from "react-icons/bs";
+import { FaChevronRight } from "react-icons/fa";
 import Select from 'react-select';
 import './sortTable.css'
 
@@ -18,7 +18,7 @@ function SortTable() {
         <div className="filter_panel my-3">
           <div className="name d-flex justify-content-between align-items-center">
             <span>Sort</span>
-            <BsChevronCompactRight className="chevron active" />
+            <FaChevronRight className="chevron active" />
           </div>
           <div className="filter d-flex flex-column">
             <span>Sort Results By</span>
