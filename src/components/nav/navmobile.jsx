@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navmobile.css";
 import { FaSearch } from "react-icons/fa";
-function NavMobile(props) {
+function NavMobile() {
   return (
     <React.Fragment>
       <div className="dropdown">
@@ -10,7 +10,7 @@ function NavMobile(props) {
           <Link to="/movie">
             <li className="dropdown_title">Movie</li>
           </Link>
-          <Link to="/tvshow">
+          <Link to="/tvshow" >
             <li className="dropdown_title">TV Shows</li>
           </Link>
           <Link to="/search">
