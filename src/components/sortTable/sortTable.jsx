@@ -46,7 +46,7 @@ function SortTable() {
       </div>
       <div
         className={`d-flex justify-content-center ${
-          Selected && isOpenTable ? "search_btn" : "disable search_btn"
+          Selected  ? "search_btn" : "disable search_btn"
         }`}
       >
         Search
