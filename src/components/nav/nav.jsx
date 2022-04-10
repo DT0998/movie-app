@@ -15,6 +15,8 @@ export const Nav = (props) => {
   const [isShowModal, setIsShowModal] = useState(false);
   // nav mobile
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
+  // overlay
+  const [isOpenNavOverlay,setIsOpenOverlay] = useState(false)
   useEffect(() => {
     // scroll nav
     window.addEventListener("scroll", handlescroll);
@@ -25,9 +27,12 @@ export const Nav = (props) => {
     const offset = window.scrollY;
     if (offset > 20) {
       setScroll(true);
+      setIsOpenOverlay(true)
     } else {
       setScroll(false);
+      setIsOpenOverlay(false)
     }
+
   };
   
 
@@ -75,7 +80,7 @@ export const Nav = (props) => {
       ) : (
         // mobile
         <React.Fragment>
-          {isOpenNavMobile && <div className="overlay overlay-effect"></div> }
+          {isOpenNavOverlay && isOpenNavMobile && <div className="overlay_main overlay-effect"></div> }
             <Container className={`nav_fluid ${scroll && "sticky" }`}>
               <div className="wrap_fluid">
                 <div className="wrap">
@@ -99,6 +104,7 @@ export const Nav = (props) => {
                               className="icons_menu"
                               onClick={() => {
                                 setIsOpenNavMobile(!isOpenNavMobile);
+                                setIsOpenOverlay(true)
                               }}
                             />
                           ) : (
@@ -106,6 +112,7 @@ export const Nav = (props) => {
                               className="icons_menu"
                               onClick={() => {
                                 setIsOpenNavMobile(!isOpenNavMobile);
+                                setIsOpenOverlay(false)
                               }}
                             />
                           )}
