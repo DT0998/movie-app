@@ -103,7 +103,7 @@ export const Nav = (props) => {
                             <FaBars
                               className="icons_menu"
                               onClick={() => {
-                                setIsOpenNavMobile(!isOpenNavMobile);
+                                setIsOpenNavMobile(true);
                                 setIsOpenOverlay(true)
                               }}
                             />
@@ -111,7 +111,7 @@ export const Nav = (props) => {
                             <MdClose
                               className="icons_menu"
                               onClick={() => {
-                                setIsOpenNavMobile(!isOpenNavMobile);
+                                setIsOpenNavMobile(false);
                                 setIsOpenOverlay(false)
                               }}
                             />

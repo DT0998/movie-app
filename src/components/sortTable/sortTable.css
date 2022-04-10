@@ -34,12 +34,7 @@ h1 {
   background-color: white;
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
-.chevron {
-  transform: rotate(0deg);
-}
-.active {
-  transform: rotate(90deg);
-}
+
 .box_select {
   padding: 5px 16px;
   border-radius: 5px;
