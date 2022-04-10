@@ -7,17 +7,16 @@ import { Trendingpage } from "./pages/trendingpage/trending";
 import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
 import { Movielegacypage } from './pages/movielegacypage/movielegacypage'
 import { Loginpage } from "./pages/loginpage/login";
-import { Footer } from "./components/footer/footer";
-import { Nav } from "./components/nav/nav";
 import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
+import Layout from "./components/layout/layout";
 
 function App() {
  
 
   return (
       <BrowserRouter basename="/movie-app">
-        <Nav />
+        <Layout>
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/trending" component={Trendingpage} />
@@ -28,7 +27,7 @@ function App() {
           <Route exact path={`/details/movie/:id`} component={Detailspagemovie} />
           <Route exact path={`/details/tv/:id`} component={Detailspagetvshow} />
         </Switch>
-        <Footer />
+        </Layout>
       </BrowserRouter>
   );
 }
