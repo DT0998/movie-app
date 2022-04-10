@@ -29,6 +29,7 @@ export const Nav = (props) => {
       setScroll(false);
     }
   };
+  
 
   return (
     <React.Fragment>
@@ -73,49 +74,52 @@ export const Nav = (props) => {
         </Container>
       ) : (
         // mobile
-          <Container className={`nav_fluid ${scroll && "sticky"}`}>
-            <div className="wrap_fluid">
-              <div className="wrap">
-                <Row className="d-flex flex-row justify-content-center nav_container">
-                  <Col className="col-6">
-                    <div className="nav_left h-100">
-                      <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
-                        <li>
-                          <Link to="/">
-                            <img src={logo} className="logo" alt="logo"></img>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </Col>
-                  <Col className="col-6">
-                    <div className="nav_right h-100">
-                      <ul className="container__list d-flex flex-row justify-content-end align-items-center gap-3 h-100">
-                        {!isOpenNavMobile ? (
-                          <FaBars
-                            className="icons_menu"
-                            onClick={() => {
-                              setIsOpenNavMobile(!isOpenNavMobile);
-                            }}
-                          />
-                        ) : (
-                          <MdClose
-                            className="icons_menu"
-                            onClick={() => {
-                              setIsOpenNavMobile(!isOpenNavMobile);
-                            }}
-                          />
-                        )}
-                      </ul>
-                    </div>
-                  </Col>
-                </Row>
-                {isOpenNavMobile && (
-                  <NavMobile setIsOpenNav={setIsOpenNavMobile} />
-                )}
+        <React.Fragment>
+          {isOpenNavMobile && <div className="overlay overlay-effect"></div> }
+            <Container className={`nav_fluid ${scroll && "sticky" }`}>
+              <div className="wrap_fluid">
+                <div className="wrap">
+                  <Row className="d-flex flex-row justify-content-center nav_container">
+                    <Col className="col-6">
+                      <div className="nav_left h-100">
+                        <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
+                          <li>
+                            <Link to="/">
+                              <img src={logo} className="logo" alt="logo"></img>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </Col>
+                    <Col className="col-6">
+                      <div className="nav_right h-100">
+                        <ul className="container__list d-flex flex-row justify-content-end align-items-center gap-3 h-100">
+                          {!isOpenNavMobile ? (
+                            <FaBars
+                              className="icons_menu"
+                              onClick={() => {
+                                setIsOpenNavMobile(!isOpenNavMobile);
+                              }}
+                            />
+                          ) : (
+                            <MdClose
+                              className="icons_menu"
+                              onClick={() => {
+                                setIsOpenNavMobile(!isOpenNavMobile);
+                              }}
+                            />
+                          )}
+                        </ul>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
               </div>
-            </div>
-          </Container>
+                  {isOpenNavMobile && (
+                    <NavMobile setIsOpenNav={setIsOpenNavMobile} />
+                  )}
+            </Container>
+        </React.Fragment>
       )}
     </React.Fragment>
   );
