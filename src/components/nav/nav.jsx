@@ -90,12 +90,14 @@ export const Nav = (props) => {
                   <ul className="container__list d-flex flex-row justify-content-end align-items-center gap-3 h-100">
                     {!isOpenNavMobile ? (
                       <FaBars
+                        className="icons_menu"
                         onClick={() => {
                           setIsOpenNavMobile(!isOpenNavMobile);
                         }}
                       />
                     ) : (
                       <MdClose
+                        className="icons_menu"
                         onClick={() => {
                           setIsOpenNavMobile(!isOpenNavMobile);
                         }}
@@ -105,9 +107,7 @@ export const Nav = (props) => {
                 </div>
               </Col>
             </Row>
-                      {isOpenNavMobile && (
-                        <NavMobile setIsOpenNav={setIsOpenNavMobile} />
-                      )}
+            {isOpenNavMobile && <NavMobile setIsOpenNav={setIsOpenNavMobile} />}
           </div>
         </div>
       )}

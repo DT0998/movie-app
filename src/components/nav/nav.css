@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 .nav_container{
-  padding: 12px 12px;
+  padding: 16px 16px;
 }
 
 .nav_fluid {
@@ -45,9 +45,12 @@
   -o-transform: translateX(-50%);
   width: 98%;
   padding: 0;
-  height: 6%;
+  height: auto;
 }
-
+.icons_menu{
+  height: 25px;
+  width: 25px;
+}
 
 @media (min-width:768px) {
   .nav_fluid.sticky {

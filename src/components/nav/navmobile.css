@@ -8,7 +8,7 @@
 .dropdown_title{
     border: 1px solid transparent;
     border-top: 1px solid rgba(128, 128, 128, 0.301);
-    padding: 12px 12px;
+    padding: 26px 16px;
 }
 .dropdown a{
     color: black;
