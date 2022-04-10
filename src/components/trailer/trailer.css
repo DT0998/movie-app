@@ -3,7 +3,8 @@ body.modal-open {
   }
   .modal-content{
     width: 350px;
-    height: 360px;
+    height: 359px;
+    border: 0;
   }
   @media (min-width:768px) {
     .modal-content{
