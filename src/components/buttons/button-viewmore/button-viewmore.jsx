@@ -7,7 +7,6 @@ export const Buttonviewmore = () => {
       <button
         className="btn_view view-more"
         data-aos="fade-left"
-        data-aos-duration="1500"
       >
         <span className="circle" aria-hidden="true">
           <span className="icon arrow"></span>

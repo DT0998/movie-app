@@ -43,7 +43,6 @@ export const Movielegacyshowcase = () => {
             <div
               className=" d-flex flex-row gap-3"
               data-aos="fade-down"
-              data-aos-duration="1500"
             >
               {/* desktop */}
               {isDesktop

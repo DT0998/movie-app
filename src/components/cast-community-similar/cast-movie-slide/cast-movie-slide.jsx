@@ -38,7 +38,6 @@ export const CastMovie = ({ id }) => {
             <div
               className="wrap bg_cast-community-similar"
               data-aos="fade-down"
-              data-aos-duration="1500"
             >
               <Swiper
                 slidesPerView={4}

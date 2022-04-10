@@ -44,7 +44,6 @@ export const Similarmovie = ({ id }) => {
             <div
               className="wrap bg_recommend"
               data-aos="fade-down"
-              data-aos-duration="1500"
             >
               <Swiper
                 slidesPerView={4}

@@ -4,7 +4,6 @@ function ListTitle(props) {
         <h1
           className={props.classNameTitle}
           data-aos="fade-right"
-          data-aos-duration="1500"
         >
           {" "}
           {props.titlemain}

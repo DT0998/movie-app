@@ -58,7 +58,6 @@ export const Movielist = () => {
             <div
               className=" d-flex flex-row flex-wrap justify-content-center"
               data-aos="fade-down"
-              data-aos-duration="1500"
             >
               {movietoprate.map((movie) => (
                 <Cards

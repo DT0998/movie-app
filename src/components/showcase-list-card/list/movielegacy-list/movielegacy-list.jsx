@@ -61,7 +61,6 @@ export const Movielegacylist = () => {
             <div
               className=" d-flex flex-row flex-wrap justify-content-center"
               data-aos="fade-down"
-              data-aos-duration="1500"
             >
               {movielegacy.map((movie) => (
                 <Cards
