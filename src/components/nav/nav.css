@@ -27,9 +27,9 @@
   -ms-transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   background-color: transparent;
-  border: 1px solid transparent;
   height: 100%;
   padding: 0;
+  width: 100%;
 }
 
 .nav_fluid.sticky {
@@ -38,15 +38,14 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.95);
-  border: 1px solid #eaeaea;
   z-index: 9999;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
-  height: auto;
   width: 98%;
   padding: 0;
+  height: 6%;
 }
 
 
