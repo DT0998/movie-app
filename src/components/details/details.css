@@ -42,6 +42,8 @@
   font-weight: 700;
 }
 .release_day {
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: black;
 }
 @media (min-width:768px) {
