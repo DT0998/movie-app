@@ -41,23 +41,21 @@ export const Header = () => {
       // slideChangeTransitionStart={{addAos}}
       // slideChangeTransitionEnd={{}}
       className="header_slider w-100"
+
     >
       {moviepopular.map((movie) => (
-        <SwiperSlide data-swiper-autoplay="2000" key={movie.id}>
+        <SwiperSlide data-swiper-autoplay="2000" key={movie.id} >
           <div
             className="wrap_fluid header d-flex align-items-center header_opacity"
             style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
           >
             <Container>
-              <Row className="d-flex align-items-center">
-                <Col
-                  xs={12}
-                  md={8}
-                  data-aos="fade-right"
-                  data-aos-offset="300"
-                  data-aos-easing="ease-in-sine"
-                >
-                  <div className="wrap header_content">
+              <Row
+                className="d-flex align-items-center"
+              
+              >
+                <Col xs={12} md={8}>
+                  <div className="wrap header_content" data-aos="zoom-in">
                     <div className="header_article">
                       <h1 className="header_title">{movie.title}</h1>
                       <p className="header_overview">{movie.overview}</p>
@@ -77,7 +75,7 @@ export const Header = () => {
                       alt={movie.title}
                       className="img_movie"
                       data-aos="zoom-in"
-                    ></img>
+                    />
                   </div>
                 </Col>
               </Row>
