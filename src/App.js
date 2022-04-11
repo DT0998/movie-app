@@ -11,12 +11,14 @@ import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 import Layout from "./components/layout/layout";
 import Search from "./pages/search/search";
+import { Loading } from "./components/loading/loading";
 
 function App() {
  
 
   return (
       <BrowserRouter basename="/movie-app">
+        {/* <Loading type="fullscreen"/> */}
         <Layout>
         <Switch>
           <Route exact path="/" component={Homepage} />

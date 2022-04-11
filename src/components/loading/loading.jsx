@@ -1,19 +1,24 @@
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./loading.css";
 import { Container, Row, Col } from "react-bootstrap";
 
-export const Loading = () => {
-    return (
-        <div className="wrap_fluid loading">
-            <Container>
-                <Row>
-                    <Col>
-                        <div className="wrap d-flex justify-content-center align-items-center">
-                        <div class="loader"></div>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    );
+export const Loading = (props) => {
+  return (
+    <div className="wrap_fluid loading">
+      <Container>
+        <Row>
+          <Col>
+            {props.type === "fullscreen" ? (
+              <div className="wrap d-flex justify-content-center align-items-center">
+                <div class="loader"></div>
+              </div>
+            ) : props.type === "button" ? (
+              <div className="wrap d-flex justify-content-center align-items-center">
+                <div class="loader"></div>
+              </div>
+            ) : null}
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 };

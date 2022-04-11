@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaquery";
-import { FaBars } from "react-icons/fa";
+import { FaBars,FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import NavMobile from "./navmobile";
 
@@ -68,7 +68,9 @@ export const Nav = (props) => {
                         <Link to="/search"> Search </Link>
                       </li>
                       <li>
-                        <Link to="/account"> My Account </Link>
+                        <Link to="/account"> 
+                        <FaUserAlt/>
+                        </Link>
                       </li>
                     </ul>
                   </div>
