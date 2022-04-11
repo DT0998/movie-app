@@ -54,7 +54,9 @@ background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 99%);
 .copyright{
     cursor: default;
 }
-
+.disable_icons{
+    color: black;
+}
 @media (min-width:1440px) {
     .wrap.footer{
         padding: 20px 0px;

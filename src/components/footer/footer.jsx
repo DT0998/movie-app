@@ -20,10 +20,12 @@ export const Footer = () => {
                 <Row>
                     <Col>
                         <div className="text-center">
-                            <FaGithub
-                                alt="github"
-                                className="logo_social logo_github"
-                            />
+                            <a href="https://github.com/DT0998/movie-app" target="_blank" rel="noreferrer" className="disable_icons">
+                                <FaGithub
+                                    alt="github"
+                                    className="logo_social logo_github"
+                                />
+                            </a>
                             <FaDiscord
                                 alt="discord"
                                 className="logo_social logo_discord"
