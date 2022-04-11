@@ -6,13 +6,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import ShowcaseTitle from "../../showcase-title";
 import { Cards } from "../../card";
-import { Loading } from "../../../loading/loading";
-import "react-loading-skeleton/dist/skeleton.css";
 
 export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
   // skeleton
-  const [loading, setLoading] = useState(true);
 
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
@@ -30,13 +27,11 @@ export const Tvshowcase = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setTVshows(data.results);
-    setLoading(true);
   };
   useEffect(() => {
     getTvshow();
     // use aos
     Aos.init();
-    setLoading(false);
   }, [API_URL]);
 
   return (

@@ -1,6 +1,7 @@
 import "./loading.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Skeleton from 'react-loading-skeleton'
+import "react-loading-skeleton/dist/skeleton.css";
 
 export const Loading = (props) => {
   return (
