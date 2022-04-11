@@ -10,7 +10,6 @@ import { Cards } from "../../card";
 export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
   // skeleton loading
-  const [loading, setLoading] = useState(true)
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
