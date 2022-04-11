@@ -4,6 +4,17 @@ import "./card.css";
 import { FaStar } from "react-icons/fa";
 
 export const Cards = (props) => {
+  // format date
+  const formatDate = (date) => {
+    const [dateStr] = new Date(date)
+      .toLocaleString("default", {
+        month: "short",
+        year: "numeric",
+        day: "numeric",
+      })
+      .split("T");
+    return dateStr;
+  };
   return (
     <Card className={props.classNameCard}>
       <Link to={`/details/${props.type}/${props.id}`}>
@@ -18,10 +29,13 @@ export const Cards = (props) => {
             {props.title || props.originaltitle}
           </p>
           <p className={props.classNameText}>
-            {props.first_air_date || props.release_date}
+            {props.type === "tv"
+              ? formatDate(props.first_air_date)
+              : formatDate(props.release_date) ||
+                formatDate(props.first_air_date)}
           </p>
           <div className="d-flex align-items-center">
-            <FaStar className="me-2"/>
+            <FaStar className="me-2" />
             <p className={props.classNameText}>{props.vote_average}</p>
           </div>
         </div>

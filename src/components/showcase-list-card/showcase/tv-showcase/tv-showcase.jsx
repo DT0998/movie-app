@@ -9,8 +9,8 @@ import { Cards } from "../../card";
 
 export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
-  // skeleton
-
+  // skeleton loading
+  const [loading, setLoading] = useState(true)
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
@@ -21,6 +21,7 @@ export const Tvshowcase = () => {
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL = BASE_URL + "/tv/popular?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
+
 
   // fetch movie api
   const getTvshow = async function () {

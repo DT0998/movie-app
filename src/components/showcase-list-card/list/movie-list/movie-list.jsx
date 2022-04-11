@@ -27,6 +27,7 @@ export const Movielist = () => {
     let data = response.data;
     setMovietoprate([...movietoprate, ...data.results]);
     setTotalpage(data.total_pages);
+    console.log(data.results);
   };
   useEffect(() => {
     getTrending();

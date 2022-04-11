@@ -11,6 +11,17 @@ import { CastTv } from "../cast-community-similar/cast-tv-slide/cast-tv-slide";
 import { Similartv } from "../cast-community-similar/similar-tvshow-slide/similar-tvshow";
 
 function Details(props) {
+  // format date
+  const formatDate = (date) => {
+    const [dateStr] = new Date(date)
+      .toLocaleString("default", {
+        month: "short",
+        year: "numeric",
+        day: "numeric",
+      })
+      .split("T");
+    return dateStr;
+  };
   return (
     <React.Fragment>
       <div
@@ -45,12 +56,16 @@ function Details(props) {
                   <GenresTV id={props.id} />
                 ) : null}
                 <p className={props.classNameDay}>
-                  Release day: {props.release_date || props.first_air_date}
+                  Release day:{" "}
+                  {props.type === "tv"
+                    ? formatDate(props.first_air_date)
+                    : formatDate(props.release_date) ||
+                      formatDate(props.first_air_date)}
                 </p>
               </div>
-              {props.type === "movie"  ? (
+              {props.type === "movie" ? (
                 <TrailerMovie id={props.id} />
-              ) : props.type === "tv"  ? (
+              ) : props.type === "tv" ? (
                 <TrailerTV id={props.id} />
               ) : null}
             </Col>
