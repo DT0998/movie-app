@@ -11,6 +11,7 @@ export const Cards = (props) => {
           src={props.img_url + props.poster_path}
           alt={props.originalalt}
           className={props.classNameImg}
+          loading="lazy"
         />
         <div className={props.classNameCardBody}>
           <p className={props.classNameTitle}>

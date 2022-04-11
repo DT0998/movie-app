@@ -1,24 +1,27 @@
 import "./loading.css";
 import { Container, Row, Col } from "react-bootstrap";
+import Skeleton from 'react-loading-skeleton'
 
 export const Loading = (props) => {
   return (
-    <div className="wrap_fluid loading">
-      <Container>
+    <Container>
         <Row>
           <Col>
             {props.type === "fullscreen" ? (
+             <div className="wrap_fluid loading">
               <div className="wrap d-flex justify-content-center align-items-center">
                 <div class="loader"></div>
+              </div>
               </div>
             ) : props.type === "button" ? (
               <div className="wrap d-flex justify-content-center align-items-center">
                 <div class="loader"></div>
               </div>
-            ) : null}
+            ) : props.type === "skeleton" ? <div className="wrap d-flex justify-content-center align-items-center">
+              <Skeleton duration={2}/>
+            </div> : null}
           </Col>
         </Row>
       </Container>
-    </div>
   );
 };

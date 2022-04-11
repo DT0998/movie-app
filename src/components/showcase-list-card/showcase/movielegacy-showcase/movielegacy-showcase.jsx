@@ -46,7 +46,7 @@ export const Movielegacyshowcase = () => {
             >
               {/* desktop */}
               {isDesktop
-                ? movielegacy.map(
+                && movielegacy.map(
                     (movie, index) =>
                       index < 5 && (
                         <Cards
@@ -69,10 +69,10 @@ export const Movielegacyshowcase = () => {
                         />
                       )
                   )
-                : null}
+                }
               {/* tablet */}
               {isTablet
-                ? movielegacy.map(
+                && movielegacy.map(
                     (movie, index) =>
                       index < 4 && (
                         <Cards
@@ -95,10 +95,10 @@ export const Movielegacyshowcase = () => {
                         />
                       )
                   )
-                : null}
+                }
               {/* mobile */}
               {isMobile
-                ? movielegacy.map(
+                && movielegacy.map(
                     (movie, index) =>
                       index < 2 && (
                         <Cards
@@ -121,7 +121,7 @@ export const Movielegacyshowcase = () => {
                         />
                       )
                   )
-                : null}
+                }
             </div>
           </Col>
         </Row>

@@ -6,9 +6,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import ShowcaseTitle from "../../showcase-title";
 import { Cards } from "../../card";
+import { Loading } from "../../../loading/loading";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
+  // skeleton
+  const [loading, setLoading] = useState(true);
 
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
@@ -26,11 +30,13 @@ export const Tvshowcase = () => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setTVshows(data.results);
+    setLoading(true);
   };
   useEffect(() => {
     getTvshow();
     // use aos
     Aos.init();
+    setLoading(false);
   }, [API_URL]);
 
   return (
@@ -41,13 +47,10 @@ export const Tvshowcase = () => {
             <div className="wrap">
               <ShowcaseTitle titlemain="TV SHOWS" linkto="/tvshow" />
             </div>
-            <div
-              className=" d-flex flex-row gap-3"
-              data-aos="fade-down"
-            >
+            <div className=" d-flex flex-row gap-3" data-aos="fade-down">
               {/* desktop */}
-              {isDesktop
-                ? tvshows.map(
+              {isDesktop &&
+                tvshows.map(
                   (tvshow, index) =>
                     index < 5 && (
                       <Cards
@@ -69,11 +72,10 @@ export const Tvshowcase = () => {
                         vote_average={tvshow.vote_average}
                       />
                     )
-                )
-                : null}
+                )}
               {/* tablet */}
-              {isTablet
-                ? tvshows.map(
+              {isTablet &&
+                tvshows.map(
                   (tvshow, index) =>
                     index < 4 && (
                       <Cards
@@ -95,11 +97,10 @@ export const Tvshowcase = () => {
                         vote_average={tvshow.vote_average}
                       />
                     )
-                )
-                : null}
+                )}
               {/* mobile */}
-              {isMobile
-                ? tvshows.map(
+              {isMobile &&
+                tvshows.map(
                   (tvshow, index) =>
                     index < 2 && (
                       <Cards
@@ -121,8 +122,7 @@ export const Tvshowcase = () => {
                         vote_average={tvshow.vote_average}
                       />
                     )
-                )
-                : null}
+                )}
             </div>
           </Col>
         </Row>

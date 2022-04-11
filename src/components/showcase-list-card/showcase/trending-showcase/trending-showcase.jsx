@@ -47,7 +47,7 @@ export const Trendingshowcase = () => {
             >
               {/* desktop */}
               {isDesktop
-                ? movietrending.map(
+                && movietrending.map(
                     (movie, index) =>
                       index < 5 && (
                         <Cards
@@ -70,10 +70,10 @@ export const Trendingshowcase = () => {
                         />
                       )
                   )
-                : null}
+                }
               {/* tablet */}
               {isTablet
-                ? movietrending.map(
+                && movietrending.map(
                     (movie, index) =>
                       index < 4 && (
                         <Cards
@@ -96,10 +96,10 @@ export const Trendingshowcase = () => {
                         />
                       )
                   )
-                : null}
+                }
               {/* mobile */}
               {isMobile
-                ? movietrending.map(
+                && movietrending.map(
                     (movie, index) =>
                       index < 2 && (
                         <Cards
@@ -122,7 +122,7 @@ export const Trendingshowcase = () => {
                         />
                       )
                   )
-                : null}
+                }
             </div>
           </Col>
         </Row>
