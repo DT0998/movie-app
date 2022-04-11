@@ -7,19 +7,19 @@ function NavMobile() {
     <React.Fragment>
       <div className="dropdown">
         <ul className="dropdown-content">
-          <Link to="/movie-app/movie">
+          <Link to="/movie">
             <li className="dropdown_title">Movie</li>
           </Link>
-          <Link to="/movie-app/tvshow" >
+          <Link to="/tvshow" >
             <li className="dropdown_title">TV Shows</li>
           </Link>
-          <Link to="/movie-app/search">
+          <Link to="/search">
             <li className="dropdown_title d-flex justify-content-between align-items-center">
               <div>Search</div>
               <FaSearch />
             </li>
           </Link>
-          <Link to="/movie-app/account">
+          <Link to="/account">
             <li className="dropdown_title">My Account</li>
           </Link>
         </ul>

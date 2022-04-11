@@ -48,15 +48,15 @@ export const Nav = (props) => {
                   <div className="nav_left h-100">
                     <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
                       <li>
-                        <Link to="/movie-app">
+                        <Link to="/">
                           <img src={logo} className="logo" alt="logo"></img>
                         </Link>
                       </li>
                       <li>
-                        <Link to="/movie-app/movie"> Movie </Link>
+                        <Link to="/movie"> Movie </Link>
                       </li>
                       <li>
-                        <Link to="/movie-app/tvshow"> TV Show </Link>
+                        <Link to="/tvshow"> TV Show </Link>
                       </li>
                     </ul>
                   </div>
@@ -65,10 +65,10 @@ export const Nav = (props) => {
                   <div className="nav_right h-100">
                     <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-3 h-100">
                       <li>
-                        <Link to="/movie-app/search"> Search </Link>
+                        <Link to="/search"> Search </Link>
                       </li>
                       <li>
-                        <Link to="/movie-app/account"> My Account </Link>
+                        <Link to="/account"> My Account </Link>
                       </li>
                     </ul>
                   </div>
