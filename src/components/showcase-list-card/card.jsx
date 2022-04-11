@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa";
 export const Cards = (props) => {
   return (
     <Card className={props.classNameCard}>
-      <Link to={`/details/${props.type}/${props.id}`}>
+      <Link to={`/movie-app/details/${props.type}/${props.id}`}>
         <img
           src={props.img_url + props.poster_path}
           alt={props.originalalt}
