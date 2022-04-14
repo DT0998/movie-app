@@ -19,7 +19,6 @@ export const TrailerMovie = ({ id }, props) => {
     let response = await axios.get(API_URL);
     let data = response.data;
     setTrailers(data.results);
-    console.log(data.results);
   };
   useEffect(() => {
     getTrailer();

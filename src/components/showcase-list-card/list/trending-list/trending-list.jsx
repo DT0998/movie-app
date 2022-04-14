@@ -44,7 +44,6 @@ export const Trendinglist = () => {
   const handlesortReleasedate = async function () {
     let response = await axios.get(`${API_SORT}`);
     let data = response.data;
-    console.log(data);
   };
   // use aos
   Aos.init();
