@@ -36,8 +36,9 @@ export const Header = () => {
   return (
     <Swiper
       autoplay={{
-        delay: 2000,
+        delay: 1000,
       }}
+      loop={true}
       // slideChangeTransitionStart={{addAos}}
       // slideChangeTransitionEnd={{}}
       className="header_slider w-100"
