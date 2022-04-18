@@ -2,7 +2,6 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./card.css";
 import { FaStar } from "react-icons/fa";
-import { Children } from "react";
 
 export const Cards = (props) => {
   // format date
