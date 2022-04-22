@@ -46,7 +46,7 @@ export const Movielist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ListTitle classNameTitle="title_content" titlemain="MOVIE" />
+              <ListTitle classNameTitle="title_content" titlemain="Movies" />
             </div>
           </Col>
         </Row>

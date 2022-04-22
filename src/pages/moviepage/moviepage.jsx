@@ -3,6 +3,6 @@ import { Movielist } from "../../components/showcase-list-card/list/movie-list/m
 // route moviepage
 export const Moviepage = () => {
   // change title
-  document.title = "Movie";
+  document.title = "Movies";
   return <Movielist />;
 };

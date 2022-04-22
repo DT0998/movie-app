@@ -40,7 +40,7 @@ export const Tvshowcase = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ShowcaseTitle titlemain="TV SHOWS" linkto="/tvshow" />
+              <ShowcaseTitle titlemain="TV" linkto="/tvshow" />
             </div>
             <div className=" d-flex flex-row gap-3" data-aos="fade-down">
               {/* desktop */}

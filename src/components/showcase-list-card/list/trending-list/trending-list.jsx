@@ -54,7 +54,7 @@ export const Trendinglist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ListTitle classNameTitle="title_content" titlemain="TRENDING" />
+              <ListTitle classNameTitle="title_content" titlemain="Trending" />
             </div>
           </Col>
         </Row>

@@ -48,7 +48,7 @@ export const Tvshowlist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ListTitle classNameTitle="title_content" titlemain="TV SHOW" />
+              <ListTitle classNameTitle="title_content" titlemain="TV" />
             </div>
           </Col>
         </Row>

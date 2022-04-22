@@ -38,7 +38,7 @@ export const Movielegacyshowcase = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ShowcaseTitle titlemain="MOVIE LEGACY" linkto="/movielegacy" />
+              <ShowcaseTitle titlemain="Movies legacy" linkto="/movielegacy" />
             </div>
             <div
               className=" d-flex flex-row gap-3"

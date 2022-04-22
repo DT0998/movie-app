@@ -40,7 +40,7 @@ export const Similartv = ({ id }) => {
       <Container>
         <Row>
           <Col>
-            <CastCommunitySimilarTitle titlemain="Recommend" />
+            <CastCommunitySimilarTitle titlemain="Recommendations" />
             <div
               className="wrap bg_recommend"
               data-aos="fade-down"

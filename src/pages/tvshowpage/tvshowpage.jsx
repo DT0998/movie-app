@@ -3,7 +3,7 @@ import { Tvshowlist } from "../../components/showcase-list-card/list/tv-list/tvs
 
 export const Tvshowpage = () => {
    // change title
-   document.title = "TV Show";
+   document.title = "TV Shows";
   return (
     <Tvshowlist />
   );

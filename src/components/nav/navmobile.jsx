@@ -8,7 +8,7 @@ function NavMobile() {
       <div className="dropdown">
         <ul className="dropdown-content">
           <Link to="/movie">
-            <li className="dropdown_title">Movie</li>
+            <li className="dropdown_title">Movies</li>
           </Link>
           <Link to="/tvshow" >
             <li className="dropdown_title">TV Shows</li>

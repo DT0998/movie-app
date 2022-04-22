@@ -39,7 +39,7 @@ export const Trendingshowcase = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ShowcaseTitle titlemain="TRENDING" linkto="/trending" />
+              <ShowcaseTitle titlemain="Trending" linkto="/trending" />
             </div>
             <div
               className=" d-flex flex-row gap-3"

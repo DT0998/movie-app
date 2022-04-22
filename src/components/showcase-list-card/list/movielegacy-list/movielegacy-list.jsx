@@ -48,7 +48,7 @@ export const Movielegacylist = () => {
             <div className="wrap">
               <ListTitle
                 classNameTitle="title_content"
-                titlemain="MOVIE LEGACY"
+                titlemain="Movies legacy"
               />
             </div>
           </Col>

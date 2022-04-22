@@ -51,10 +51,10 @@ export const Nav = (props) => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/movie"> Movie </Link>
+                        <Link to="/movie"> Movies </Link>
                       </li>
                       <li>
-                        <Link to="/tvshow"> TV Show </Link>
+                        <Link to="/tvshow"> TV Shows </Link>
                       </li>
                     </ul>
                   </div>
