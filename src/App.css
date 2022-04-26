@@ -3,6 +3,7 @@ body {
   min-width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {

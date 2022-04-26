@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navmobile.css";
 import { FaSearch } from "react-icons/fa";
+import logo from "../../assets/nav/logo/logo.svg";
+
 function NavMobile() {
   return (
     <React.Fragment>
@@ -21,6 +23,11 @@ function NavMobile() {
           </Link>
           <Link to="/account">
             <li className="dropdown_title">My Account</li>
+          </Link>
+          <Link to="/">
+            <div className="logo_border d-flex align-items-center">
+            <img src={logo} className="logo" alt="logo"/>
+            </div>
           </Link>
         </ul>
       </div>

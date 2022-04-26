@@ -36,7 +36,7 @@
 
 .nav_fluid.sticky {
   position: fixed;
-  top: 15px;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.95);
@@ -68,6 +68,7 @@
   .nav_fluid.sticky {
     width: 100%;
     padding: 0 12px;
+    top: 15px;
   }
   .nav_fluid {
     padding: 0 12px;

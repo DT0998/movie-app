@@ -16,3 +16,8 @@
 ul{
     margin-bottom: 0 !important;
 }
+.logo_border{
+    min-height: 40vh;
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(128, 128, 128, 0.301);
+}
