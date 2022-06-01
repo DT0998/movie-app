@@ -1,16 +1,12 @@
 import React from "react";
-import { Nav } from "./nav/nav";
 import { Footer } from "./footer/footer";
-import { TrailerMovie } from "../components/trailer/watchtrailer-movie/watchtrailer-movie";
-import { TrailerTV } from "../components/trailer/watchtrailer-tv/watchtrailer-tv";
+import {Nav} from './nav/nav'
 
 
 function Layout({children}) {
     return ( 
         <React.Fragment>
-            <Nav />
-            <TrailerTV/>
-            <TrailerMovie/>
+            <Nav/>
             <main>{children}</main>
             <Footer/>
         </React.Fragment>

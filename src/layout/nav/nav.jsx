@@ -80,7 +80,7 @@ export const Nav = () => {
         // mobile
         <React.Fragment>
           {isOpenNavOverlay && isOpenNavMobile && (
-            <div className="overlay" data-aos="fade-zoom-in"></div>
+            <div className="overlay"></div>
           )}
           <Container className={`nav_fluid ${scroll && "sticky" }`} >
             <div className="wrap_fluid">
