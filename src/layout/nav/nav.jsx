@@ -8,7 +8,7 @@ import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import NavMobile from "./navmobile";
 
-export const Nav = () => {
+export const Nav = ({ActiveTrailer}) => {
   const isTablet = useMediaQuery("(min-width:768px)");
   //   sticky nav
   const [scroll, setScroll] = useState(false);
@@ -37,7 +37,7 @@ export const Nav = () => {
     <React.Fragment>
       {isTablet ? (
         //  desktop
-        <Container className={`nav_fluid ${scroll && "sticky"}`} >
+        <Container className={`nav_fluid ${scroll && ActiveTrailer && "sticky"}`} ActiveTrailer={ActiveTrailer} >
           <div className="wrap_fluid">
             <div className="wrap">
               <Row className="d-flex flex-row justify-content-center nav_container">

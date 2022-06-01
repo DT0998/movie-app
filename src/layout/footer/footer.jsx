@@ -40,7 +40,7 @@ export const Footer = () => {
 
                 <Row>
                     <Col>
-                        <div className="text-center my-lg-1">
+                        <div className=" d-flex justify-content-center flex-md-row flex-column gap-2 text-center my-lg-1">
                             <span className="contract">ĐIỀU KHOẢN DỊCH VỤ</span>
                             <span className="contract">DCMA</span>
                             <span className="contract">LIÊN HỆ</span>
