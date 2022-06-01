@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import Aos from "aos";
 import ShowcaseTitle from "../../showcase-title";
 import { Cards } from "../../card";
 
@@ -28,12 +27,10 @@ export const Movielegacyshowcase = () => {
   };
   useEffect(() => {
     getLegacy();
-    // use aos
-    Aos.init();
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid showcase w-100">
+    <div className="wrap_fluid showcase" >
       <Container>
         <Row>
           <Col>
@@ -42,7 +39,6 @@ export const Movielegacyshowcase = () => {
             </div>
             <div
               className=" d-flex flex-row gap-3"
-              data-aos="fade-down"
             >
               {/* desktop */}
               {isDesktop

@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { useEffect } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { Homepage } from "./pages/homepage/homepage";
 import { Moviepage } from "./pages/moviepage/moviepage";
@@ -12,13 +13,19 @@ import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 import Search from "./pages/search/search";
 import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
+import Scroll from "./components/smoothscroll/SmoothScroll";
+// aos
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 function App() {
- 
-
+  // aos
+    AOS.init();
+    AOS.refresh();
   return (
-      <BrowserRouter basename="/movie-app">
+    <BrowserRouter basename="/movie-app">
         {/* <Loading type="fullscreen"/> */}
+        <Scroll/>
         <Layout>
         <Switch>
           <Route exact path="/" component={Homepage} />

@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Aos from "aos";
 import Details from "../details";
 
 export const Detailstvshow = ({ id }) => {
@@ -20,8 +19,6 @@ export const Detailstvshow = ({ id }) => {
   };
   useEffect(() => {
     getTrending();
-    // use aos
-    Aos.init();
   }, [API_URL]);
 
   // change title

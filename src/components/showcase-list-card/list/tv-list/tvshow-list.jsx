@@ -1,4 +1,3 @@
-import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
@@ -37,8 +36,6 @@ export const Tvshowlist = () => {
     setPage(page + 1);
   };
 
-  // use aos
-  Aos.init();
 
   // option
 

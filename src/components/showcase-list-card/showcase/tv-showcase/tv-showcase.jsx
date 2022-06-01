@@ -1,5 +1,4 @@
 import axios from "axios";
-import Aos from "aos";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 // media query hook
@@ -30,19 +29,17 @@ export const Tvshowcase = () => {
   };
   useEffect(() => {
     getTvshow();
-    // use aos
-    Aos.init();
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid showcase w-100">
+    <div className="wrap_fluid showcase">
       <Container>
         <Row>
           <Col>
             <div className="wrap">
               <ShowcaseTitle titlemain="TV" linkto="/tvshow" />
             </div>
-            <div className=" d-flex flex-row gap-3" data-aos="fade-down">
+            <div className=" d-flex flex-row gap-3">
               {/* desktop */}
               {isDesktop &&
                 tvshows.map(

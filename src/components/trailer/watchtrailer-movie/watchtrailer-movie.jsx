@@ -24,22 +24,27 @@ export const TrailerMovie = ({ id }, props) => {
     getTrailer();
   }, [API_URL]);
 
-
-
+  // open modal
+  const openModalHandler = () => {
+    setLgShow(true);
+  };
+  const closeModalHandler = () => {
+    setLgShow(false);
+  };
 
   return (
     <React.Fragment>
       {Trailers.length === 0 ? null : (
         <React.Fragment>
           <Buttonsquare
-            onClick={() => {setLgShow(true)}}
+            onClick={openModalHandler}
             className="btn_info_watch"
             title="Watch now"
           />
           <Modal
             size="lg"
             show={lgShow}
-            onHide={() => setLgShow(false)}
+            onHide={closeModalHandler}
             aria-labelledby="example-modal-sizes-title-lg"
             className="d-flex align-items-center justify-content-center"
           >

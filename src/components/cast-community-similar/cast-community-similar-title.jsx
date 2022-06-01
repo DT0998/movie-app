@@ -4,7 +4,7 @@ function CastCommunitySimilarTitle(props) {
   return (
     <React.Fragment>
       <div className="d-flex justify-content-between align-items-center">
-        <h3 data-aos="fade-right">
+        <h3>
           {props.titlemain}
         </h3>
       </div>

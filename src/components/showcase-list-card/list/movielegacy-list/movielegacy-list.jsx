@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row} from "react-bootstrap";
@@ -37,8 +36,6 @@ export const Movielegacylist = () => {
   const loadMore = () => {
     setPage(page + 1);
   };
-  // use aos
-  Aos.init();
 
   return (
     <div className="wrap_fluid list w-100">

@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Aos from "aos";
 import CastCommunityBody from "../cast-community-body";
 import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
@@ -27,8 +26,6 @@ export const Community = () => {
   };
   useEffect(() => {
     getCommunity();
-    // use aos
-    Aos.init();
   }, [API_URL]);
 
   return (
@@ -39,7 +36,6 @@ export const Community = () => {
             <CastCommunitySimilarTitle titlemain="Community" />
             <div
               className="wrap bg_cast-community-similar"
-              data-aos="fade-down"
             >
               <Swiper
                 slidesPerView={4}

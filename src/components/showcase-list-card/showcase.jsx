@@ -7,7 +7,7 @@ import { Tvshowcase } from "./showcase/tv-showcase/tv-showcase";
 function Showcase() {
     return ( 
         <React.Fragment>
-            <Trendingshowcase/>
+            <Trendingshowcase />
             <Movielegacyshowcase/>
             <Tvshowcase/>
         </React.Fragment>

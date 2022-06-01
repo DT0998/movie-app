@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Buttonsquare } from "../buttons/button-square/button-square";
-import Aos from "aos";
 
 export const Header = () => {
   const [moviepopular, setMoviepopular] = useState([]);
@@ -26,7 +25,6 @@ export const Header = () => {
   };
   useEffect(() => {
     getPopular();
-    Aos.refresh()
   }, [API_URL]);
 
   // add aos swiper

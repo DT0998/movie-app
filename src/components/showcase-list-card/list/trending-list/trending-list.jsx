@@ -1,8 +1,7 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+
 import { Link } from "react-router-dom";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
@@ -41,12 +40,11 @@ export const Trendinglist = () => {
     setPage(page + 1);
   };
   // search release_date
-  const handlesortReleasedate = async function () {
-    let response = await axios.get(`${API_SORT}`);
-    let data = response.data;
-  };
-  // use aos
-  Aos.init();
+  // const handlesortReleasedate = async function () {
+  //   let response = await axios.get(`${API_SORT}`);
+  //   let data = response.data;
+  // };
+
 
   return (
     <div className="wrap_fluid list w-100">

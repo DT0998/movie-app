@@ -1,13 +1,9 @@
 import "./login.css";
 import { Container, Col, Row } from "react-bootstrap";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import { Loginquotes } from "./login-quotes/login-quotes";
 import { Loginform } from "./login-form/login-form";
 
 function Login() {
-  // use aos
-  Aos.init();
   return (
     <Container className="form_shadow px-5">
       <div className="my-5">

@@ -1,12 +1,11 @@
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import ShowcaseTitle from "../../showcase-title";
 import { Cards } from "../../card";
+import AOS from "aos";
 
 export const Trendingshowcase = () => {
   const [movietrending, setMovietrending] = useState([]);
@@ -29,21 +28,21 @@ export const Trendingshowcase = () => {
   };
   useEffect(() => {
     getTrending();
-    // use aos
-    Aos.init();
   }, [API_URL]);
+  
+
 
   return (
-    <div className="wrap_fluid showcase w-100">
+    <div className="wrap_fluid showcase" data-aos="fade-up">
       <Container>
-        <Row>
-          <Col>
+        <Row >
+          <Col >
             <div className="wrap">
               <ShowcaseTitle titlemain="Trending" linkto="/trending" />
             </div>
             <div
               className=" d-flex flex-row gap-3"
-              data-aos="fade-down"
+              
             >
               {/* desktop */}
               {isDesktop

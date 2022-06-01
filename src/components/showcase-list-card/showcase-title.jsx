@@ -5,7 +5,7 @@ function ShowcaseTitle(props) {
     return ( 
         <div className="d-flex justify-content-between align-items-center my-3">
         <h1
-          data-aos="fade-right"
+         
         >
           {" "}
           {props.titlemain}
