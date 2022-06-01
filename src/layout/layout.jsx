@@ -6,17 +6,12 @@ import { TrailerTV } from "../components/trailer/watchtrailer-tv/watchtrailer-tv
 
 
 function Layout({children}) {
-    // active trailer
-    const [activeTrailer, setActiveTrailer] = useState(true)
-    const OpenModalTrailerHandler = () =>{
-        setActiveTrailer(!activeTrailer)
-    }
-    console.log(activeTrailer);
+  
 
     return ( 
         <React.Fragment>
-            <Nav ActiveTrailer={activeTrailer} />
-            <TrailerTV onOpen={OpenModalTrailerHandler}/>
+            <Nav />
+            <TrailerTV/>
             <TrailerMovie/>
             <main>{children}</main>
             <Footer/>

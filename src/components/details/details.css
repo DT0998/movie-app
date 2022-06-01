@@ -38,7 +38,7 @@
 }
 
 .details_title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 .release_day {
@@ -49,5 +49,8 @@
 @media (min-width:768px) {
   .release_day {
     color: white;
+  }
+  .details_title {
+    font-size: 2rem;
   }
 }

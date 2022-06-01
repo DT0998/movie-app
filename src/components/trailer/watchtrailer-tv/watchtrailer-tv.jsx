@@ -38,7 +38,7 @@ export const TrailerTV = ({ id },props) => {
       {Trailers.length === 0 ? null : (
         <React.Fragment>
           <Buttonsquare
-            onClick={props.onOpen}
+            onOpen={openModalHandler}
             className="btn_info_watch"
             title="Watch now"
           />
