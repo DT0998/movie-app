@@ -14,7 +14,6 @@ import Search from "./pages/search/search";
 import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
 import Scroll from "./components/smoothscroll/SmoothScroll";
-// aos
 
 function App() {
 
