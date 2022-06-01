@@ -12,14 +12,13 @@ import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
 import Search from "./pages/search/search";
 import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
-import Scroll from "./components/smoothscroll/SmoothScroll";
+
 
 function App() {
-
+ 
   return (
     <BrowserRouter basename="/movie-app">
         {/* <Loading type="fullscreen"/> */}
-        <Scroll/>
         <Layout>
         <Switch>
           <Route exact path="/" component={Homepage} />
