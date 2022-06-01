@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import ShowcaseTitle from "../../showcase-title";
 import { Cards } from "../../card";
-import AOS from "aos";
 
 export const Trendingshowcase = () => {
   const [movietrending, setMovietrending] = useState([]);

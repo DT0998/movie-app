@@ -15,13 +15,9 @@ import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
 import Scroll from "./components/smoothscroll/SmoothScroll";
 // aos
-import "aos/dist/aos.css";
-import AOS from "aos";
 
 function App() {
-  // aos
-    AOS.init();
-    AOS.refresh();
+
   return (
     <BrowserRouter basename="/movie-app">
         {/* <Loading type="fullscreen"/> */}
