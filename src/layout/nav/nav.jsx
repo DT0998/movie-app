@@ -8,11 +8,10 @@ import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import NavMobile from "./navmobile";
 
-export const Nav = (props) => {
+export const Nav = () => {
   const isTablet = useMediaQuery("(min-width:768px)");
   //   sticky nav
   const [scroll, setScroll] = useState(false);
-  const [isShowModal, setIsShowModal] = useState(false);
   // nav mobile
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   // overlay
@@ -38,7 +37,7 @@ export const Nav = (props) => {
     <React.Fragment>
       {isTablet ? (
         //  desktop
-        <Container className={`nav_fluid ${scroll && "sticky"}`}>
+        <Container className={`nav_fluid ${scroll && "sticky"}`} >
           <div className="wrap_fluid">
             <div className="wrap">
               <Row className="d-flex flex-row justify-content-center nav_container">

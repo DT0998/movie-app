@@ -9,9 +9,9 @@ import { Movielegacypage } from './pages/movielegacypage/movielegacypage'
 import { Loginpage } from "./pages/loginpage/login";
 import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
-import Layout from "./components/layout/layout";
 import Search from "./pages/search/search";
 import { Loading } from "./components/loading/loading";
+import Layout from "./layout/layout";
 
 function App() {
  
