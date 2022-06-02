@@ -25,10 +25,10 @@ export const TrailerMovie = ({ id }, props) => {
   }, [API_URL]);
 
   // open modal
-  const openModalHandler = () => {
+  const openModalHandle = () => {
     setLgShow(true);
   };
-  const closeModalHandler = () => {
+  const closeModalHandle = () => {
     setLgShow(false);
   };
 
@@ -37,14 +37,14 @@ export const TrailerMovie = ({ id }, props) => {
       {Trailers.length === 0 ? null : (
         <React.Fragment>
           <Buttonsquare
-            onClick={openModalHandler}
+            onClick={openModalHandle}
             className="btn_info_watch"
             title="Watch now"
           />
           <Modal
             size="lg"
             show={lgShow}
-            onHide={closeModalHandler}
+            onHide={closeModalHandle}
             aria-labelledby="example-modal-sizes-title-lg"
             className="d-flex align-items-center justify-content-center"
           >

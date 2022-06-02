@@ -1,0 +1,18 @@
+.Button_ScrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    transition: all .2s ease-out;
+}
+
+.Button_ScrollToTop_icon {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.Active_ScrollToTop{
+    opacity: 1;
+}
+.inActive_ScrollToTop{
+    opacity: 0;
+}
