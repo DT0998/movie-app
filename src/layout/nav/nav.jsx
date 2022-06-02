@@ -80,8 +80,9 @@ export const Nav = () => {
         // mobile
         <React.Fragment>
           {isOpenNavOverlay && isOpenNavMobile && (
-            <div className="overlay"></div>
+            <div className="overlay"/>
           )}
+          
           <Container className={`nav_fluid ${scroll && "sticky" }`} >
             <div className="wrap_fluid">
               <div className="wrap">
@@ -112,7 +113,7 @@ export const Nav = () => {
                 </Row>
               </div>
             </div>
-            {isOpenNavMobile && <NavMobile setIsOpenNav={setIsOpenNavMobile} />}
+             <NavMobile open={isOpenNavMobile} />
           </Container>
         </React.Fragment>
       )}
