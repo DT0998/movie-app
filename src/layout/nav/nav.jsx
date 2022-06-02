@@ -16,6 +16,9 @@ export const Nav = () => {
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
+  // transparent nav when scroll
+  const [isTransparentNav,setIsTransparentNav] = useState(false)
+
   useEffect(() => {
     // scroll nav
     window.addEventListener("scroll", handlescroll);
@@ -27,17 +30,24 @@ export const Nav = () => {
     if (offset > 20) {
       setScroll(true);
       setIsOpenOverlay(true);
+      setIsTransparentNav(false)
     } else {
       setScroll(false);
       setIsOpenOverlay(false);
+      setIsTransparentNav(true)
     }
+   
+    // transparent nav
+    setTimeout(() => {
+      setIsTransparentNav(true)
+    }, 2000);
   };
 
   return (
     <React.Fragment>
       {isTablet ? (
         //  desktop
-        <Container className={`nav_fluid ${scroll && "sticky"}`}>
+        <Container className={`nav_fluid ${scroll && "sticky"}`} style={{opacity:isTransparentNav? "1" : "0"}} >
           <div className="wrap_fluid">
             <div className="wrap">
               <Row className="d-flex flex-row justify-content-center nav_container">
@@ -80,10 +90,10 @@ export const Nav = () => {
         // mobile
         <React.Fragment>
           {isOpenNavOverlay && isOpenNavMobile && (
-            <div className="overlay"/>
+            <div className="overlay" />
           )}
-          
-          <Container className={`nav_fluid ${scroll && "sticky" }`} >
+
+          <Container className={`nav_fluid ${scroll && "sticky"}`} >
             <div className="wrap_fluid">
               <div className="wrap">
                 <Row className="d-flex flex-row justify-content-center nav_container">
@@ -113,7 +123,7 @@ export const Nav = () => {
                 </Row>
               </div>
             </div>
-             <NavMobile open={isOpenNavMobile} />
+            <NavMobile open={isOpenNavMobile} />
           </Container>
         </React.Fragment>
       )}
