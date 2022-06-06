@@ -68,12 +68,20 @@ ul {
         transform: translateY(0%);
     }
 }
-@media (min-width:375px) {
+@media (min-width:320px) {
     .Active_div{
-        min-height: 30vh;
+        min-height: 26vh;
     }
     .inActive_div{
-        min-height: 35vh;
+        min-height: 33vh;
+    } 
+}
+@media (min-width:375px) {
+    .Active_div{
+        min-height: 26vh;
+    }
+    .inActive_div{
+        min-height: 31vh;
     } 
 }
 @media (min-width:390px) {
@@ -82,5 +90,13 @@ ul {
     }
     .inActive_div{
         min-height: 48.6vh;
+    }
+}
+@media (min-width:425px) {
+    .Active_div{
+        min-height: 26vh;
+    }
+    .inActive_div{
+        min-height: 31.6vh;
     }
 }
