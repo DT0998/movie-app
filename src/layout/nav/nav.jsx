@@ -17,9 +17,7 @@ export const Nav = () => {
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
   // transparent nav when scroll
-  const [isTransparentNav, setIsTransparentNav] = useState(false)
-
-  
+  const [isTransparentNav, setIsTransparentNav] = useState(false);
 
   // scroll nav
   const handleScroll = () => {
@@ -27,18 +25,18 @@ export const Nav = () => {
     if (offset > 20) {
       setScroll(true);
       setIsOpenOverlay(true);
-      setIsTransparentNav(false)
+      setIsTransparentNav(false);
     } else {
       setScroll(false);
       setIsOpenOverlay(false);
-      setIsTransparentNav(true)
+      setIsTransparentNav(true);
     }
     // transparent nav
     setTimeout(() => {
-      setIsTransparentNav(true)
+      setIsTransparentNav(true);
     }, 2000);
   };
-  
+
   useEffect(() => {
     // listen scroll handle
     window.addEventListener("scroll", handleScroll);
@@ -49,7 +47,10 @@ export const Nav = () => {
     <React.Fragment>
       {isTablet ? (
         //  desktop
-        <Container className={`nav_fluid ${scroll && "sticky"}`} style={{ opacity: isTransparentNav ? "1" : "0" }} >
+        <Container
+          className={`nav_fluid ${scroll && "sticky"}`}
+          style={{ opacity: isTransparentNav ? "1" : "0" }}
+        >
           <div className="wrap_fluid">
             <div className="wrap">
               <Row className="d-flex flex-row justify-content-center nav_container">
@@ -91,11 +92,8 @@ export const Nav = () => {
       ) : (
         // mobile
         <React.Fragment>
-          {isOpenNavOverlay && isOpenNavMobile && (
-            <div className="overlay" />
-          )}
-
-          <Container className={`nav_fluid ${scroll && "sticky"}`} >
+          {isOpenNavOverlay && isOpenNavMobile && <div className="overlay" />}
+          <Container className={`nav_fluid ${scroll && "sticky"}`}>
             <div className="wrap_fluid">
               <div className="wrap">
                 <Row className="d-flex flex-row justify-content-center nav_container">

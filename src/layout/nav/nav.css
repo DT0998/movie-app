@@ -31,7 +31,7 @@
   padding: 0;
   width: 100%;
   position: relative;
-  z-index: 3;
+  z-index: 13;
 }
 
 
@@ -58,7 +58,7 @@
   height: 100%;
   width: 100%;
   background-color: rgba(51, 51, 51, 0.712);
-  z-index: 3;
+  z-index: 11;
   backdrop-filter: blur(5px);
 }
 

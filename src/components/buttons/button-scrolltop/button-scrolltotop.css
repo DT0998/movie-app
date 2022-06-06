@@ -1,18 +1,33 @@
 .Button_ScrollToTop {
     position: fixed;
-    bottom: 30px;
-    right: 40px;
+    bottom: 10px;
+    right: 10px;
     transition: all .2s ease-out;
+    z-index: 10;
 }
 
 .Button_ScrollToTop_icon {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
+    color:  #955251;
 }
-.Active_ScrollToTop{
+
+.Active_ScrollToTop {
     opacity: 1;
 }
-.inActive_ScrollToTop{
+
+.inActive_ScrollToTop {
     opacity: 0;
+}
+
+@media (min-width:768px) {
+    .Button_ScrollToTop {
+        bottom: 25px;
+        right: 25px;
+    }
+    .Button_ScrollToTop_icon {
+        height: 40px;
+        width: 40px;
+    }
 }

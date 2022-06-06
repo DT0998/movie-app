@@ -42,6 +42,7 @@ function NavMobile({open}) {
           <Link to="/account">
             <li className="dropdown_title">My Account</li>
           </Link>
+          <div className={isScroll ? "Active_div" : "inActive_div"}/>
           <Link to="/">
             <div className={` d-flex align-items-center ${isScroll ? "logo_scroll" : "logo_noscroll" }`}>
             <img src={logo} className="logo" alt="logo"/>
