@@ -31,8 +31,6 @@ ul {
 }
 
 .logo_noscroll {
-    border: 1px solid transparent;
-    border-top: 1px solid rgba(128, 128, 128, 0.301);
     margin: 20px 0;
 }
 
