@@ -64,7 +64,7 @@ export const Nav = () => {
                         </Link>
                       </li>
                       <li>
-                        <NavLink  to="/movie" activeClassName="is-active"> Movies </NavLink>
+                        <NavLink to="/movie" activeClassName="is-active"> Movies </NavLink>
                       </li>
                       <li>
                         <NavLink to="/tvshow" activeClassName="is-active"> TV Shows </NavLink>

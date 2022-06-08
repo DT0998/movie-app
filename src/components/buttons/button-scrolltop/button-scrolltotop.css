@@ -2,32 +2,50 @@
     position: fixed;
     bottom: 10px;
     right: 10px;
-    transition: all .2s ease-out;
+    transition: all .2s ease-in;
     z-index: 10;
+    background-color: white;
+    padding: 5px;
+    width: 35px;
+    height: 37px;
+    border-radius: 2px;
+    box-shadow: 6px 6px 13px 0px rgb(42 67 113 / 20%);
+    outline: medium none;
+    border: 1px solid rgb(221, 215, 215);
+    cursor: pointer;
 }
 
 .Button_ScrollToTop_icon {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     cursor: pointer;
-    color:  #955251;
+    color: #43baff;
 }
 
 .Active_ScrollToTop {
+    transform: translateY(-10px);
     opacity: 1;
 }
 
 .inActive_ScrollToTop {
+    transform: translateY(10px);
     opacity: 0;
+}
+
+.Button_ScrollToTop:hover {
+    transform: translateY(-5px);
 }
 
 @media (min-width:768px) {
     .Button_ScrollToTop {
         bottom: 25px;
-        right: 25px;
+        right: 30px;
+        width: 42px;
+        height: 45px;
     }
+
     .Button_ScrollToTop_icon {
-        height: 40px;
-        width: 40px;
+        height: 17px;
+        width: 17px;
     }
 }
