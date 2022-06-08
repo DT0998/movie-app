@@ -7,6 +7,7 @@ import useMediaQuery from "../../hooks/useMediaquery";
 import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import NavMobile from "./navmobile";
+import { NavLink } from "react-router-dom";
 
 export const Nav = () => {
   const isTablet = useMediaQuery("(min-width:768px)");
@@ -63,10 +64,10 @@ export const Nav = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/movie"> Movies </Link>
+                        <NavLink  to="/movie" activeClassName="is-active"> Movies </NavLink>
                       </li>
                       <li>
-                        <Link to="/tvshow"> TV Shows </Link>
+                        <NavLink to="/tvshow" activeClassName="is-active"> TV Shows </NavLink>
                       </li>
                     </ul>
                   </div>
@@ -75,12 +76,12 @@ export const Nav = () => {
                   <div className="nav_right h-100">
                     <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-3 h-100">
                       <li>
-                        <Link to="/search"> Search </Link>
+                        <NavLink to="/search" activeClassName="is-active"> Search </NavLink>
                       </li>
                       <li>
-                        <Link to="/account">
+                        <NavLink to="/account" activeClassName="is-active">
                           <FaUserAlt />
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   </div>
