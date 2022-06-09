@@ -84,14 +84,7 @@ ul {
         min-height: 31vh;
     } 
 }
-@media (min-width:390px) {
-    .Active_div{
-        min-height: 45vh;
-    }
-    .inActive_div{
-        min-height: 48.6vh;
-    }
-}
+
 @media (min-width:425px) {
     .Active_div{
         min-height: 26vh;
