@@ -7,7 +7,10 @@ import React from "react";
 
 export const Homepage = () => {
   // change title
-  document.title = "Home";
+  useEffect(() => {
+    document.title = "Home";
+  }, [])
+  
 
   return (
     <React.Fragment>

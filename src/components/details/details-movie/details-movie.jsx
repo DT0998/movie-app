@@ -23,7 +23,9 @@ export const Detailsmovie = ({ id }) => {
   }, [API_URL]);
 
   // change title
-  document.title = movie?.original_title;
+  useEffect(()=>{
+    document.title = movie?.original_title;
+  },[])
 
   return (
     <React.Fragment>

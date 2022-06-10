@@ -22,7 +22,9 @@ export const Detailstvshow = ({ id }) => {
   }, [API_URL]);
 
   // change title
-  document.title = tvshow?.name;
+  useEffect(()=>{
+    document.title = tvshow?.name;
+  },[])
 
   return (
     <React.Fragment>
