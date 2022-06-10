@@ -2,7 +2,6 @@ import React from "react";
 import ButtonScrollTop from "../components/buttons/button-scrolltop/button-scrolltotop";
 import { Footer } from "./footer/footer";
 import { Nav } from "./nav/nav";
-// smooth scroll
 
 function Layout({ children }) {
   return (

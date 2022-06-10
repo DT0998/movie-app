@@ -17,14 +17,14 @@ export const Detailstvshow = ({ id }) => {
     let response = await axios.get(API_URL);
     setTvshow(response.data);
   };
-  useEffect(() => {
-    getTrending();
-  }, [API_URL]);
-
   // change title
   useEffect(()=>{
     document.title = tvshow.name;
   })
+  useEffect(() => {
+    getTrending();
+  }, []);
+
 
   return (
     <React.Fragment>
