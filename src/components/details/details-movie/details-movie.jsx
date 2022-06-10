@@ -24,8 +24,8 @@ export const Detailsmovie = ({ id }) => {
 
   // change title
   useEffect(()=>{
-    document.title = movie?.original_title;
-  },[])
+    document.title = movie.original_title;
+  })
 
   return (
     <React.Fragment>

@@ -23,8 +23,8 @@ export const Detailstvshow = ({ id }) => {
 
   // change title
   useEffect(()=>{
-    document.title = tvshow?.name;
-  },[])
+    document.title = tvshow.name;
+  })
 
   return (
     <React.Fragment>

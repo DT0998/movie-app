@@ -1,4 +1,5 @@
 // route movielegacypage
+import { useEffect } from "react";
 import { Movielegacylist } from "../../components/showcase-list-card/list/movielegacy-list/movielegacy-list";
 
 export const Movielegacypage = () => {
