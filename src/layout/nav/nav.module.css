@@ -60,9 +60,9 @@
 
 .Active {
   color: black;
-  border-bottom: 2px solid black;
-  transition: transform .7s cubic-bezier(.19, 1, .22, 1) .2s;
+  border-bottom: 3px solid black;
 }
+
 
 @media (min-width: 768px) {
   .nav_fluid.sticky {
