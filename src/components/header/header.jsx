@@ -58,7 +58,7 @@ export const Header = () => {
                     </div>
                     <Link to={`/movie/${movie.id}`}>
                       <Buttonsquare
-                        className="btn_info_watch"
+                        type="moreInfo"
                         title="More info"
                       />
                     </Link>

@@ -6,7 +6,7 @@ import "../trailer.css";
 import { Modal } from "react-bootstrap";
 import { Buttonsquare } from "../../buttons/button-square/button-square";
 
-export const TrailerTV = ({ id },props) => {
+export const TrailerTV = ({ id }, props) => {
   const [lgShow, setLgShow] = useState(false);
   const [Trailers, setTrailers] = useState([]);
   // api
@@ -23,23 +23,22 @@ export const TrailerTV = ({ id },props) => {
   useEffect(() => {
     getTrailer();
   }, [API_URL]);
-  
-  // open modal
-  const openModalHandle = () =>{
-      setLgShow(true)
-  }
-  const closeModalHandle = () =>{
-    setLgShow(false)
-  }
 
+  // open modal
+  const openModalHandle = () => {
+    setLgShow(true);
+  };
+  const closeModalHandle = () => {
+    setLgShow(false);
+  };
 
   return (
     <React.Fragment>
       {Trailers.length === 0 ? null : (
         <React.Fragment>
           <Buttonsquare
+            type="moreInfo"
             onClick={openModalHandle}
-            className="btn_info_watch"
             title="Watch now"
           />
           <Modal
