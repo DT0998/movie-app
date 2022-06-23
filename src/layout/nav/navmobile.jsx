@@ -26,7 +26,7 @@ function NavMobile({open}) {
   return (
     <React.Fragment>
       <div className={`${classes.dropDown} ${open ? classes.Active : classes.inActive}`} open={open}>
-        <ul className={`${classes.dropDown_content} ${open ? "Active_content" : "inActive_content"}`} open={open}>
+        <ul className={`${classes.dropDown_content} ${open ? classes.Active_content : classes.inActive_content}`} open={open}>
           <Link to="/movie">
             <li className={classes.dropDown_title}>Movies</li>
           </Link>
@@ -44,8 +44,8 @@ function NavMobile({open}) {
           </Link>
           <div className={isScroll ? classes.Active_blankSpace : classes.inActive_blankSpace}/>
           <Link to="/">
-            <div className={` d-flex align-items-center ${isScroll ? classes.logo_scroll : classes.logo_noscroll }`}>
-            <img src={logo} className="logo" alt="logo"/>
+            <div className={` d-flex align-items-center justify-content-center ${isScroll ? classes.logo_scroll : classes.logo_noscroll }`}>
+            <img src={logo} className={classes.logo} alt="logo"/>
             </div>
           </Link>
         </ul>

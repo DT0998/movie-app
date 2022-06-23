@@ -18,6 +18,11 @@
 .inActive {
     opacity: 0;
 }
+.logo {
+    cursor: pointer;
+    width: 55px;
+    height: 25px;
+}
 
 .dropDown_title {
     border: 1px solid transparent;
