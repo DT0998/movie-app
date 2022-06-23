@@ -28,7 +28,15 @@ ul{
   margin-bottom: 0;
 }
 .wrap{
-  padding: 20px 0px;
+  padding: 10px 0px;
+}
+.wrap_fluid{
+  padding: 5px 10px;
+}
+@media (min-width:1440px) {
+  .wrap{
+    padding: 5px 0px;
+  }
 }
 /* scrollbar */
 ::-webkit-scrollbar-track

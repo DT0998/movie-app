@@ -1,8 +1,7 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
 import ListTitle from "../../list-title";

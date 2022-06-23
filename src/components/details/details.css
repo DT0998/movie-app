@@ -19,12 +19,6 @@
   min-width: 100%;
   min-height: 100%;
 }
-.wrap.details_img.details_content {
-  padding: 20px 10px;
-}
-.wrap_fluid.details {
-  padding: 30px 0px;
-}
 .details_img {
   width: 100%;
   border-radius: 10px;

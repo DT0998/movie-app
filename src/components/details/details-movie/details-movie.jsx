@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useCallback } from "react";
 import { useEffect } from "react";
 import Details from "../details";
 
@@ -13,14 +14,14 @@ export const Detailsmovie = ({ id }) => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  const getTrending = async function () {
+  const getTrending = useCallback(async ()=>{
     let response = await axios.get(API_URL);
     setMovie(response.data);
-  };
+  });
 
   useEffect(() => {
     getTrending();
-  }, []);
+  }, [API_URL,getTrending]);
 
   // change title
   useEffect(()=>{

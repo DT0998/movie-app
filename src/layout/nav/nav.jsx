@@ -94,7 +94,7 @@ export const Nav = () => {
         // mobile
         <React.Fragment>
           {isOpenNavOverlay && isOpenNavMobile && <div className="overlay" />}
-          <Container className={`nav_fluid ${scroll && "sticky"}`}>
+          <Container className={`${classes.nav_fluid} ${scroll && classes.sticky}`}>
             <div className="wrap_fluid">
               <div className="wrap">
                 <Row className="d-flex flex-row justify-content-center nav_container">

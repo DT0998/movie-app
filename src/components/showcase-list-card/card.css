@@ -1,10 +1,4 @@
-.wrap.showcase {
-  padding: 20px 10px;
-}
 
-.wrap_fluid.showcase {
-  padding: 20px 0px;
-}
 
 .img_showcase {
   width: 100%;
@@ -90,12 +84,3 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .wrap.showcase {
-    padding: 20px 20px;
-  }
-
-  .wrap_fluid.showcase {
-    padding: 20px 0px;
-  }
-}

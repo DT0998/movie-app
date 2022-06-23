@@ -23,7 +23,7 @@ export const Detailstvshow = ({ id }) => {
   })
   useEffect(() => {
     getTrending();
-  }, []);
+  }, [API_URL]);
 
 
   return (
