@@ -39,7 +39,7 @@ export const Tvshowlist = () => {
   // option
 
   return (
-    <div className={`wrap_fluid w-100 ${classes.list}`}>
+    <div className={`wrap_fluid ${classes.list}`}>
       <Container>
         <Row>
           <Col>
@@ -74,7 +74,7 @@ export const Tvshowlist = () => {
               {page < totalpage ? (
                 <Buttonsquare
                   onClick={loadMore}
-                  className="btn_loadmore"
+                  type="loadMore"
                   title="load more"
                 />
               ) : null}

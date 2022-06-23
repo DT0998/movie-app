@@ -16,15 +16,15 @@ export const Cards = (props) => {
     return dateStr;
   };
   return (
-    <Card className={`${classes.card_container} mx-2 my-2`}>
+    <Card className={`${classes.card_container} mx-2 my-2 ${props.res_card}`}>
       <Link to={`/${props.type}/${props.id}`}>
         <img
           src={props.img_url + props.poster_path}
           alt={props.originalalt}
-          className={`${classes.img_showcase} ${classes.card_img}`}
+          className={`${classes.img_showcase}`}
           loading="lazy"
         />
-        <div className={`${classes.card_body} ${classes.card_showcase}`}>
+        <div className={`${classes.card_showcase}`}>
           <p className={`${classes.card_text} ${classes.card_title}`}>
             {props.title || props.originaltitle}
           </p>

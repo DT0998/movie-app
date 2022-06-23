@@ -1,11 +1,11 @@
 import React from "react";
+import "./details.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { CastMovie } from "../cast-community-similar/cast-movie-slide/cast-movie-slide";
 import { Similarmovie } from "../cast-community-similar/similar-movie-slide/similar-movie";
 import { TrailerMovie } from "../trailer/watchtrailer-movie/watchtrailer-movie";
 import GenresMovie from "./genres/genres-movie";
 import GenresTV from "./genres/genres-tv";
-import "./details.css";
 import { TrailerTV } from "../trailer/watchtrailer-tv/watchtrailer-tv";
 import { CastTv } from "../cast-community-similar/cast-tv-slide/cast-tv-slide";
 import { Similartv } from "../cast-community-similar/similar-tvshow-slide/similar-tvshow";

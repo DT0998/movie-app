@@ -1,3 +1,4 @@
+import classes from '../../card.module.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
@@ -46,6 +47,7 @@ export const Tvshowcase = () => {
                   (tvshow, index) =>
                     index < 5 && (
                       <Cards
+                        res_card={classes.isDesktop}
                         key={tvshow.id}
                         type="tvshow"
                         id={tvshow.id}
@@ -66,6 +68,7 @@ export const Tvshowcase = () => {
                   (tvshow, index) =>
                     index < 4 && (
                       <Cards
+                        res_card={classes.isTablet}
                         key={tvshow.id}
                         type="tvshow"
                         id={tvshow.id}
@@ -86,6 +89,7 @@ export const Tvshowcase = () => {
                   (tvshow, index) =>
                     index < 2 && (
                       <Cards
+                        res_card={classes.isMobile}
                         key={tvshow.id}
                         type="tv"
                         id={tvshow.id}

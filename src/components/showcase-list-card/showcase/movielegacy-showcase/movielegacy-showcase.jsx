@@ -1,3 +1,4 @@
+import classes from '../../card.module.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
@@ -46,6 +47,7 @@ export const Movielegacyshowcase = () => {
                     (movie, index) =>
                       index < 5 && (
                         <Cards
+                        res_card={classes.isDesktop}
                           key={movie.id}
                           type="movie"
                           id={movie.id}
@@ -67,6 +69,7 @@ export const Movielegacyshowcase = () => {
                     (movie, index) =>
                       index < 4 && (
                         <Cards
+                        res_card={classes.isTablet}
                           key={movie.id}
                           type="movie"
                           id={movie.id}
@@ -88,6 +91,7 @@ export const Movielegacyshowcase = () => {
                     (movie, index) =>
                       index < 2 && (
                         <Cards
+                          res_card={classes.isMobile}
                           key={movie.id}
                           type="movie"
                           id={movie.id}
