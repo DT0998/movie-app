@@ -39,7 +39,7 @@ export const Tvshowlist = () => {
   // option
 
   return (
-    <div className={`wrap_fluid ${classes.list}`}>
+    <div className={classes.list}>
       <Container>
         <Row>
           <Col>

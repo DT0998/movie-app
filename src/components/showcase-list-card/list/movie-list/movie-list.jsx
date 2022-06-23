@@ -37,7 +37,7 @@ export const Movielist = () => {
   // option movie sort
 
   return (
-    <div className={`wrap_fluid w-100 ${classes.list}`}>
+    <div className={classes.list}>
       <Container>
         <Row>
           <Col>
@@ -74,11 +74,11 @@ export const Movielist = () => {
                 />
               ))}
               {page < totalpage ? (
-                <Buttonsquare
-                  onClick={loadMore}
-                  className="btn_loadmore"
-                  title="load more"
-                />
+                 <Buttonsquare
+                 onClick={loadMore}
+                 type="loadMore"
+                 title="load more"
+               />
               ) : null}
             </div>
           </Col>

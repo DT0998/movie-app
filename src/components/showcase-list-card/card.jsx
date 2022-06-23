@@ -15,8 +15,9 @@ export const Cards = (props) => {
       .split("T");
     return dateStr;
   };
+
   return (
-    <Card className={`${classes.card_container} mx-2 my-2 ${props.res_card}`}>
+    <Card className={`${classes.card_container} ${props.res_card}`}>
       <Link to={`/${props.type}/${props.id}`}>
         <img
           src={props.img_url + props.poster_path}

@@ -4,7 +4,6 @@ body {
   /* height:100vh; */
   scroll-behavior: smooth;
   /* hide scroll bar */
-  width: 100vw;
 }
 body{
   overflow: overlay;
