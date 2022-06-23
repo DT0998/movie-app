@@ -54,32 +54,32 @@ export const Nav = () => {
         >
           <div className="wrap_fluid">
             <div className="wrap">
-              <Row className="d-flex flex-row justify-content-center nav_container">
+              <Row className="d-flex flex-row justify-content-center">
                 <Col className="col-6">
-                  <div className="nav_left h-100">
-                    <ul className="container__list d-flex flex-row justify-content-md-start align-items-center gap-3 h-100">
+                  <div className={classes.nav_left}>
+                    <ul className={`${classes.nav_list} d-flex flex-row justify-content-md-start align-items-center gap-3`}>
                       <li>
                         <Link to="/">
-                          <img src={logo} className="logo" alt="logo"></img>
+                          <img src={logo} className={classes.logo} alt="logo"></img>
                         </Link>
                       </li>
                       <li>
-                        <NavLink to="/movie" activeClassName="is-active"> Movies </NavLink>
+                        <NavLink to="/movie" activeClassName={classes.Active}> Movies </NavLink>
                       </li>
                       <li>
-                        <NavLink to="/tvshow" activeClassName="is-active"> TV Shows </NavLink>
+                        <NavLink to="/tvshow" activeClassName={classes.Active}>TV Shows</NavLink>
                       </li>
                     </ul>
                   </div>
                 </Col>
                 <Col className="col-6">
-                  <div className="nav_right h-100">
-                    <ul className="container__list d-flex flex-row justify-content-md-end align-items-center gap-3 h-100">
+                  <div className={classes.nav_right}>
+                    <ul className={`${classes.nav_list} d-flex flex-row justify-content-md-end align-items-center gap-3`}>
                       <li>
-                        <NavLink to="/search" activeClassName="is-active"> Search </NavLink>
+                        <NavLink to="/search" activeClassName={classes.Active}> Search </NavLink>
                       </li>
                       <li>
-                        <NavLink to="/account" activeClassName="is-active">
+                        <NavLink to="/account">
                           <FaUserAlt />
                         </NavLink>
                       </li>
@@ -93,17 +93,17 @@ export const Nav = () => {
       ) : (
         // mobile
         <React.Fragment>
-          {isOpenNavOverlay && isOpenNavMobile && <div className="overlay" />}
+          {isOpenNavOverlay && isOpenNavMobile && <div className={classes.overlay} />}
           <Container className={`${classes.nav_fluid} ${scroll && classes.sticky}`}>
             <div className="wrap_fluid">
               <div className="wrap">
-                <Row className="d-flex flex-row justify-content-center nav_container">
+                <Row className={`d-flex flex-row justify-content-center`}>
                   <Col className="col-12">
-                    <div className="nav_left h-100">
-                      <ul className="container__list d-flex flex-row justify-content-start align-items-center gap-3 h-100">
+                    <div className={`${classes.nav_left}`}>
+                      <ul className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}>
                         {!isOpenNavMobile ? (
                           <FaBars
-                            className="icons_menu"
+                            className={classes.icons_menu}
                             onClick={() => {
                               setIsOpenNavMobile(true);
                               setIsOpenOverlay(true);
@@ -111,7 +111,7 @@ export const Nav = () => {
                           />
                         ) : (
                           <MdClose
-                            className="icons_menu"
+                            className={classes.icons_menu}
                             onClick={() => {
                               setIsOpenNavMobile(false);
                               setIsOpenOverlay(false);
