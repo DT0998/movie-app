@@ -4,7 +4,7 @@ import { Detailstvshow } from '../../components/details/details-tvshow/details-t
 
 
 export const Detailspagetvshow = () => {
-  const { id } = useParams();
+  const {id} = useParams();
 
   return (
     <React.Fragment>

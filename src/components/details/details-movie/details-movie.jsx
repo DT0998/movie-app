@@ -20,7 +20,7 @@ export const Detailsmovie = ({ id }) => {
 
   useEffect(() => {
     getTrending();
-  }, [API_URL]);
+  }, []);
 
   // change title
   useEffect(()=>{

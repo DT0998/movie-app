@@ -48,7 +48,7 @@ export const Tvshowcase = () => {
                       <Cards
                         classNameCard="card_container isDesktop"
                         key={tvshow.id}
-                        type="tv"
+                        type="tvshow"
                         id={tvshow.id}
                         img_url={IMG_URL}
                         poster_path={tvshow.poster_path}
@@ -73,7 +73,7 @@ export const Tvshowcase = () => {
                       <Cards
                         classNameCard="card_container isTablet"
                         key={tvshow.id}
-                        type="tv"
+                        type="tvshow"
                         id={tvshow.id}
                         img_url={IMG_URL}
                         poster_path={tvshow.poster_path}

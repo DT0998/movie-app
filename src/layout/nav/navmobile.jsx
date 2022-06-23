@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./navmobile.css";
 import { FaSearch } from "react-icons/fa";
 import logo from "../../assets/nav/logo/logo.svg";
+import classes from "./navmobile.module.css";
 
 function NavMobile({open}) {
   // state scroll nav mobile
@@ -25,26 +25,26 @@ function NavMobile({open}) {
 
   return (
     <React.Fragment>
-      <div className={`dropdown ${open ? "Active" : "inActive"}`} open={open}>
-        <ul className={`dropdown-content ${open ? "Active_content" : "inActive_content"}`} open={open}>
+      <div className={`${classes.dropDown} ${open ? classes.Active : classes.inActive}`} open={open}>
+        <ul className={`${classes.dropDown_content} ${open ? "Active_content" : "inActive_content"}`} open={open}>
           <Link to="/movie">
-            <li className="dropdown_title">Movies</li>
+            <li className={classes.dropDown_title}>Movies</li>
           </Link>
           <Link to="/tvshow" >
-            <li className="dropdown_title">TV Shows</li>
+            <li className={classes.dropDown_title}>TV Shows</li>
           </Link>
           <Link to="/search">
-            <li className="dropdown_title d-flex justify-content-between align-items-center">
+            <li className={`${classes.dropDown_title} d-flex justify-content-between align-items-center`}>
               <div>Search</div>
               <FaSearch />
             </li>
           </Link>
           <Link to="/account">
-            <li className="dropdown_title">My Account</li>
+            <li className={classes.dropDown_title}>My Account</li>
           </Link>
-          <div className={isScroll ? "Active_div" : "inActive_div"}/>
+          <div className={isScroll ? classes.Active_blankSpace : classes.inActive_blankSpace}/>
           <Link to="/">
-            <div className={` d-flex align-items-center ${isScroll ? "logo_scroll" : "logo_noscroll" }`}>
+            <div className={` d-flex align-items-center ${isScroll ? classes.logo_scroll : classes.logo_noscroll }`}>
             <img src={logo} className="logo" alt="logo"/>
             </div>
           </Link>

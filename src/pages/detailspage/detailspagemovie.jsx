@@ -4,7 +4,7 @@ import { Detailsmovie } from '../../components/details/details-movie/details-mov
 
 
 export const Detailspagemovie = () => {
-  const { id } = useParams();
+  const {id} = useParams();
 
   return (
     <React.Fragment>

@@ -62,7 +62,7 @@ export const Tvshowlist = () => {
                 <Cards
                   classNameCard="card_container mx-2 my-2"
                   key={tvshow.id}
-                  type="tv"
+                  type="tvshow"
                   id={tvshow.id}
                   img_url={IMG_URL}
                   poster_path={tvshow.poster_path}

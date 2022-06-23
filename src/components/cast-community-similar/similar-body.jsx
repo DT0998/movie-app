@@ -5,7 +5,7 @@ import './cast-community-similar-body.css'
 function SimilarBody(props) {
   return (
     <React.Fragment>
-      <Link to={`/details/${props.type}/${props.linkto}`}>
+      <Link to={`/${props.type}/${props.linkto}`}>
         <Card
           className={props.classNameCard}
           style={{

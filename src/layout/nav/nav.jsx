@@ -1,4 +1,4 @@
-import "./nav.css";
+import classes from "./nav.module.css";
 import logo from "../../assets/nav/logo/logo.svg";
 import { Container, Row, Col } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
@@ -49,7 +49,7 @@ export const Nav = () => {
       {isTablet ? (
         //  desktop
         <Container
-          className={`nav_fluid ${scroll && "sticky"}`}
+          className={`${classes.nav_fluid} ${scroll && classes.sticky}`}
           style={{ opacity: isTransparentNav ? "1" : "0" }}
         >
           <div className="wrap_fluid">

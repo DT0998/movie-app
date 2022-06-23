@@ -17,7 +17,7 @@ export const Cards = (props) => {
   };
   return (
     <Card className={props.classNameCard}>
-      <Link to={`/details/${props.type}/${props.id}`}>
+      <Link to={`/${props.type}/${props.id}`}>
         <img
           src={props.img_url + props.poster_path}
           alt={props.originalalt}
@@ -29,7 +29,7 @@ export const Cards = (props) => {
             {props.title || props.originaltitle}
           </p>
           <p className={props.classNameText}>
-            {props.type === "tv"
+            {props.type === "tvshow"
               ? formatDate(props.first_air_date)
               : formatDate(props.release_date) ||
                 formatDate(props.first_air_date)}

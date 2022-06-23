@@ -73,7 +73,7 @@ export const Similartv = ({ id }) => {
                   {Similars.map((Similar) => (
                     <SwiperSlide key={Similar.id}>
                       <SimilarBody
-                        type="tv"
+                        type="tvshow"
                         linkto={Similar.id}
                         classNameCard="card_cast-community-similar"
                         img_org={IMG_ORG}

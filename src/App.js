@@ -22,14 +22,14 @@ function App() {
         <Layout>
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/trending" component={Trendingpage} />
+          <Route path="/trending" component={Trendingpage} />
+          <Route path="/movielegacy" component={Movielegacypage} />
+          <Route path="/account" component={Loginpage} />
+          <Route path="/search" component={Search} />
           <Route exact path="/movie" component={Moviepage} />
+          <Route path={`/movie/:id`} component={Detailspagemovie} />
           <Route exact path="/tvshow" component={Tvshowpage} />
-          <Route exact path="/movielegacy" component={Movielegacypage} />
-          <Route exact path="/account" component={Loginpage} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path={`/details/movie/:id`} component={Detailspagemovie} />
-          <Route exact path={`/details/tv/:id`} component={Detailspagetvshow} />
+          <Route path={`/tvshow/:id`} component={Detailspagetvshow} />
         </Switch>
         </Layout>
       </BrowserRouter>

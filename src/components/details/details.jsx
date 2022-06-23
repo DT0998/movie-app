@@ -52,12 +52,12 @@ function Details(props) {
                 <p>{props.overview}</p>
                 {props.type === "movie" ? (
                   <GenresMovie id={props.id} />
-                ) : props.type === "tv" ? (
+                ) : props.type === "tvshow" ? (
                   <GenresTV id={props.id} />
                 ) : null}
                 <p className={props.classNameDay}>
                   Release day:{" "}
-                  {props.type === "tv"
+                  {props.type === "tvshow"
                     ? formatDate(props.first_air_date)
                     : formatDate(props.release_date) ||
                       formatDate(props.first_air_date)}
@@ -65,7 +65,7 @@ function Details(props) {
               </div>
               {props.type === "movie" ? (
                 <TrailerMovie id={props.id} />
-              ) : props.type === "tv" ? (
+              ) : props.type === "tvshow" ? (
                 <TrailerTV id={props.id} />
               ) : null}
             </Col>
@@ -74,12 +74,12 @@ function Details(props) {
       </div>
       {props.type === "movie" ? (
         <CastMovie id={props.id} />
-      ) : props.type === "tv" ? (
+      ) : props.type === "tvshow" ? (
         <CastTv id={props.id} />
       ) : null}
       {props.type === "movie" ? (
         <Similarmovie id={props.id} />
-      ) : props.type === "tv" ? (
+      ) : props.type === "tvshow" ? (
         <Similartv id={props.id} />
       ) : null}
     </React.Fragment>

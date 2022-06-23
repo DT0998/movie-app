@@ -25,6 +25,7 @@ li{
 }
 ul{
   padding-left: 0rem;
+  margin-bottom: 0;
 }
 /* scrollbar */
 ::-webkit-scrollbar-track
