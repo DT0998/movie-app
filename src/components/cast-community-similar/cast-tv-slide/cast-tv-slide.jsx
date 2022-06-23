@@ -37,7 +37,6 @@ export const CastTv = ({ id }) => {
                 <CastCommunitySimilarTitle titlemain="Cast" />
                 <div
                   className="wrap bg_cast-community-similar"
-                  data-aos="fade-down"
                 >
                   <Swiper
                     slidesPerView={4}

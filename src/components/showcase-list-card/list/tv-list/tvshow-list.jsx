@@ -56,7 +56,6 @@ export const Tvshowlist = () => {
           <Col xs={12} md={8} lg={9}>
             <div
               className=" d-flex flex-row flex-wrap justify-content-center"
-              data-aos="fade-down"
             >
               {tvshows.map((tvshow) => (
                 <Cards

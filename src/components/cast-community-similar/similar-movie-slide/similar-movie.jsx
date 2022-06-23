@@ -43,7 +43,6 @@ export const Similarmovie = ({ id }) => {
             <CastCommunitySimilarTitle titlemain="Recommendations" />
             <div
               className="wrap bg_recommend"
-              data-aos="fade-down"
             >
               <Swiper
                 slidesPerView={4}

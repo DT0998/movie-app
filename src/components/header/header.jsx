@@ -51,7 +51,7 @@ export const Header = () => {
               
               >
                 <Col xs={12} md={8}>
-                  <div className="wrap header_content" data-aos="zoom-in">
+                  <div className="wrap header_content">
                     <div className="header_article">
                       <h1 className="header_title">{movie.title}</h1>
                       <p className="header_overview">{movie.overview}</p>
@@ -70,7 +70,6 @@ export const Header = () => {
                       src={IMG_URL + movie.poster_path}
                       alt={movie.title}
                       className="img_movie"
-                      data-aos="zoom-in"
                     />
                   </div>
                 </Col>
