@@ -1,7 +1,7 @@
-import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./card.css";
+import classes from "./card.module.css";
 import { FaStar } from "react-icons/fa";
+import { Card } from "react-bootstrap";
 
 export const Cards = (props) => {
   // format date
@@ -16,19 +16,19 @@ export const Cards = (props) => {
     return dateStr;
   };
   return (
-    <Card className={props.classNameCard}>
+    <Card className={`${classes.card_container} mx-2 my-2`}>
       <Link to={`/${props.type}/${props.id}`}>
         <img
           src={props.img_url + props.poster_path}
           alt={props.originalalt}
-          className={props.classNameImg}
+          className={`${classes.img_showcase} ${classes.card_img}`}
           loading="lazy"
         />
-        <div className={props.classNameCardBody}>
-          <p className={props.classNameTitle}>
+        <div className={`${classes.card_body} ${classes.card_showcase}`}>
+          <p className={`${classes.card_text} ${classes.card_title}`}>
             {props.title || props.originaltitle}
           </p>
-          <p className={props.classNameText}>
+          <p className={classes.card_text}>
             {props.type === "tvshow"
               ? formatDate(props.first_air_date)
               : formatDate(props.release_date) ||

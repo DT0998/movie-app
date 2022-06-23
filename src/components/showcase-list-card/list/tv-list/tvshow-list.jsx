@@ -4,8 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
 import ListTitle from "../../list-title";
-import "../../card.css";
-import "../../list.css";
+import classes from "../../card.module.css";
 import { Cards } from "../../card";
 
 
@@ -40,7 +39,7 @@ export const Tvshowlist = () => {
   // option
 
   return (
-    <div className="wrap_fluid list w-100">
+    <div className={`wrap_fluid w-100 ${classes.list}`}>
       <Container>
         <Row>
           <Col>
@@ -59,19 +58,14 @@ export const Tvshowlist = () => {
             >
               {tvshows.map((tvshow) => (
                 <Cards
-                  classNameCard="card_container mx-2 my-2"
                   key={tvshow.id}
                   type="tvshow"
                   id={tvshow.id}
                   img_url={IMG_URL}
                   poster_path={tvshow.poster_path}
                   originalalt={tvshow.original_name}
-                  classNameImg="img_showcase card-img-top"
-                  classNameCardBody="card-body card_showcase"
-                  classNameTitle="card-text card-title"
                   originaltitle={tvshow.original_name}
                   title={tvshow.title}
-                  classNameText="card-text"
                   first_air_date={tvshow.first_air_date}
                   release_date={tvshow.release_date}
                   vote_average={tvshow.vote_average}

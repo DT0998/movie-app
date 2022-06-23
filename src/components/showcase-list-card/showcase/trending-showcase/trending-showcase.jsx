@@ -49,19 +49,14 @@ export const Trendingshowcase = () => {
                     (movie, index) =>
                       index < 5 && (
                         <Cards
-                          classNameCard="card_container isDesktop"
                           key={movie.id}
                           type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
                           originalalt={movie.title}
-                          classNameImg="img_showcase card-img-top"
-                          classNameCardBody="card-body card_showcase"
-                          classNameTitle="card-text card-title"
                           originaltitle={movie.original_name}
                           title={movie.title}
-                          classNameText="card-text"
                           first_air_date={movie.first_air_date}
                           release_date={movie.release_date}
                           vote_average={movie.vote_average}
@@ -75,16 +70,12 @@ export const Trendingshowcase = () => {
                     (movie, index) =>
                       index < 4 && (
                         <Cards
-                          classNameCard="card_container isTablet"
                           key={movie.id}
                           type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
                           originalalt={movie.title}
-                          classNameImg="img_showcase card-img-top"
-                          classNameCardBody="card-body card_showcase"
-                          classNameTitle="card-text card-title"
                           originaltitle={movie.original_name}
                           title={movie.title}
                           classNameText="card-text"
@@ -101,16 +92,12 @@ export const Trendingshowcase = () => {
                     (movie, index) =>
                       index < 2 && (
                         <Cards
-                          classNameCard="card_container isMobile"
                           key={movie.id}
                           type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
                           originalalt={movie.title}
-                          classNameImg="img_showcase card-img-top"
-                          classNameCardBody="card-body card_showcase"
-                          classNameTitle="card-text card-title"
                           originaltitle={movie.original_name}
                           title={movie.title}
                           classNameText="card-text"

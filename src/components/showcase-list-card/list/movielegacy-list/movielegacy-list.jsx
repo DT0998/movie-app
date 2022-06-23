@@ -5,8 +5,7 @@ import { Container, Col, Row} from "react-bootstrap";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
 import ListTitle from "../../list-title";
-import '../../card.css';
-import '../../list.css';
+import classes from "../../card.module.css";
 import { Cards } from "../../card";
 
 export const Movielegacylist = () => {
@@ -38,7 +37,7 @@ export const Movielegacylist = () => {
   };
 
   return (
-    <div className="wrap_fluid list w-100">
+    <div className={`wrap_fluid w-100 ${classes.list}`}>
       <Container>
         <Row>
           <Col>
@@ -60,7 +59,6 @@ export const Movielegacylist = () => {
             >
               {movielegacy.map((movie) => (
                 <Cards
-                  classNameCard="card_container mx-2 my-2"
                   key={movie.id}
                   type="movie"
                   id={movie.id}

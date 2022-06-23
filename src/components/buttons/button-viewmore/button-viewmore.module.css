@@ -12,11 +12,11 @@
   font-size: inherit;
   font-family: inherit;
 }
-.btn_view.view-more {
+.btn_view {
   width: 4rem;
   height: auto;
 }
-.btn_view.view-more .circle {
+.btn_view .circle {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
@@ -26,7 +26,7 @@
   background: #282936;
   border-radius: 1.625rem;
 }
-.btn_view.view-more .circle .icon {
+.btn_view .circle .arrow {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
@@ -34,14 +34,14 @@
   margin: auto;
   background: #fff;
 }
-.btn_view.view-more .circle .icon.arrow {
+.btn_view .circle .arrow {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
   width: 1.125rem;
   height: 0.125rem;
   background: none;
 }
-.btn_view.view-more .circle .icon.arrow::before {
+.btn_view .circle .arrow::before {
   position: absolute;
   content: "";
   top: -0.25rem;
@@ -52,7 +52,7 @@
   border-right: 0.125rem solid #fff;
   transform: rotate(45deg);
 }
-.btn_view.view-more .button-text {
+.btn_view .btn_text {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
@@ -70,23 +70,23 @@
 .btn_view:hover .circle {
   width: 100%;
 }
-.btn_view:hover .circle .icon.arrow {
+.btn_view:hover .circle .arrow {
   background: #fff;
   transform: translate(1rem, 0);
 }
-.btn_view:hover .button-text {
+.btn_view:hover .btn_text {
   color: #fff;
 }
-.button-text{
+.btn_text{
   display: none;
 }
 
 @media (min-width:768px) {
-  .btn_view.view-more {
+  .btn_view{
     width: 12rem;
     height: auto;
   }
-  .button-text{
+  .btn_text{
     display: block;
   }
 }

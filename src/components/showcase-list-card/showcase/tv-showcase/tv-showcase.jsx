@@ -46,19 +46,14 @@ export const Tvshowcase = () => {
                   (tvshow, index) =>
                     index < 5 && (
                       <Cards
-                        classNameCard="card_container isDesktop"
                         key={tvshow.id}
                         type="tvshow"
                         id={tvshow.id}
                         img_url={IMG_URL}
                         poster_path={tvshow.poster_path}
                         originalalt={tvshow.original_name}
-                        classNameImg="img_showcase card-img-top"
-                        classNameCardBody="card-body card_showcase"
-                        classNameTitle="card-text card-title"
                         originaltitle={tvshow.original_name}
                         title={tvshow.title}
-                        classNameText="card-text"
                         first_air_date={tvshow.first_air_date}
                         release_date={tvshow.release_date}
                         vote_average={tvshow.vote_average}
@@ -71,19 +66,14 @@ export const Tvshowcase = () => {
                   (tvshow, index) =>
                     index < 4 && (
                       <Cards
-                        classNameCard="card_container isTablet"
                         key={tvshow.id}
                         type="tvshow"
                         id={tvshow.id}
                         img_url={IMG_URL}
                         poster_path={tvshow.poster_path}
                         originalalt={tvshow.original_name}
-                        classNameImg="img_showcase card-img-top"
-                        classNameCardBody="card-body card_showcase"
-                        classNameTitle="card-text card-title"
                         originaltitle={tvshow.original_name}
                         title={tvshow.title}
-                        classNameText="card-text"
                         first_air_date={tvshow.first_air_date}
                         release_date={tvshow.release_date}
                         vote_average={tvshow.vote_average}
@@ -96,19 +86,14 @@ export const Tvshowcase = () => {
                   (tvshow, index) =>
                     index < 2 && (
                       <Cards
-                        classNameCard="card_container isMobile"
                         key={tvshow.id}
                         type="tv"
                         id={tvshow.id}
                         img_url={IMG_URL}
                         poster_path={tvshow.poster_path}
                         originalalt={tvshow.original_name}
-                        classNameImg="img_showcase card-img-top"
-                        classNameCardBody="card-body card_showcase"
-                        classNameTitle="card-text card-title"
                         originaltitle={tvshow.original_name}
                         title={tvshow.title}
-                        classNameText="card-text"
                         first_air_date={tvshow.first_air_date}
                         release_date={tvshow.release_date}
                         vote_average={tvshow.vote_average}

@@ -1,17 +1,18 @@
-import "./button-viewmore.css";
+import React from "react";
+import classes from "./button-viewmore.module.css";
 
 export const Buttonviewmore = () => {
   
   return (
-    <div>
+    <React.Fragment>
       <button
-        className="btn_view view-more"
+        className={`${classes.btn_view}`}
       >
-        <span className="circle" aria-hidden="true">
-          <span className="icon arrow"></span>
+        <span className={classes.circle} aria-hidden="true">
+          <span className={`${classes.arrow}`}></span>
         </span>
-        <span className="button-text">View More</span>
+        <span className={classes.btn_text}>View More</span>
       </button>
-    </div>
+    </React.Fragment>
   );
 };

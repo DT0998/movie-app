@@ -3,8 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row} from "react-bootstrap";
 import ListTitle from "../../list-title";
-import "../../card.css";
-import "../../list.css";
+import classes from "../../card.module.css";
 import SortTable from "../../../sortTable/sortTable";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import { Cards } from "../../card";
@@ -38,7 +37,7 @@ export const Movielist = () => {
   // option movie sort
 
   return (
-    <div className="wrap_fluid list w-100">
+    <div className={`wrap_fluid w-100 ${classes.list}`}>
       <Container>
         <Row>
           <Col>
@@ -57,7 +56,6 @@ export const Movielist = () => {
             >
               {movietoprate.map((movie) => (
                 <Cards
-                  classNameCard="card_container mx-2 my-2"
                   key={movie.id}
                   type="movie"
                   id={movie.id}
