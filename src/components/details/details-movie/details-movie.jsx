@@ -33,17 +33,11 @@ export const Detailsmovie = ({ id }) => {
       <Details
         id={id}
         type="movie"
-        classNameDetails="wrap_fluid details"
         img_org={IMG_ORG}
         backdrop_path={movie.backdrop_path}
-        classNameDetailsImgContainer="wrap details_img"
         img_url={IMG_URL}
         poster_path={movie.poster_path}
         alt={movie.name}
-        classNameDetailsImg="details_img"
-        classNameDetailsContent="wrap details_content"
-        classNameDetailsTitle="details_title"
-        classNameDay="release_day"
         original_title={movie.original_title}
         overview={movie.overview}
         release_date={movie.release_date}

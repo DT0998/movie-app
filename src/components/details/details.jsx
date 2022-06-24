@@ -1,5 +1,5 @@
 import React from "react";
-import "./details.css";
+import classes from "./details.module.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { CastMovie } from "../cast-community-similar/cast-movie-slide/cast-movie-slide";
 import { Similarmovie } from "../cast-community-similar/similar-movie-slide/similar-movie";
@@ -25,7 +25,7 @@ function Details(props) {
   return (
     <React.Fragment>
       <div
-        className={props.classNameDetails}
+        className={`wrap_fluid ${classes.details}`}
         style={{
           backgroundImage: `url(${props.img_org + props.backdrop_path})`,
         }}
@@ -36,17 +36,17 @@ function Details(props) {
               className="d-flex justify-content-center align-items-center"
               md={4}
             >
-              <div className={props.classNameDetailsImgContainer}>
+              <div className="wrap">
                 <img
                   src={`${props.img_url + props.poster_path}`}
                   alt={props.alt}
-                  className={props.classNameDetailsImg}
+                  className={classes.details_img}
                 />
               </div>
             </Col>
             <Col md={8}>
-              <div className={props.classNameDetailsContent}>
-                <p className={props.classNameDetailsTitle}>
+              <div className={`wrap ${classes.details_content}`}>
+                <p className={classes.details_title}>
                   {props.original_title}
                 </p>
                 <p>{props.overview}</p>
@@ -55,7 +55,7 @@ function Details(props) {
                 ) : props.type === "tvshow" ? (
                   <GenresTV id={props.id} />
                 ) : null}
-                <p className={props.classNameDay}>
+                <p className={classes.release_day}>
                   Release day:{" "}
                   {props.type === "tvshow"
                     ? formatDate(props.first_air_date)

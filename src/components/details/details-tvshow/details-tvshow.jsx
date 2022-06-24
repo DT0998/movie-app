@@ -31,17 +31,11 @@ export const Detailstvshow = ({ id }) => {
       <Details
         id={id}
         type="tvshow"
-        classNameDetails="wrap_fluid details"
         img_org={IMG_ORG}
         backdrop_path={tvshow.backdrop_path}
-        classNameDetailsImgContainer="wrap details_img"
         img_url={IMG_URL}
         poster_path={tvshow.poster_path}
         alt={tvshow.name}
-        classNameDetailsImg="details_img"
-        classNameDetailsContent="wrap details_content"
-        classNameDetailsTitle="details_title"
-        classNameDay="release_day"
         original_title={tvshow.name}
         overview={tvshow.overview}
         first_air_date={tvshow.first_air_date}

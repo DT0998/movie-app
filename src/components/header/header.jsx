@@ -1,4 +1,4 @@
-import "./header.css";
+import classes from "./header.module.css";
 import { Row, Col, Container } from "react-bootstrap";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,13 +36,13 @@ export const Header = () => {
         delay: 1000,
       }}
       loop={true}
-      className="header_slider w-100"
+      className={classes.header_slider}
 
     >
       {moviepopular.map((movie) => (
         <SwiperSlide data-swiper-autoplay="2000" key={movie.id} >
           <div
-            className="wrap_fluid header d-flex align-items-center header_opacity"
+            className={`wrap_fluid  d-flex align-items-center ${classes.header}`}
             style={{ backgroundImage: `url(${IMG_ORG + movie.backdrop_path})` }}
           >
             <Container>
@@ -51,10 +51,10 @@ export const Header = () => {
               
               >
                 <Col xs={12} md={8}>
-                  <div className="wrap header_content">
-                    <div className="header_article">
-                      <h1 className="header_title">{movie.title}</h1>
-                      <p className="header_overview">{movie.overview}</p>
+                  <div className={`wrap ${classes.header_content}`}>
+                    <div className={classes.header_article}>
+                      <h1 className={classes.header_title}>{movie.title}</h1>
+                      <p className={classes.header_overview}>{movie.overview}</p>
                     </div>
                     <Link to={`/movie/${movie.id}`}>
                       <Buttonsquare
@@ -65,11 +65,11 @@ export const Header = () => {
                   </div>
                 </Col>
                 <Col md={4}>
-                  <div className="wrap header_img">
+                  <div className={`wrap ${classes.header_img}`}>
                     <img
                       src={IMG_URL + movie.poster_path}
                       alt={movie.title}
-                      className="img_movie"
+                      className={classes.img_movie}
                     />
                   </div>
                 </Col>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./genres.css";
+import classes from "./genres.module.css";
 
 function GenresTV({ id }) {
   const [genres, setGenres] = useState([]);
@@ -20,7 +20,7 @@ function GenresTV({ id }) {
   return (
     <ul className="d-flex flex-wrap">
       {genres.map((genre) => (
-        <li className="border-genres" key={genre.id}>
+        <li className={classes.genres} key={genre.id}>
           {genre.name}
         </li>
       ))}

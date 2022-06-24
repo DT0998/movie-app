@@ -91,7 +91,7 @@ export const Tvshowcase = () => {
                       <Cards
                         res_card={classes.isMobile}
                         key={tvshow.id}
-                        type="tv"
+                        type="tvshow"
                         id={tvshow.id}
                         img_url={IMG_URL}
                         poster_path={tvshow.poster_path}
