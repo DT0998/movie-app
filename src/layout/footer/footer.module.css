@@ -1,26 +1,27 @@
-
-.footer{
+.footer {
     color: black;
-background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 99%);
-
+    background-image: linear-gradient(315deg, #08AEEA 15%, #2AF598 150%);
 }
+
 .logo {
     cursor: pointer;
     width: 60px;
     min-width: 100%;
     height: 35px;
     min-height: 10%;
-    
+
 }
-.logo_social{
+
+.logo_social {
     cursor: pointer;
     min-width: 30px;
     min-height: 30px;
     margin: 15px 5px;
 }
+
 .logo_discord,
 .logo_facebook,
-.logo_github{
+.logo_github {
     transition: all 0.4s ease-out;
     -webkit-transition: all 0.4s ease-out;
     -moz-transition: all 0.4s ease-out;
@@ -28,27 +29,32 @@ background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 99%);
     -o-transition: all 0.4s ease-out;
 }
 
-.logo_facebook:hover{
+.logo_facebook:hover {
     color: #3b5998;
 }
 
-.logo_discord:hover{
+.logo_discord:hover {
     color: #7289DA;
 }
-.logo_github:hover{
+
+.logo_github:hover {
     color: purple;
 }
-.contact{
+
+.contact {
     cursor: pointer;
     padding: 0px 5px;
 }
-.contract:hover{
+
+.contract:hover {
     border-bottom: 1px solid black;
     color: gray;
 }
-.copyright{
+
+.copyright {
     cursor: default;
 }
-.inActive_icons{
+
+.inActive_icons {
     color: black;
 }

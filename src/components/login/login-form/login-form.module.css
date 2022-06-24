@@ -1,0 +1,35 @@
+.loginForm-title,
+.loginForm-content{
+    font-weight: 700;
+    margin: 10px 0;
+}
+.loginForm-title {
+  font-size: 72px;
+  background: linear-gradient(to right, #1e130c, #9a8478);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.loginForm_content{
+    font-size: 16px;
+    color: black;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn_google {
+  min-width: 100%;
+  justify-content: center;
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+
+@media (min-width: 1024px) {
+    .loginForm {
+      width: 100%;
+    }
+}
