@@ -30,8 +30,8 @@ export const Tvshowlist = () => {
     getTvshow();
   }, [API_URL]);
 
-  // load more
-  const loadMore = () => {
+  // show more
+  const showMoreHandle = () => {
     setPage(page + 1);
   };
 
@@ -73,9 +73,9 @@ export const Tvshowlist = () => {
               ))}
               {page < totalpage ? (
                 <Buttonsquare
-                  onClick={loadMore}
-                  type="loadMore"
-                  title="load more"
+                  onClick={showMoreHandle}
+                  type="showMore"
+                  title="Show more"
                 />
               ) : null}
             </div>
