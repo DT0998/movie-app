@@ -62,7 +62,8 @@
 
 @media (min-width:320px) {
   .list .card_container{
-    width: 9.5rem;
+    width: 8.5rem;
+    margin: 5px;
   }
 }
 @media (min-width: 375px) {
