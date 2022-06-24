@@ -5,11 +5,16 @@
   transition: all .4s ease-in-out;
 }
 
-.card_text.card_title {
-  font-weight: 700;
+.card_date,
+.card_title,
+.card_vote{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 5px;
+}
+.card_title{
+  font-weight: 700;
 }
 
 .card_container {
@@ -44,8 +49,9 @@
   padding: 10px;
 }
 .card_showcase p{
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
+
 .showcase_title {
   cursor: default;
 }

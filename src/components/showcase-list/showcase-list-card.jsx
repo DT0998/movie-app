@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
-import classes from "./card.module.css";
-import { FaStar } from "react-icons/fa";
+import classes from "./showcase-list-card.module.css";
 import { Card } from "react-bootstrap";
+// route
+import { Link } from "react-router-dom";
+// icons
+import { FaStar } from "react-icons/fa";
 
-export const Cards = (props) => {
+export const ShowcaseListCard = (props) => {
   // format date
   const formatDate = (date) => {
     const [dateStr] = new Date(date)
@@ -26,16 +28,16 @@ export const Cards = (props) => {
           loading="lazy"
         />
         <div className={`${classes.card_showcase}`}>
-          <p className={`${classes.card_text} ${classes.card_title}`}>
+          <p className={`${classes.card_title}`}>
             {props.title || props.originaltitle}
           </p>
-          <p className={classes.card_text}>
+          <p className={classes.card_date}>
             {props.type === "tvshow"
               ? formatDate(props.first_air_date)
               : formatDate(props.release_date) ||
                 formatDate(props.first_air_date)}
           </p>
-          <div className="d-flex align-items-center">
+          <div className={`d-flex align-items-center ${classes.card_vote}`}>
             <FaStar className="me-2" />
             <p className={props.classNameText}>{props.vote_average}</p>
           </div>

@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Col, Row} from "react-bootstrap";
+import classes from "../../showcase-list-card.module.css";
 import ListTitle from "../../list-title";
-import classes from "../../card.module.css";
 import SortTable from "../../../sortTable/sortTable";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
-import { Cards } from "../../card";
+import { ShowcaseListCard } from "../../showcase-list-card";
+import axios from "axios";
 
 export const Movielist = () => {
   const [page, setPage] = useState(1);
@@ -42,7 +42,7 @@ export const Movielist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ListTitle classNameTitle="title_content" titlemain="Movies" />
+              <ListTitle titlemain="Movies" />
             </div>
           </Col>
         </Row>
@@ -55,19 +55,15 @@ export const Movielist = () => {
               className=" d-flex flex-row flex-wrap justify-content-center"
             >
               {movietoprate.map((movie) => (
-                <Cards
+                <ShowcaseListCard
                   key={movie.id}
                   type="movie"
                   id={movie.id}
                   img_url={IMG_URL}
                   poster_path={movie.poster_path}
                   originalalt={movie.original_name}
-                  classNameImg="img_showcase card-img-top"
-                  classNameCardBody="card-body card_showcase"
-                  classNameTitle="card-text card-title"
                   originaltitle={movie.original_name}
                   title={movie.title}
-                  classNameText="card-text"
                   first_air_date={movie.first_air_date}
                   release_date={movie.release_date}
                   vote_average={movie.vote_average}

@@ -1,6 +1,6 @@
 // route tvshowpage
 import { useEffect } from "react";
-import { Tvshowlist } from "../../components/showcase-list-card/list/tv-list/tvshow-list";
+import { Tvshowlist } from "../../components/showcase-list/list/tv-list/tvshow-list";
 
 export const Tvshowpage = () => {
   // change title

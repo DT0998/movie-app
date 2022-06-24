@@ -1,11 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import classes from "../../showcase-list-card.module.css";
+import { ShowcaseListCard } from "../../showcase-list-card";
 import { Buttonsquare } from "../../../buttons/button-square/button-square";
 import SortTable from "../../../sortTable/sortTable";
 import ListTitle from "../../list-title";
-import classes from "../../card.module.css";
-import { Cards } from "../../card";
+import axios from "axios";
 
 
 export const Tvshowlist = () => {
@@ -57,7 +57,7 @@ export const Tvshowlist = () => {
               className=" d-flex flex-row flex-wrap justify-content-center"
             >
               {tvshows.map((tvshow) => (
-                <Cards
+                <ShowcaseListCard
                   key={tvshow.id}
                   type="tvshow"
                   id={tvshow.id}

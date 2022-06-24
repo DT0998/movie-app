@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Movielist } from "../../components/showcase-list-card/list/movie-list/movie-list";
+import { Movielist } from "../../components/showcase-list/list/movie-list/movie-list";
 
 // route moviepage
 export const Moviepage = () => {

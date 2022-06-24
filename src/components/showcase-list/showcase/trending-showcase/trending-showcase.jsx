@@ -1,14 +1,14 @@
-import classes from '../../card.module.css';
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import classes from '../../showcase-list-card.module.css';
+import { ShowcaseListCard } from '../../showcase-list-card';
+import ShowcaseTitle from "../../showcase-title";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import ShowcaseTitle from "../../showcase-title";
-import { Cards } from "../../card";
+import axios from "axios";
 
-export const Movielegacyshowcase = () => {
-  const [movielegacy, setMovielegacy] = useState([]);
+export const Trendingshowcase = () => {
+  const [movietrending, setMovietrending] = useState([]);
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
@@ -17,43 +17,46 @@ export const Movielegacyshowcase = () => {
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
+  const API_URL = BASE_URL + "/trending/movie/day?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   // fetch movie api
-  const getLegacy = async function () {
+  const getTrending = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setMovielegacy(data.results);
+    setMovietrending(data.results);
   };
   useEffect(() => {
-    getLegacy();
+    getTrending();
   }, [API_URL]);
+  
+
 
   return (
-    <div className="wrap_fluid showcase" >
+    <div className="wrap_fluid showcase">
       <Container>
-        <Row>
-          <Col>
+        <Row >
+          <Col >
             <div className="wrap">
-              <ShowcaseTitle titlemain="Movies legacy" linkto="/movielegacy" />
+              <ShowcaseTitle titlemain="Trending" linkto="/trending" />
             </div>
             <div
               className=" d-flex flex-row gap-3"
+              
             >
               {/* desktop */}
               {isDesktop
-                && movielegacy.map(
+                && movietrending.map(
                     (movie, index) =>
                       index < 5 && (
-                        <Cards
-                        res_card={classes.isDesktop}
+                        <ShowcaseListCard
+                          res_card={classes.isDesktop}
                           key={movie.id}
                           type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
-                          originalalt={movie.original_name}
+                          originalalt={movie.title}
                           originaltitle={movie.original_name}
                           title={movie.title}
                           first_air_date={movie.first_air_date}
@@ -65,19 +68,20 @@ export const Movielegacyshowcase = () => {
                 }
               {/* tablet */}
               {isTablet
-                && movielegacy.map(
+                && movietrending.map(
                     (movie, index) =>
                       index < 4 && (
-                        <Cards
+                        <ShowcaseListCard
                         res_card={classes.isTablet}
                           key={movie.id}
                           type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
-                          originalalt={movie.original_name}
+                          originalalt={movie.title}
                           originaltitle={movie.original_name}
                           title={movie.title}
+                          classNameText="card-text"
                           first_air_date={movie.first_air_date}
                           release_date={movie.release_date}
                           vote_average={movie.vote_average}
@@ -87,19 +91,20 @@ export const Movielegacyshowcase = () => {
                 }
               {/* mobile */}
               {isMobile
-                && movielegacy.map(
+                && movietrending.map(
                     (movie, index) =>
                       index < 2 && (
-                        <Cards
+                        <ShowcaseListCard
                           res_card={classes.isMobile}
                           key={movie.id}
                           type="movie"
                           id={movie.id}
                           img_url={IMG_URL}
                           poster_path={movie.poster_path}
-                          originalalt={movie.original_name}
+                          originalalt={movie.title}
                           originaltitle={movie.original_name}
                           title={movie.title}
+                          classNameText="card-text"
                           first_air_date={movie.first_air_date}
                           release_date={movie.release_date}
                           vote_average={movie.vote_average}

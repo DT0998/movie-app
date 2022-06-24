@@ -1,11 +1,11 @@
-import classes from '../../card.module.css';
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import classes from '../../showcase-list-card.module.css';
+import ShowcaseTitle from "../../showcase-title";
+import { ShowcaseListCard } from "../../showcase-list-card";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import ShowcaseTitle from "../../showcase-title";
-import { Cards } from "../../card";
+import axios from "axios";
 
 export const Tvshowcase = () => {
   const [tvshows, setTVshows] = useState([]);
@@ -46,7 +46,7 @@ export const Tvshowcase = () => {
                 tvshows.map(
                   (tvshow, index) =>
                     index < 5 && (
-                      <Cards
+                      <ShowcaseListCard
                         res_card={classes.isDesktop}
                         key={tvshow.id}
                         type="tvshow"
@@ -67,7 +67,7 @@ export const Tvshowcase = () => {
                 tvshows.map(
                   (tvshow, index) =>
                     index < 4 && (
-                      <Cards
+                      <ShowcaseListCard
                         res_card={classes.isTablet}
                         key={tvshow.id}
                         type="tvshow"
@@ -88,7 +88,7 @@ export const Tvshowcase = () => {
                 tvshows.map(
                   (tvshow, index) =>
                     index < 2 && (
-                      <Cards
+                      <ShowcaseListCard
                         res_card={classes.isMobile}
                         key={tvshow.id}
                         type="tvshow"
