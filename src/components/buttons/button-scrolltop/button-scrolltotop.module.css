@@ -1,4 +1,4 @@
-.Button_ScrollToTop {
+.btn_scrolltoTop {
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -15,36 +15,36 @@
     cursor: pointer;
 }
 
-.Button_ScrollToTop_icon {
+.arrow {
     height: 20px;
     width: 20px;
     cursor: pointer;
     color: #43baff;
 }
 
-.Active_ScrollToTop {
+.Active {
     transform: translateY(-10px);
     opacity: 1;
 }
 
-.inActive_ScrollToTop {
+.inActive {
     transform: translateY(10px);
     opacity: 0;
 }
 
-.Button_ScrollToTop:hover {
+.btn_scrolltoTop:hover {
     transform: translateY(-5px);
 }
 
 @media (min-width:768px) {
-    .Button_ScrollToTop {
+    .btn_scrolltoTop {
         bottom: 25px;
         right: 30px;
         width: 42px;
         height: 45px;
     }
 
-    .Button_ScrollToTop_icon {
+    .arrow {
         height: 17px;
         width: 17px;
     }

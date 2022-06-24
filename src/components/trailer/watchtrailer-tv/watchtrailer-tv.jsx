@@ -45,11 +45,11 @@ export const TrailerTV = ({ id }, props) => {
             size="lg"
             show={lgShow}
             onHide={closeModalHandle}
-            aria-labelledby="example-modal-sizes-title-lg"
+            aria-labelledby="modal-trailer"
             className="d-flex align-items-center justify-content-center"
           >
             <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-lg">
+              <Modal.Title id="modal-trailer">
                 Play Trailer
               </Modal.Title>
             </Modal.Header>

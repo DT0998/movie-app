@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import './button-scrolltotop.css'
+import classes from './button-scrolltotop.module.css'
 function ButtonScrollTop() {
   const [isHide, setIsHide] = useState(false)
   // click to top 
@@ -31,8 +31,8 @@ function ButtonScrollTop() {
 
   return (
     <React.Fragment>
-      <div className={` d-flex align-items-center justify-content-center Button_ScrollToTop ${isHide ? "Active_ScrollToTop" : "inActive_ScrollToTop"}`} onClick={clickToTopHandle}>
-        <AiOutlineArrowUp className="Button_ScrollToTop_icon"/>
+      <div className={` d-flex align-items-center justify-content-center ${classes.btn_scrolltoTop} ${isHide ? classes.Active : classes.inActive}`} onClick={clickToTopHandle}>
+        <AiOutlineArrowUp className={classes.arrow}/>
       </div>
     </React.Fragment>
   );

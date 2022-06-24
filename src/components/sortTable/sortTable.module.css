@@ -1,26 +1,26 @@
 .card_container {
   cursor: pointer;
 }
-h1 {
-  cursor: default;
-}
-.search_btn {
-  padding: 8px 20px;
-  border-radius: 20px;
+
+.btn_search {
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  background-color: #01b4e4;
-  color: white;
-  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+  padding: 8px 20px;
 }
-.search_btn:hover {
+.Active:hover {
   background-color: #032541;
   color: white;
 }
-.search_btn.disable {
+.Active{
+  color: white;
+  background-color: #01b4e4;
+}
+.inActive {
   background-color: rgba(228, 228, 228, 0.7);
   backdrop-filter: blur(10px);
   color: rgba(0, 0, 0, 0.5);

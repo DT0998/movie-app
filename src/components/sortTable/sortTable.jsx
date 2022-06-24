@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import Select from "react-select";
-import "./sortTable.css";
+import classes from "./sortTable.module.css";
 
 //option
 const options = [
@@ -17,36 +17,42 @@ function SortTable() {
   // open filter table
   const [isOpenTable, setIsOpenTable] = useState(false);
   // handle open table
+  const openTableHandle = () =>{
+    setIsOpenTable(false);
+  }
+  const closeTableHandle = () =>{
+    setIsOpenTable(true);
+  }
 
   return (
     <div className="wrap">
-      <div className="filter_panel my-3">
+      <div className={`${classes.filter_panel} my-3`}>
         {isOpenTable ? (
-          <div className="name d-flex justify-content-between align-items-center" onClick={()=>setIsOpenTable(false)}>
+          <div className="d-flex justify-content-between align-items-center" onClick={openTableHandle}>
             <span>Sort</span>
             <FaChevronDown />
           </div>
         ) : (
-          <div className="name d-flex justify-content-between align-items-center" onClick={()=>setIsOpenTable(true)}>
+          <div className="d-flex justify-content-between align-items-center" onClick={closeTableHandle}>
             <span>Sort</span>
             <FaChevronRight />
           </div>
         )}
         {isOpenTable && (
-          <div className="filter d-flex flex-column">
+          <div className={`${classes.filter} d-flex flex-column`}>
             <span>Sort Results By</span>
             <Select
               className="my-2"
               defaultValue={Selected}
               onChange={setSelected}
               options={options}
-            ></Select>
+            />
           </div>
         )}
       </div>
       <div
-        className={`d-flex justify-content-center ${
-          Selected  ? "search_btn" : "disable search_btn"
+        className={`${classes.btn_search} d-flex justify-content-center ${
+          Selected  ? classes.Active : classes.inActive
         }`}
       >
         Search
