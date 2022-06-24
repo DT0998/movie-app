@@ -1,7 +1,6 @@
 /* form */
 .form_container{
   padding: 20px;
-  background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 100%);
 }
 .form_shadow {
   box-shadow: unset;
@@ -15,7 +14,7 @@
 @media (min-width: 1024px) {
   .form_container{
     padding: 20px 120px;
-    background-color: aqua;
+    background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 100%);
   }
   .form_shadow {
     box-shadow: -5px -5px 0px 5px rgba(255, 255, 255, 0.507),
