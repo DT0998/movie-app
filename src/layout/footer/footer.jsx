@@ -1,7 +1,9 @@
 import classes from "./footer.module.css";
-import logo from "../../assets/footer/logo.svg";
-import { FaDiscord,FaGithub,FaFacebook } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
+// logo
+import logo from "../../assets/images/footer/logo.svg";
+// icon
+import { FaDiscord,FaGithub,FaFacebook } from "react-icons/fa";
 
 export const Footer = () => {
     return (

@@ -1,14 +1,14 @@
 import React from "react";
 import classes from "./details.module.css";
 import { Col, Container, Row } from "react-bootstrap";
-import { CastMovie } from "../cast-community-similar/cast-movie-slide/cast-movie-slide";
-import { Similarmovie } from "../cast-community-similar/similar-movie-slide/similar-movie";
-import { TrailerMovie } from "../trailer/watchtrailer-movie/watchtrailer-movie";
 import GenresMovie from "./genres/genres-movie";
 import GenresTV from "./genres/genres-tv";
 import { TrailerTV } from "../trailer/watchtrailer-tv/watchtrailer-tv";
-import { CastTv } from "../cast-community-similar/cast-tv-slide/cast-tv-slide";
-import { Similartv } from "../cast-community-similar/similar-tvshow-slide/similar-tvshow";
+import { TrailerMovie } from "../trailer/watchtrailer-movie/watchtrailer-movie";
+import { RecommendTv } from "../cast-community-recommend/recommend-tvshow-slide/recommend-tvshow";
+import { RecommendMovie } from "../cast-community-recommend/recommend-movie-slide/recommend-movie";
+import { CastMovie } from "../cast-community-recommend/cast-movie-slide/cast-movie-slide";
+import { CastTv } from "../cast-community-recommend/cast-tv-slide/cast-tv-slide";
 
 function Details(props) {
   // format date
@@ -78,9 +78,9 @@ function Details(props) {
         <CastTv id={props.id} />
       ) : null}
       {props.type === "movie" ? (
-        <Similarmovie id={props.id} />
+        <RecommendMovie id={props.id} />
       ) : props.type === "tvshow" ? (
-        <Similartv id={props.id} />
+        <RecommendTv id={props.id} />
       ) : null}
     </React.Fragment>
   );

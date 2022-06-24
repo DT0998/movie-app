@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
-import logo from "../../assets/nav/logo/logo.svg";
+import logo from "../../assets/images/nav/logo/logo.svg";
 import classes from "./navmobile.module.css";
+// route
+import { Link } from "react-router-dom";
+// icon
+import { FaSearch } from "react-icons/fa";
 
 function NavMobile({open}) {
   // state scroll nav mobile

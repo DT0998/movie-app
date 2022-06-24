@@ -1,12 +1,14 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import classes from '../cast-community-card.module.css';
+import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
+import CastCommunityCard from "../cast-community-card";
+import axios from "axios";
+// swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import CastCommunityBody from "../cast-community-body";
-import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const CastTv = ({ id }) => {
@@ -30,13 +32,13 @@ export const CastTv = ({ id }) => {
   return (
     <React.Fragment>
       {Casts.length === 0 ? null : (
-        <div className="wrap_fluid cast-community-similar w-100">
+        <div className="wrap_fluid">
           <Container>
             <Row>
               <Col>
-                <CastCommunitySimilarTitle titlemain="Cast" />
+                <CastCommunityRecommendTitle titlemain="Cast" />
                 <div
-                  className="wrap bg_cast-community-similar"
+                  className={`wrap ${classes.CastCommunity_container}`}
                 >
                   <Swiper
                     slidesPerView={4}
@@ -65,11 +67,9 @@ export const CastTv = ({ id }) => {
                     <div className="d-flex flex-column justify-content-around">
                       {Casts.map((Cast) => (
                         <SwiperSlide key={Cast.id}>
-                          <CastCommunityBody
-                            classNameCard="card_cast-community-similar"
+                          <CastCommunityCard
                             img_url={IMG_ORG}
                             profile_path={Cast.profile_path}
-                            classNamepeople="border"
                             peoplename={Cast.name}
                           />
                         </SwiperSlide>

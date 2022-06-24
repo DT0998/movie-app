@@ -1,16 +1,16 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import './cast-community-similar-body.css'
-function CastCommunityBody(props) {
+import classes from './cast-community-card.module.css'
+function CastCommunityCard(props) {
   return (
     <React.Fragment>
       <Card
-        className={props.classNameCard}
+        className={classes.CastCommunity_card}
         style={{
           backgroundImage: `url(${props.img_url + props.profile_path})`,
         }}
       >
-        <div className={props.classNamepeople}>
+        <div className={classes.border_card}>
           <h2>{props.peoplename}</h2>
         </div>
       </Card>
@@ -18,4 +18,4 @@ function CastCommunityBody(props) {
   );
 }
 
-export default CastCommunityBody;
+export default CastCommunityCard;

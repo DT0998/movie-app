@@ -1,48 +1,44 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {Col, Container, Row } from "react-bootstrap";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Col, Container, Row } from "react-bootstrap";
+import classes from '../cast-community-card.module.css'
+import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
+import CastCommunityCard from "../cast-community-card";
+import axios from "axios";
+// swiper
 import SwiperCore, { Scrollbar } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import SimilarBody from "../similar-body";
-import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
-export const Similarmovie = ({ id }) => {
-  const [Similars, setSimilars] = useState([]);
+export const CastMovie = ({ id }) => {
+  const [Casts, setCasts] = useState([]);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + `/movie/${id}/recommendations?` + API_KEY;
+  const API_URL = BASE_URL + `/movie/${id}/credits?` + API_KEY;
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
   // fetch movie api
-  const getSimilar = async function () {
+  const getCast = async function () {
     let response = await axios.get(API_URL);
     let data = response.data;
-    setSimilars(data.results);
+    setCasts(data.cast);
   };
   useEffect(() => {
-    getSimilar();
-    // after click movie
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    getCast();
   }, [API_URL]);
 
   return (
     <React.Fragment>
-      {Similars.length === 0 ? null : (
-    <div className="wrap_fluid cast-community-similar w-100">
+    {Casts.length === 0 ? null : (
+    <div className="wrap_fluid">
       <Container>
         <Row>
           <Col>
-            <CastCommunitySimilarTitle titlemain="Recommendations" />
+            <CastCommunityRecommendTitle titlemain="Cast" />
             <div
-              className="wrap bg_recommend"
+              className={`wrap ${classes.CastCommunity_container}`}
             >
               <Swiper
                 slidesPerView={4}
@@ -69,16 +65,12 @@ export const Similarmovie = ({ id }) => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {Similars.map((Similar) => (
-                    <SwiperSlide key={Similar.id}>
-                      <SimilarBody
-                        type="movie"
-                        linkto={Similar.id}
-                        classNameCard="card_cast-community-similar"
-                        img_org={IMG_ORG}
-                        backdrop_path={Similar.backdrop_path}
-                        classNameTitle="border"
-                        original_title={Similar.original_title}
+                  {Casts.map((Cast) => (
+                    <SwiperSlide key={Cast.id}>
+                      <CastCommunityCard
+                        img_url={IMG_ORG}
+                        profile_path={Cast.profile_path}
+                        peoplename={Cast.name}
                       />
                     </SwiperSlide>
                   ))}
@@ -89,7 +81,7 @@ export const Similarmovie = ({ id }) => {
         </Row>
       </Container>
     </div>
-      )}
+    )}
     </React.Fragment>
   );
 };

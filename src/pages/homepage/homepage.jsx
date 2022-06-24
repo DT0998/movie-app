@@ -1,8 +1,8 @@
 // route homepage
-import { Community } from "../../components/cast-community-similar/community-slide/community-slide";
 import { Header } from "../../components/header/header";
 import Showcase from "../../components/showcase-list-card/showcase";
 import React, { useEffect } from "react";
+import { Community } from "../../components/cast-community-recommend/community-slide/community-slide";
 
 
 export const Homepage = () => {

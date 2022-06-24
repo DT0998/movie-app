@@ -1,13 +1,14 @@
+import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import classes from '../cast-community-card.module.css'
+import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
+import CastCommunityCard from "../cast-community-card";
+import axios from "axios";
 // swiper
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import CastCommunityBody from "../cast-community-body";
-import CastCommunitySimilarTitle from "../cast-community-similar-title";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {
@@ -29,13 +30,13 @@ export const Community = () => {
   }, [API_URL]);
 
   return (
-    <div className="wrap_fluid cast-community-similar w-100">
+    <div className="wrap_fluid">
       <Container>
         <Row>
           <Col>
-            <CastCommunitySimilarTitle titlemain="Community" />
+            <CastCommunityRecommendTitle titlemain="Community" />
             <div
-              className="wrap bg_cast-community-similar"
+              className={`wrap ${classes.CastCommunity_container}`}
             >
               <Swiper
                 slidesPerView={4}
@@ -64,11 +65,9 @@ export const Community = () => {
                 <div className="d-flex flex-column justify-content-around">
                   {Peoples.map((People) => (
                     <SwiperSlide key={People.id}>
-                      <CastCommunityBody
-                        classNameCard="card_cast-community-similar"
+                      <CastCommunityCard
                         img_url={IMG_ORG}
                         profile_path={People.profile_path}
-                        classNamepeople="border"
                         peoplename={People.name}
                       />
                     </SwiperSlide>

@@ -1,13 +1,17 @@
-import classes from "./nav.module.css";
-import logo from "../../assets/nav/logo/logo.svg";
-import { Container, Row, Col } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import NavMobile from "./navmobile";
+import classes from "./nav.module.css";
+// route
 import { Link } from "react-router-dom";
-import useMediaQuery from "../../hooks/useMediaquery";
+import { NavLink } from "react-router-dom";
+// logo
+import logo from "../../assets/images/nav/logo/logo.svg";
+// icons
 import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
-import NavMobile from "./navmobile";
-import { NavLink } from "react-router-dom";
+// hook
+import useMediaQuery from "../../hooks/useMediaquery";
 
 export const Nav = () => {
   const isTablet = useMediaQuery("(min-width:768px)");
