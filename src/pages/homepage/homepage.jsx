@@ -14,7 +14,7 @@ export const Homepage = () => {
 
   return (
     <React.Fragment>
-      {/* <Loading type="fullscreen"/> */}
+      <Loading type="fullscreen"/>
       <Header />
       <Showcase />
       <Community />

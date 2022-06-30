@@ -5,3 +5,6 @@ const homepageSlice = createSlice({
         loading:"true"
     }
 })
+
+export const homepageActions = homepageSlice.actions
+export default homepageSlice
