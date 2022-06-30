@@ -14,10 +14,10 @@ export const Homepage = () => {
 
   return (
     <React.Fragment>
-      <Loading type="fullscreen"/>
-      {/* <Header />
+      {/* <Loading type="fullscreen"/> */}
+      <Header />
       <Showcase />
-      <Community /> */}
+      <Community />
     </React.Fragment>
   );
 };

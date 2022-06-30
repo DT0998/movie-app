@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import classes from '../../showcase-list-card.module.css';
-import { ShowcaseListCard } from '../../showcase-list-card';
+import classes from "../../showcase-list-card.module.css";
+import { ShowcaseListCard } from "../../showcase-list-card";
 import ShowcaseTitle from "../../showcase-title";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
@@ -29,89 +29,89 @@ export const Trendingshowcase = () => {
   useEffect(() => {
     getTrending();
   }, [API_URL]);
-  
 
+  let TrendingUi;
+    /* mobile */
+    if (isMobile) {
+       TrendingUi = (movietrending.map(
+        (movie, index) =>
+          index < 2 && (
+            <ShowcaseListCard
+              res_card={classes.isMobile}
+              key={movie.id}
+              type="movie"
+              id={movie.id}
+              img_url={IMG_URL}
+              poster_path={movie.poster_path}
+              originalalt={movie.title}
+              originaltitle={movie.original_name}
+              title={movie.title}
+              classNameText="card-text"
+              first_air_date={movie.first_air_date}
+              release_date={movie.release_date}
+              vote_average={movie.vote_average}
+            />
+          )
+      ));
+    }
+    
+    /* tablet */
+    if (isTablet) {
+      TrendingUi = (movietrending.map(
+        (movie, index) =>
+          index < 4 && (
+            <ShowcaseListCard
+              res_card={classes.isTablet}
+              key={movie.id}
+              type="movie"
+              id={movie.id}
+              img_url={IMG_URL}
+              poster_path={movie.poster_path}
+              originalalt={movie.title}
+              originaltitle={movie.original_name}
+              title={movie.title}
+              classNameText="card-text"
+              first_air_date={movie.first_air_date}
+              release_date={movie.release_date}
+              vote_average={movie.vote_average}
+            />
+          )
+      ));
+    }
+
+    /* desktop */
+    if (isDesktop) {
+      TrendingUi = (movietrending.map(
+        (movie, index) =>
+          index < 5 && (
+            <ShowcaseListCard
+              res_card={classes.isDesktop}
+              key={movie.id}
+              type="movie"
+              id={movie.id}
+              img_url={IMG_URL}
+              poster_path={movie.poster_path}
+              originalalt={movie.title}
+              originaltitle={movie.original_name}
+              title={movie.title}
+              first_air_date={movie.first_air_date}
+              release_date={movie.release_date}
+              vote_average={movie.vote_average}
+            />
+          )
+      ));
+    }
 
   return (
     <div className="wrap_fluid showcase">
       <Container>
-        <Row >
-          <Col >
+        <Row>
+          <Col>
             <div className="wrap">
               <ShowcaseTitle titlemain="Trending" linkto="/trending" />
             </div>
-            <div
-              className=" d-flex flex-row gap-3"
-              
-            >
-              {/* desktop */}
-              {isDesktop
-                && movietrending.map(
-                    (movie, index) =>
-                      index < 5 && (
-                        <ShowcaseListCard
-                          res_card={classes.isDesktop}
-                          key={movie.id}
-                          type="movie"
-                          id={movie.id}
-                          img_url={IMG_URL}
-                          poster_path={movie.poster_path}
-                          originalalt={movie.title}
-                          originaltitle={movie.original_name}
-                          title={movie.title}
-                          first_air_date={movie.first_air_date}
-                          release_date={movie.release_date}
-                          vote_average={movie.vote_average}
-                        />
-                      )
-                  )
-                }
-              {/* tablet */}
-              {isTablet
-                && movietrending.map(
-                    (movie, index) =>
-                      index < 4 && (
-                        <ShowcaseListCard
-                        res_card={classes.isTablet}
-                          key={movie.id}
-                          type="movie"
-                          id={movie.id}
-                          img_url={IMG_URL}
-                          poster_path={movie.poster_path}
-                          originalalt={movie.title}
-                          originaltitle={movie.original_name}
-                          title={movie.title}
-                          classNameText="card-text"
-                          first_air_date={movie.first_air_date}
-                          release_date={movie.release_date}
-                          vote_average={movie.vote_average}
-                        />
-                      )
-                  )
-                }
-              {/* mobile */}
-              {isMobile
-                && movietrending.map(
-                    (movie, index) =>
-                      index < 2 && (
-                        <ShowcaseListCard
-                          res_card={classes.isMobile}
-                          key={movie.id}
-                          type="movie"
-                          id={movie.id}
-                          img_url={IMG_URL}
-                          poster_path={movie.poster_path}
-                          originalalt={movie.title}
-                          originaltitle={movie.original_name}
-                          title={movie.title}
-                          classNameText="card-text"
-                          first_air_date={movie.first_air_date}
-                          release_date={movie.release_date}
-                          vote_average={movie.vote_average}
-                        />
-                      )
-                  )
-                }
+            <div className=" d-flex flex-row gap-3">
+              {TrendingUi}
             </div>
           </Col>
         </Row>
