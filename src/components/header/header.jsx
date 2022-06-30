@@ -11,10 +11,8 @@ export const Header = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   const sliderData = useSelector((state) => state.homepage.slider)
-  console.log(sliderData);
   // add aos swiper
   
-
   return (
     <Swiper
       autoplay={{

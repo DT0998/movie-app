@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import classes from '../cast-community-card.module.css'
 import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
 import CastCommunityCard from "../cast-community-card";
-import axios from "axios";
+import {useSelector} from 'react-redux'
 // swiper
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -12,22 +11,8 @@ import SwiperCore, { Scrollbar } from "swiper";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {
-  const [Peoples, setPeoples] = useState([]);
-  // api
-  const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-  const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/person/popular?" + API_KEY;
+  const communityData = useSelector((state) => state.homepage.movielegacy);
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
-
-  // fetch movie api
-  const getCommunity = async function () {
-    let response = await axios.get(API_URL);
-    let data = response.data;
-    setPeoples(data.results);
-  };
-  useEffect(() => {
-    getCommunity();
-  }, [API_URL]);
 
   return (
     <div className="wrap_fluid">
@@ -63,7 +48,7 @@ export const Community = () => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {Peoples.map((People) => (
+                  {communityData.map((People) => (
                     <SwiperSlide key={People.id}>
                       <CastCommunityCard
                         img_url={IMG_ORG}

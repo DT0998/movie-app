@@ -3,6 +3,7 @@ import { homepageAction } from "./homepage-slice";
 
 // get movie and tvshow
 export const getAllMovieAndTvShowData = () => {
+  
   return async (dispatch) => {
     const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
     const BASE_URL = "https://api.themoviedb.org/3";
@@ -11,7 +12,10 @@ export const getAllMovieAndTvShowData = () => {
     const TVSHOW_URL = "/tv/popular?";
     const MOVIELEGACY_URL = "/movie/top_rated?";
     const COMMUNITY_URL = "/person/popular?";
-
+    
+    dispatch(homepageAction.getHomepageData({
+      loading:true
+    }));
 
     // fetch api
     const fetchURL = (url) => axios.get(BASE_URL + url + API_KEY);
@@ -35,10 +39,8 @@ export const getAllMovieAndTvShowData = () => {
       return { movieSliderData,MovieData, TvShowData, MovieLegacyData, CommunityData };
     };
 
+
     try {
-      dispatch(homepageAction.getHomepageData({
-        loading:true
-      }));
       const homepageData = await fetchData();
       dispatch(
         homepageAction.getHomepageDataSuccess({
@@ -50,8 +52,9 @@ export const getAllMovieAndTvShowData = () => {
           community: homepageData.CommunityData,
         })
       )
+      console.log(homepageData.CommunityData);
     } catch (error) {
-      
+
     }
   };
 };

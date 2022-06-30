@@ -1,38 +1,24 @@
-import { useEffect, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { ShowcaseListCard } from "../../showcase-list-card";
 import ShowcaseTitle from "../../showcase-title";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import axios from "axios";
-
+import {useSelector} from 'react-redux'
 export const Movielegacyshowcase = () => {
-  const [movielegacy, setMovielegacy] = useState([]);
+  const movielegacyData = useSelector((state) => state.homepage.movielegacy);
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
   const isDesktop = useMediaQuery("(min-width:1024px)");
 
-  // api
-  const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-  const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/movie/top_rated?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
-  // fetch movie api
-  const getLegacy = async function () {
-    let response = await axios.get(API_URL);
-    let data = response.data;
-    setMovielegacy(data.results);
-  };
-  useEffect(() => {
-    getLegacy();
-  }, [API_URL]);
+
 
   let MovieLegacyUi;
   /* mobile */
   if (isMobile) {
-    MovieLegacyUi = movielegacy.map(
+    MovieLegacyUi = movielegacyData.map(
       (movie, index) =>
         index < 2 && (
           <ShowcaseListCard
@@ -54,7 +40,7 @@ export const Movielegacyshowcase = () => {
 
   /* tablet */
   if (isTablet) {
-    MovieLegacyUi = movielegacy.map(
+    MovieLegacyUi = movielegacyData.map(
       (movie, index) =>
         index < 4 && (
           <ShowcaseListCard
@@ -76,7 +62,7 @@ export const Movielegacyshowcase = () => {
 
   /* desktop */
   if (isDesktop) {
-    MovieLegacyUi = movielegacy.map(
+    MovieLegacyUi = movielegacyData.map(
       (movie, index) =>
         index < 5 && (
           <ShowcaseListCard

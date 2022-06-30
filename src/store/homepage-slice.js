@@ -10,7 +10,7 @@ const homepageSlice = createSlice({
         loading:"true"
     },
     reducers:{
-       getHomepageData: state =>{
+       getHomepageData:(state) =>{
         state.loading = true
        }, 
        getHomepageDataSuccess:(state,actions) =>{

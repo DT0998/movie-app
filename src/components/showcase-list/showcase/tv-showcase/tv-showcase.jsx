@@ -1,39 +1,26 @@
-import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ShowcaseTitle from "../../showcase-title";
 import { ShowcaseListCard } from "../../showcase-list-card";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import axios from "axios";
 
+import {useSelector} from 'react-redux'
 export const Tvshowcase = () => {
-  const [tvshows, setTVshows] = useState([]);
-  // skeleton loading
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
   const isDesktop = useMediaQuery("(min-width:1024px)");
 
-  // api
-  const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-  const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL = BASE_URL + "/tv/popular?" + API_KEY;
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
+  const tvshowData = useSelector((state) => state.homepage.tvshow);
 
-  // fetch movie api
-  const getTvshow = async function () {
-    let response = await axios.get(API_URL);
-    let data = response.data;
-    setTVshows(data.results);
-  };
-  useEffect(() => {
-    getTvshow();
-  }, [API_URL]);
+
+  
 
   let TvShowUi;
   /* mobile */
   if (isMobile) {
-    TvShowUi = tvshows.map(
+    TvShowUi = tvshowData.map(
       (tvshow, index) =>
         index < 2 && (
           <ShowcaseListCard
@@ -55,7 +42,7 @@ export const Tvshowcase = () => {
 
   /* tablet */
   if (isTablet) {
-    TvShowUi = tvshows.map(
+    TvShowUi = tvshowData.map(
       (tvshow, index) =>
         index < 4 && (
           <ShowcaseListCard
@@ -77,7 +64,7 @@ export const Tvshowcase = () => {
 
   /* desktop */
   if (isDesktop) {
-    TvShowUi = tvshows.map(
+    TvShowUi = tvshowData.map(
       (tvshow, index) =>
         index < 5 && (
           <ShowcaseListCard
