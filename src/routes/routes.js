@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Detailspagemovie } from "../pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "../pages/detailspage/detailspagetvshow";
 import { Homepage } from "../pages/homepage/homepage";

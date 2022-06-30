@@ -13,12 +13,12 @@ const homepageSlice = createSlice({
        getHomepageData: state =>{
         state.loading = true
        }, 
-       getHomepageDataSuccess:(state,{payload}) =>{
-        state.slider = payload
-        state.movie = payload
-        state.tvshow = payload
-        state.movielegacy = payload
+       getHomepageDataSuccess:(state,actions) =>{
         state.loading = false
+        state.slider = actions.payload.slider
+        state.movie = actions.payload.movie
+        state.tvshow = actions.payload.tvshow
+        state.movielegacy = actions.payload.movielegacy
        }
     }
 })

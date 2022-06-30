@@ -10,9 +10,11 @@ import {useSelector} from 'react-redux';
 export const Header = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
-  // const sliderData = useSelector((state) =>state.homepage.slider)
+  const sliderData = useSelector((state) => state.homepage.slider)
+  console.log(sliderData);
   // add aos swiper
   
+
   return (
     <Swiper
       autoplay={{
@@ -21,7 +23,7 @@ export const Header = () => {
       loop={true}
       className={classes.header_slider}
     >
-      {/* {sliderData.map((movie) => (
+      {sliderData.map((movie) => (
         <SwiperSlide data-swiper-autoplay="2000" key={movie.id}>
           <div
             className={`wrap_fluid  d-flex align-items-center ${classes.header}`}
@@ -55,7 +57,7 @@ export const Header = () => {
             </Container>
           </div>
         </SwiperSlide>
-      ))} */}
+      ))}
     </Swiper>
   );
 };
