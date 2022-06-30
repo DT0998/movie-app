@@ -1,38 +1,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Switch, Route, BrowserRouter } from "react-router-dom";
-import { Homepage } from "./pages/homepage/homepage";
-import { Moviepage } from "./pages/moviepage/moviepage";
-import { Trendingpage } from "./pages/trendingpage/trending";
-import { Tvshowpage } from "./pages/tvshowpage/tvshowpage";
-import { Movielegacypage } from './pages/movielegacypage/movielegacypage'
-import { Loginpage } from "./pages/loginpage/login";
-import { Detailspagemovie } from "./pages/detailspage/detailspagemovie";
-import { Detailspagetvshow } from "./pages/detailspage/detailspagetvshow";
-import Search from "./pages/search/search";
+import {BrowserRouter } from "react-router-dom";
 import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllMovieAndTvShowData } from "./store/homepage-actions";
+import Routes from "./routes/routes";
 
 function App() {
- 
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.homepage.loading);
+  useEffect(() => {
+    dispatch(getAllMovieAndTvShowData());
+  }, [dispatch]);
+
   return (
     <BrowserRouter basename="/movie-app">
-        {/* <Loading type="fullscreen"/> */}
-        <Layout>
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/trending" component={Trendingpage} />
-          <Route path="/movielegacy" component={Movielegacypage} />
-          <Route path="/account" component={Loginpage} />
-          <Route path="/search" component={Search} />
-          <Route exact path="/movie" component={Moviepage} />
-          <Route path={`/movie/:id`} component={Detailspagemovie} />
-          <Route exact path="/tvshow" component={Tvshowpage} />
-          <Route path={`/tvshow/:id`} component={Detailspagetvshow} />
-        </Switch>
-        </Layout>
-      </BrowserRouter>
+      {loading ? <Loading type="fullscreen" /> : null}
+      <Layout>
+        <Routes/>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

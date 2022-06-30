@@ -1,10 +1,12 @@
 import {createSlice} from '@reduxjs/toolkit'
 const homepageSlice = createSlice({
-    name:'homepagedata',
+    name:'homepage',
     initialState:{
+        slider:[],
         movie:[],
         tvshow:[],
         movielegacy:[],
+        community:[],
         loading:"true"
     },
     reducers:{
@@ -12,6 +14,7 @@ const homepageSlice = createSlice({
         state.loading = true
        }, 
        getHomepageDataSuccess:(state,{payload}) =>{
+        state.slider = payload
         state.movie = payload
         state.tvshow = payload
         state.movielegacy = payload
@@ -20,5 +23,5 @@ const homepageSlice = createSlice({
     }
 })
 
-export const{getHomepageData,getHomepageDataSuccess} = homepageSlice.actions;
+export const homepageAction = homepageSlice.actions;
 export default homepageSlice;

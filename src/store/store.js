@@ -3,7 +3,7 @@ import homepageSlice from "./homepage-slice";
 
 const store = configureStore({
     reducer:{
-     homepagedata:homepageSlice.reducer   
+     homepage:homepageSlice.reducer   
     }
 })
 
