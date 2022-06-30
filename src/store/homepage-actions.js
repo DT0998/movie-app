@@ -50,8 +50,9 @@ export const getAllMovieAndTvShowData = () => {
           community: homepageData.CommunityData,
         })
       )
-      console.log(homepageData.movieSliderData);
-    } catch (error) {}
+    } catch (error) {
+      
+    }
   };
 };
 // show more movie and tvshow

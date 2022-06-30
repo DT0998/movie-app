@@ -17,6 +17,11 @@ export const ShowcaseListCard = (props) => {
       .split("T");
     return dateStr;
   };
+  // convert star vote
+  const formatStarVote = (star) =>{
+    const stars = star.toFixed(1)
+    return stars;
+  }
 
   return (
     <Card className={`${classes.card_container} ${props.res_card}`}>
@@ -39,7 +44,9 @@ export const ShowcaseListCard = (props) => {
           </p>
           <div className={`d-flex align-items-center ${classes.card_vote}`}>
             <FaStar className="me-2" />
-            <p className={props.classNameText}>{props.vote_average}</p>
+            <p className={props.classNameText}>
+             {formatStarVote(props.vote_average)}
+              </p>
           </div>
         </div>
       </Link>
