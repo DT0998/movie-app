@@ -14,6 +14,7 @@ export const Community = () => {
   const communityData = useSelector((state) => state.homepage.movielegacy);
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
 
+
   return (
     <div className="wrap_fluid">
       <Container>

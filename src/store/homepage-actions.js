@@ -12,24 +12,24 @@ export const getAllMovieAndTvShowData = () => {
     const TVSHOW_URL = "/tv/popular?";
     const MOVIELEGACY_URL = "/movie/top_rated?";
     const COMMUNITY_URL = "/person/popular?";
-    
+
     dispatch(homepageAction.getHomepageData({
       loading:true
     }));
-
-    // fetch api
-    const fetchURL = (url) => axios.get(BASE_URL + url + API_KEY);
-    // map api
-    const HomepageURL = [
-      MOVIE_URL_SLIDER,
-      MOVIE_URL,
-      TVSHOW_URL,
-      MOVIELEGACY_URL,
-      COMMUNITY_URL,
-    ].map(fetchURL);
     //  loading init
     // fetch all data movie and tvshow
     const fetchData = async () => {
+      // fetch api
+      const fetchURL = (url) => axios.get(BASE_URL + url + API_KEY);
+      // map api
+      const HomepageURL = [
+        MOVIE_URL_SLIDER,
+        MOVIE_URL,
+        TVSHOW_URL,
+        MOVIELEGACY_URL,
+        COMMUNITY_URL,
+      ].map(fetchURL);
+      
       let responses = await axios.all(HomepageURL);
       let movieSliderData = responses[0].data.results
       let MovieData = responses[1].data.results;
