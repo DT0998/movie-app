@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import classes from '../cast-community-card.module.css'
+import classes from "../cast-community-card.module.css";
 import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
 import CastCommunityCard from "../cast-community-card";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 // swiper
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -11,9 +11,8 @@ import SwiperCore, { Scrollbar } from "swiper";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {
-  const communityData = useSelector((state) => state.homepage.movielegacy);
-  const IMG_ORG = "https://image.tmdb.org/t/p/original/";
-
+  const communityData = useSelector((state) => state.homepage.community);
+  const IMG_ORG = "https://image.tmdb.org/t/p/w500/";
 
   return (
     <div className="wrap_fluid">
@@ -21,9 +20,7 @@ export const Community = () => {
         <Row>
           <Col>
             <CastCommunityRecommendTitle titlemain="Community" />
-            <div
-              className={`wrap ${classes.CastCommunity_container}`}
-            >
+            <div className={`wrap ${classes.CastCommunity_container}`}>
               <Swiper
                 slidesPerView={4}
                 scrollbar={{

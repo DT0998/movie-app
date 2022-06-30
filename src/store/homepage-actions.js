@@ -13,9 +13,7 @@ export const getAllMovieAndTvShowData = () => {
     const MOVIELEGACY_URL = "/movie/top_rated?";
     const COMMUNITY_URL = "/person/popular?";
 
-    dispatch(homepageAction.getHomepageData({
-      loading:true
-    }));
+
     //  loading init
     // fetch all data movie and tvshow
     const fetchData = async () => {
@@ -38,7 +36,10 @@ export const getAllMovieAndTvShowData = () => {
       let CommunityData = responses[4].data.results;
       return { movieSliderData,MovieData, TvShowData, MovieLegacyData, CommunityData };
     };
-
+    
+    dispatch(homepageAction.getHomepageData({
+      loading:true
+    }));
 
     try {
       const homepageData = await fetchData();
@@ -51,8 +52,9 @@ export const getAllMovieAndTvShowData = () => {
           movielegacy: homepageData.MovieLegacyData,
           community: homepageData.CommunityData,
         })
-      )
-    } catch (error) {
+        )
+      } catch (error) {
+
 
     }
   };

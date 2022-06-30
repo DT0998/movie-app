@@ -1,8 +1,9 @@
-import NotFound from "../../components/404/404";
+import SearchInput from "../../components/search-input/search-input";
 
 function Search() {
     return ( 
-        <NotFound/>
+        <SearchInput/>
+        
      );
 }
 

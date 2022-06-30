@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
 import { useEffect } from "react";
@@ -17,10 +17,13 @@ function App() {
 
   return (
     <BrowserRouter basename="/movie-app">
-      {loading ? <Loading type="fullscreen" /> : null}
-      <Layout>
-        <Routes/>
+      {loading ? (
+        <Loading type="fullscreen" />
+      ) : (
+        <Layout>
+        <Routes />
       </Layout>
+      )}
     </BrowserRouter>
   );
 }

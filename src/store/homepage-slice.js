@@ -7,18 +7,19 @@ const homepageSlice = createSlice({
         tvshow:[],
         movielegacy:[],
         community:[],
-        loading:"true"
+        loading:""
     },
     reducers:{
-       getHomepageData:(state) =>{
-        state.loading = true
+       getHomepageData:(state,actions) =>{
+        state.loading = actions.payload.loading
        }, 
        getHomepageDataSuccess:(state,actions) =>{
-        state.loading = false
+        state.loading = actions.payload.loading
         state.slider = actions.payload.slider
         state.movie = actions.payload.movie
         state.tvshow = actions.payload.tvshow
         state.movielegacy = actions.payload.movielegacy
+        state.community = actions.payload.community
        }
     }
 })

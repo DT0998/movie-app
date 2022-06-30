@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import NotFound from "../components/404/404";
 import { Detailspagemovie } from "../pages/detailspage/detailspagemovie";
 import { Detailspagetvshow } from "../pages/detailspage/detailspagetvshow";
 import { Homepage } from "../pages/homepage/homepage";
@@ -21,6 +22,7 @@ function Routes() {
       <Route path={`/movie/:id`} component={Detailspagemovie} />
       <Route exact path="/tvshow" component={Tvshowpage} />
       <Route path={`/tvshow/:id`} component={Detailspagetvshow} />
+      <Route path="*" component={NotFound}/>
     </Switch>
   );
 }

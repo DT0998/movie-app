@@ -25,6 +25,9 @@ export const Detailstvshow = ({ id }) => {
     getTrending();
   }, [API_URL]);
 
+  
+
+
 
   return (
     <React.Fragment>

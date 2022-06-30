@@ -6,7 +6,7 @@ import { Nav } from "./nav/nav";
 function Layout({ children }) {
   return (
     <React.Fragment>
-        <Nav />
+        <Nav/>
         <main>{children}</main>
         <ButtonScrollTop/>
       <Footer />
