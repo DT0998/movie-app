@@ -6,7 +6,7 @@ export const Loading = (props) => {
     <React.Fragment>
       {props.type === "fullscreen" && 
        <div className={`${classes.loading} d-flex justify-content-center align-items-center`}>
-          <div class={classes.loader}></div>
+          <div className={classes.loader}></div>
         </div>}
     </React.Fragment>
   );
