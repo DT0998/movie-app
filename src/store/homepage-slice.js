@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
-// const homepageSlice = createSlice({
-//     name:'homepage',
-//     initialState:{
-//         loading:"true"
-//     }
-// })
+const homepageSlice = createSlice({
+    name:'homepagedata',
+    initialState:{
+        loading:"true"
+    }
+})

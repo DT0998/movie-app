@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import classes from "../../showcase-list-card.module.css";
 import ShowcaseTitle from "../../showcase-title";
 import { ShowcaseListCard } from "../../showcase-list-card";
 // media query hook
