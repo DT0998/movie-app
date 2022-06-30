@@ -52,7 +52,6 @@ export const getAllMovieAndTvShowData = () => {
           community: homepageData.CommunityData,
         })
       )
-      console.log(homepageData.CommunityData);
     } catch (error) {
 
     }
