@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import classes from "../../showcase-list-card.module.css";
 import { ShowcaseListCard } from "../../showcase-list-card";
 import ShowcaseTitle from "../../showcase-title";
 // media query hook
@@ -37,7 +36,6 @@ export const Trendingshowcase = () => {
         (movie, index) =>
           index < 2 && (
             <ShowcaseListCard
-              res_card={classes.isMobile}
               key={movie.id}
               type="movie"
               id={movie.id}
@@ -61,7 +59,6 @@ export const Trendingshowcase = () => {
         (movie, index) =>
           index < 4 && (
             <ShowcaseListCard
-              res_card={classes.isTablet}
               key={movie.id}
               type="movie"
               id={movie.id}
@@ -85,7 +82,6 @@ export const Trendingshowcase = () => {
         (movie, index) =>
           index < 5 && (
             <ShowcaseListCard
-              res_card={classes.isDesktop}
               key={movie.id}
               type="movie"
               id={movie.id}

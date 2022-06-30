@@ -56,14 +56,6 @@
   cursor: default;
 }
 
-.isDesktop {
-  display: none;
-}
-
-.isTablet {
-  display: none;
-}
-
 /* mobile */
 
 @media (min-width:320px) {
@@ -86,13 +78,6 @@
 
 /* tablet */
 @media (min-width:768px) {
-  .isTablet {
-    display: block;
-  }
-
-  .isMobile {
-    display: none;
-  }
   .list .card_container {
     width: 12rem;
   }
@@ -100,19 +85,6 @@
 
 /* desktop */
 @media (min-width:1024px) {
-
-  .isDesktop {
-    display: block;
-  }
-
-  .isTablet {
-    display: none;
-  }
-
-  .isMobile {
-    display: none;
-  }
-
   .list .card_container {
     width: 9rem;
   }
