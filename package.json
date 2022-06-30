@@ -4,6 +4,7 @@
   "private": false,
   "homepage": "https://dt0998.github.io/movie-app/",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -19,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
     "react-select": "^5.2.2",
+    "redux": "^4.2.0",
     "smooth-scrollbar": "^8.7.4",
     "swiper": "^7.4.1",
     "web-vitals": "^2.1.4"
