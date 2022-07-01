@@ -1,9 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
 import { Loading } from "./components/loading/loading";
 import Layout from "./layout/layout";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllMovieAndTvShowData } from "./store/homepage-actions";
 import Routes from "./routes/routes";
@@ -16,7 +15,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <BrowserRouter basename="/movie-app">
+    <React.Fragment>
       {isLoading ? (
         <Layout>
           <Routes />
@@ -24,7 +23,7 @@ function App() {
       ) : (
         <Loading type="fullscreen" />
       )}
-    </BrowserRouter>
+    </React.Fragment>
   );
 }
 
