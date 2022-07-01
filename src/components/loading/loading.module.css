@@ -2,10 +2,21 @@
     background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 99%);
     height: 100vh;
 }
+.loading_slide{
+  background-image: url("https://image.tmdb.org/t/p/original//wcKFYIiVDvRURrzglV9kGu7fpfY.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 94vh;
+}
+
 
 .loader,
 .loader:before,
-.loader:after {
+.loader:after,
+.loader_slide,
+.loader_slide::before,
+.loader_slide::after {
   background: #ffffff;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
@@ -37,6 +48,7 @@
 .loader:after {
   left: 1.5em;
 }
+
 @-webkit-keyframes load1 {
   0%,
   80%,

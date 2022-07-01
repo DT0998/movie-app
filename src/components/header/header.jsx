@@ -48,6 +48,7 @@ export const Header = () => {
                       src={IMG_URL + movie.poster_path}
                       alt={movie.title}
                       className={classes.img_movie}
+                      loading="lazy"
                     />
                   </div>
                 </Col>

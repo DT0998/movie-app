@@ -8,6 +8,13 @@ export const Loading = (props) => {
        <div className={`${classes.loading} d-flex justify-content-center align-items-center`}>
           <div className={classes.loader}></div>
         </div>}
+        {props.type === "loading_slide" && 
+        <div>
+          <div className={`${classes.loading_slide} d-flex justify-content-center align-items-center`}>
+             <div className={classes.loader}></div>
+           </div>
+        </div>
+        }
     </React.Fragment>
   );
 };

@@ -4,6 +4,9 @@ import classes from "./login-form.module.css";
 import GoogleLogin from "react-google-login";
 
 export const Loginform = () => {
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
   return (
     <form>
       <div className={`${classes.loginForm} px-md-5`}>
@@ -12,15 +15,15 @@ export const Loginform = () => {
         <label className={classes.loginForm_content}>
           Login watch and chill movie
         </label>
-        <div>
           <GoogleLogin
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
             buttonText="Login"
             cookiePolicy={"single_host_origin"}
             style={{ marginTop: "100px" }}
             isSignedIn={true}
             className={classes.btn_google}
           />
-        </div>
       </div>
       </div>
     </form>
