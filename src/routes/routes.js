@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "../components/404/404";
 import { Detailspagemovie } from "../pages/detailspage/detailspagemovie";
@@ -9,6 +10,7 @@ import { Moviepage } from "../pages/moviepage/moviepage";
 import Search from "../pages/search/search";
 import { Trendingpage } from "../pages/trendingpage/trending";
 import { Tvshowpage } from "../pages/tvshowpage/tvshowpage";
+
 
 function Routes() {
   return (
