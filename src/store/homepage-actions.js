@@ -17,8 +17,11 @@ export const getAllMovieAndTvShowData = () => {
     //  loading init
     // fetch all data movie and tvshow
     const fetchData = async () => {
+      dispatch(homepageAction.getHomepageData({
+        isLoading:false,
+      }));
       // fetch api
-      const fetchURL = (url) => axios.get(BASE_URL + url + API_KEY);
+      const fetchURL = async(url) => await axios.get(BASE_URL + url + API_KEY);
       // map api
       const HomepageURL = [
         MOVIE_URL_SLIDER,
@@ -37,15 +40,13 @@ export const getAllMovieAndTvShowData = () => {
       return { movieSliderData,MovieData, TvShowData, MovieLegacyData, CommunityData };
     };
     
-    dispatch(homepageAction.getHomepageData({
-      loading:true
-    }));
+  
 
     try {
       const homepageData = await fetchData();
       dispatch(
         homepageAction.getHomepageDataSuccess({
-          loading: false,
+          isLoading: true,
           slider:homepageData.movieSliderData,
           movie: homepageData.MovieData,
           tvshow: homepageData.TvShowData,

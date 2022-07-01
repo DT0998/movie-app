@@ -7,14 +7,14 @@ const homepageSlice = createSlice({
         tvshow:[],
         movielegacy:[],
         community:[],
-        loading:""
+        isLoading:false
     },
     reducers:{
        getHomepageData:(state,actions) =>{
-        state.loading = actions.payload.loading
+        state.isLoading = actions.payload.isLoading
        }, 
        getHomepageDataSuccess:(state,actions) =>{
-        state.loading = actions.payload.loading
+        state.isLoading = actions.payload.isLoading
         state.slider = actions.payload.slider
         state.movie = actions.payload.movie
         state.tvshow = actions.payload.tvshow

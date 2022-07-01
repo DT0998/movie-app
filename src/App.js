@@ -10,19 +10,19 @@ import Routes from "./routes/routes";
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.homepage.loading);
+  const isLoading = useSelector((state) => state.homepage.isLoading);
   useEffect(() => {
     dispatch(getAllMovieAndTvShowData());
   }, [dispatch]);
 
   return (
     <BrowserRouter basename="/movie-app">
-      {loading ? (
-        <Loading type="fullscreen" />
-      ) : (
+      {isLoading ? (
         <Layout>
-        <Routes />
-      </Layout>
+          <Routes />
+        </Layout>
+      ) : (
+        <Loading type="fullscreen" />
       )}
     </BrowserRouter>
   );
