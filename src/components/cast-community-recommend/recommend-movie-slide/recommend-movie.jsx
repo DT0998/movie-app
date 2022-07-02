@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {Col, Container, Row } from "react-bootstrap";
-import classes from '../recommend-card.module.css'
+import { Col, Container, Row } from "react-bootstrap";
+import classes from "../recommend-card.module.css";
 import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
 import RecommendCard from "../recommend-card";
 import axios from "axios";
@@ -38,55 +38,55 @@ export const RecommendMovie = ({ id }) => {
   return (
     <React.Fragment>
       {Recommends.length === 0 ? null : (
-        <Row>
-          <Col>
-            <CastCommunityRecommendTitle titlemain="Recommendations" />
-            <div
-             className={`${classes.Recommend_container}`}
-            >
+        <React.Fragment>
+          <CastCommunityRecommendTitle titlemain="Recommendations" />
+          <div className={`${classes.Recommend_container}`}>
             <Container>
-              <Swiper
-                slidesPerView={4}
-                scrollbar={{
-                  " dragable": true,
-                }}
-                breakpoints={{
-                  // when window width is >= 320px
-                  320: {
-                    slidesPerView: 1,
-                  },
-                  // when window width is >= 480px
-                  425: {
-                    slidesPerView: 2,
-                  },
-                  // when window width is >= 640px
-                  640: {
-                    slidesPerView: 3,
-                  },
-                  // when window width is >= 1024px
-                  1024: {
-                    slidesPerView: 4,
-                  },
-                }}
+              <Row>
+              <Col>
+                <Swiper
+                  slidesPerView={4}
+                  scrollbar={{
+                    " dragable": true,
+                  }}
+                  breakpoints={{
+                    // when window width is >= 320px
+                    320: {
+                      slidesPerView: 1,
+                    },
+                    // when window width is >= 480px
+                    425: {
+                      slidesPerView: 2,
+                    },
+                    // when window width is >= 640px
+                    640: {
+                      slidesPerView: 3,
+                    },
+                    // when window width is >= 1024px
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                  }}
                 >
-                <div className="d-flex flex-column justify-content-around">
-                  {Recommends.map((recommend) => (
-                    <SwiperSlide key={recommend.id}>
-                      <RecommendCard
-                        type="movie"
-                        linkto={recommend.id}
-                        img_org={IMG_ORG}
-                        backdrop_path={recommend.backdrop_path}
-                        original_title={recommend.original_title}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </div>
-              </Swiper>
-                  </Container>
-            </div>
-          </Col>
-        </Row>
+                  <div className="d-flex flex-column justify-content-around">
+                    {Recommends.map((recommend) => (
+                      <SwiperSlide key={recommend.id}>
+                        <RecommendCard
+                          type="movie"
+                          linkto={recommend.id}
+                          img_org={IMG_ORG}
+                          backdrop_path={recommend.backdrop_path}
+                          original_title={recommend.original_title}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </div>
+                </Swiper>
+              </Col>
+              </Row>
+            </Container>
+          </div>
+        </React.Fragment>
       )}
     </React.Fragment>
   );

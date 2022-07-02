@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import RecommendCard from "../recommend-card";
 import CastCommunityRecommendTitle from "../cast-community-recommend-card-title";
-import classes from '../recommend-card.module.css'
+import classes from "../recommend-card.module.css";
 import axios from "axios";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -31,64 +31,62 @@ export const RecommendTv = ({ id }) => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }, [API_URL]);
 
   return (
     <React.Fragment>
       {Recommends.length === 0 ? null : (
-    <div className="wrap_fluid">
-      <Container>
-        <Row>
-          <Col>
-            <CastCommunityRecommendTitle titlemain="Recommendations" />
-            <div
-              className={`wrap ${classes.Recommend_container}`}
-            >
-              <Swiper
-                slidesPerView={4}
-                scrollbar={{
-                  " dragable": true,
-                }}
-                breakpoints={{
-                  // when window width is >= 320px
-                  320: {
-                    slidesPerView: 1,
-                  },
-                  // when window width is >= 480px
-                  425: {
-                    slidesPerView: 2,
-                  },
-                  // when window width is >= 640px
-                  640: {
-                    slidesPerView: 3,
-                  },
-                  // when window width is >= 1024px
-                  1024: {
-                    slidesPerView: 4,
-                  },
-                }}
-              >
-                <div className="d-flex flex-column justify-content-around">
-                  {Recommends.map((recommend) => (
-                    <SwiperSlide key={recommend.id}>
-                      <RecommendCard
-                        type="tvshow"
-                        linkto={recommend.id}
-                        img_org={IMG_ORG}
-                        backdrop_path={recommend.backdrop_path}
-                        original_title={recommend.original_name}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </div>
-              </Swiper>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+        <React.Fragment>
+          <CastCommunityRecommendTitle titlemain="Recommendations" />
+          <div className={`wrap ${classes.Recommend_container}`}>
+            <Container>
+              <Row>
+                <Col>
+                  <Swiper
+                    slidesPerView={4}
+                    scrollbar={{
+                      " dragable": true,
+                    }}
+                    breakpoints={{
+                      // when window width is >= 320px
+                      320: {
+                        slidesPerView: 1,
+                      },
+                      // when window width is >= 480px
+                      425: {
+                        slidesPerView: 2,
+                      },
+                      // when window width is >= 640px
+                      640: {
+                        slidesPerView: 3,
+                      },
+                      // when window width is >= 1024px
+                      1024: {
+                        slidesPerView: 4,
+                      },
+                    }}
+                  >
+                    <div className="d-flex flex-column justify-content-around">
+                      {Recommends.map((recommend) => (
+                        <SwiperSlide key={recommend.id}>
+                          <RecommendCard
+                            type="tvshow"
+                            linkto={recommend.id}
+                            img_org={IMG_ORG}
+                            backdrop_path={recommend.backdrop_path}
+                            original_title={recommend.original_name}
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </div>
+                  </Swiper>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </React.Fragment>
       )}
     </React.Fragment>
   );
