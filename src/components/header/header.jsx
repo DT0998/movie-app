@@ -1,5 +1,4 @@
 import classes from "./header.module.css";
-import { Blurhash } from "react-blurhash";
 import { Row, Col, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
