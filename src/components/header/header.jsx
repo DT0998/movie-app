@@ -1,29 +1,33 @@
 import classes from "./header.module.css";
+import { Blurhash } from "react-blurhash";
 import { Row, Col, Container } from "react-bootstrap";
-import {useSelector} from 'react-redux';
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Buttonsquare } from "../buttons/button-square/button-square";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 // effect swiper
-import { EffectFade } from 'swiper';
+import { EffectFade } from "swiper";
 import "swiper/css/effect-fade";
 // autoplay
 import "swiper/css/autoplay";
-SwiperCore.use([Autoplay])
+SwiperCore.use([Autoplay]);
+// blurhash
 
 export const Header = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
-  const sliderData = useSelector((state) => state.homepage.slider)
+  const sliderData = useSelector((state) => state.homepage.slider);
   // add aos swiper
-  
+
   return (
     <Swiper
       slidesPerView={1}
-      autoplay={true}
+      autoplay={{
+        delay: 4000,
+      }}
       loop={true}
       effect="fade"
       modules={[EffectFade]}
