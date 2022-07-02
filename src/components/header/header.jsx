@@ -64,6 +64,7 @@ export const Header = () => {
                       showLoadingAnimation={true}
                       style={skeletonImage}
                       ready={true}
+                      delay={1000}
                     >
                       <img
                         src={IMG_URL + movie.poster_path}
