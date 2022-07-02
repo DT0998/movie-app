@@ -3,6 +3,9 @@ import { Row, Col, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Buttonsquare } from "../buttons/button-square/button-square";
+// skeleton loading
+import ReactPlaceholder from "react-placeholder";
+import "react-placeholder/lib/reactPlaceholder.css";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
@@ -13,13 +16,13 @@ import "swiper/css/effect-fade";
 // autoplay
 import "swiper/css/autoplay";
 SwiperCore.use([Autoplay]);
-// blurhash
 
 export const Header = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   const sliderData = useSelector((state) => state.homepage.slider);
-  // add aos swiper
+  // style skeleton image
+  const skeletonImage = { width: 416, height: 624, borderRadius: 10 };
 
   return (
     <Swiper
@@ -55,12 +58,20 @@ export const Header = () => {
                 </Col>
                 <Col md={4}>
                   <div className={`wrap ${classes.header_img}`}>
-                    <img
-                      src={IMG_URL + movie.poster_path}
-                      alt={movie.title}
-                      className={classes.img_movie}
-                      loading="lazy"
-                    />
+                    <ReactPlaceholder
+                      type="rect"
+                      color="#E0E0E0"
+                      showLoadingAnimation={true}
+                      style={skeletonImage}
+                      ready={true}
+                    >
+                      <img
+                        src={IMG_URL + movie.poster_path}
+                        alt={movie.title}
+                        className={classes.img_movie}
+                        loading="lazy"
+                      />
+                    </ReactPlaceholder>
                   </div>
                 </Col>
               </Row>
