@@ -1,11 +1,12 @@
 import React from "react";
 import classes from './recommend-card.module.css'
 // route
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 function RecommendCard(props) {
   return (
     <React.Fragment>
+      
       <Link to={`/${props.type}/${props.linkto}`}>
         <Card
           className={classes.Recommend_card}

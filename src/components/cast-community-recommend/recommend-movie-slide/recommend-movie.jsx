@@ -38,14 +38,13 @@ export const RecommendMovie = ({ id }) => {
   return (
     <React.Fragment>
       {Recommends.length === 0 ? null : (
-    <div className="wrap_fluid">
-      <Container>
         <Row>
           <Col>
             <CastCommunityRecommendTitle titlemain="Recommendations" />
             <div
-             className={`wrap ${classes.Recommend_container}`}
+             className={`${classes.Recommend_container}`}
             >
+            <Container>
               <Swiper
                 slidesPerView={4}
                 scrollbar={{
@@ -69,7 +68,7 @@ export const RecommendMovie = ({ id }) => {
                     slidesPerView: 4,
                   },
                 }}
-              >
+                >
                 <div className="d-flex flex-column justify-content-around">
                   {Recommends.map((recommend) => (
                     <SwiperSlide key={recommend.id}>
@@ -84,11 +83,10 @@ export const RecommendMovie = ({ id }) => {
                   ))}
                 </div>
               </Swiper>
+                  </Container>
             </div>
           </Col>
         </Row>
-      </Container>
-    </div>
       )}
     </React.Fragment>
   );
