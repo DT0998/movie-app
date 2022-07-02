@@ -1,11 +1,18 @@
 import classes from "./header.module.css";
 import { Row, Col, Container } from "react-bootstrap";
-// swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import {useSelector} from 'react-redux';
 import { Link } from "react-router-dom";
 import { Buttonsquare } from "../buttons/button-square/button-square";
-import {useSelector} from 'react-redux';
+// swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from 'swiper';
+import "swiper/css";
+// effect swiper
+import { EffectFade } from 'swiper';
+import "swiper/css/effect-fade";
+// autoplay
+import "swiper/css/autoplay";
+SwiperCore.use([Autoplay])
 
 export const Header = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
@@ -15,10 +22,11 @@ export const Header = () => {
   
   return (
     <Swiper
-      autoplay={{
-        delay: 1000,
-      }}
+      slidesPerView={1}
+      autoplay={true}
       loop={true}
+      effect="fade"
+      modules={[EffectFade]}
       className={classes.header_slider}
     >
       {sliderData.map((movie) => (
