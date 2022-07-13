@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/home";
 import Trending from "../../pages/trending";
-import MovieLegacy from "../../pages/movielegacy";
+import MovieLegacy from "../../pages/movie-legacy";
 import Movie from "../../pages/movie";
 import TvShow from "../../pages/tvshow";
 import DetailsMovie from "../../pages/details/movie";
