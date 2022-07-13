@@ -1,4 +1,4 @@
-import SearchInput from "../../components/search-input";
+import SearchInput from "../../components/search-bar";
 
 function Search() {
     return ( 

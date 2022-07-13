@@ -1,4 +1,4 @@
-import classes from './search-input.module.css';
+import classes from './search-bar.module.css';
 import { FaSearch } from "react-icons/fa";
 function SearchInput() {
     return (
