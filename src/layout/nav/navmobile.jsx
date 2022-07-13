@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/images/nav/logo/logo.svg";
+import logo from "../../assets/images/layout/nav/logo/logo.svg";
 import classes from "./navmobile.module.css";
 // route
 import { Link } from "react-router-dom";

@@ -1,14 +1,14 @@
 import React from "react";
 import classes from "./details.module.css";
 import { Col, Container, Row } from "react-bootstrap";
-import GenresMovie from "./genres/genres-movie";
-import GenresTV from "./genres/genres-tv";
-import { TrailerTV } from "../trailer/watchtrailer-tv/watchtrailer-tv";
-import { TrailerMovie } from "../trailer/watchtrailer-movie/watchtrailer-movie";
-import { RecommendTv } from "../cast-community-recommend/recommend-tvshow-slide/recommend-tvshow";
-import { RecommendMovie } from "../cast-community-recommend/recommend-movie-slide/recommend-movie";
-import { CastMovie } from "../cast-community-recommend/cast-movie-slide/cast-movie-slide";
-import { CastTv } from "../cast-community-recommend/cast-tv-slide/cast-tv-slide";
+import GenresMovie from "./genres/movie";
+import GenresTV from "./genres/tvshow";
+import TrailerTV  from "../trailer/tvshow";
+import TrailerMovie  from "../trailer/movie";
+import RecommendTv from "../cast-community-recommend/recommend/tvshow";
+import RecommendMovie from "../cast-community-recommend/recommend/movie";
+import CastMovie from "../cast-community-recommend/cast/movie";
+import CastTv from "../cast-community-recommend/cast/tvshow";
 
 function Details(props) {
   // format date
@@ -46,9 +46,7 @@ function Details(props) {
             </Col>
             <Col md={8}>
               <div className={`wrap ${classes.details_content}`}>
-                <p className={classes.details_title}>
-                  {props.original_title}
-                </p>
+                <p className={classes.details_title}>{props.original_title}</p>
                 <p>{props.overview}</p>
                 {props.type === "movie" ? (
                   <GenresMovie id={props.id} />

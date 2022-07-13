@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonScrollTop from "../components/buttons/button-scrolltop/button-scrolltotop";
+import ButtonScrollTop from "../components/buttons/button-scrolltop";
 import { Footer } from "./footer/footer";
 import { Nav } from "./nav/nav";
 

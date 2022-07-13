@@ -6,7 +6,7 @@ import classes from "./nav.module.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 // logo
-import logo from "../../assets/images/nav/logo/logo.svg";
+import logo from "../../assets/images/layout/nav/logo/logo.svg";
 // icons
 import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";

@@ -1,15 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Loading } from "./components/loading/loading";
+import { Loading } from "./components/loading";
 import Layout from "./layout/layout";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllMovieAndTvShowData } from "./store/homepage-actions";
-import Routes from "./routes/routes";
+import { getAllMovieAndTvShowData } from "./redux/home/actions";
+import Routes from "./config/routes/routes";
+import { selectorLoading } from "./redux/home/slice";
 
 function App() {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.homepage.isLoading);
+  const isLoading = useSelector(selectorLoading);
   useEffect(() => {
     dispatch(getAllMovieAndTvShowData());
   }, [dispatch]);
