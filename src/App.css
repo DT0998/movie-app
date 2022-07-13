@@ -1,10 +1,10 @@
 html,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
   /* hide scroll bar */
 }
-body{
+body {
   overflow: overlay;
 }
 
@@ -21,37 +21,34 @@ h1 {
   cursor: default;
 }
 
-li{
+li {
   list-style: none;
 }
-ul{
+ul {
   padding-left: 0rem;
   margin-bottom: 0;
 }
-.wrap{
+.wrap {
   padding: 10px 0px;
 }
-.wrap_fluid{
+.wrap_fluid {
   padding: 5px 10px;
 }
-@media (min-width:1440px) {
-  .wrap{
+@media (min-width: 1440px) {
+  .wrap {
     padding: 5px 0px;
   }
 }
 /* scrollbar */
-::-webkit-scrollbar-track
-{
-	background-color: transparent;
-}
-
-::-webkit-scrollbar
-{ 
+::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
   background-color: lightgray;
   border-radius: 10px;
   border: 6px solid transparent;
@@ -60,7 +57,7 @@ ul{
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
-::-webkit-scrollbar-corner{
+::-webkit-scrollbar-corner {
   border-radius: 10px;
   background-color: lightgray;
 }
