@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const homeSlice = createSlice({
+const slice = createSlice({
   name: "home",
   initialState: {
     slider: [],
@@ -24,11 +24,11 @@ const homeSlice = createSlice({
   },
 });
 
-export const homepageAction = homeSlice.actions;
+export const homepageAction = slice.actions;
 export const selectorSlider = (state) => state.page.home.slider;
 export const selectorMovie = (state) => state.page.home.movie;
 export const selectorTvshow = (state) => state.page.home.tvshow;
 export const selectorMovieLegacy = (state) => state.page.home.movielegacy;
 export const selectorCommunity = (state) => state.page.home.community;
 export const selectorLoading = (state) => state.page.home.isLoading;
-export default homeSlice.reducer;
+export default slice.reducer;
