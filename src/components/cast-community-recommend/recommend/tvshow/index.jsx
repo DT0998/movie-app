@@ -38,9 +38,11 @@ const RecommendTv = ({ id }) => {
     <React.Fragment>
       {Recommends.length === 0 ? null : (
         <React.Fragment>
-          <h3 className="d-flex justify-content-between align-items-center">
-            Recommendations
-          </h3>
+          <Container>
+            <h3 className="d-flex justify-content-between align-items-center">
+              Recommendations
+            </h3>
+          </Container>
           <div className={`wrap ${classes.Recommend_container}`}>
             <Container>
               <Row>
