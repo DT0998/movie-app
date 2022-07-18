@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import NavMobile from "../header-mobile";
-import classes from "./header-desktop.module.css";
+import NavMobile from "../nav-mobile";
+import classes from "./nav-desktop.module.css";
 // route
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
