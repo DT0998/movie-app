@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
-import { selectorCommunity } from "../../../redux/home/slice";
+import { selectorCommunity } from "../../../redux/pages/home/slice";
 SwiperCore.use([Scrollbar]);
 
 export const Community = () => {

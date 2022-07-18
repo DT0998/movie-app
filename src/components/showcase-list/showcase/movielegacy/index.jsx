@@ -4,7 +4,7 @@ import ShowcaseTitle from "../../showcase-title";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import {useSelector} from 'react-redux'
-import { selectorMovieLegacy } from "../../../../redux/home/slice";
+import { selectorMovieLegacy } from "../../../../redux/pages/home/slice";
 export const Movielegacyshowcase = () => {
   const movielegacyData = useSelector(selectorMovieLegacy);
   // media query

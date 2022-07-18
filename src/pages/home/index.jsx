@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Community } from "../../components/cast-community-recommend/community";
 import Showcase from "../../components/showcase-list/showcase";
-import { Header } from "../../components/header";
+import { Banner } from "../../components/banner";
 
 const HomePage = () => {
   // change title
@@ -10,7 +10,7 @@ const HomePage = () => {
   }, []);
   return (
     <React.Fragment>
-      <Header />
+      <Banner />
       <Showcase />
       <Community />
     </React.Fragment>

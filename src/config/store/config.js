@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import pageReducer from "../../redux/slice";
+import pageReducer from "../../redux/pages/slice";
 
 const reducer = combineReducers({
   page: pageReducer,

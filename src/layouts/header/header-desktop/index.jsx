@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import NavMobile from "./navmobile";
-import classes from "./nav.module.css";
+import NavMobile from "../header-mobile";
+import classes from "./header-desktop.module.css";
 // route
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 // logo
-import logo from "../../assets/images/layout/nav/logo/logo.svg";
+import logo from "../../../assets/images/layout/header/logo/logo.svg";
 // icons
 import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 // hook
-import useMediaQuery from "../../hooks/useMediaquery";
+import useMediaQuery from "../../../hooks/useMediaquery";
 
-export const Nav = () => {
+export const Header = () => {
   const isTablet = useMediaQuery("(min-width:768px)");
   //   sticky nav
   const [scroll, setScroll] = useState(false);
@@ -61,26 +61,42 @@ export const Nav = () => {
               <Row className="d-flex flex-row justify-content-center">
                 <Col className="col-6">
                   <div className={classes.nav_left}>
-                    <ul className={`${classes.nav_list} d-flex flex-row justify-content-md-start align-items-center gap-3`}>
+                    <ul
+                      className={`${classes.nav_list} d-flex flex-row justify-content-md-start align-items-center gap-3`}
+                    >
                       <li>
                         <Link to="/">
-                          <img src={logo} className={classes.logo} alt="logo"></img>
+                          <img
+                            src={logo}
+                            className={classes.logo}
+                            alt="logo"
+                          ></img>
                         </Link>
                       </li>
                       <li>
-                        <NavLink to="/movie" activeClassName={classes.Active}> Movies </NavLink>
+                        <NavLink to="/movie" activeClassName={classes.Active}>
+                          {" "}
+                          Movies{" "}
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink to="/tvshow" activeClassName={classes.Active}>TV Shows</NavLink>
+                        <NavLink to="/tvshow" activeClassName={classes.Active}>
+                          TV Shows
+                        </NavLink>
                       </li>
                     </ul>
                   </div>
                 </Col>
                 <Col className="col-6">
                   <div className={classes.nav_right}>
-                    <ul className={`${classes.nav_list} d-flex flex-row justify-content-md-end align-items-center gap-3`}>
+                    <ul
+                      className={`${classes.nav_list} d-flex flex-row justify-content-md-end align-items-center gap-3`}
+                    >
                       <li>
-                        <NavLink to="/search" activeClassName={classes.Active}> Search </NavLink>
+                        <NavLink to="/search" activeClassName={classes.Active}>
+                          {" "}
+                          Search{" "}
+                        </NavLink>
                       </li>
                       <li>
                         <NavLink to="/account">
@@ -97,14 +113,20 @@ export const Nav = () => {
       ) : (
         // mobile
         <React.Fragment>
-          {isOpenNavOverlay && isOpenNavMobile && <div className={classes.overlay} />}
-          <Container className={`${classes.nav_fluid} ${scroll && classes.sticky}`}>
+          {isOpenNavOverlay && isOpenNavMobile && (
+            <div className={classes.overlay} />
+          )}
+          <Container
+            className={`${classes.nav_fluid} ${scroll && classes.sticky}`}
+          >
             <div className="wrap_fluid">
               <div className="wrap">
                 <Row className={`d-flex flex-row justify-content-center`}>
                   <Col className="col-12">
                     <div className={`${classes.nav_left}`}>
-                      <ul className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}>
+                      <ul
+                        className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
+                      >
                         {!isOpenNavMobile ? (
                           <FaBars
                             className={classes.icons_menu}

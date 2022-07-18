@@ -4,7 +4,7 @@ import ShowcaseTitle from "../../showcase-title";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
 import { useSelector } from "react-redux";
-import { selectorMovie } from "../../../../redux/home/slice";
+import { selectorMovie } from "../../../../redux/pages/home/slice";
 export const Trendingshowcase = () => {
   const movieData = useSelector(selectorMovie);
   // media query

@@ -4,8 +4,8 @@ import { ShowcaseListCard } from "../../showcase-list-card";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
 
-import {useSelector} from 'react-redux'
-import { selectorTvshow } from "../../../../redux/home/slice";
+import { useSelector } from "react-redux";
+import { selectorTvshow } from "../../../../redux/pages/home/slice";
 export const Tvshowcase = () => {
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
@@ -14,9 +14,6 @@ export const Tvshowcase = () => {
 
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const tvshowData = useSelector(selectorTvshow);
-
-
-  
 
   let TvShowUi;
   /* mobile */

@@ -1,7 +1,7 @@
-import classes from "./header.module.css";
+import classes from "./banner.module.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectorSlider } from "../../redux/home/slice";
+import { selectorSlider } from "../../redux/pages/home/slice";
 import { Link } from "react-router-dom";
 import ButtonMoreInfo from "../buttons/button-square";
 // skeleton loading
@@ -18,7 +18,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
 SwiperCore.use([Autoplay]);
 
-export const Header = () => {
+export const Banner = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   const sliderData = useSelector(selectorSlider);
