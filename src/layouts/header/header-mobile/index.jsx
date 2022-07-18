@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../../assets/images/layout/header/logo/logo.svg";
+import logo from "../../../assets/images/layouts/header/logo/logo.svg";
 import classes from "./header-mobile.module.css";
 // route
 import { Link } from "react-router-dom";

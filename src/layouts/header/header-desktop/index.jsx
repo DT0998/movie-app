@@ -6,7 +6,7 @@ import classes from "./header-desktop.module.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 // logo
-import logo from "../../../assets/images/layout/header/logo/logo.svg";
+import logo from "../../../assets/images/layouts/header/logo/logo.svg";
 // icons
 import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";

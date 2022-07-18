@@ -5,7 +5,7 @@ import Layout from "./layouts/main";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllMovieAndTvShowData } from "./redux/pages/home/actions";
-import Routes from "./config/routes/routes";
+import Routes from "./configs/routes/routes";
 import { selectorLoading } from "./redux/pages/home/slice";
 
 function App() {
