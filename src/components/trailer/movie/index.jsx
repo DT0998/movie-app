@@ -39,8 +39,9 @@ const TrailerMovie = ({ id }, props) => {
           <ButtonWatchNow
             type="moreInfo"
             onClick={openModalHandle}
-            title="Watch now"
-          />
+          >
+            Watch Now
+          </ButtonWatchNow>
           <Modal
             size="lg"
             show={lgShow}

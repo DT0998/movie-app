@@ -36,11 +36,9 @@ const TrailerTV = ({ id }, props) => {
     <React.Fragment>
       {Trailers.length === 0 ? null : (
         <React.Fragment>
-          <ButtonMoreInfo
-            type="moreInfo"
-            onClick={openModalHandle}
-            title="Watch now"
-          />
+          <ButtonMoreInfo type="moreInfo" onClick={openModalHandle}>
+            Watch Now
+          </ButtonMoreInfo>
           <Modal
             size="lg"
             show={lgShow}

@@ -1,26 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getAllMovieAndTvShow } from "../home/actions";
 const slice = createSlice({
-  name: "home",
+  name: "homepage",
   initialState: {
     slider: [],
     movie: [],
     tvshow: [],
     movielegacy: [],
     community: [],
-    isLoading: false,
   },
-  reducers: {
-    getHomepageData: (state, actions) => {
-      state.isLoading = actions.payload.isLoading;
+  reducers: {},
+  extraReducers: {
+    [getAllMovieAndTvShow.fulfilled]: (state, action) => {
+      state.slider = action.payload.SliderData;
+      state.movie = action.payload.MovieData;
+      state.tvshow = action.payload.TvShowData;
+      state.movielegacy = action.payload.MovieLegacyData;
+      state.community = action.payload.CommunityData;
     },
-    getHomepageDataSuccess: (state, actions) => {
-      state.isLoading = actions.payload.isLoading;
-      state.slider = actions.payload.slider;
-      state.movie = actions.payload.movie;
-      state.tvshow = actions.payload.tvshow;
-      state.movielegacy = actions.payload.movielegacy;
-      state.community = actions.payload.community;
-    },
+    [getAllMovieAndTvShow.error]: () => {},
   },
 });
 
@@ -30,5 +28,4 @@ export const selectorMovie = (state) => state.page.home.movie;
 export const selectorTvshow = (state) => state.page.home.tvshow;
 export const selectorMovieLegacy = (state) => state.page.home.movielegacy;
 export const selectorCommunity = (state) => state.page.home.community;
-export const selectorLoading = (state) => state.page.home.isLoading;
 export default slice.reducer;

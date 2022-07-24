@@ -5,14 +5,10 @@ const ButtonSquare = (props) => {
   return (
     <React.Fragment>
       {props.type === "moreInfo" && (
-        <button className={classes.btn_info_watch} {...props}>
-          {props.title}
-        </button>
+        <button className={classes.btn_infowatch} {...props} />
       )}
       {props.type === "showMore" && (
-        <button className={classes.btn_loadmore} {...props}>
-          {props.title}
-        </button>
+        <button className={classes.btn_loadmore} {...props} />
       )}
     </React.Fragment>
   );

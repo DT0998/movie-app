@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // icon
 import { FaSearch } from "react-icons/fa";
 
-function HeaderMobile({ open }) {
+function NavMobile({ open }) {
   // state scroll nav mobile
   const [isScroll, setIsScroll] = useState(false);
   useEffect(() => {
@@ -75,4 +75,4 @@ function HeaderMobile({ open }) {
   );
 }
 
-export default HeaderMobile;
+export default NavMobile;

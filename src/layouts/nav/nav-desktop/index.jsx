@@ -13,7 +13,7 @@ import { MdClose } from "react-icons/md";
 // hook
 import useMediaQuery from "../../../hooks/useMediaquery";
 
-export const Header = () => {
+const NavDesktop = () => {
   const isTablet = useMediaQuery("(min-width:768px)");
   //   sticky nav
   const [scroll, setScroll] = useState(false);
@@ -157,3 +157,4 @@ export const Header = () => {
     </React.Fragment>
   );
 };
+export default NavDesktop;

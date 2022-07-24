@@ -17,7 +17,7 @@ export const Detailsmovie = ({ id }) => {
   const getTrending = useCallback(async ()=>{
     let response = await axios.get(API_URL);
     setMovie(response.data);
-  });
+  },[API_URL]);
 
   useEffect(() => {
     getTrending();

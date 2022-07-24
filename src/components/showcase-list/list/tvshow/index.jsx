@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import classes from "../../showcase-list-card.module.css";
@@ -68,11 +69,9 @@ export const Tvshowlist = () => {
                 />
               ))}
               {page < totalpage ? (
-                <ButtonShowMore
-                  onClick={showMoreHandle}
-                  type="showMore"
-                  title="Show more"
-                />
+                <ButtonShowMore onClick={showMoreHandle} type="showMore">
+                  Show More
+                </ButtonShowMore>
               ) : null}
             </div>
           </Col>

@@ -1,29 +1,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Loading } from "./components/loading";
-import Layout from "./layouts/main";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllMovieAndTvShowData } from "./redux/pages/home/actions";
+import React from "react";
+import { useSelector } from "react-redux";
 import Routes from "./configs/routes/routes";
-import { selectorLoading } from "./redux/pages/home/slice";
+import Layout from "./layouts";
+import { selectorLoading } from "./redux/features/loading/slice";
 
 function App() {
-  const dispatch = useDispatch();
   const isLoading = useSelector(selectorLoading);
-  useEffect(() => {
-    dispatch(getAllMovieAndTvShowData());
-  }, [dispatch]);
 
   return (
     <React.Fragment>
-      {isLoading ? (
         <Layout>
           <Routes />
         </Layout>
+      {/* {isLoading ? (
       ) : (
         <Loading type="fullscreen" />
-      )}
+      )} */}
     </React.Fragment>
   );
 }

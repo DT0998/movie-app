@@ -19,9 +19,9 @@ export const Community = () => {
       <Container>
         <Row>
           <Col>
-            <h3 className="d-flex justify-content-between align-items-center">
+            <h1 className="d-flex justify-content-between align-items-center">
               Community
-            </h3>
+            </h1>
             <div className={`wrap ${classes.CastCommunity_container}`}>
               <Swiper
                 slidesPerView={4}

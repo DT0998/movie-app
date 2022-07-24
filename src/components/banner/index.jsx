@@ -53,7 +53,9 @@ export const Banner = () => {
                       </p>
                     </div>
                     <Link to={`/movie/${movie.id}`}>
-                      <ButtonMoreInfo type="moreInfo" title="More info" />
+                      <ButtonMoreInfo type="moreInfo">
+                        More info
+                      </ButtonMoreInfo>
                     </Link>
                   </div>
                 </Col>

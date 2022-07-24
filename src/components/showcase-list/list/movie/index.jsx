@@ -68,11 +68,9 @@ export const Movielist = () => {
                 />
               ))}
               {page < totalpage ? (
-                <ButtonShowMore
-                  onClick={showMoreHandle}
-                  type="showMore"
-                  title="Show more"
-                />
+                <ButtonShowMore onClick={showMoreHandle} type="showMore">
+                  Show More
+                </ButtonShowMore>
               ) : null}
             </div>
           </Col>

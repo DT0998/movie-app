@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Container, Col, Row} from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import classes from "../../showcase-list-card.module.css";
 import ListTitle from "../../list-title";
 import { ShowcaseListCard } from "../../showcase-list-card";
@@ -42,9 +42,7 @@ export const Movielegacylist = () => {
         <Row>
           <Col>
             <div className="wrap">
-              <ListTitle
-                titlemain="Movies legacy"
-              />
+              <ListTitle titlemain="Movies legacy" />
             </div>
           </Col>
         </Row>
@@ -53,9 +51,7 @@ export const Movielegacylist = () => {
             <SortTable />
           </Col>
           <Col xs={12} md={8} lg={9}>
-            <div
-              className=" d-flex flex-row flex-wrap justify-content-center"
-            >
+            <div className=" d-flex flex-row flex-wrap justify-content-center">
               {movielegacy.map((movie) => (
                 <ShowcaseListCard
                   key={movie.id}
@@ -72,11 +68,9 @@ export const Movielegacylist = () => {
                 />
               ))}
               {page < totalpage ? (
-               <ButtonShowMore
-               onClick={showMoreHandle}
-               type="showMore"
-               title="Show more"
-             />
+                <ButtonShowMore onClick={showMoreHandle} type="showMore">
+                  Show More
+                </ButtonShowMore>
               ) : null}
             </div>
           </Col>
