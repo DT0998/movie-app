@@ -1,8 +1,8 @@
 html,
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Custom Font";
   scroll-behavior: smooth;
-  /* hide scroll bar */
+  text-rendering: optimizeLegibility;
 }
 body {
   overflow: overlay;

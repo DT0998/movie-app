@@ -1,1 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap');
+@font-face {
+  font-family: "Custom Font";
+  src: url("../assets/fonts/SF-Pro-Display-Heavy.otf");
+}

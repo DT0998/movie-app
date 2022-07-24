@@ -23,7 +23,7 @@ const Footer = () => {
           <Col>
             <div className="text-center">
               <a
-                href="https://github.com/DT0998/movie-app"
+                href="https://github.com/DT0998"
                 target="_blank"
                 rel="noreferrer"
                 className={classes.inActive_icons}
