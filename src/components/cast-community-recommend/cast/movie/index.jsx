@@ -28,21 +28,28 @@ const CastMovie = ({ id }) => {
   useEffect(() => {
     getCast();
   }, [API_URL]);
+  
+  let castMovie;
   // filter null cast movie
-  let castMovie = Casts.map((cast) => {
+  castMovie = (cast) => {
     if (cast.profile_path === null) {
       return null;
     }
-    return (
-      <SwiperSlide key={cast.id}>
-        <CastCommunityCard
-          img_url={IMG_ORG}
-          profile_path={cast.profile_path}
-          peoplename={cast.name}
-        />
-      </SwiperSlide>
-    );
-  });
+  };
+  // render 10 cast movie
+  castMovie = Casts.map(
+    (cast, index) =>
+      index < 10 && (
+        <SwiperSlide key={cast.id}>
+          <CastCommunityCard
+            img_url={IMG_ORG}
+            profile_path={cast.profile_path}
+            peoplename={cast.name}
+          />
+        </SwiperSlide>
+      )
+  );
+
   return (
     <React.Fragment>
       {Casts.length === 0 ? null : (

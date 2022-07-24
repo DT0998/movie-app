@@ -30,21 +30,27 @@ const CastTvShow = ({ id }) => {
     getCast();
   }, [API_URL]);
 
+  let castTvShow;
   // filter null cast tvshow
-  let castTvShow = Casts.map((cast) => {
+  castTvShow = (cast) => {
     if (cast.profile_path === null) {
       return null;
     }
-    return (
-      <SwiperSlide key={cast.id}>
-        <CastCommunityCard
-          img_url={IMG_ORG}
-          profile_path={cast.profile_path}
-          peoplename={cast.name}
-        />
-      </SwiperSlide>
-    );
-  });
+  };
+
+  // render 10 cast tvshow
+  castTvShow = Casts.map(
+    (cast, index) =>
+      index < 10 && (
+        <SwiperSlide key={cast.id}>
+          <CastCommunityCard
+            img_url={IMG_ORG}
+            profile_path={cast.profile_path}
+            peoplename={cast.name}
+          />
+        </SwiperSlide>
+      )
+  );
   return (
     <React.Fragment>
       {Casts.length === 0 ? null : (
