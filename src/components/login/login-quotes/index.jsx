@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import classes from './login-quotes.module.css'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
+import classes from "./login-quotes.module.css";
 import axios from "axios";
 
 export const Loginquotes = () => {
@@ -20,7 +21,7 @@ export const Loginquotes = () => {
   }, [API_URL]);
 
   return (
-    <div>
+    <React.Fragment>
       {loginQuotes.map(
         (image, index) =>
           index < 1 && (
@@ -33,6 +34,6 @@ export const Loginquotes = () => {
             ></div>
           )
       )}
-    </div>
+    </React.Fragment>
   );
 };

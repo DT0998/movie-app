@@ -22,6 +22,7 @@
 }
 
 .btn_google {
+  margin-top: 10px;
   min-width: 100%;
   justify-content: center;
   border-radius: 20px !important;
