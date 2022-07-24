@@ -55,16 +55,16 @@ const slice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [getAllMovieAndTvShow.pending]: (state) => { 
+    [getAllMovieAndTvShow.pending]: (state) => {
       state.isLoading = false;
     },
     [getAllMovieAndTvShow.fulfilled]: (state, action) => {
+      state.isLoading = true;
       state.slider = action.payload.SliderData;
       state.movie = action.payload.MovieData;
       state.tvshow = action.payload.TvShowData;
       state.movielegacy = action.payload.MovieLegacyData;
       state.community = action.payload.CommunityData;
-      state.isLoading = true;
     },
     [getAllMovieAndTvShow.error]: (state) => {
       state.isLoading = false;
