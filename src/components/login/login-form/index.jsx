@@ -4,27 +4,31 @@ import classes from "./login-form.module.css";
 import GoogleLogin from "react-google-login";
 
 export const Loginform = () => {
-  const responseGoogle = (response) => {
-    console.log(response);
+  const handleFailure = (response) => {
+    alert(response)
+  };
+  const handleSuccess = () => {
+    
   }
   return (
     <form>
       <div className={`${classes.loginForm} px-md-5`}>
-      <div className="text-xxl-start text-xl-center text-lg-center my-4 px-md-5 d-flex flex-column">
-        <label className={classes.loginForm_title}>Login</label>
-        <label className={classes.loginForm_content}>
-          Login watch and chill movie
-        </label>
+        <div className="text-xxl-start text-xl-center text-lg-center my-4 px-md-5 d-flex flex-column">
+          <label className={classes.loginForm_title}>Login</label>
+          <label className={classes.loginForm_content}>
+            Login watch and chill movie
+          </label>
           <GoogleLogin
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            clientId=""
+            onSuccess={handleSuccess}
+            onFailure={handleFailure}
             buttonText="Login"
             cookiePolicy={"single_host_origin"}
             style={{ marginTop: "100px" }}
             isSignedIn={true}
             className={classes.btn_google}
           />
-      </div>
+        </div>
       </div>
     </form>
   );
