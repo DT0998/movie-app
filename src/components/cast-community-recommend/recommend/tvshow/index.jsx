@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Col, Container, Row } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import RecommendCard from "../../recommend-card";
@@ -16,7 +17,7 @@ const RecommendTv = ({ id }) => {
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL = BASE_URL + `/tv/${id}/recommendations?` + API_KEY;
-  const IMG_ORG = "https://image.tmdb.org/t/p/original/";
+  const IMG_ORG = "https://image.tmdb.org/t/p/original";
 
   // fetch movie api
   const getRecommend = async function () {
@@ -24,6 +25,7 @@ const RecommendTv = ({ id }) => {
     let data = response.data;
     setRecommends(data.results);
   };
+
   useEffect(() => {
     getRecommend();
     // after click movie
@@ -33,6 +35,24 @@ const RecommendTv = ({ id }) => {
       behavior: "smooth",
     });
   }, [API_URL]);
+
+  // filter null tvshow
+  let recommendTvShow = Recommends.map((recommend) => {
+    if (recommend.backdrop_path === null) {
+      return null;
+    }
+    return (
+      <SwiperSlide key={recommend.id}>
+        <RecommendCard
+          type="tvshow"
+          img_org={IMG_ORG}
+          backdrop_path={recommend.backdrop_path}
+          original_title={recommend.original_name}
+          linkto={recommend.id}
+        />
+      </SwiperSlide>
+    );
+  });
 
   return (
     <React.Fragment>
@@ -72,17 +92,7 @@ const RecommendTv = ({ id }) => {
                     }}
                   >
                     <div className="d-flex flex-column justify-content-around">
-                      {Recommends.map((recommend) => (
-                        <SwiperSlide key={recommend.id}>
-                          <RecommendCard
-                            type="tvshow"
-                            linkto={recommend.id}
-                            img_org={IMG_ORG}
-                            backdrop_path={recommend.backdrop_path}
-                            original_title={recommend.original_name}
-                          />
-                        </SwiperSlide>
-                      ))}
+                      {recommendTvShow}
                     </div>
                   </Swiper>
                 </Col>
