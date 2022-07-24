@@ -5,7 +5,6 @@
 .CastCommunity_card {
   min-height: 400px;
   transform: scale(0.8);
-  box-shadow: 0 70px 63px -60px #000;
   overflow: hidden;
   transition: background 0.8s;
   -webkit-transition: background 0.8s;
