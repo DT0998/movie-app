@@ -1,7 +1,7 @@
 import classes from "./footer.module.css";
 import { Container, Row, Col } from "react-bootstrap";
 // logo
-import logo from "../../assets/images/layouts/footer/logo.svg";
+import logo from "../../assets/images/layouts/footer/logo.png";
 // icon
 import { FaDiscord, FaGithub, FaFacebook } from "react-icons/fa";
 
@@ -11,7 +11,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col>
-            <div className="wrap">
+            <div className="wrap text-center">
               <a href="/">
                 <img src={logo} className={classes.logo} alt="logo"></img>
               </a>

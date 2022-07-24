@@ -6,7 +6,7 @@ import classes from "./nav-desktop.module.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 // logo
-import logo from "../../../assets/images/layouts/header/logo/logo.svg";
+import logo from "../../../assets/images/layouts/nav/logo/logo.png";
 // icons
 import { FaBars, FaUserAlt } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
@@ -58,7 +58,7 @@ const NavDesktop = () => {
         >
           <div className="wrap_fluid">
             <div className="wrap">
-              <Row className="d-flex flex-row justify-content-center">
+              <Row className="d-flex flex-row justify-content-center align-items-center">
                 <Col className="col-6">
                   <div className={classes.nav_left}>
                     <ul

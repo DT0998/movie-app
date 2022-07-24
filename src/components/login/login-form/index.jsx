@@ -5,11 +5,11 @@ import GoogleLogin from "react-google-login";
 
 export const Loginform = () => {
   const handleFailure = (response) => {
-    alert(response)
+    alert(response);
   };
-  const handleSuccess = () => {
-    
-  }
+  const handleSuccess = (googleData) => {
+    console.log(googleData);
+  };
   return (
     <form>
       <div className={`${classes.loginForm} px-md-5`}>
@@ -19,7 +19,7 @@ export const Loginform = () => {
             Login watch and chill movie
           </label>
           <GoogleLogin
-            clientId=""
+            clientId={process.env.GOOGLE_CLIENT_ID}
             onSuccess={handleSuccess}
             onFailure={handleFailure}
             buttonText="Login"
