@@ -6,7 +6,7 @@ function SearchInput() {
       <div className="input-group mb-3">
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Search for a movie..."
           aria-label="Search for a movie..."
         />
