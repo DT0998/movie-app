@@ -21,8 +21,6 @@ const NavDesktop = () => {
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
-  // transparent nav when scroll
-  const [isTransparentNav, setIsTransparentNav] = useState(false);
 
   // scroll nav
   const handleScroll = () => {
@@ -30,16 +28,10 @@ const NavDesktop = () => {
     if (offset > 20) {
       setScroll(true);
       setIsOpenOverlay(true);
-      setIsTransparentNav(false);
     } else {
       setScroll(false);
       setIsOpenOverlay(false);
-      setIsTransparentNav(true);
     }
-    // transparent nav
-    setTimeout(() => {
-      setIsTransparentNav(true);
-    }, 2000);
   };
 
   useEffect(() => {
@@ -48,13 +40,16 @@ const NavDesktop = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    setIsOpenNavMobile(false);
+  };
+
   return (
     <React.Fragment>
       {isTablet ? (
         //  desktop
         <Container
           className={`${classes.nav_fluid} ${scroll && classes.sticky}`}
-          style={{ opacity: isTransparentNav ? "1" : "0" }}
         >
           <div className="wrap_fluid">
             <div className="wrap">
@@ -150,7 +145,7 @@ const NavDesktop = () => {
                 </Row>
               </div>
             </div>
-            <NavMobile open={isOpenNavMobile} />
+            <NavMobile open={isOpenNavMobile} close={handleLinkClick} />
           </Container>
         </React.Fragment>
       )}

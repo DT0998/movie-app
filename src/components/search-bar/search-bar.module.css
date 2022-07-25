@@ -1,4 +1,15 @@
-.search_container{
+.search_container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 320px) {
+  .search_container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .search_container {
     width: 500px;
-    margin: 0 auto;
+  }
 }

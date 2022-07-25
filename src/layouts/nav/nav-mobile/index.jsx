@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 // icon
 import { FaSearch } from "react-icons/fa";
 
-function NavMobile({ open }) {
+function NavMobile({ open, close }) {
   // state scroll nav mobile
   const [isScroll, setIsScroll] = useState(false);
   useEffect(() => {
     // scroll nav mobile
-    window.addEventListener("scroll", handlescroll);
-    return () => window.removeEventListener("scroll", handlescroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   // scroll nav mobile
-  const handlescroll = () => {
+  const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 20) {
       setIsScroll(true);
@@ -38,13 +38,13 @@ function NavMobile({ open }) {
           }`}
           open={open}
         >
-          <Link to="/movie">
+          <Link to="/movie" onClick={close}>
             <li className={classes.dropDown_title}>Movies</li>
           </Link>
-          <Link to="/tvshow">
+          <Link to="/tvshow" onClick={close}>
             <li className={classes.dropDown_title}>TV Shows</li>
           </Link>
-          <Link to="/search">
+          <Link to="/search" onClick={close}>
             <li
               className={`${classes.dropDown_title} d-flex justify-content-between align-items-center`}
             >
@@ -52,15 +52,10 @@ function NavMobile({ open }) {
               <FaSearch />
             </li>
           </Link>
-          <Link to="/account">
+          <Link to="/account" onClick={close}>
             <li className={classes.dropDown_title}>My Account</li>
           </Link>
-          <div
-            className={
-              isScroll ? classes.Active_blankSpace : classes.inActive_blankSpace
-            }
-          />
-          <Link to="/">
+          <Link to="/" onClick={close}>
             <div
               className={` d-flex align-items-center justify-content-center ${
                 isScroll ? classes.logo_scroll : classes.logo_noscroll

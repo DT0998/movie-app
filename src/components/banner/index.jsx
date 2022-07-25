@@ -16,6 +16,7 @@ import { EffectFade } from "swiper";
 import "swiper/css/effect-fade";
 // autoplay
 import "swiper/css/autoplay";
+import { Suspense } from "react";
 SwiperCore.use([Autoplay]);
 
 export const Banner = () => {
@@ -53,21 +54,23 @@ export const Banner = () => {
                       </p>
                     </div>
                     <Link to={`/movie/${movie.id}`}>
-                      <ButtonMoreInfo type="moreInfo">
-                        More info
-                      </ButtonMoreInfo>
+                      <ButtonMoreInfo type="moreInfo">More info</ButtonMoreInfo>
                     </Link>
                   </div>
                 </Col>
                 <Col md={4}>
                   <div className={`wrap ${classes.header_img}`}>
-                    <ReactPlaceholder
-                      type="rect"
-                      color="#E0E0E0"
-                      showLoadingAnimation={true}
-                      style={skeletonImage}
-                      ready={true}
-                      delay={1000}
+                    <Suspense
+                      fallback={
+                        <ReactPlaceholder
+                          type="rect"
+                          color="#E0E0E0"
+                          showLoadingAnimation={true}
+                          style={skeletonImage}
+                          ready={true}
+                          delay={1000}
+                        />
+                      }
                     >
                       <img
                         src={IMG_URL + movie.poster_path}
@@ -75,7 +78,7 @@ export const Banner = () => {
                         className={classes.img_movie}
                         loading="lazy"
                       />
-                    </ReactPlaceholder>
+                    </Suspense>
                   </div>
                 </Col>
               </Row>

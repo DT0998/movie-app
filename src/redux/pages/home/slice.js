@@ -51,15 +51,10 @@ const slice = createSlice({
     tvshow: [],
     movielegacy: [],
     community: [],
-    isLoading: false,
   },
   reducers: {},
   extraReducers: {
-    [getAllMovieAndTvShow.pending]: (state) => {
-      state.isLoading = false;
-    },
     [getAllMovieAndTvShow.fulfilled]: (state, action) => {
-      state.isLoading = true;
       state.slider = action.payload.SliderData;
       state.movie = action.payload.MovieData;
       state.tvshow = action.payload.TvShowData;
