@@ -1,9 +1,12 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import classes from './cast-community-card.module.css'
+import classes from "./cast-community-card.module.css";
 function CastCommunityCard(props) {
-  return (
-    <React.Fragment>
+  let castCommunity;
+  if (props.profile_path === null) {
+    return null;
+  } else {
+    castCommunity = (
       <Card
         className={classes.CastCommunity_card}
         style={{
@@ -14,8 +17,9 @@ function CastCommunityCard(props) {
           <h2>{props.peoplename}</h2>
         </div>
       </Card>
-    </React.Fragment>
-  );
+    );
+  }
+  return <React.Fragment>{castCommunity}</React.Fragment>;
 }
 
 export default CastCommunityCard;

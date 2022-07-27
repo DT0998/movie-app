@@ -12,6 +12,7 @@ export const Movielist = () => {
   const [page, setPage] = useState(1);
   const [totalpage, setTotalpage] = useState();
   const [movietoprate, setMovietoprate] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const PAGE = "&page=" + page;
@@ -21,13 +22,20 @@ export const Movielist = () => {
 
   // fetch movie api
   const getTrending = async function () {
-    let response = await axios.get(API_URL);
-    let data = response.data;
-    setMovietoprate([...movietoprate, ...data.results]);
-    setTotalpage(data.total_pages);
+    try {
+      let response = await axios.get(API_URL);
+      let data = response.data;
+      setIsLoading(true);
+      setMovietoprate([...movietoprate, ...data.results]);
+      setIsLoading(false);
+      setTotalpage(data.total_pages);
+    } catch (error) {}
   };
   useEffect(() => {
     getTrending();
+    return () => {
+      clearTimeout(getTrending());
+    };
   }, [API_URL]);
 
   // show more
@@ -69,7 +77,7 @@ export const Movielist = () => {
               ))}
               {page < totalpage ? (
                 <ButtonShowMore onClick={showMoreHandle} type="showMore">
-                  Show More
+                  {isLoading ? "Loading..." : "Show More"}
                 </ButtonShowMore>
               ) : null}
             </div>

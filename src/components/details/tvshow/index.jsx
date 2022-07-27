@@ -19,16 +19,12 @@ export const Detailstvshow = ({ id }) => {
     setTvshow(response.data);
   };
   // change title
-  useEffect(()=>{
+  useEffect(() => {
     document.title = tvshow.name;
-  })
+  });
   useEffect(() => {
     getTrending();
   }, [API_URL]);
-
-  
-
-
 
   return (
     <React.Fragment>

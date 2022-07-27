@@ -28,18 +28,15 @@ const CastMovie = ({ id }) => {
   useEffect(() => {
     getCast();
   }, [API_URL]);
-  
-  let castMovie;
-  // filter null cast movie
-  castMovie = (cast) => {
+
+  // filter null  cast movie
+  let castMovie = Casts.map((cast, index) => {
     if (cast.profile_path === null) {
       return null;
     }
-  };
-  // render 10 cast movie
-  castMovie = Casts.map(
-    (cast, index) =>
-      index < 10 && (
+    // render 10 cast movie
+    return (
+      index < 7 && (
         <SwiperSlide key={cast.id}>
           <CastCommunityCard
             img_url={IMG_ORG}
@@ -48,7 +45,8 @@ const CastMovie = ({ id }) => {
           />
         </SwiperSlide>
       )
-  );
+    );
+  });
 
   return (
     <React.Fragment>

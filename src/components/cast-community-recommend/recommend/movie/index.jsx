@@ -4,12 +4,16 @@ import { Col, Container, Row } from "react-bootstrap";
 import classes from "../../recommend-card.module.css";
 import RecommendCard from "../../recommend-card";
 import axios from "axios";
+// toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
+
 
 const RecommendMovie = ({ id }) => {
   const [Recommends, setRecommends] = useState([]);
@@ -36,20 +40,22 @@ const RecommendMovie = ({ id }) => {
   }, [API_URL]);
 
   // filter null movie
-  let recommendMovie = Recommends.map((recommend) => {
+  let recommendMovie = Recommends.map((recommend, index) => {
     if (recommend.backdrop_path === null) {
       return null;
     }
     return (
-      <SwiperSlide key={recommend.id}>
-        <RecommendCard
-          type="movie"
-          linkto={recommend.id}
-          img_org={IMG_ORG}
-          backdrop_path={recommend.backdrop_path}
-          original_title={recommend.original_title}
-        />
-      </SwiperSlide>
+      index < 7 && (
+        <SwiperSlide key={recommend.id}>
+          <RecommendCard
+            type="movie"
+            linkto={recommend.id}
+            img_org={IMG_ORG}
+            backdrop_path={recommend.backdrop_path}
+            original_title={recommend.original_title}
+          />
+        </SwiperSlide>
+      )
     );
   });
   return (
@@ -99,6 +105,7 @@ const RecommendMovie = ({ id }) => {
           </div>
         </React.Fragment>
       )}
+      
     </React.Fragment>
   );
 };

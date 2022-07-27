@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import RecommendCard from "../../recommend-card";
 import classes from "../../recommend-card.module.css";
 import axios from "axios";
+// toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Scrollbar } from "swiper";
@@ -37,20 +40,22 @@ const RecommendTv = ({ id }) => {
   }, [API_URL]);
 
   // filter null tvshow
-  let recommendTvShow = Recommends.map((recommend) => {
+  let recommendTvShow = Recommends.map((recommend, index) => {
     if (recommend.backdrop_path === null) {
       return null;
     }
     return (
-      <SwiperSlide key={recommend.id}>
-        <RecommendCard
-          type="tvshow"
-          img_org={IMG_ORG}
-          backdrop_path={recommend.backdrop_path}
-          original_title={recommend.original_name}
-          linkto={recommend.id}
-        />
-      </SwiperSlide>
+      index < 7 && (
+        <SwiperSlide key={recommend.id}>
+          <RecommendCard
+            type="tvshow"
+            img_org={IMG_ORG}
+            backdrop_path={recommend.backdrop_path}
+            original_title={recommend.original_name}
+            linkto={recommend.id}
+          />
+        </SwiperSlide>
+      )
     );
   });
 
@@ -101,6 +106,7 @@ const RecommendTv = ({ id }) => {
           </div>
         </React.Fragment>
       )}
+      
     </React.Fragment>
   );
 };
