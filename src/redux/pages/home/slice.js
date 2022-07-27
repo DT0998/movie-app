@@ -61,9 +61,6 @@ const slice = createSlice({
       state.movielegacy = action.payload.MovieLegacyData;
       state.community = action.payload.CommunityData;
     },
-    [getAllMovieAndTvShow.error]: (state) => {
-      state.isLoading = false;
-    },
   },
 });
 
@@ -73,5 +70,4 @@ export const selectorMovie = (state) => state.page.home.movie;
 export const selectorTvshow = (state) => state.page.home.tvshow;
 export const selectorMovieLegacy = (state) => state.page.home.movielegacy;
 export const selectorCommunity = (state) => state.page.home.community;
-export const selectorLoading = (state) => state.page.home.isLoading;
 export default slice.reducer;

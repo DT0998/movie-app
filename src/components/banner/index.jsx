@@ -30,7 +30,7 @@ export const Banner = () => {
     <Swiper
       slidesPerView={1}
       autoplay={{
-        delay: 4000,
+        delay: 6000,
       }}
       loop={true}
       effect="fade"
