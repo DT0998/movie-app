@@ -33,9 +33,6 @@ export const Movielist = () => {
   };
   useEffect(() => {
     getTrending();
-    return () => {
-      clearTimeout(getTrending());
-    };
   }, [API_URL]);
 
   // show more
