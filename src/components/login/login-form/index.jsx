@@ -10,6 +10,9 @@ export const Loginform = () => {
           <label className={classes.loginForm_content}>
             Login watch and chill movie
           </label>
+          <button type="button" className={classes.google_btn}>
+            Sign in with Google
+          </button>
         </div>
       </div>
     </form>
