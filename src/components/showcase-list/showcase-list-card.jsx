@@ -1,4 +1,6 @@
 import classes from "./showcase-list-card.module.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Card } from "react-bootstrap";
 // route
 import { Link } from "react-router-dom";
@@ -6,6 +8,7 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 export const ShowcaseListCard = (props) => {
+  const { placeholderClassName, placeholderSrc, ...rest } = props;
   // format date
   const formatDate = (date) => {
     const [dateStr] = new Date(date)
@@ -18,35 +21,39 @@ export const ShowcaseListCard = (props) => {
     return dateStr;
   };
   // convert star vote
-  const formatStarVote = (star) =>{
-    const stars = star.toFixed(1)
-    return stars;
-  }
+  const formatStarVote = (star) => {
+    return star.toFixed(1);
+  };
+
 
   return (
     <Card className={`${classes.card_container} ${props.res_card}`}>
-      <Link to={`/${props.type}/${props.id}`}>
-        <img
-          src={props.img_url + props.poster_path}
-          alt={props.originalalt}
+      <Link to={`/${rest.type}/${rest.id}`}>
+        <LazyLoadImage
+          src={rest.img_url + rest.poster_path}
+          alt={rest.originalalt}
           className={`${classes.img_showcase}`}
-          loading="lazy"
+          effect="blur"
+          threshold={100}
+          delayMethod="debounce"
+          delayTime={300}
+          placeholderSrc={rest.img_url + rest.poster_path}
         />
         <div className={`${classes.card_showcase}`}>
           <p className={`${classes.card_title}`}>
-            {props.title || props.originaltitle}
+            {rest.title || rest.originaltitle}
           </p>
           <p className={classes.card_date}>
-            {props.type === "tvshow"
-              ? formatDate(props.first_air_date)
-              : formatDate(props.release_date) ||
-                formatDate(props.first_air_date)}
+            {rest.type === "tvshow"
+              ? formatDate(rest.first_air_date)
+              : formatDate(rest.release_date) ||
+                formatDate(rest.first_air_date)}
           </p>
           <div className={`d-flex align-items-center ${classes.card_vote}`}>
             <FaStar className="me-2" />
-            <p className={props.classNameText}>
-             {formatStarVote(props.vote_average)}
-              </p>
+            <p className={rest.classNameText}>
+              {formatStarVote(rest.vote_average)}
+            </p>
           </div>
         </div>
       </Link>

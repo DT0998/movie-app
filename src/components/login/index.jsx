@@ -1,8 +1,12 @@
-import classes from "./login.module.css";
-import { Col, Row } from "react-bootstrap";
-import { Loginquotes } from "./login-quotes";
-import { Loginform } from "./login-form";
 import React from "react";
+import classes from "./login.module.css";
+// lazy image
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { Col, Row } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
+// component
+import { Loginform } from "./login-form";
+import { Loginquotes } from "./login-quotes";
 
 function Login() {
   return (
@@ -17,7 +21,9 @@ function Login() {
               xs={0}
               className="d-flex justify-content-center col-md-0 col-xl-0 col-xxl-6"
             >
-              <Loginquotes />
+              <LazyLoadComponent placeholder={<Spinner />}>
+                <Loginquotes />
+              </LazyLoadComponent>
             </Col>
           </Row>
         </div>

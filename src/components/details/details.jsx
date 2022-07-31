@@ -1,6 +1,11 @@
 import React from "react";
 import classes from "./details.module.css";
+// lazy image
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 import { Col, Container, Row } from "react-bootstrap";
+// component
 import GenresMovie from "./genres/movie";
 import GenresTV from "./genres/tvshow";
 import TrailerTV from "../trailer/tvshow";
@@ -22,6 +27,38 @@ function Details(props) {
       .split("T");
     return dateStr;
   };
+  // genres detail
+  let detailsGenres;
+  if (props.type === "movie") {
+    detailsGenres = <GenresMovie id={props.id} />;
+  }
+  if (props.type === "tvshow") {
+    detailsGenres = <GenresTV id={props.id} />;
+  }
+  // trailer detail
+  let detailsTrailer;
+  if (props.type === "movie") {
+    detailsTrailer = <TrailerMovie id={props.id} />;
+  }
+  if (props.type === "tvshow") {
+    detailsTrailer = <TrailerTV id={props.id} />;
+  }
+  // recommend detail
+  let detailsRecommend;
+  if (props.type === "movie") {
+    detailsRecommend = <RecommendMovie id={props.id} />;
+  }
+  if (props.type === "tvshow") {
+    detailsRecommend = <RecommendTv id={props.id} />;
+  }
+  // cast detail
+  let detailsCast;
+  if (props.type === "movie") {
+    detailsCast = <CastMovie id={props.id} />;
+  }
+  if (props.type === "tvshow") {
+    detailsCast = <CastTv id={props.id} />;
+  }
   return (
     <React.Fragment>
       <div
@@ -37,10 +74,15 @@ function Details(props) {
               md={4}
             >
               <div className="wrap">
-                <img
+                <LazyLoadImage
                   src={`${props.img_url + props.poster_path}`}
                   alt={props.alt}
                   className={classes.details_img}
+                  effect="blur"
+                  threshold={100}
+                  delayMethod="debounce"
+                  delayTime={300}
+                  placeholderSrc={`${props.img_url + props.poster_path}`}
                 />
               </div>
             </Col>
@@ -48,11 +90,7 @@ function Details(props) {
               <div className={`wrap ${classes.details_content}`}>
                 <p className={classes.details_title}>{props.original_title}</p>
                 <p>{props.overview}</p>
-                {props.type === "movie" ? (
-                  <GenresMovie id={props.id} />
-                ) : props.type === "tvshow" ? (
-                  <GenresTV id={props.id} />
-                ) : null}
+                {detailsGenres}
                 <p className={classes.release_day}>
                   Release day:{" "}
                   {props.type === "tvshow"
@@ -61,25 +99,13 @@ function Details(props) {
                       formatDate(props.first_air_date)}
                 </p>
               </div>
-              {props.type === "movie" ? (
-                <TrailerMovie id={props.id} />
-              ) : props.type === "tvshow" ? (
-                <TrailerTV id={props.id} />
-              ) : null}
+              {detailsTrailer}
             </Col>
           </Row>
         </Container>
       </div>
-      {props.type === "movie" ? (
-        <CastMovie id={props.id} />
-      ) : props.type === "tvshow" ? (
-        <CastTv id={props.id} />
-      ) : null}
-      {props.type === "movie" ? (
-        <RecommendMovie id={props.id} />
-      ) : props.type === "tvshow" ? (
-        <RecommendTv id={props.id} />
-      ) : null}
+      {detailsCast}
+      {detailsRecommend}
     </React.Fragment>
   );
 }

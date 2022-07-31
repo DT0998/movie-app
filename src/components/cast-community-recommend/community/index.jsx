@@ -48,15 +48,18 @@ export const Community = () => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {communityData.map((people) => (
-                    <SwiperSlide key={people.id}>
-                      <CastCommunityCard
-                        img_url={IMG_ORG}
-                        profile_path={people.profile_path}
-                        peoplename={people.name}
-                      />
-                    </SwiperSlide>
-                  ))}
+                  {communityData.map(
+                    (people, index) =>
+                      index < 20 && (
+                        <SwiperSlide key={people.id}>
+                          <CastCommunityCard
+                            img_url={IMG_ORG}
+                            profile_path={people.profile_path}
+                            peoplename={people.name}
+                          />
+                        </SwiperSlide>
+                      )
+                  )}
                 </div>
               </Swiper>
             </div>

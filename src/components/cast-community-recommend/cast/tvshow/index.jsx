@@ -31,7 +31,6 @@ const CastTvShow = ({ id }) => {
       console.log(data.cast);
       setCasts(data.cast);
     } catch (error) {
-      // toast.error;
       toast.error(error.message, {
         position: "top-right",
         autoClose: 5000,

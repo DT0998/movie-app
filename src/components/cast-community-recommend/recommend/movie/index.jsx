@@ -25,10 +25,23 @@ const RecommendMovie = ({ id }) => {
 
   // fetch movie api
   const getRecommend = async function () {
-    let response = await axios.get(API_URL);
-    let data = response.data;
-    setRecommends(data.results);
+    try {
+      let response = await axios.get(API_URL);
+      let data = response.data;
+      setRecommends(data.results);
+    } catch (error) { 
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+        transition: "zoom",
+      });
+    }
   };
+  
   useEffect(() => {
     getRecommend();
     // after click movie
