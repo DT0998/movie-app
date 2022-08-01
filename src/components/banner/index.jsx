@@ -9,17 +9,17 @@ import { Link } from "react-router-dom";
 import ButtonMoreInfo from "../buttons/button-square";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, EffectFade } from "swiper";
+import SwiperCore, { Autoplay, EffectFade, Lazy } from "swiper";
 import "swiper/css";
 // effect swiper
 import "swiper/css/effect-fade";
 // autoplay
 import "swiper/css/autoplay";
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Autoplay, EffectFade, Lazy]);
 
 export const Banner = () => {
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
-  const IMG_ORG = "https://image.tmdb.org/t/p/w1280/";
+  const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   const sliderData = useSelector(selectorSlider);
 
   return (
@@ -30,8 +30,11 @@ export const Banner = () => {
       }}
       loop={true}
       effect="fade"
-      modules={[EffectFade]}
+      modules={[EffectFade, Autoplay, Lazy]}
       className={classes.header_slider}
+      lazy={true}
+      preloadImages={false}
+      parallax={true}
     >
       {sliderData.map(
         (movie, index) =>

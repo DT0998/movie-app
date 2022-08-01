@@ -37,6 +37,7 @@
   object-fit: cover;
   border-radius: 10px;
   width: 100%;
+  filter: brightness(0.5);
 }
 
 .Recommend_card h2 {

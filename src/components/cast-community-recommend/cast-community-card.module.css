@@ -19,6 +19,7 @@
   object-fit: cover;
   border-radius: 10px;
   width: 100%;
+  filter: brightness(0.5);
 }
 
 .CastCommunity_card:after {
