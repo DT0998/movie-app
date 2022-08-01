@@ -14,9 +14,9 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 SwiperCore.use([Scrollbar]);
 
-
 const RecommendMovie = ({ id }) => {
   const [Recommends, setRecommends] = useState([]);
+  const [isError, setIsError] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -25,11 +25,13 @@ const RecommendMovie = ({ id }) => {
 
   // fetch movie api
   const getRecommend = async function () {
+    setIsError(false);
     try {
       let response = await axios.get(API_URL);
       let data = response.data;
       setRecommends(data.results);
-    } catch (error) { 
+    } catch (error) {
+      setIsError(true);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 5000,
@@ -41,7 +43,7 @@ const RecommendMovie = ({ id }) => {
       });
     }
   };
-  
+
   useEffect(() => {
     getRecommend();
     // after click movie
@@ -118,7 +120,19 @@ const RecommendMovie = ({ id }) => {
           </div>
         </React.Fragment>
       )}
-      
+      {isError && (
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+          theme="colored"
+        />
+      )}
     </React.Fragment>
   );
 };

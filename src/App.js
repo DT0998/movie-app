@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Loading } from "./components/loading";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect,useState } from "react";
 import { useDispatch } from "react-redux";
 import Routes from "./configs/routes/routes";
 import Layout from "./layouts";
 import { getAllMovieAndTvShow } from "./redux/pages/home/slice";
-import { useState } from "react";
 // toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,12 +16,13 @@ function App() {
 
   const dispatch = useDispatch();
   const fetchAllMovieAndTvShow = useCallback(async () => {
+    setIsError(false);
     try {
       setIsLoading(false);
       await dispatch(getAllMovieAndTvShow()).unwrap();
       setIsLoading(true);
     } catch (error) {
-      // toast.error;
+      setIsError(true);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 5000,
@@ -31,7 +31,6 @@ function App() {
         pauseOnHover: true,
         progress: undefined,
       });
-      setIsError(true);
     }
   }, [dispatch]);
   useEffect(() => {

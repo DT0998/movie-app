@@ -14,6 +14,26 @@ export const Community = () => {
   const communityData = useSelector(selectorCommunity);
   const IMG_ORG = "https://image.tmdb.org/t/p/w500/";
 
+  
+
+  // filter null community
+  let community = communityData.map((people, index) => {
+    if (people.profile_path === null) {
+      return null;
+    }
+    return (
+      index < 7 && (
+        <SwiperSlide key={people.id}>
+          <CastCommunityCard
+            img_url={IMG_ORG}
+            profile_path={people.profile_path}
+            peoplename={people.name}
+          />
+        </SwiperSlide>
+      )
+    );
+  });
+
   return (
     <div className="wrap_fluid">
       <Container>
@@ -48,18 +68,7 @@ export const Community = () => {
                 }}
               >
                 <div className="d-flex flex-column justify-content-around">
-                  {communityData.map(
-                    (people, index) =>
-                      index < 20 && (
-                        <SwiperSlide key={people.id}>
-                          <CastCommunityCard
-                            img_url={IMG_ORG}
-                            profile_path={people.profile_path}
-                            peoplename={people.name}
-                          />
-                        </SwiperSlide>
-                      )
-                  )}
+                  {community}
                 </div>
               </Swiper>
             </div>
