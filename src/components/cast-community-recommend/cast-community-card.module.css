@@ -22,17 +22,6 @@
   filter: brightness(0.5);
 }
 
-.CastCommunity_card:after {
-  content: "";
-  background-color: rgba(51, 51, 51, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: block;
-  min-width: 100%;
-  min-height: 100%;
-}
 
 .CastCommunity_card h2 {
   opacity: 1;
