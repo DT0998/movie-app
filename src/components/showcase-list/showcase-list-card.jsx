@@ -25,7 +25,6 @@ export const ShowcaseListCard = (props) => {
     return star.toFixed(1);
   };
 
-
   return (
     <Card className={`${classes.card_container} ${props.res_card}`}>
       <Link to={`/${rest.type}/${rest.id}`}>
@@ -39,6 +38,8 @@ export const ShowcaseListCard = (props) => {
           delayTime={300}
           placeholderSrc={rest.img_url + rest.poster_path}
         />
+        <div className={classes.img_container}/>
+          
         <div className={`${classes.card_showcase}`}>
           <p className={`${classes.card_title}`}>
             {rest.title || rest.originaltitle}
