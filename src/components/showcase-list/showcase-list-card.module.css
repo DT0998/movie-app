@@ -1,11 +1,11 @@
 .img_showcase {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  transition: all 0.4s ease-in-out;
   height: 100%;
   width: 100%;
   position: relative;
   z-index: 10;
+  transition: 2s ease;
 }
 .img_container{
   position: absolute;
@@ -38,16 +38,16 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   width: 18rem;
   overflow: hidden;
-  transition: transform 330ms ease-in-out;
+  transition: all 1s ease;
 }
 
-.card_container:hover {
+.card_container_active {
   box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
   transform: translateY(-4px);
 }
 
-.img_showcase:hover {
-  transform: scale(1.1);
+.img_showcase_active {
+  transform: scale(1.2);
 }
 
 .card_showcase {

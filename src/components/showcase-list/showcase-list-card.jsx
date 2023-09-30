@@ -6,9 +6,12 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // icons
 import { FaStar } from "react-icons/fa";
+import { useState } from "react";
 
 export const ShowcaseListCard = (props) => {
   const { placeholderClassName, placeholderSrc, ...rest } = props;
+  const [activeCard, setActiveCard] = useState(false);
+
   // format date
   const formatDate = (date) => {
     const [dateStr] = new Date(date)
@@ -26,20 +29,28 @@ export const ShowcaseListCard = (props) => {
   };
 
   return (
-    <Card className={`${classes.card_container} ${props.res_card}`}>
+    <Card
+      className={`${classes.card_container} ${props.res_card} ${
+        activeCard && classes.card_container_active
+      }`}
+      onMouseLeave={() => setActiveCard(false)}
+      onMouseEnter={() => setActiveCard(true)}
+    >
       <Link to={`/${rest.type}/${rest.id}`}>
         <LazyLoadImage
           src={rest.img_url + rest.poster_path}
           alt={rest.originalalt}
-          className={`${classes.img_showcase}`}
+          className={`${classes.img_showcase} ${
+            activeCard && classes.img_showcase_active
+          }`}
           effect="blur"
           threshold={100}
           delayMethod="debounce"
           delayTime={300}
           placeholderSrc={rest.img_url + rest.poster_path}
         />
-        <div className={classes.img_container}/>
-          
+        <div className={classes.img_container} />
+
         <div className={`${classes.card_showcase}`}>
           <p className={`${classes.card_title}`}>
             {rest.title || rest.originaltitle}
