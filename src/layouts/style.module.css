@@ -1,4 +1,4 @@
-.btn_scrolltoTop {
+.scrolltotop_container {
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -22,7 +22,7 @@
     color: #43baff;
 }
 
-.Active {
+.active {
     transform: translateY(-10px);
     opacity: 1;
 }
@@ -32,12 +32,12 @@
     opacity: 0;
 }
 
-.btn_scrolltoTop:hover {
+.scrolltotop_container:hover {
     transform: translateY(-5px);
 }
 
 @media (min-width:768px) {
-    .btn_scrolltoTop {
+    .scrolltotop_container {
         bottom: 25px;
         right: 30px;
         width: 42px;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ButtonViewMore from "../buttons/button-viewmore";
+import ButtonViewMore from "../Button/ButtonViewMore";
 
 function ShowcaseTitle(props) {
   return (

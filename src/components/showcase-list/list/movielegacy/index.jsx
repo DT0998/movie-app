@@ -4,7 +4,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import classes from "../../showcase-list-card.module.css";
 import ListTitle from "../../list-title";
 import { ShowcaseListCard } from "../../showcase-list-card";
-import ButtonShowMore from "../../../buttons/button-square";
+import ButtonShowMore from "../../../Button/ButtonSquare";
 import axios from "axios";
 import SortTable from "../../../sort-table";
 

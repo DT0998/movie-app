@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./button-viewmore.module.css";
+import classes from "./style.module.css";
 
 const ButtonViewMore = () => {
   return (

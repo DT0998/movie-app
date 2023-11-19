@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import classes from "../../showcase-list-card.module.css";
 import { ShowcaseListCard } from "../../showcase-list-card";
-import ButtonShowMore from "../../../buttons/button-square";
+import ButtonShowMore from "../../../Button/ButtonSquare";
 import ListTitle from "../../list-title";
 import axios from "axios";
 import SortTable from "../../../sort-table";

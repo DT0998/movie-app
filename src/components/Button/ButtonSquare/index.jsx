@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./button-square.module.css";
+import classes from "./style.module.css";
 
 const ButtonSquare = (props) => {
   return (

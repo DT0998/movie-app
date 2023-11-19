@@ -1,4 +1,4 @@
-import classes from "./banner.module.css";
+import classes from "./style.module.css";
 // lazy load image
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -6,7 +6,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { selectorSlider } from "../../redux/pages/home/slice";
 import { Link } from "react-router-dom";
-import ButtonMoreInfo from "../buttons/button-square";
+import ButtonMoreInfo from "../Button/ButtonSquare";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, EffectFade, Lazy } from "swiper";

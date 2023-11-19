@@ -1,4 +1,4 @@
-import classes from "./footer.module.css";
+import classes from "./style.module.css";
 import { Container, Row, Col } from "react-bootstrap";
 // logo
 import logo from "../../assets/images/layouts/footer/logo.png";

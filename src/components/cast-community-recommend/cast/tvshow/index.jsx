@@ -110,20 +110,6 @@ const CastTvShow = ({ id }) => {
           </Container>
         </div>
       )}
-      {/* toast error */}
-      {isError && (
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={true}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          pauseOnHover
-          theme="light"
-        />
-      )}
     </React.Fragment>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ButtonBack from "../../components/buttons/button-square";
+import ButtonBack from "../../components/Button/ButtonSquare";
 
 function NotFound() {
   return (

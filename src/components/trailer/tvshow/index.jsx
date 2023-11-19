@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import React from "react";
 import "../trailer.css";
 import { Modal } from "react-bootstrap";
-import ButtonMoreInfo from "../../buttons/button-square";
+import ButtonMoreInfo from "../../Button/ButtonSquare";
 
 const TrailerTV = ({ id }, props) => {
   const [lgShow, setLgShow] = useState(false);
