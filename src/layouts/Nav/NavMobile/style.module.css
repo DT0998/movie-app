@@ -1,4 +1,4 @@
-.dropDown ul {
+.dropdown ul {
   position: absolute;
   width: 100%;
   right: 0;
@@ -6,25 +6,27 @@
   background-color: rgba(255, 255, 255, 0.95);
   transition: all 0.5s ease;
 }
-.dropDown a {
+
+.dropdown a {
   color: black;
 }
 
-.Active {
+.active {
   opacity: 1;
   min-height: 100%;
 }
 
-.inActive {
+.inactive {
   opacity: 0;
 }
+
 .logo {
   cursor: pointer;
   width: 55px;
   height: 55px;
 }
 
-.dropDown_title {
+.dropdown_title {
   border: 1px solid transparent;
   border-top: 1px solid rgba(128, 128, 128, 0.301);
   padding: 26px 16px;
@@ -38,59 +40,27 @@
   margin: 11.4rem 0 1.2rem 0;
 }
 
-.dropDown_content {
+.dropdown_content {
   transition: visibility 0s, opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
     transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.inActive_content {
+.inactive_content {
   opacity: 0;
   visibility: hidden;
 }
 
-.Active_content {
+.active_content {
   animation: SlideDown 1s;
   opacity: 1;
   visibility: visible;
-}
-
-.Active_blankSpace {
-  min-height: 48vh;
-}
-.inActive_blankSpace {
-  min-height: 52vh;
-}
-
-@media (min-width: 320px) {
-  .Active_blankSpace {
-    min-height: 26vh;
-  }
-  .inActive_blankSpace {
-    min-height: 33vh;
-  }
-}
-@media (min-width: 375px) {
-  .Active_blankSpace {
-    min-height: 26vh;
-  }
-  .inActive_blankSpace {
-    min-height: 31vh;
-  }
-}
-
-@media (min-width: 425px) {
-  .Active_blankSpace {
-    min-height: 26vh;
-  }
-  .inActive_blankSpace {
-    min-height: 31.6vh;
-  }
 }
 
 @keyframes SlideDown {
   from {
     transform: translateY(-20px);
   }
+
   to {
     transform: translateY(0%);
   }

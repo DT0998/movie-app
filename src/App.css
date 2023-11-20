@@ -4,6 +4,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
+
 body {
   overflow: overlay;
 }
@@ -17,6 +18,7 @@ body {
 a {
   text-decoration: none;
 }
+
 h1 {
   cursor: default;
 }
@@ -24,21 +26,26 @@ h1 {
 li {
   list-style: none;
 }
+
 ul {
   padding-left: 0rem;
   margin-bottom: 0;
 }
+
 .wrap {
   padding: 10px 0px;
 }
+
 .wrap_fluid {
   padding: 5px 10px;
 }
+
 @media (min-width: 1440px) {
   .wrap {
     padding: 5px 0px;
   }
 }
+
 /* scrollbar */
 ::-webkit-scrollbar-track {
   background-color: transparent;
@@ -54,9 +61,11 @@ ul {
   border: 6px solid transparent;
   background-clip: content-box;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
+
 ::-webkit-scrollbar-corner {
   border-radius: 10px;
   background-color: lightgray;
