@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import classes from "./style.module.css";
 import Footer from "./Footer";
 import { AiOutlineArrowUp } from "react-icons/ai";
@@ -19,6 +19,7 @@ function Layout(props) {
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -27,29 +28,43 @@ function Layout(props) {
     });
   };
 
-  // scroll btn to top
-  const handleScroll = () => {
+  const handleEventScrollNav = useCallback(() => {
     const offset = window.scrollY;
-    // detect page height
-    const pageHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
     if (offset > 20) {
       setIsNavScroll(true);
     } else {
       setIsNavScroll(false);
     }
+  }, []);
+
+  // scroll btn to top
+  const handleEventScrollToTop = useCallback(() => {
+    const offset = window.scrollY;
+    // Convert the number to a string
+    const offsetString = offset.toString();
+    // Extract the first four characters of the string
+    const firstFourDigitsString = offsetString.substring(0, 4);
+    // Convert the extracted string to an integer
+    const firstFourDigitsOffset = parseInt(firstFourDigitsString, 10);
+    // detect page height
+    const pageHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
     // show scroll to top button
-    if (offset === pageHeight) {
+    if (firstFourDigitsOffset >= pageHeight - 100) {
       setIsShowScrollTop(true);
     } else {
       setIsShowScrollTop(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleEventScrollToTop);
+    window.addEventListener("scroll", handleEventScrollNav);
+    return () => {
+      window.removeEventListener("scroll", handleEventScrollToTop);
+      window.removeEventListener("scroll", handleEventScrollNav);
+    };
+  }, [handleEventScrollNav, handleEventScrollToTop]);
 
   const handleCloseNavMobile = () => {
     setIsOpenNavMobile(false);
