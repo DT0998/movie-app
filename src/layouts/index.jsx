@@ -72,82 +72,84 @@ function Layout(props) {
 
   return (
     <React.Fragment>
-      {/* toast container */}
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        pauseOnHover
-        theme="colored"
-      />
-      <Container
-        className={`${classes.nav_fluid} ${isNavScroll && classes.sticky}`}
-      >
-        {isTablet ? (
-          // nav desktop
-          <NavDesktop />
-        ) : (
-          // nav mobile
-          <React.Fragment>
-            {isOpenNavOverlay && isOpenNavMobile && (
-              <div className={classes.overlay} />
-            )}
-            <div className="wrap_fluid">
-              <div className="wrap">
-                <Row className={`d-flex flex-row justify-content-center`}>
-                  <Col className="col-12">
-                    <div className={`${classes.nav_left}`}>
-                      <ul
-                        className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
-                      >
-                        {!isOpenNavMobile ? (
-                          <FaBars
-                            className={classes.icons_menu}
-                            onClick={() => {
-                              setIsOpenNavMobile(true);
-                              setIsOpenOverlay(true);
-                            }}
-                          />
-                        ) : (
-                          <MdClose
-                            className={classes.icons_menu}
-                            onClick={() => {
-                              setIsOpenNavMobile(false);
-                              setIsOpenOverlay(false);
-                            }}
-                          />
-                        )}
-                      </ul>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
-            </div>
-            <NavMobile
-              open={isOpenNavMobile}
-              close={handleCloseNavMobile}
-              isNavScroll={isNavScroll}
-            />
-          </React.Fragment>
-        )}
-      </Container>
-      <main>{children}</main>
-      {/* scroll to top button */}
-      <React.Fragment>
-        <div
-          className={` d-flex align-items-center justify-content-center ${
-            classes.scrolltotop_container
-          } ${isShowScrollTop ? classes.active : classes.inactive}`}
-          onClick={handleScrollToTop}
+      <div className="d-flex flex-column vh-100">
+        {/* toast container */}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+          theme="colored"
+        />
+        <Container
+          className={`${classes.nav_fluid} ${isNavScroll && classes.sticky}`}
         >
-          <AiOutlineArrowUp className={classes.arrow} />
-        </div>
-      </React.Fragment>
-      <Footer />
+          {isTablet ? (
+            // nav desktop
+            <NavDesktop />
+          ) : (
+            // nav mobile
+            <React.Fragment>
+              {isOpenNavOverlay && isOpenNavMobile && (
+                <div className={classes.overlay} />
+              )}
+              <div>
+                <div className="wrap">
+                  <Row className={`d-flex flex-row justify-content-center`}>
+                    <Col className="col-12">
+                      <div className={`${classes.nav_left}`}>
+                        <ul
+                          className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
+                        >
+                          {!isOpenNavMobile ? (
+                            <FaBars
+                              className={classes.icons_menu}
+                              onClick={() => {
+                                setIsOpenNavMobile(true);
+                                setIsOpenOverlay(true);
+                              }}
+                            />
+                          ) : (
+                            <MdClose
+                              className={classes.icons_menu}
+                              onClick={() => {
+                                setIsOpenNavMobile(false);
+                                setIsOpenOverlay(false);
+                              }}
+                            />
+                          )}
+                        </ul>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+              <NavMobile
+                open={isOpenNavMobile}
+                close={handleCloseNavMobile}
+                isNavScroll={isNavScroll}
+              />
+            </React.Fragment>
+          )}
+        </Container>
+        <div className="d-flex flex-fill justify-content-center">{children}</div>
+        {/* scroll to top button */}
+        <React.Fragment>
+          <div
+            className={` d-flex align-items-center justify-content-center ${
+              classes.scrolltotop_container
+            } ${isShowScrollTop ? classes.active : classes.inactive}`}
+            onClick={handleScrollToTop}
+          >
+            <AiOutlineArrowUp className={classes.arrow} />
+          </div>
+        </React.Fragment>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 }

@@ -13,7 +13,7 @@ import { FaUserAlt } from "react-icons/fa";
 const NavDesktop = () => {
   return (
     <React.Fragment>
-      <div className="wrap_fluid">
+      <div>
         <div className="wrap">
           <Row className="d-flex flex-row justify-content-center align-items-center">
             <Col className="col-6">
@@ -52,7 +52,7 @@ const NavDesktop = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/account">
+                    <NavLink to="/login">
                       <FaUserAlt />
                     </NavLink>
                   </li>

@@ -7,7 +7,7 @@ import { FaDiscord, FaGithub, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className={`wrap_fluid ${classes.footer}`}>
+    <div className={`${classes.footer}`}>
       <Container>
         <Row>
           <Col>

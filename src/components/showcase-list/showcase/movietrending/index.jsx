@@ -83,7 +83,7 @@ export const Trendingshowcase = () => {
   }
 
   return (
-    <div className="wrap_fluid showcase">
+    <div className="showcase">
       <Container>
         <Row>
           <Col>

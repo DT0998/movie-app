@@ -36,7 +36,7 @@ function NavMobile(props) {
               <FaSearch />
             </li>
           </Link>
-          <Link to="/account" onClick={close}>
+          <Link to="/login" onClick={close}>
             <li className={classes.dropdown_title}>My Account</li>
           </Link>
           <Link to="/" onClick={close}>

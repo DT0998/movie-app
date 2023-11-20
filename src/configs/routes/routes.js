@@ -21,7 +21,7 @@ function Routes() {
       <Route path={`/movie/:id`} component={DetailsMovie} />
       <Route exact path="/tvshow" component={TvShow} />
       <Route path={`/tvshow/:id`} component={DetailsTvshow} />
-      <Route path="/account" component={Login} />
+      <Route path="/login" component={Login} />
       <Route path="/search" component={Search} />
       <Route path="*" component={NotFound} />
     </Switch>

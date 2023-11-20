@@ -10,11 +10,11 @@ const HomePage = () => {
   });
 
   return (
-    <React.Fragment>
+    <div className="d-flex flex-column">
       <Banner />
       <Showcase />
       <Community />
-    </React.Fragment>
+    </div>
   );
 };
 export default HomePage;

@@ -35,7 +35,7 @@ export const Community = () => {
   });
 
   return (
-    <div className="wrap_fluid">
+    <div>
       <Container>
         <Row>
           <Col>

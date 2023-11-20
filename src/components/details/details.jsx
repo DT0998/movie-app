@@ -62,7 +62,7 @@ function Details(props) {
   return (
     <React.Fragment>
       <div
-        className={`wrap_fluid ${classes.details}`}
+        className={`${classes.details}`}
         style={{
           backgroundImage: `url(${props.img_org + props.backdrop_path})`,
         }}

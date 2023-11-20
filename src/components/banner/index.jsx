@@ -23,68 +23,70 @@ export const Banner = () => {
   const sliderData = useSelector(selectorSlider);
 
   return (
-    <Swiper
-      slidesPerView={1}
-      autoplay={{
-        delay: 6000,
-      }}
-      loop={true}
-      effect="fade"
-      modules={[EffectFade, Autoplay, Lazy]}
-      className={classes.header_slider}
-      lazy={true}
-      preloadImages={false}
-      parallax={true}
-    >
-      {sliderData.map(
-        (movie, index) =>
-          index < 10 && (
-            <SwiperSlide data-swiper-autoplay="2000" key={movie.id}>
-              <div
-                className={`wrap_fluid  d-flex align-items-center ${classes.header}`}
-                style={{
-                  backgroundImage: `url(${IMG_ORG + movie.backdrop_path})`,
-                }}
-              >
-                <Container>
-                  <Row className="d-flex align-items-center">
-                    <Col xs={12} md={8}>
-                      <div className={`wrap ${classes.header_content}`}>
-                        <div className={classes.header_article}>
-                          <h1 className={classes.header_title}>
-                            {movie.title}
-                          </h1>
-                          <p className={classes.header_overview}>
-                            {movie.overview}
-                          </p>
+    <div className="vw-100">
+      <Swiper
+        slidesPerView={1}
+        autoplay={{
+          delay: 6000,
+        }}
+        loop={true}
+        effect="fade"
+        modules={[EffectFade, Autoplay, Lazy]}
+        className={classes.header_slider}
+        lazy={true}
+        preloadImages={false}
+        parallax={true}
+      >
+        {sliderData.map(
+          (movie, index) =>
+            index < 10 && (
+              <SwiperSlide data-swiper-autoplay="2000" key={movie.id}>
+                <div
+                  className={`d-flex align-items-center ${classes.header}`}
+                  style={{
+                    backgroundImage: `url(${IMG_ORG + movie.backdrop_path})`,
+                  }}
+                >
+                  <Container>
+                    <Row className="d-flex align-items-center">
+                      <Col xs={12} md={8}>
+                        <div className={`wrap ${classes.header_content}`}>
+                          <div className={classes.header_article}>
+                            <h1 className={classes.header_title}>
+                              {movie.title}
+                            </h1>
+                            <p className={classes.header_overview}>
+                              {movie.overview}
+                            </p>
+                          </div>
+                          <Link to={`/movie/${movie.id}`}>
+                            <ButtonMoreInfo type="moreInfo">
+                              More info
+                            </ButtonMoreInfo>
+                          </Link>
                         </div>
-                        <Link to={`/movie/${movie.id}`}>
-                          <ButtonMoreInfo type="moreInfo">
-                            More info
-                          </ButtonMoreInfo>
-                        </Link>
-                      </div>
-                    </Col>
-                    <Col md={4}>
-                      <div className={`wrap ${classes.header_img}`}>
-                        <LazyLoadImage
-                          src={IMG_URL + movie.poster_path}
-                          alt={movie.title}
-                          className={classes.img_movie}
-                          effect="blur"
-                          threshold={100}
-                          delayMethod="debounce"
-                          delayTime={300}
-                          placeholderSrc={IMG_URL + movie.poster_path}
-                        />
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-            </SwiperSlide>
-          )
-      )}
-    </Swiper>
+                      </Col>
+                      <Col md={4}>
+                        <div className={`wrap ${classes.header_img}`}>
+                          <LazyLoadImage
+                            src={IMG_URL + movie.poster_path}
+                            alt={movie.title}
+                            className={classes.img_movie}
+                            effect="blur"
+                            threshold={100}
+                            delayMethod="debounce"
+                            delayTime={300}
+                            placeholderSrc={IMG_URL + movie.poster_path}
+                          />
+                        </div>
+                      </Col>
+                    </Row>
+                  </Container>
+                </div>
+              </SwiperSlide>
+            )
+        )}
+      </Swiper>
+    </div>
   );
 };

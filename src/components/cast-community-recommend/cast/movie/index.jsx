@@ -51,7 +51,7 @@ const CastMovie = ({ id }) => {
   return (
     <React.Fragment>
       {Casts.length === 0 ? null : (
-        <div className="wrap_fluid">
+        <div>
           <Container>
             <Row>
               <Col>
