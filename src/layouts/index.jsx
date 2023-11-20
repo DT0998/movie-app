@@ -3,6 +3,7 @@ import classes from "./style.module.css";
 import Footer from "./Footer";
 import Nav from "../layouts/nav/nav-desktop";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import { ToastContainer } from "react-toastify";
 
 function Layout({ children }) {
   const [isHide, setIsHide] = useState(false);
@@ -33,6 +34,18 @@ function Layout({ children }) {
 
   return (
     <React.Fragment>
+      {/* toast container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        theme="colored"
+      />
       <Nav />
       <main>{children}</main>
       {/* scroll to top button */}
