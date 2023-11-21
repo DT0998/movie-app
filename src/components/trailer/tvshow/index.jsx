@@ -7,7 +7,8 @@ import "../trailer.css";
 import { Modal } from "react-bootstrap";
 import ButtonMoreInfo from "../../Button/ButtonSquare";
 
-const TrailerTV = ({ id }, props) => {
+const TrailerTV = (props) => {
+  const { id } = props;
   const [lgShow, setLgShow] = useState(false);
   const [Trailers, setTrailers] = useState([]);
   // api

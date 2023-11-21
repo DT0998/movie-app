@@ -5,7 +5,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSelector } from "react-redux";
 import { selectorSlider } from "../../redux/pages/home/slice";
 import { Link } from "react-router-dom";
-import ButtonMoreInfo from "../Button/ButtonSquare";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, EffectFade, Lazy } from "swiper";
@@ -46,39 +45,31 @@ export const Banner = () => {
                     backgroundImage: `url(${IMG_ORG + movie.backdrop_path})`,
                   }}
                 >
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div>
-                        <div className={`wrap ${classes.header_content}`}>
-                          <div className={classes.header_article}>
-                            <h1 className={classes.header_title}>
-                              {movie.title}
-                            </h1>
-                            <p className={classes.header_overview}>
-                              {movie.overview}
-                            </p>
-                          </div>
-                          <Link to={`/movie/${movie.id}`}>
-                            <ButtonMoreInfo type="moreInfo">
-                              More info
-                            </ButtonMoreInfo>
-                          </Link>
-                        </div>
+                  <div className="d-flex align-items-center justify-content-center w-100">
+                    <div className="px-2 col-12 col-md-6">
+                      <div className={classes.header_article}>
+                        <h1 className={classes.header_title}>{movie.title}</h1>
+                        <p className={classes.header_overview}>
+                          {movie.overview}
+                        </p>
                       </div>
-                      <div>
-                        <div className={`wrap ${classes.header_img}`}>
-                          <LazyLoadImage
-                            src={IMG_URL + movie.poster_path}
-                            alt={movie.title}
-                            className={classes.img_movie}
-                            effect="blur"
-                            threshold={100}
-                            delayMethod="debounce"
-                            delayTime={300}
-                            placeholderSrc={IMG_URL + movie.poster_path}
-                          />
-                        </div>
-                      </div>
+                      <Link to={`/movie/${movie.id}`}>
+                        <button className={classes.btn_infowatch}>
+                          More info
+                        </button>
+                      </Link>
+                    </div>
+                    <div className="d-none d-md-block">
+                      <LazyLoadImage
+                        src={IMG_URL + movie.poster_path}
+                        alt={movie.title}
+                        className={classes.img_movie}
+                        effect="blur"
+                        threshold={100}
+                        delayMethod="debounce"
+                        delayTime={300}
+                        placeholderSrc={IMG_URL + movie.poster_path}
+                      />
                     </div>
                   </div>
                 </div>

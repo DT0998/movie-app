@@ -7,7 +7,8 @@ import "../trailer.css";
 import { Modal } from "react-bootstrap";
 import ButtonWatchNow  from "../../Button/ButtonSquare";
 
-const TrailerMovie = ({ id }, props) => {
+const TrailerMovie = (props) => {
+  const { id } = props;
   const [lgShow, setLgShow] = useState(false);
   const [Trailers, setTrailers] = useState([]);
   // api
@@ -37,10 +38,7 @@ const TrailerMovie = ({ id }, props) => {
     <React.Fragment>
       {Trailers.length === 0 ? null : (
         <React.Fragment>
-          <ButtonWatchNow
-            type="moreInfo"
-            onClick={openModalHandle}
-          >
+          <ButtonWatchNow type="moreInfo" onClick={openModalHandle}>
             Watch Now
           </ButtonWatchNow>
           <Modal
