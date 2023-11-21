@@ -4,7 +4,6 @@ import classes from "./details.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import { Col, Container, Row } from "react-bootstrap";
 // component
 import GenresMovie from "./genres/movie";
 import GenresTV from "./genres/tvshow";
@@ -67,27 +66,24 @@ function Details(props) {
           backgroundImage: `url(${props.img_org + props.backdrop_path})`,
         }}
       >
-        <Container>
-          <Row className="d-flex justify-content-center align-items-center flex-md-row flex-column">
-            <Col
+        <div>
+          <div className="d-flex justify-content-center align-items-center flex-md-row flex-column">
+            <div
               className="d-flex justify-content-center align-items-center"
-              md={4}
             >
-              <div className="wrap">
-                <LazyLoadImage
-                  src={`${props.img_url + props.poster_path}`}
-                  alt={props.alt}
-                  className={classes.details_img}
-                  effect="blur"
-                  threshold={100}
-                  delayMethod="debounce"
-                  delayTime={300}
-                  placeholderSrc={`${props.img_url + props.poster_path}`}
-                />
-              </div>
-            </Col>
-            <Col md={8}>
-              <div className={`wrap ${classes.details_content}`}>
+              <LazyLoadImage
+                src={`${props.img_url + props.poster_path}`}
+                alt={props.alt}
+                className={classes.details_img}
+                effect="blur"
+                threshold={100}
+                delayMethod="debounce"
+                delayTime={300}
+                placeholderSrc={`${props.img_url + props.poster_path}`}
+              />
+            </div>
+            <div>
+              <div className={`${classes.details_content}`}>
                 <p className={classes.details_title}>{props.original_title}</p>
                 <p>{props.overview}</p>
                 {detailsGenres}
@@ -100,9 +96,9 @@ function Details(props) {
                 </p>
               </div>
               {detailsTrailer}
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </div>
       {detailsCast}
       {detailsRecommend}

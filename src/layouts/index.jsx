@@ -7,7 +7,6 @@ import useMediaQuery from "../hooks/useMediaquery";
 import NavDesktop from "../layouts/Nav/NavDesktop";
 import NavMobile from "./Nav/NavMobile";
 import { MdClose } from "react-icons/md";
-import { Col, Container, Row } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
 
 function Layout(props) {
@@ -85,7 +84,7 @@ function Layout(props) {
           pauseOnHover
           theme="colored"
         />
-        <Container
+        <div
           className={`${classes.nav_fluid} ${isNavScroll && classes.sticky}`}
         >
           {isTablet ? (
@@ -97,35 +96,29 @@ function Layout(props) {
               {isOpenNavOverlay && isOpenNavMobile && (
                 <div className={classes.overlay} />
               )}
-              <div>
-                <div className="wrap">
-                  <Row className={`d-flex flex-row justify-content-center`}>
-                    <Col className="col-12">
-                      <div className={`${classes.nav_left}`}>
-                        <ul
-                          className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
-                        >
-                          {!isOpenNavMobile ? (
-                            <FaBars
-                              className={classes.icons_menu}
-                              onClick={() => {
-                                setIsOpenNavMobile(true);
-                                setIsOpenOverlay(true);
-                              }}
-                            />
-                          ) : (
-                            <MdClose
-                              className={classes.icons_menu}
-                              onClick={() => {
-                                setIsOpenNavMobile(false);
-                                setIsOpenOverlay(false);
-                              }}
-                            />
-                          )}
-                        </ul>
-                      </div>
-                    </Col>
-                  </Row>
+              <div className={`d-flex flex-row justify-content-center`}>
+                <div className={`${classes.nav_left}`}>
+                  <ul
+                    className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
+                  >
+                    {!isOpenNavMobile ? (
+                      <FaBars
+                        className={classes.icons_menu}
+                        onClick={() => {
+                          setIsOpenNavMobile(true);
+                          setIsOpenOverlay(true);
+                        }}
+                      />
+                    ) : (
+                      <MdClose
+                        className={classes.icons_menu}
+                        onClick={() => {
+                          setIsOpenNavMobile(false);
+                          setIsOpenOverlay(false);
+                        }}
+                      />
+                    )}
+                  </ul>
                 </div>
               </div>
               <NavMobile
@@ -135,8 +128,8 @@ function Layout(props) {
               />
             </React.Fragment>
           )}
-        </Container>
-        <div className="d-flex flex-fill justify-content-center">{children}</div>
+        </div>
+        <main>{children}</main>
         {/* scroll to top button */}
         <React.Fragment>
           <div

@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import { ShowcaseListCard } from "../../showcase-list-card";
 import ShowcaseTitle from "../../showcase-title";
 // media query hook
@@ -84,16 +83,14 @@ export const Trendingshowcase = () => {
 
   return (
     <div className="showcase">
-      <Container>
-        <Row>
-          <Col>
-            <div className="wrap">
-              <ShowcaseTitle titlemain="Trending" linkto="/trending" />
-            </div>
+      <div>
+        <div>
+          <div>
+            <ShowcaseTitle titlemain="Trending" linkto="/trending" />
             <div className=" d-flex flex-row gap-3">{TrendingUi}</div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

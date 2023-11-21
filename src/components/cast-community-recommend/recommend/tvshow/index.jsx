@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Col, Container, Row } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import RecommendCard from "../../recommend-card";
 import classes from "../../recommend-card.module.css";
 import axios from "axios";
 // toast
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,7 +15,6 @@ SwiperCore.use([Scrollbar]);
 
 const RecommendTv = ({ id }) => {
   const [Recommends, setRecommends] = useState([]);
-  const [isError, setIsError] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -25,22 +23,12 @@ const RecommendTv = ({ id }) => {
 
   // fetch movie api
   const getRecommend = async function () {
-    setIsError(false);
     try {
       let response = await axios.get(API_URL);
       let data = response.data;
       setRecommends(data.results);
     } catch (error) {
-      setIsError(true);
-      toast.error(error.message, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        progress: undefined,
-        transition: "zoom",
-      });
+      toast.error(error.message);
     }
   };
 
@@ -78,15 +66,15 @@ const RecommendTv = ({ id }) => {
     <React.Fragment>
       {Recommends.length === 0 ? null : (
         <React.Fragment>
-          <Container>
+          <div>
             <h3 className="d-flex justify-content-between align-items-center">
               Recommendations
             </h3>
-          </Container>
-          <div className={`wrap ${classes.Recommend_container}`}>
-            <Container>
-              <Row>
-                <Col>
+          </div>
+          <div className={`${classes.Recommend_container}`}>
+            <div>
+              <div>
+                <div>
                   <Swiper
                     slidesPerView={4}
                     scrollbar={{
@@ -115,24 +103,11 @@ const RecommendTv = ({ id }) => {
                       {recommendTvShow}
                     </div>
                   </Swiper>
-                </Col>
-              </Row>
-            </Container>
+                </div>
+              </div>
+            </div>
           </div>
         </React.Fragment>
-      )}
-      {isError && (
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={true}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          pauseOnHover
-          theme="colored"
-        />
       )}
     </React.Fragment>
   );

@@ -25,7 +25,7 @@ function SortTable() {
   };
 
   return (
-    <div className="wrap">
+    <div>
       <div className={`${classes.filter_panel} my-3`}>
         {isOpenTable ? (
           <div

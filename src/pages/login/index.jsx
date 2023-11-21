@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Col, Row } from "react-bootstrap";
 import classes from "./style.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import axios from "axios";
@@ -48,8 +47,8 @@ const LoginPage = () => {
   return (
     <div className={`${classes.form_container} d-flex align-items-center`}>
       <div className={`my-5 ps-xl-5 ${classes.form_shadow}`}>
-        <Row className="d-flex flex-wrap justify-content-center align-items-center">
-          <Col xs={12} className="text-center col-md-12 col-xl-12 col-xxl-6">
+        <div className="d-flex flex-wrap justify-content-center align-items-center">
+          <div className="text-center">
             {/* form login */}
             <form>
               <div className={`w-full px-md-5`}>
@@ -64,10 +63,9 @@ const LoginPage = () => {
                 </div>
               </div>
             </form>
-          </Col>
-          <Col
-            xs={0}
-            className="d-flex justify-content-center col-md-0 col-xl-0 col-xxl-6"
+          </div>
+          <div
+            className="d-flex justify-content-center"
           >
             {/* login img */}
             {loginImg?.map(
@@ -81,8 +79,8 @@ const LoginPage = () => {
                   />
                 )
             )}
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
     </div>
   );

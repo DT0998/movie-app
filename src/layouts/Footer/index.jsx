@@ -1,5 +1,4 @@
 import classes from "./style.module.css";
-import { Container, Row, Col } from "react-bootstrap";
 // logo
 import logo from "../../assets/images/layouts/footer/logo.png";
 // icon
@@ -8,19 +7,19 @@ import { FaDiscord, FaGithub, FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className={`${classes.footer}`}>
-      <Container>
-        <Row>
-          <Col>
-            <div className="wrap text-center">
+      <div>
+        <div>
+          <div>
+            <div className="text-center">
               <a href="/">
                 <img src={logo} className={classes.logo} alt="logo"></img>
               </a>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
 
-        <Row>
-          <Col>
+        <div>
+          <div>
             <div className="text-center">
               <a
                 href="https://github.com/DT0998"
@@ -42,29 +41,29 @@ const Footer = () => {
                 className={`${classes.logo_social} ${classes.logo_facebook}`}
               />
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
 
-        <Row>
-          <Col>
+        <div>
+          <div>
             <div className=" d-flex justify-content-center flex-md-row flex-column gap-2 text-center my-lg-1">
               <span className={classes.contact}>ĐIỀU KHOẢN DỊCH VỤ</span>
               <span className={classes.contact}>DCMA</span>
               <span className={classes.contact}>LIÊN HỆ</span>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
 
-        <Row>
-          <Col>
+        <div>
+          <div>
             <div className="text-center my-lg-1">
               <span className={classes.copyright}>
                 &copy; 2021 Movie and Chill
               </span>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

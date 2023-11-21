@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import ShowcaseTitle from "../../showcase-title";
 import { ShowcaseListCard } from "../../showcase-list-card";
 // media query hook
@@ -84,16 +83,14 @@ export const Tvshowcase = () => {
 
   return (
     <div className="showcase">
-      <Container>
-        <Row>
-          <Col>
-            <div className="wrap">
-              <ShowcaseTitle titlemain="TV" linkto="/tvshow" />
-            </div>
+      <div>
+        <div>
+          <div>
+            <ShowcaseTitle titlemain="TV" linkto="/tvshow" />
             <div className=" d-flex flex-row gap-3">{TvShowUi}</div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

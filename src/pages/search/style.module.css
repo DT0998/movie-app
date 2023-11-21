@@ -1,0 +1,11 @@
+.search_container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 320px) {
+    .search_container {
+        width: 100%;
+    }
+}

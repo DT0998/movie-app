@@ -2,7 +2,6 @@ import classes from "./style.module.css";
 // lazy load image
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { Row, Col, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { selectorSlider } from "../../redux/pages/home/slice";
 import { Link } from "react-router-dom";
@@ -47,9 +46,9 @@ export const Banner = () => {
                     backgroundImage: `url(${IMG_ORG + movie.backdrop_path})`,
                   }}
                 >
-                  <Container>
-                    <Row className="d-flex align-items-center">
-                      <Col xs={12} md={8}>
+                  <div>
+                    <div className="d-flex align-items-center">
+                      <div>
                         <div className={`wrap ${classes.header_content}`}>
                           <div className={classes.header_article}>
                             <h1 className={classes.header_title}>
@@ -65,8 +64,8 @@ export const Banner = () => {
                             </ButtonMoreInfo>
                           </Link>
                         </div>
-                      </Col>
-                      <Col md={4}>
+                      </div>
+                      <div>
                         <div className={`wrap ${classes.header_img}`}>
                           <LazyLoadImage
                             src={IMG_URL + movie.poster_path}
@@ -79,9 +78,9 @@ export const Banner = () => {
                             placeholderSrc={IMG_URL + movie.poster_path}
                           />
                         </div>
-                      </Col>
-                    </Row>
-                  </Container>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </SwiperSlide>
             )

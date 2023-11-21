@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import classes from "../../cast-community-card.module.css";
 import CastCommunityCard from "../../cast-community-card";
 import axios from "axios";
 // toast
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,7 +15,6 @@ SwiperCore.use([Scrollbar]);
 
 const CastTvShow = ({ id }) => {
   const [Casts, setCasts] = useState([]);
-  const [isError, setIsError] = useState(false);
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -28,7 +26,6 @@ const CastTvShow = ({ id }) => {
     try {
       let response = await axios.get(API_URL);
       let data = response.data;
-      console.log(data.cast);
       setCasts(data.cast);
     } catch (error) {
       toast.error(error.message, {
@@ -40,9 +37,9 @@ const CastTvShow = ({ id }) => {
         progress: undefined,
         transition: "zoom",
       });
-      setIsError(true);
     }
   };
+
   useEffect(() => {
     getCast();
   }, [API_URL]);
@@ -69,13 +66,13 @@ const CastTvShow = ({ id }) => {
     <React.Fragment>
       {Casts.length === 0 ? null : (
         <div>
-          <Container>
-            <Row>
-              <Col>
+          <div>
+            <div>
+              <div>
                 <h3 className="d-flex justify-content-between align-items-center">
                   Cast
                 </h3>
-                <div className={`wrap ${classes.CastCommunity_container}`}>
+                <div className={`${classes.CastCommunity_container}`}>
                   <Swiper
                     slidesPerView={4}
                     scrollbar={{
@@ -105,9 +102,9 @@ const CastTvShow = ({ id }) => {
                     </div>
                   </Swiper>
                 </div>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </React.Fragment>

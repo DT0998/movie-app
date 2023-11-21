@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import classes from "../../showcase-list-card.module.css";
 import { ShowcaseListCard } from "../../showcase-list-card";
 import ButtonShowMore from "../../../Button/ButtonSquare";
@@ -44,19 +43,17 @@ export const Trendinglist = () => {
 
   return (
     <div className={classes.list}>
-      <Container>
-        <Row>
-          <Col>
-            <div className="wrap">
-              <ListTitle titlemain="Trending" />
-            </div>
-          </Col>
-        </Row>
-        <Row className="d-flex">
-          <Col xs={12} md={4} lg={3}>
+      <div>
+        <div>
+          <div>
+            <ListTitle titlemain="Trending" />
+          </div>
+        </div>
+        <div className="d-flex">
+          <div>
             <SortTable />
-          </Col>
-          <Col xs={12} md={8} lg={9}>
+          </div>
+          <div>
             <div className=" d-flex flex-row flex-wrap justify-content-center">
               {movietrending.map((movie) => (
                 <ShowcaseListCard
@@ -79,9 +76,9 @@ export const Trendinglist = () => {
                 </ButtonShowMore>
               ) : null}
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

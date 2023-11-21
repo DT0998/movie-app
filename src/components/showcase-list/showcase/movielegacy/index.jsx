@@ -1,9 +1,8 @@
-import { Container, Col, Row } from "react-bootstrap";
 import { ShowcaseListCard } from "../../showcase-list-card";
 import ShowcaseTitle from "../../showcase-title";
 // media query hook
 import useMediaQuery from "../../../../hooks/useMediaquery";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 import { selectorMovieLegacy } from "../../../../redux/pages/home/slice";
 export const Movielegacyshowcase = () => {
   const movielegacyData = useSelector(selectorMovieLegacy);
@@ -13,8 +12,6 @@ export const Movielegacyshowcase = () => {
   const isDesktop = useMediaQuery("(min-width:1024px)");
 
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
-
-
 
   let MovieLegacyUi;
   /* mobile */
@@ -85,16 +82,14 @@ export const Movielegacyshowcase = () => {
 
   return (
     <div className="showcase">
-      <Container>
-        <Row>
-          <Col>
-            <div className="wrap">
-              <ShowcaseTitle titlemain="Movies legacy" linkto="/movielegacy" />
-            </div>
+      <div>
+        <div>
+          <div>
+            <ShowcaseTitle titlemain="Movies legacy" linkto="/movielegacy" />
             <div className=" d-flex flex-row gap-3">{MovieLegacyUi}</div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

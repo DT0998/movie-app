@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import classes from "../../cast-community-card.module.css";
 import CastCommunityCard from "../../cast-community-card";
 import axios from "axios";
@@ -52,13 +51,13 @@ const CastMovie = ({ id }) => {
     <React.Fragment>
       {Casts.length === 0 ? null : (
         <div>
-          <Container>
-            <Row>
-              <Col>
+          <div>
+            <div>
+              <div>
                 <h3 className="d-flex justify-content-between align-items-center">
                   Cast
                 </h3>
-                <div className={`wrap ${classes.CastCommunity_container}`}>
+                <div className={`${classes.CastCommunity_container}`}>
                   <Swiper
                     slidesPerView={4}
                     scrollbar={{
@@ -88,9 +87,9 @@ const CastMovie = ({ id }) => {
                     </div>
                   </Swiper>
                 </div>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </React.Fragment>

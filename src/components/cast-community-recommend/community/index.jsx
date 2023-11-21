@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import classes from "../../cast-community-recommend/cast-community-card.module.css";
 import CastCommunityCard from "../../cast-community-recommend/cast-community-card";
 import { useSelector } from "react-redux";
@@ -36,13 +35,13 @@ export const Community = () => {
 
   return (
     <div>
-      <Container>
-        <Row>
-          <Col>
+      <div>
+        <div>
+          <div>
             <h1 className="d-flex justify-content-between align-items-center">
               Community
             </h1>
-            <div className={`wrap ${classes.CastCommunity_container}`}>
+            <div className={`${classes.CastCommunity_container}`}>
               <Swiper
                 slidesPerView={4}
                 scrollbar={{
@@ -72,9 +71,9 @@ export const Community = () => {
                 </div>
               </Swiper>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
