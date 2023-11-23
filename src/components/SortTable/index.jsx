@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import Select from "react-select";
-import classes from "./sortTable.module.css";
+import classes from "./style.module.css";
 
 //option
 const options = [

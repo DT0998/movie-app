@@ -1,0 +1,19 @@
+.modal-content {
+    width: 350px;
+    height: 359px;
+    border: 0;
+}
+
+@media (min-width:768px) {
+    .modal-content {
+        width: 550px;
+        height: 500px;
+    }
+}
+
+@media (min-width:1024px) {
+    .modal-content {
+        width: 800px;
+        height: 600px;
+    }
+}

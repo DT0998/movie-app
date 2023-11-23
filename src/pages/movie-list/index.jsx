@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import classes from "./style.module.css";
-import SortTable from "../../components/sort-table";
 import Card from "../../components/Card";
+import SortTable from "../../components/SortTable";
 
 const MovieListPage = (props) => {
   const { type, title } = props;

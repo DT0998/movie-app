@@ -1,8 +1,8 @@
 import { useState } from "react";
 import React from "react";
-import "./style.module.css";
+import classes from "./style.module.css";
+import "./style.css";
 import { Modal } from "react-bootstrap";
-import ButtonMoreInfo from "../Button/ButtonSquare";
 
 const Trailer = (props) => {
   const { data } = props;
@@ -15,15 +15,15 @@ const Trailer = (props) => {
     <React.Fragment>
       {data.length === 0 ? null : (
         <React.Fragment>
-          <ButtonMoreInfo type="moreInfo" onClick={toggleModalHandle}>
+          <button className={classes.btn_infowatch} onClick={toggleModalHandle}>
             Watch Now
-          </ButtonMoreInfo>
+          </button>
           <Modal
             size="lg"
             show={isShow}
             onHide={toggleModalHandle}
             aria-labelledby="modal-trailer"
-            className="d-flex align-items-center justify-content-center"
+            className={`d-flex align-items-center justify-content-center`}
           >
             <Modal.Header closeButton>
               <Modal.Title id="modal-trailer">Play Trailer</Modal.Title>

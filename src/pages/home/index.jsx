@@ -2,13 +2,19 @@ import React, { useEffect } from "react";
 import Showcase from "../../components/showcase-list/showcase";
 import { Banner } from "../../components/Banner";
 import { useSelector } from "react-redux";
-import { selectorCommunity } from "../../redux/pages/home/slice";
+import { selectorCommunity, selectorMovie } from "../../redux/pages/home/slice";
 import SliderCard from "../../components/SliderCard";
 import classes from "./style.module.css";
+import useMediaQuery from "../../hooks/useMediaquery";
 
 const HomePage = () => {
   const community = useSelector(selectorCommunity);
+  const movie = useSelector(selectorMovie);
   const IMG_ORG = "https://image.tmdb.org/t/p/w500/";
+  // media query
+  const isMobile = useMediaQuery("(min-width:320px)");
+  const isTablet = useMediaQuery("(min-width:768px)");
+  const isDesktop = useMediaQuery("(min-width:1024px)");
 
   useEffect(() => {
     // change title
