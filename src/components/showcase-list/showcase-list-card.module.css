@@ -70,20 +70,20 @@
 /* mobile */
 
 @media (min-width: 320px) {
-  .list .card_container {
+  .card_container {
     width: 8.5rem;
     margin: 5px;
   }
 }
 @media (min-width: 375px) {
-  .list .card_container {
+  .card_container {
     width: 9.5rem;
   }
 
 }
 
 @media (min-width: 425px) {
-  .list .card_container {
+  .card_container {
     width: 11rem;
   }
   
@@ -91,7 +91,7 @@
 
 /* tablet */
 @media (min-width: 768px) {
-  .list .card_container {
+  .card_container {
     width: 12rem;
   }
 
@@ -99,14 +99,14 @@
 
 /* desktop */
 @media (min-width: 1024px) {
-  .list .card_container {
+  .card_container {
     width: 9rem;
   }
  
 }
 
 @media (min-width: 1440px) {
-  .list .card_container {
+  .card_container {
     width: 11rem;
   }
   

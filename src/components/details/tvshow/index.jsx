@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Details from "../details";
 
-export const Detailstvshow = ({ id }) => {
+export const Detailstvshow = (props) => {
+  const { id } = props;
   const [tvshow, setTvshow] = useState({});
   // api
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";

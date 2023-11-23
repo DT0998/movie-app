@@ -45,7 +45,7 @@ const LoginPage = () => {
   }, [API_URL, getLoginImg, source]);
 
   return (
-    <div className={`${classes.form_container} d-flex align-items-center`}>
+    <div className={`${classes.form_container} d-flex align-items-center justify-content-center`}>
       <div className={`my-5 ps-xl-5 ${classes.form_shadow}`}>
         <div className="d-flex flex-wrap justify-content-center align-items-center">
           <div className="text-center">

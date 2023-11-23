@@ -86,7 +86,7 @@ export const Trendingshowcase = () => {
       <div>
         <div>
           <div>
-            <ShowcaseTitle titlemain="Trending" linkto="/trending" />
+            <ShowcaseTitle titlemain="Movies Trending" linkto="/trending" />
             <div className=" d-flex flex-row gap-3">{TrendingUi}</div>
           </div>
         </div>

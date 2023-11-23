@@ -85,7 +85,7 @@ export const Movielegacyshowcase = () => {
       <div>
         <div>
           <div>
-            <ShowcaseTitle titlemain="Movies legacy" linkto="/movielegacy" />
+            <ShowcaseTitle titlemain="Movies Legacy" linkto="/movie-legacy" />
             <div className=" d-flex flex-row gap-3">{MovieLegacyUi}</div>
           </div>
         </div>

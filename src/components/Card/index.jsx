@@ -1,4 +1,4 @@
-import classes from "./showcase-list-card.module.css";
+import classes from "./style.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Card } from "react-bootstrap";
@@ -8,20 +8,20 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 
-export const ShowcaseListCard = (props) => {
+const MovieCard = (props) => {
   const {
     type,
     id,
-    res_card,
-    img_url,
-    poster_path,
-    originalalt,
+    resCard,
+    imgUrl,
+    posterPath,
+    originalAlt,
     title,
-    originaltitle,
-    first_air_date,
-    release_date,
-    classNameText,
-    vote_average,
+    originalTitle,
+    firstAirDate,
+    releaseDate,
+    extraClassTitle,
+    voteAverage,
   } = props;
   const [activeCard, setActiveCard] = useState(false);
 
@@ -43,7 +43,7 @@ export const ShowcaseListCard = (props) => {
 
   return (
     <Card
-      className={`${classes.card_container} ${res_card} ${
+      className={`${classes.card_container} ${resCard} ${
         activeCard && classes.card_container_active
       }`}
       onMouseLeave={() => setActiveCard(false)}
@@ -51,8 +51,8 @@ export const ShowcaseListCard = (props) => {
     >
       <Link to={`/${type}/${id}`}>
         <LazyLoadImage
-          src={img_url + poster_path}
-          alt={originalalt}
+          src={imgUrl + posterPath}
+          alt={originalAlt}
           className={`${classes.img_showcase} ${
             activeCard && classes.img_showcase_active
           }`}
@@ -60,25 +60,22 @@ export const ShowcaseListCard = (props) => {
           threshold={100}
           delayMethod="debounce"
           delayTime={300}
-          placeholderSrc={img_url + poster_path}
+          placeholderSrc={imgUrl + posterPath}
         />
         <div className={classes.img_container} />
 
         <div className={`${classes.card_showcase}`}>
-          <p className={`${classes.card_title}`}>{title || originaltitle}</p>
+          <p className={`${classes.card_title}`}>{title || originalTitle}</p>
           <p className={classes.card_date}>
-            {type === "tvshow"
-              ? formatDate(first_air_date)
-              : formatDate(release_date) || formatDate(first_air_date)}
+            {formatDate(firstAirDate || releaseDate)}
           </p>
           <div className={`d-flex align-items-center ${classes.card_vote}`}>
             <FaStar className="me-2" />
-            <p className={classNameText}>
-              {formatStarVote(vote_average)}
-            </p>
+            <p className={extraClassTitle}>{formatStarVote(voteAverage)}</p>
           </div>
         </div>
       </Link>
     </Card>
   );
 };
+export default MovieCard;
