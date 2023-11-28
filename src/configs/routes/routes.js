@@ -1,51 +1,34 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../../pages/home";
-import MovieList from "../../pages/movie-list";
-import Search from "../../pages/search";
-import Login from "../../pages/login";
-import NotFound from "../../pages/404";
+import HomePage from "../../pages/home";
+import SearchPage from "../../pages/search";
+import LoginPage from "../../pages/login";
+import NotFoundPage from "../../pages/404";
 import DetailsMoviePage from "../../pages/details";
+import TvShowListPage from "../../pages/tvshow-list";
+import MovieListPage from "../../pages/movie-list";
+import MovieLegacyListPage from "../../pages/movie-legacy-list";
+import MovieTrendingListPage from "../../pages/movie-trending-list";
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route
-        path="/trending"
-        render={() => (
-          <MovieList type="/trending/movie/week?" title="Movies Trending" />
-        )}
-      />
-      <Route
-        path="/movie-legacy"
-        render={() => (
-          <MovieList type="/movie/top_rated?" title="Movies Legacy" />
-        )}
-      />
-      <Route
-        exact
-        path="/movie"
-        render={() => (
-          <MovieList type="/movie/popular?" title="Movies Popular" />
-        )}
-      />
+      <Route exact path="/" component={HomePage} />
+      <Route path="/trending" component={MovieTrendingListPage} />
+      <Route path="/movie-legacy" component={MovieLegacyListPage} />
+      <Route exact path="/movie" component={MovieListPage} />
       <Route
         path={`/movie/:id`}
         render={() => <DetailsMoviePage type="movie" />}
       />
-      <Route
-        exact
-        path="/tvshow"
-        render={() => <MovieList type="/tv/popular?" title="TV Show" />}
-      />
+      <Route exact path="/tvshow" component={TvShowListPage} />
       <Route
         path={`/tvshow/:id`}
         render={() => <DetailsMoviePage type="tv" />}
       />
-      <Route path="/login" component={Login} />
-      <Route path="/search" component={Search} />
-      <Route path="*" component={NotFound} />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/search" component={SearchPage} />
+      <Route path="*" component={NotFoundPage} />
     </Switch>
   );
 }

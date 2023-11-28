@@ -5,15 +5,16 @@ import classes from "./style.module.css";
 import Card from "../../components/Card";
 import SortTable from "../../components/SortTable";
 
-const MovieListPage = () => {
+const TvShowListPage = () => {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState();
   const [movies, setMovies] = useState([]);
+  // const pageRef = useRef(page);
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
   const PAGE = "&page=" + page;
-  const API_URL = BASE_URL + "/movie/popular?" + API_KEY + PAGE;
+  const API_URL = BASE_URL + "/tv/popular?" + API_KEY + PAGE;
 
   // fetch movie api
   const getMovies = useCallback(async () => {
@@ -39,13 +40,13 @@ const MovieListPage = () => {
 
   // change title
   useEffect(() => {
-    document.title = "Movies Popular";
+    document.title = "TV Show";
   }, []);
 
   return (
     <React.Fragment>
       <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
-        <h1>Movies Popular</h1>
+        <h1>TV Show</h1>
       </div>
       <SortTable />
       <div className=" d-flex flex-row flex-wrap justify-content-center">
@@ -53,7 +54,7 @@ const MovieListPage = () => {
         {movies.map((movie) => (
           <Card
             key={movie.id}
-            type="movie"
+            type="tvshow"
             title={movie.title}
             id={movie.id}
             imgUrl={IMG_URL}
@@ -75,4 +76,4 @@ const MovieListPage = () => {
     </React.Fragment>
   );
 };
-export default MovieListPage;
+export default TvShowListPage;

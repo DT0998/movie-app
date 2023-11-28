@@ -5,7 +5,7 @@ import classes from "./style.module.css";
 import Card from "../../components/Card";
 import SortTable from "../../components/SortTable";
 
-const MovieListPage = () => {
+const MovieTrendingListPage = () => {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState();
   const [movies, setMovies] = useState([]);
@@ -13,7 +13,7 @@ const MovieListPage = () => {
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
   const PAGE = "&page=" + page;
-  const API_URL = BASE_URL + "/movie/popular?" + API_KEY + PAGE;
+  const API_URL = BASE_URL + "/trending/movie/week?" + API_KEY + PAGE;
 
   // fetch movie api
   const getMovies = useCallback(async () => {
@@ -39,13 +39,13 @@ const MovieListPage = () => {
 
   // change title
   useEffect(() => {
-    document.title = "Movies Popular";
+    document.title = "Movies Trending";
   }, []);
 
   return (
     <React.Fragment>
       <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
-        <h1>Movies Popular</h1>
+        <h1>Movies Trending</h1>
       </div>
       <SortTable />
       <div className=" d-flex flex-row flex-wrap justify-content-center">
@@ -75,4 +75,4 @@ const MovieListPage = () => {
     </React.Fragment>
   );
 };
-export default MovieListPage;
+export default MovieTrendingListPage;

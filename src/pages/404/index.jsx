@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./style.module.css";
 
-function NotFound() {
+function NotFoundPage() {
   return (
     <React.Fragment>
       <div
@@ -27,4 +27,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default NotFoundPage;
