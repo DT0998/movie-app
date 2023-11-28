@@ -7,7 +7,7 @@ import Routes from "./configs/routes/routes";
 import Layout from "./layouts";
 import { getAllMovieAndTvShow } from "./redux/pages/home/slice";
 // toast
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +30,18 @@ function App() {
 
   return (
     <React.Fragment>
+      {/* toast container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        theme="colored"
+      />
       {isLoading ? (
         <div
           className={`${classes.loading} d-flex justify-content-center align-items-center`}

@@ -2,15 +2,16 @@ import React, { useCallback, useEffect, useState } from "react";
 import classes from "./style.module.css";
 import Footer from "./Footer";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { ToastContainer } from "react-toastify";
 import useMediaQuery from "../hooks/useMediaquery";
 import NavDesktop from "../layouts/Nav/NavDesktop";
 import NavMobile from "./Nav/NavMobile";
 import { MdClose } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 function Layout(props) {
   const { children } = props;
+  const location = useLocation();
   const isTablet = useMediaQuery("(min-width:768px)");
   const [isShowScrollTop, setIsShowScrollTop] = useState(false);
   const [isNavScroll, setIsNavScroll] = useState(false);
@@ -18,6 +19,7 @@ function Layout(props) {
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -69,81 +71,79 @@ function Layout(props) {
     setIsOpenNavMobile(false);
   };
 
+  useEffect(() => {
+    if (location.pathname === "/login") {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, [location.pathname]);
+
   return (
-    <React.Fragment>
-      <div className="d-flex flex-column vh-100">
-        {/* toast container */}
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={true}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          pauseOnHover
-          theme="colored"
-        />
-        <div
-          className={`${classes.nav_fluid} ${isNavScroll && classes.sticky}`}
-        >
-          {isTablet ? (
-            // nav desktop
-            <NavDesktop />
-          ) : (
-            // nav mobile
-            <React.Fragment>
-              {isOpenNavOverlay && isOpenNavMobile && (
-                <div className={classes.overlay} />
-              )}
-              <div className={`d-flex flex-row justify-content-center`}>
-                <div className={`${classes.nav_left}`}>
-                  <ul
-                    className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
-                  >
-                    {!isOpenNavMobile ? (
-                      <FaBars
-                        className={classes.icons_menu}
-                        onClick={() => {
-                          setIsOpenNavMobile(true);
-                          setIsOpenOverlay(true);
-                        }}
-                      />
-                    ) : (
-                      <MdClose
-                        className={classes.icons_menu}
-                        onClick={() => {
-                          setIsOpenNavMobile(false);
-                          setIsOpenOverlay(false);
-                        }}
-                      />
-                    )}
-                  </ul>
-                </div>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+    >
+      <div className={`${classes.nav_fluid} ${isNavScroll && classes.sticky}`}>
+        {isTablet ? (
+          // nav desktop
+          <NavDesktop />
+        ) : (
+          // nav mobile
+          <React.Fragment>
+            {isOpenNavOverlay && isOpenNavMobile && (
+              <div className={classes.overlay} />
+            )}
+            <div className={`d-flex flex-row justify-content-center`}>
+              <div className={`${classes.nav_left}`}>
+                <ul
+                  className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
+                >
+                  {!isOpenNavMobile ? (
+                    <FaBars
+                      className={classes.icons_menu}
+                      onClick={() => {
+                        setIsOpenNavMobile(true);
+                        setIsOpenOverlay(true);
+                      }}
+                    />
+                  ) : (
+                    <MdClose
+                      className={classes.icons_menu}
+                      onClick={() => {
+                        setIsOpenNavMobile(false);
+                        setIsOpenOverlay(false);
+                      }}
+                    />
+                  )}
+                </ul>
               </div>
-              <NavMobile
-                open={isOpenNavMobile}
-                close={handleCloseNavMobile}
-                isNavScroll={isNavScroll}
-              />
-            </React.Fragment>
-          )}
-        </div>
-        <main>{children}</main>
-        {/* scroll to top button */}
-        <React.Fragment>
-          <div
-            className={` d-flex align-items-center justify-content-center ${
-              classes.scrolltotop_container
-            } ${isShowScrollTop ? classes.active : classes.inactive}`}
-            onClick={handleScrollToTop}
-          >
-            <AiOutlineArrowUp className={classes.arrow} />
-          </div>
-        </React.Fragment>
-        <Footer />
+            </div>
+            <NavMobile
+              open={isOpenNavMobile}
+              close={handleCloseNavMobile}
+              isNavScroll={isNavScroll}
+            />
+          </React.Fragment>
+        )}
       </div>
-    </React.Fragment>
+      {/* main */}
+      <div
+        style={{ flex: 1, minHeight: "100%", height: "100%" }}
+        className={isLogin && classes.login_container}
+      >
+        {children}
+      </div>
+      {/* scroll to top button */}
+      <div
+        className={` d-flex align-items-center justify-content-center ${
+          classes.scrolltotop_container
+        } ${isShowScrollTop ? classes.active : classes.inactive}`}
+        onClick={handleScrollToTop}
+      >
+        <AiOutlineArrowUp className={classes.arrow} />
+      </div>
+      <Footer />
+    </div>
   );
 }
 

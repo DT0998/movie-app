@@ -1,8 +1,4 @@
 /* form */
-.form_container {
-    background-image: linear-gradient(315deg, #08AEEA 15%, #2AF598 85%);
-}
-
 .form_shadow {
     box-shadow: unset;
     border-top-left-radius: 20px;
