@@ -26,11 +26,9 @@ const SliderCard = (props) => {
     <React.Fragment>
       {data.length === 0 ? null : (
         <React.Fragment>
-          <div>
-            <h3 className="d-flex justify-content-between align-items-center">
-              {title}
-            </h3>
-          </div>
+          <h1 className="d-flex justify-content-between align-items-center">
+            {title}
+          </h1>
           <div className={extraClass}>
             <Swiper
               slidesPerView={4}

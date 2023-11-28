@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 // autoplay
 import "swiper/css/autoplay";
+import React from "react";
 SwiperCore.use([Autoplay, EffectFade, Lazy]);
 
 export const Banner = () => {
@@ -21,7 +22,7 @@ export const Banner = () => {
   const sliderData = useSelector(selectorSlider);
 
   return (
-    <div className="vw-100">
+    <React.Fragment>
       <Swiper
         slidesPerView={1}
         autoplay={{
@@ -30,10 +31,10 @@ export const Banner = () => {
         loop={true}
         effect="fade"
         modules={[EffectFade, Autoplay, Lazy]}
-        className={classes.header_slider}
         lazy={true}
         preloadImages={false}
         parallax={true}
+        className="w-100"
       >
         {sliderData.map(
           (movie, index) =>
@@ -45,14 +46,12 @@ export const Banner = () => {
                     backgroundImage: `url(${IMG_ORG + movie.backdrop_path})`,
                   }}
                 >
-                  <div className="d-flex align-items-center justify-content-center w-100">
-                    <div className="px-2 col-12 col-md-6">
-                      <div className={classes.header_article}>
-                        <h1 className={classes.header_title}>{movie.title}</h1>
-                        <p className={classes.header_overview}>
-                          {movie.overview}
-                        </p>
-                      </div>
+                  <div className="d-flex align-items-center justify-content-center w-100 px-3">
+                    <div className="col-12 col-md-6">
+                      <h1 className={classes.header_title}>{movie.title}</h1>
+                      <p className={classes.header_overview}>
+                        {movie.overview}
+                      </p>
                       <Link to={`/movie/${movie.id}`}>
                         <button className={classes.btn_infowatch}>
                           More info
@@ -77,6 +76,6 @@ export const Banner = () => {
             )
         )}
       </Swiper>
-    </div>
+    </React.Fragment>
   );
 };

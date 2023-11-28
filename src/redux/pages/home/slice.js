@@ -10,7 +10,7 @@ export const getAllMovieAndTvShow = createAsyncThunk(
     const MOVIE_URL_SLIDER = "/movie/popular?";
     const MOVIE_URL = "/trending/movie/day?";
     const TVSHOW_URL = "/tv/popular?";
-    const MOVIELEGACY_URL = "/movie/top_rated?";
+    const MOVIE_LEGACY_URL = "/movie/top_rated?";
     const COMMUNITY_URL = "/person/popular?";
     // fetch all data movie and tvshow
     // fetch api
@@ -20,7 +20,7 @@ export const getAllMovieAndTvShow = createAsyncThunk(
       MOVIE_URL_SLIDER,
       MOVIE_URL,
       TVSHOW_URL,
-      MOVIELEGACY_URL,
+      MOVIE_LEGACY_URL,
       COMMUNITY_URL,
     ].map(fetchURL);
 
@@ -48,7 +48,7 @@ const slice = createSlice({
     slider: [],
     movie: [],
     tvshow: [],
-    movielegacy: [],
+    movieLegacy: [],
     community: [],
   },
   reducers: {},
@@ -57,7 +57,7 @@ const slice = createSlice({
       state.slider = action.payload.SliderData;
       state.movie = action.payload.MovieData;
       state.tvshow = action.payload.TvShowData;
-      state.movielegacy = action.payload.MovieLegacyData;
+      state.movieLegacy = action.payload.MovieLegacyData;
       state.community = action.payload.CommunityData;
     },
   },
@@ -67,6 +67,6 @@ export const homepageAction = slice.actions;
 export const selectorSlider = (state) => state.page.home.slider;
 export const selectorMovie = (state) => state.page.home.movie;
 export const selectorTvshow = (state) => state.page.home.tvshow;
-export const selectorMovieLegacy = (state) => state.page.home.movielegacy;
+export const selectorMovieLegacy = (state) => state.page.home.movieLegacy;
 export const selectorCommunity = (state) => state.page.home.community;
 export default slice.reducer;
