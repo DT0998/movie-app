@@ -44,33 +44,47 @@ const MovieListPage = () => {
 
   return (
     <React.Fragment>
-      <div className="d-flex justify-content-lg-between align-items-center justify-content-center">
+      <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-4">
         <h1>Movies Popular</h1>
       </div>
-      <SortTable />
-      <div className=" d-flex flex-row flex-wrap justify-content-center">
-        {/* list */}
-        {movies.map((movie) => (
-          <Card
-            key={movie.id}
-            type="movie"
-            title={movie.title}
-            id={movie.id}
-            imgUrl={IMG_URL}
-            posterPath={movie.poster_path}
-            originalAlt={movie.original_name}
-            originalTitle={movie.original_name}
-            firstAirDate={movie.first_air_date}
-            releaseDate={movie.release_date}
-            voteAverage={movie.vote_average}
-          />
-        ))}
-        {/* button show more */}
-        {page < totalPage ? (
-          <button className={classes.btn_loadmore} onClick={showMoreHandle}>
-            Show More
-          </button>
-        ) : null}
+      <div className="d-flex flex-column flex-lg-row gap-lg-4 px-4">
+        <div className="col-lg-3 col-12">
+          <SortTable />
+        </div>
+        <div
+          className={`d-flex align-items-center flex-column col-lg-9 col-12`}
+        >
+          <div
+            className={`d-flex flex-row flex-wrap gap-4 py-2 justify-content-center`}
+          >
+            {/* list */}
+            {movies.map((movie) => (
+              <div
+                key={movie.id}
+                className={`col-4 col-md-2 col-lg-2 col-xl-2`}
+              >
+                <Card
+                  type="movie"
+                  title={movie.title}
+                  id={movie.id}
+                  imgUrl={IMG_URL}
+                  posterPath={movie.poster_path}
+                  originalAlt={movie.original_name}
+                  originalTitle={movie.original_name}
+                  firstAirDate={movie.first_air_date}
+                  releaseDate={movie.release_date}
+                  voteAverage={movie.vote_average}
+                />
+              </div>
+            ))}
+          </div>
+          {/* button show more */}
+          {page < totalPage ? (
+            <button className={classes.btn_loadmore} onClick={showMoreHandle}>
+              Show More
+            </button>
+          ) : null}
+        </div>
       </div>
     </React.Fragment>
   );

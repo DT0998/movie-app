@@ -12,10 +12,10 @@ import classes from "./style.module.css";
 import ShowCase from "../../components/ShowCase";
 
 const HomePage = () => {
-  const communityData = useSelector(selectorCommunity);
   const movieData = useSelector(selectorMovie);
   const movieLegacyData = useSelector(selectorMovieLegacy);
   const tvshowData = useSelector(selectorTvshow);
+  const communityData = useSelector(selectorCommunity);
   const IMG_ORG = "https://image.tmdb.org/t/p/w500/";
 
   useEffect(() => {
@@ -30,19 +30,22 @@ const HomePage = () => {
         data={movieData}
         type="movie"
         to="/trending"
-        title_main="Movies Trending"
+        titleMain="Movies Trending"
+        imgUrl={IMG_ORG}
       />
       <ShowCase
         data={movieLegacyData}
         type="movie"
         to="/movie-legacy"
-        title_main="Movies Legacy"
+        titleMain="Movies Legacy"
+        imgUrl={IMG_ORG}
       />
       <ShowCase
         data={tvshowData}
         type="tvshow"
         to="/tvshow"
-        title_main="TV Shows"
+        titleMain="TV Shows"
+        imgUrl={IMG_ORG}
       />
       {/* cast */}
       <SliderCard

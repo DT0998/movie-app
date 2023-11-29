@@ -6,12 +6,11 @@ import { Link } from "react-router-dom";
 import classes from "./style.module.css";
 
 const ShowCase = (props) => {
-  const { to, data, title_main, type } = props;
+  const { to, data, titleMain, type, imgUrl } = props;
   // media query
   const isMobile = useMediaQuery("(min-width:320px)");
   const isTablet = useMediaQuery("(min-width:768px)");
   const isDesktop = useMediaQuery("(min-width:1024px)");
-  const IMG_URL = "http://image.tmdb.org/t/p/w500/";
 
   let ShowCaseUI;
   /* mobile */
@@ -24,7 +23,7 @@ const ShowCase = (props) => {
             type={type}
             title={movie.title}
             id={movie.id}
-            imgUrl={IMG_URL}
+            imgUrl={imgUrl}
             posterPath={movie.poster_path}
             originalAlt={movie.original_name}
             originalTitle={movie.original_name}
@@ -46,7 +45,7 @@ const ShowCase = (props) => {
             type={type}
             title={movie.title}
             id={movie.id}
-            imgUrl={IMG_URL}
+            imgUrl={imgUrl}
             posterPath={movie.poster_path}
             originalAlt={movie.original_name}
             originalTitle={movie.original_name}
@@ -68,7 +67,7 @@ const ShowCase = (props) => {
             type={type}
             title={movie.title}
             id={movie.id}
-            imgUrl={IMG_URL}
+            imgUrl={imgUrl}
             posterPath={movie.poster_path}
             originalAlt={movie.original_name}
             originalTitle={movie.original_name}
@@ -82,8 +81,8 @@ const ShowCase = (props) => {
 
   return (
     <React.Fragment>
-      <div className="d-flex justify-content-between align-items-center my-3">
-        <h1> {title_main}</h1>
+      <div className="d-flex justify-content-between align-items-center my-3 px-3">
+        <h1> {titleMain}</h1>
         <Link to={to}>
           <button className={`${classes.btn_view}`}>
             <span className={classes.circle} aria-hidden="true">
@@ -93,7 +92,7 @@ const ShowCase = (props) => {
           </button>
         </Link>
       </div>
-      <div className=" d-flex flex-row gap-3">{ShowCaseUI}</div>
+      <div className=" d-flex flex-row gap-3 px-3">{ShowCaseUI}</div>
     </React.Fragment>
   );
 };

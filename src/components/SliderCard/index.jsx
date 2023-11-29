@@ -26,7 +26,7 @@ const SliderCard = (props) => {
     <React.Fragment>
       {data.length === 0 ? null : (
         <React.Fragment>
-          <h1 className="d-flex justify-content-between align-items-center">
+          <h1 className="d-flex justify-content-between align-items-center px-3">
             {title}
           </h1>
           <div className={extraClass}>

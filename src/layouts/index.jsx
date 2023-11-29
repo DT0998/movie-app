@@ -72,7 +72,7 @@ function Layout(props) {
   };
 
   useEffect(() => {
-    if (location.pathname === "/login") {
+    if (location?.pathname === "/login") {
       setIsLogin(true);
     } else {
       setIsLogin(false);
@@ -129,7 +129,7 @@ function Layout(props) {
       {/* main */}
       <div
         style={{ flex: 1, minHeight: "100%", height: "100%" }}
-        className={isLogin && classes.login_container}
+        className={isLogin ? classes.login_container : ""}
       >
         {children}
       </div>

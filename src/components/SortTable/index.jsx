@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import Select from "react-select";
 import classes from "./style.module.css";
@@ -25,7 +25,7 @@ function SortTable() {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <div className={`${classes.filter_panel} my-3`}>
         {isOpenTable ? (
           <div
@@ -58,12 +58,12 @@ function SortTable() {
       </div>
       <div
         className={`${classes.btn_search} d-flex justify-content-center ${
-          Selected ? classes.Active : classes.inActive
+          Selected ? classes.active : classes.inactive
         }`}
       >
         Search
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

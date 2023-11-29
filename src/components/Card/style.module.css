@@ -39,9 +39,10 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    width: 18rem;
+    width: 100%;
     overflow: hidden;
     transition: all 1s ease;
+    height: 100%;
 }
 
 .card_container_active {
@@ -69,50 +70,4 @@
 
 .showcase_title {
     cursor: default;
-}
-
-/* mobile */
-
-@media (min-width: 320px) {
-    .card_container {
-        width: 8.5rem;
-        margin: 5px;
-    }
-}
-
-@media (min-width: 375px) {
-    .card_container {
-        width: 9.5rem;
-    }
-
-}
-
-@media (min-width: 425px) {
-    .card_container {
-        width: 11rem;
-    }
-
-}
-
-/* tablet */
-@media (min-width: 768px) {
-    .card_container {
-        width: 12rem;
-    }
-
-}
-
-/* desktop */
-@media (min-width: 1024px) {
-    .card_container {
-        width: 9rem;
-    }
-
-}
-
-@media (min-width: 1440px) {
-    .card_container {
-        width: 11rem;
-    }
-
 }
