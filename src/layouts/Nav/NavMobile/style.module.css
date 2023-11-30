@@ -1,10 +1,11 @@
-.dropdown ul {
+.dropdown {
   position: absolute;
   width: 100%;
   right: 0;
   z-index: 20;
   background-color: rgba(255, 255, 255, 0.95);
-  transition: all 0.5s ease;
+  transition: visibility 0s, opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .dropdown a {
@@ -13,44 +14,23 @@
 
 .active {
   opacity: 1;
-  min-height: 100%;
 }
 
 .inactive {
   opacity: 0;
 }
 
-.logo {
-  cursor: pointer;
-  width: 55px;
-  height: 55px;
-}
-
 .dropdown_title {
   border: 1px solid transparent;
   border-top: 1px solid rgba(128, 128, 128, 0.301);
-  padding: 26px 16px;
 }
 
-.logo_noscroll {
-  margin: 11.4rem 0 1rem 0;
-}
-
-.logo_scroll {
-  margin: 11.4rem 0 1.2rem 0;
-}
-
-.dropdown_content {
-  transition: visibility 0s, opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
-    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.inactive_content {
+.inactive {
   opacity: 0;
   visibility: hidden;
 }
 
-.active_content {
+.active {
   animation: SlideDown 1s;
   opacity: 1;
   visibility: visible;

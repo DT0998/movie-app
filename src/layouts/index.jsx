@@ -103,9 +103,9 @@ function Layout(props) {
           <NavDesktop />
         ) : (
           <React.Fragment>
-            {isOpenNavOverlay && isOpenNavMobile && (
+            {/* {isOpenNavOverlay && isOpenNavMobile && (
               <div className={classes.overlay} />
-            )}
+            )} */}
             <div
               className="d-flex flex-row align-items-center justify-content-end"
               style={{ height: "50px" }}

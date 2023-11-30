@@ -10,46 +10,45 @@ function NavMobile(props) {
   const { open, close, isNavScroll } = props;
   return (
     <React.Fragment>
-      <div
+      <ul
         className={`${classes.dropdown} ${
           open ? classes.active : classes.inactive
-        }`}
+        } d-flex flex-column justify-content-between`}
         open={open}
+        style={{height: isNavScroll ? "calc(100vh - 58px)" : "calc(100vh - 50px)"}}
       >
-        <ul
-          className={`${classes.dropDown_content} ${
-            open ? classes.active_content : classes.inactive_content
-          }`}
-          open={open}
-        >
+        <div>
           <Link to="/movie" onClick={close}>
-            <li className={classes.dropdown_title}>Movies</li>
+            <li className={`${classes.dropdown_title} py-2 px-2`}>Movies</li>
           </Link>
           <Link to="/tvshow" onClick={close}>
-            <li className={classes.dropdown_title}>TV Shows</li>
+            <li className={`${classes.dropdown_title} py-2 px-2`}>TV Shows</li>
           </Link>
           <Link to="/search" onClick={close}>
             <li
-              className={`${classes.dropdown_title} d-flex justify-content-between align-items-center`}
+              className={`${classes.dropdown_title} d-flex justify-content-between align-items-center py-2 px-2`}
             >
               <div>Search</div>
               <FaSearch />
             </li>
           </Link>
           <Link to="/login" onClick={close}>
-            <li className={classes.dropdown_title}>My Account</li>
+            <li className={`${classes.dropdown_title} py-2 px-2`}>
+              My Account
+            </li>
           </Link>
+        </div>
+        <div className={`d-flex align-items-center justify-content-center`}>
           <Link to="/" onClick={close}>
-            <div
-              className={` d-flex align-items-center justify-content-center ${
-                isNavScroll ? classes.logo_scroll : classes.logo_noscroll
-              }`}
-            >
-              <img src={logo} className={classes.logo} alt="logo" />
-            </div>
+            <img
+              src={logo}
+              alt="logo"
+              style={{ height: "50px", width: "50px" }}
+              className="py-4"
+            />
           </Link>
-        </ul>
-      </div>
+        </div>
+      </ul>
     </React.Fragment>
   );
 }
