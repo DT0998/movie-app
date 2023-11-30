@@ -90,76 +90,78 @@ function Layout(props) {
   }, [isMobile, isNavMobileStyle]);
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
+    <React.Fragment>
+      {isOpenNavOverlay && isOpenNavMobile && isNavScroll && (
+        <div className={classes.overlay} />
+      )}
       <div
-        className={`${classes.nav_fluid} ${
-          isNavScroll ? classes.sticky : ""
-        } mx-1 mx-md-0 `}
-        style={{ top: isNavMobileStyle ? "0.25rem" : "0" }}
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
-        {isTablet ? (
-          <NavDesktop />
-        ) : (
-          <React.Fragment>
-            {/* {isOpenNavOverlay && isOpenNavMobile && (
-              <div className={classes.overlay} />
-            )} */}
-            <div
-              className="d-flex flex-row align-items-center justify-content-end"
-              style={{ height: "50px" }}
-            >
-              <div className={classes.nav_left}>
-                <ul
-                  className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3 my-0 mx-2`}
-                >
-                  {!isOpenNavMobile ? (
-                    <FaBars
-                      className={classes.icons_menu}
-                      onClick={() => {
-                        setIsOpenNavMobile(true);
-                        setIsOpenOverlay(true);
-                      }}
-                    />
-                  ) : (
-                    <MdClose
-                      className={classes.icons_menu}
-                      onClick={() => {
-                        setIsOpenNavMobile(false);
-                        setIsOpenOverlay(false);
-                      }}
-                    />
-                  )}
-                </ul>
+        <div
+          className={`${classes.nav_fluid} ${
+            isNavScroll ? classes.sticky : ""
+          }  mx-md-0 ${isNavMobileStyle ? "mx-1" : ""}`}
+          style={{ top: isNavMobileStyle ? "0.25rem" : "0" }}
+        >
+          {isTablet ? (
+            <NavDesktop />
+          ) : (
+            <React.Fragment>
+              <div
+                className="d-flex flex-row align-items-center justify-content-end"
+                style={{ height: "50px" }}
+              >
+                <div className={classes.nav_left}>
+                  <ul
+                    className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3 my-0 mx-2`}
+                  >
+                    {!isOpenNavMobile ? (
+                      <FaBars
+                        className={classes.icons_menu}
+                        onClick={() => {
+                          setIsOpenNavMobile(true);
+                          setIsOpenOverlay(true);
+                        }}
+                      />
+                    ) : (
+                      <MdClose
+                        className={classes.icons_menu}
+                        onClick={() => {
+                          setIsOpenNavMobile(false);
+                          setIsOpenOverlay(false);
+                        }}
+                      />
+                    )}
+                  </ul>
+                </div>
               </div>
-            </div>
-            <NavMobile
-              open={isOpenNavMobile}
-              close={handleCloseNavMobile}
-              isNavScroll={isNavScroll}
-            />
-          </React.Fragment>
-        )}
+              <NavMobile
+                open={isOpenNavMobile}
+                close={handleCloseNavMobile}
+                isNavScroll={isNavScroll}
+              />
+            </React.Fragment>
+          )}
+        </div>
+        {/* main */}
+        <div
+          style={{ flex: 1, minHeight: "100%", height: "100%" }}
+          className={isLogin ? classes.login_container : ""}
+        >
+          {children}
+        </div>
+        {/* scroll to top button */}
+        <div
+          className={` d-flex align-items-center justify-content-center ${
+            classes.scrolltotop_container
+          } ${isShowScrollTop ? classes.active : classes.inactive}`}
+          onClick={handleScrollToTop}
+        >
+          <AiOutlineArrowUp className={classes.arrow} />
+        </div>
+        <Footer />
       </div>
-      {/* main */}
-      <div
-        style={{ flex: 1, minHeight: "100%", height: "100%" }}
-        className={isLogin ? classes.login_container : ""}
-      >
-        {children}
-      </div>
-      {/* scroll to top button */}
-      <div
-        className={` d-flex align-items-center justify-content-center ${
-          classes.scrolltotop_container
-        } ${isShowScrollTop ? classes.active : classes.inactive}`}
-        onClick={handleScrollToTop}
-      >
-        <AiOutlineArrowUp className={classes.arrow} />
-      </div>
-      <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 
