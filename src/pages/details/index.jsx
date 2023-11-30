@@ -64,6 +64,12 @@ const DetailsMoviePage = (props) => {
   useEffect(() => {
     document.title = movie.original_title || movie.original_name;
   });
+  
+  const releaseTimeMovie = () => {
+    if (movie.first_air_date || movie.release_date) {
+      return formatDate(movie.first_air_date || movie.release_date);
+    }
+  };
 
   return (
     <React.Fragment>
@@ -73,51 +79,48 @@ const DetailsMoviePage = (props) => {
           backgroundImage: `url(${IMG_ORG + movie.backdrop_path})`,
         }}
       >
-        <div>
-          <div className="d-flex justify-content-center align-items-center flex-md-row flex-column">
-            <div className="d-flex justify-content-center align-items-center">
-              <LazyLoadImage
-                src={`${IMG_URL + movie.poster_path}`}
-                alt={movie.name}
-                className={classes.details_img}
-                effect="blur"
-                threshold={100}
-                delayMethod="debounce"
-                delayTime={300}
-                placeholderSrc={`${IMG_URL + movie.poster_path}`}
-              />
-            </div>
-            <div>
-              <div className={`${classes.details_content}`}>
-                <p className={classes.details_title}>{movie.original_title}</p>
-                <p>{movie.overview}</p>
-                {/* genres */}
-                <ul className="d-flex flex-wrap">
-                  {genres.map((genre) => (
-                    <li className={classes.genres} key={genre.id}>
-                      {genre.name}
-                    </li>
-                  ))}
-                </ul>
-                <p className={classes.release_day}>
-                  Release day:{" "}
-                  {formatDate(movie.first_air_date || movie.release_date)}
-                </p>
-              </div>
-              {/* trailer */}
-              <Trailer data={trailer} />
-            </div>
+        <div className="d-flex justify-content-center align-items-center flex-md-row flex-column py-5">
+          <div className="d-flex justify-content-center align-items-center col-md-6 px-3 px-md-0">
+            <LazyLoadImage
+              src={`${IMG_URL + movie.poster_path}`}
+              alt={movie.name}
+              className={classes.details_img}
+              effect="blur"
+              threshold={100}
+              delayMethod="debounce"
+              delayTime={300}
+              placeholderSrc={`${IMG_URL + movie.poster_path}`}
+            />
+          </div>
+          <div className={`${classes.details_content} px-3 col-md-5`}>
+            <p className={classes.details_title}>{movie.original_title}</p>
+            <p>{movie.overview}</p>
+            {/* genres */}
+            <ul className="d-flex flex-wrap">
+              {genres.map((genre) => (
+                <li className={classes.genres} key={genre.id}>
+                  {genre.name}
+                </li>
+              ))}
+            </ul>
+            <p className={classes.release_day}>
+              Release day: {releaseTimeMovie()}
+            </p>
+            {/* trailer */}
+            <Trailer data={trailer} />
           </div>
         </div>
       </div>
-      {/* cast */}
-      <SliderCard
-        data={casts}
-        type="cast"
-        IMG_ORG={IMG_ORG}
-        extraClass={classes.cast_container}
-        title="Cast"
-      />
+      <div className="py-3">
+        {/* cast */}
+        <SliderCard
+          data={casts}
+          type="cast"
+          IMG_ORG={IMG_ORG}
+          extraClass={classes.cast_container}
+          title="Cast"
+        />
+      </div>
       {/* recommend */}
       <SliderCard
         data={recommends}

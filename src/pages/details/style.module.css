@@ -22,11 +22,6 @@
     height: 100%;
     width: 100%;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    transform: scale(0.8);
 }
 
 .details_content {
@@ -91,5 +86,9 @@
 
     .details_title {
         font-size: 2rem;
+    }
+
+    .details_img {
+        height: 500px;
     }
 }

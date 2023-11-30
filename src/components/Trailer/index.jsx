@@ -15,7 +15,10 @@ const Trailer = (props) => {
     <React.Fragment>
       {data.length === 0 ? null : (
         <React.Fragment>
-          <button className={classes.btn_infowatch} onClick={toggleModalHandle}>
+          <button
+            className={`${classes.btn_infowatch}`}
+            onClick={toggleModalHandle}
+          >
             Watch Now
           </button>
           <Modal

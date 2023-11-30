@@ -15,11 +15,13 @@ function Layout(props) {
   const isTablet = useMediaQuery("(min-width:768px)");
   const [isShowScrollTop, setIsShowScrollTop] = useState(false);
   const [isNavScroll, setIsNavScroll] = useState(false);
+  const [isNavMobileStyle, setIsNavMobileStyle] = useState(false);
   // nav mobile
   const [isOpenNavMobile, setIsOpenNavMobile] = useState(false);
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const isMobile = useMediaQuery("(max-width:426px)");
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -79,24 +81,38 @@ function Layout(props) {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (isMobile) {
+      setIsNavMobileStyle(true);
+    } else {
+      setIsNavMobileStyle(false);
+    }
+  }, [isMobile, isNavMobileStyle]);
+
   return (
     <div
       style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
     >
-      <div className={`${classes.nav_fluid} ${isNavScroll && classes.sticky}`}>
+      <div
+        className={`${classes.nav_fluid} ${
+          isNavScroll ? classes.sticky : ""
+        } mx-1 mx-md-0 `}
+        style={{ top: isNavMobileStyle ? "0.25rem" : "0" }}
+      >
         {isTablet ? (
-          // nav desktop
           <NavDesktop />
         ) : (
-          // nav mobile
           <React.Fragment>
             {isOpenNavOverlay && isOpenNavMobile && (
               <div className={classes.overlay} />
             )}
-            <div className={`d-flex flex-row justify-content-center`}>
-              <div className={`${classes.nav_left}`}>
+            <div
+              className="d-flex flex-row align-items-center justify-content-end"
+              style={{ height: "50px" }}
+            >
+              <div className={classes.nav_left}>
                 <ul
-                  className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3`}
+                  className={`${classes.nav_list} d-flex flex-row justify-content-start align-items-center gap-3 my-0 mx-2`}
                 >
                   {!isOpenNavMobile ? (
                     <FaBars
