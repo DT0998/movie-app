@@ -19,9 +19,10 @@ const SliderCard = (props) => {
     } else if (type === "tv") {
       return `/tvshow/${movieId}`;
     } else {
-      return null;
+      return "#";
     }
   };
+
   return (
     <React.Fragment>
       {data.length === 0 ? null : (

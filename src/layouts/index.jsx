@@ -80,7 +80,7 @@ function Layout(props) {
     } else {
       setIsLogin(false);
     }
-  }, [location.pathname]);
+  }, [location?.pathname]);
 
   useEffect(() => {
     if (isMobile) {
