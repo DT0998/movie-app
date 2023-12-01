@@ -34,7 +34,7 @@ function NavMobile(props) {
           </Link>
           <Link to="/login" onClick={close}>
             <li className={`${classes.dropdown_title} py-2 px-2`}>
-              My Account
+              Login
             </li>
           </Link>
         </div>

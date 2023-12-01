@@ -5,20 +5,36 @@ import classes from "./style.module.css";
 import Card from "../../components/Card";
 import SortTable from "../../components/SortTable";
 
+//option sort
+const options = [
+  { value: "popularity.desc", label: "Popularity Descending" },
+  { value: "popularity.asc", label: "Popularity Ascending" },
+  { value: "vote_average.desc", label: "Rating Descending" },
+  { value: "vote_average.asc", label: "Rating Ascending" },
+];
+
 const MovieListPage = () => {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState();
   const [movies, setMovies] = useState([]);
+  const [sort, setSort] = useState("");
+  const [API_URL, setAPI_URL] = useState("");
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
   const PAGE = "&page=" + page;
-  const API_URL = BASE_URL + "/movie/popular?" + API_KEY + PAGE;
+  const SORT = "&sort_by=" + sort;
+  const TOKEN =
+    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MmNkYjA4OTQ2MjZiYTQyODZjMWQ2YmQ0MTc5MTI0OSIsInN1YiI6IjYxZTk2Y2JkY2QyMDQ2MDA5MjJmOWI0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fQnsFjLzKHOuxjjDe50PxICN1qRaBWAp5iS0GRfKa8Q";
 
   // fetch movie api
   const getMovies = useCallback(async () => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(API_URL, {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        },
+      });
       const data = response.data;
       setMovies((prevMovies) => [...prevMovies, ...data.results]);
       // state show button show more
@@ -29,8 +45,15 @@ const MovieListPage = () => {
   }, [API_URL]);
 
   useEffect(() => {
+    // detect url sort
+    if (sort) {
+      setAPI_URL(BASE_URL + "/discover/movie?" + PAGE + SORT);
+    } else {
+      setAPI_URL(BASE_URL + "/movie/popular?" + API_KEY + PAGE);
+    }
+    // fetch movies when API_URL changes
     getMovies();
-  }, [API_URL, getMovies]);
+  }, [sort, page, getMovies, PAGE, SORT]);
 
   // show more handle
   const showMoreHandle = () => {
@@ -42,6 +65,12 @@ const MovieListPage = () => {
     document.title = "Movies Popular";
   }, []);
 
+  //  sort movie handle
+  const sortMovieHandle = (selectedSort) => {
+    console.log(selectedSort);
+    setSort(selectedSort);
+  };
+
   return (
     <React.Fragment>
       <div className="d-flex justify-content-lg-between align-items-center justify-content-center px-4">
@@ -49,7 +78,7 @@ const MovieListPage = () => {
       </div>
       <div className="d-flex flex-column flex-lg-row gap-lg-4 px-4">
         <div className="col-lg-3 col-12">
-          <SortTable />
+          <SortTable options={options} onClickSort={sortMovieHandle} />
         </div>
         <div
           className={`d-flex align-items-center flex-column col-lg-9 col-12`}

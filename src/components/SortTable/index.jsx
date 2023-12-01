@@ -3,17 +3,10 @@ import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import Select from "react-select";
 import classes from "./style.module.css";
 
-//option
-const options = [
-  { value: "Popularity Descending", label: "Popularity Descending" },
-  { value: "Popularity Ascending", label: "Popularity Ascending" },
-  { value: "Rating Descending", label: "Rating Descending" },
-  { value: "Rating Ascending", label: "Rating Ascending" },
-];
-
-function SortTable() {
+function SortTable(props) {
+  const { options, onClickSort } = props;
   // select
-  const [Selected, setSelected] = useState(false);
+  const [selectedSort, setSelectedSort] = useState(null);
   // open filter table
   const [isOpenTable, setIsOpenTable] = useState(false);
   // handle open table
@@ -22,6 +15,14 @@ function SortTable() {
   };
   const closeTableHandle = () => {
     setIsOpenTable(true);
+  };
+
+  const handleSortChange = (selectedOption) => {
+    setSelectedSort(selectedOption);
+  };
+
+  const handleSortClick = () => {
+    onClickSort(selectedSort ? selectedSort.value : null);
   };
 
   return (
@@ -49,8 +50,8 @@ function SortTable() {
             <span>Sort Results By</span>
             <Select
               className="my-2"
-              defaultValue={Selected}
-              onChange={setSelected}
+              value={selectedSort}
+              onChange={handleSortChange}
               options={options}
             />
           </div>
@@ -58,8 +59,9 @@ function SortTable() {
       </div>
       <div
         className={`${classes.btn_search} d-flex justify-content-center ${
-          Selected ? classes.active : classes.inactive
+          selectedSort ? classes.active : classes.inactive
         }`}
+        onClick={handleSortClick}
       >
         Search
       </div>

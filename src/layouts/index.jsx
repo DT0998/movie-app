@@ -13,6 +13,8 @@ function Layout(props) {
   const { children } = props;
   const location = useLocation();
   const isTablet = useMediaQuery("(min-width:768px)");
+  const isTabletLogin = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width:426px)");
   const [isShowScrollTop, setIsShowScrollTop] = useState(false);
   const [isNavScroll, setIsNavScroll] = useState(false);
   const [isNavMobileStyle, setIsNavMobileStyle] = useState(false);
@@ -21,7 +23,6 @@ function Layout(props) {
   // overlay
   const [isOpenNavOverlay, setIsOpenOverlay] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const isMobile = useMediaQuery("(max-width:426px)");
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -146,7 +147,11 @@ function Layout(props) {
         {/* main */}
         <div
           style={{ flex: 1, minHeight: "100%", height: "100%" }}
-          className={isLogin ? classes.login_container : ""}
+          className={`${isLogin ? classes.login_container : ""} ${
+            isLogin && isTabletLogin
+              ? `${classes.login_container_mobile} bg-white`
+              : ""
+          }`}
         >
           {children}
         </div>

@@ -5,6 +5,14 @@ import classes from "./style.module.css";
 import Card from "../../components/Card";
 import SortTable from "../../components/SortTable";
 
+//option sort
+const options = [
+  { value: "Popularity Descending", label: "Popularity Descending" },
+  { value: "Popularity Ascending", label: "Popularity Ascending" },
+  { value: "Rating Descending", label: "Rating Descending" },
+  { value: "Rating Ascending", label: "Rating Ascending" },
+];
+
 const MovieTrendingListPage = () => {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState();
@@ -49,7 +57,7 @@ const MovieTrendingListPage = () => {
       </div>
       <div className="d-flex flex-column flex-lg-row gap-lg-4 px-4">
         <div className="col-lg-3 col-12">
-          <SortTable />
+          <SortTable options={options} />
         </div>
         <div
           className={`d-flex align-items-center flex-column col-lg-9 col-12`}

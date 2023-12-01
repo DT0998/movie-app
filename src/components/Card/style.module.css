@@ -42,7 +42,7 @@
     width: 100%;
     overflow: hidden;
     transition: all 1s ease;
-    height: 100%;
+    min-height: 100%;
 }
 
 .card_container_active {

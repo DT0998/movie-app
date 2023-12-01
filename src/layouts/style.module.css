@@ -82,6 +82,10 @@
     justify-content: center;
 }
 
+.login_container_mobile {
+    background-image: none;
+}
+
 @media (min-width:768px) {
     .scrolltotop_container {
         bottom: 25px;

@@ -1,10 +1,10 @@
-import { FaSearch } from 'react-icons/fa';
-import classes from './style.module.css'
+import { FaSearch } from "react-icons/fa";
+import classes from "./style.module.css";
 
 function SearchPage() {
   return (
     <div className={`${classes.search_container} d-flex align-items-start`}>
-      <div className="input-group mb-3">
+      <div className="input-group py-4 py-md-0">
         <input
           type="text"
           className="form-control"
