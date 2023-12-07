@@ -7,10 +7,10 @@ import SortTable from "../../components/SortTable";
 
 //option sort
 const options = [
-  { value: "Popularity Descending", label: "Popularity Descending" },
-  { value: "Popularity Ascending", label: "Popularity Ascending" },
-  { value: "Rating Descending", label: "Rating Descending" },
-  { value: "Rating Ascending", label: "Rating Ascending" },
+  { value: "popularity.desc", label: "Popularity Descending" },
+  { value: "popularity.asc", label: "Popularity Ascending" },
+  { value: "vote_average.desc", label: "Rating Descending" },
+  { value: "vote_average.asc", label: "Rating Ascending" },
 ];
 
 const MovieTrendingListPage = () => {
@@ -66,11 +66,8 @@ const MovieTrendingListPage = () => {
             className={`d-flex flex-row flex-wrap gap-4 py-2 justify-content-center`}
           >
             {/* list */}
-            {movies.map((movie) => (
-              <div
-                key={movie.id}
-                className={`col-4 col-md-2 col-lg-2 col-xl-2`}
-              >
+            {movies.map((movie, index) => (
+              <div key={index} className={`col-4 col-md-2 col-lg-2 col-xl-2`}>
                 <Card
                   type="movie"
                   title={movie.title}

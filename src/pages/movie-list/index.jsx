@@ -24,17 +24,11 @@ const MovieListPage = () => {
   const BASE_URL = "https://api.themoviedb.org/3";
   const PAGE = "&page=" + page;
   const SORT = "&sort_by=" + sort;
-  const TOKEN =
-    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MmNkYjA4OTQ2MjZiYTQyODZjMWQ2YmQ0MTc5MTI0OSIsInN1YiI6IjYxZTk2Y2JkY2QyMDQ2MDA5MjJmOWI0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fQnsFjLzKHOuxjjDe50PxICN1qRaBWAp5iS0GRfKa8Q";
 
   // fetch movie api
   const getMovies = useCallback(async () => {
     try {
-      const response = await axios.get(API_URL, {
-        headers: {
-          Authorization: `Bearer ${TOKEN}`,
-        },
-      });
+      const response = await axios.get(API_URL);
       const data = response.data;
       setMovies((prevMovies) => [...prevMovies, ...data.results]);
       // state show button show more
@@ -44,16 +38,19 @@ const MovieListPage = () => {
     }
   }, [API_URL]);
 
+  // change api url when sort
   useEffect(() => {
-    // detect url sort
     if (sort) {
-      setAPI_URL(BASE_URL + "/discover/movie?" + PAGE + SORT);
+      setAPI_URL(BASE_URL + "/discover/movie?" + API_KEY + PAGE + SORT);
     } else {
       setAPI_URL(BASE_URL + "/movie/popular?" + API_KEY + PAGE);
     }
-    // fetch movies when API_URL changes
+  }, [sort, PAGE, SORT]);
+
+  // fetch movie
+  useEffect(() => {
     getMovies();
-  }, [sort, page, getMovies, PAGE, SORT]);
+  }, [getMovies]);
 
   // show more handle
   const showMoreHandle = () => {
@@ -67,8 +64,9 @@ const MovieListPage = () => {
 
   //  sort movie handle
   const sortMovieHandle = (selectedSort) => {
-    console.log(selectedSort);
     setSort(selectedSort);
+    setPage(1);
+    setMovies([]);
   };
 
   return (
@@ -87,18 +85,15 @@ const MovieListPage = () => {
             className={`d-flex flex-row flex-wrap gap-4 py-2 justify-content-center`}
           >
             {/* list */}
-            {movies.map((movie) => (
-              <div
-                key={movie.id}
-                className={`col-4 col-md-2 col-lg-2 col-xl-2`}
-              >
+            {movies.map((movie, index) => (
+              <div className={`col-4 col-md-2 col-lg-2 col-xl-2`} key={index}>
                 <Card
                   type="movie"
                   title={movie.title}
                   id={movie.id}
                   imgUrl={IMG_URL}
                   posterPath={movie.poster_path}
-                  originalAlt={movie.original_name}
+                  originalAlt={movie.original_name || movie.original_title}
                   originalTitle={movie.original_name}
                   firstAirDate={movie.first_air_date}
                   releaseDate={movie.release_date}

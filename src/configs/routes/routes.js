@@ -19,12 +19,12 @@ function Routes() {
       <Route exact path="/movie" component={MovieListPage} />
       <Route
         path={`/movie/:id`}
-        render={() => <DetailsMoviePage type="movie" />}
+        render={() => <DetailsMoviePage type="movie" titleDetail="Movie" />}
       />
       <Route exact path="/tvshow" component={TvShowListPage} />
       <Route
         path={`/tvshow/:id`}
-        render={() => <DetailsMoviePage type="tv" />}
+        render={() => <DetailsMoviePage type="tv" titleDetail="TV Show" />}
       />
       <Route path="/login" component={LoginPage} />
       <Route path="/search" component={SearchPage} />

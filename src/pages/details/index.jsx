@@ -8,13 +8,14 @@ import SliderCard from "../../components/SliderCard";
 import Trailer from "../../components/Trailer";
 
 const DetailsMoviePage = (props) => {
-  const { type } = props;
+  const { type, titleDetail } = props;
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const [genres, setGenres] = useState([]);
   const [trailer, setTrailer] = useState([]);
   const [casts, setCasts] = useState([]);
   const [recommends, setRecommends] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -41,6 +42,7 @@ const DetailsMoviePage = (props) => {
   // fetch movie api
   const getDetailsMovie = useCallback(async () => {
     try {
+      setIsLoading(true);
       const responseDetails = await axios.get(API_URL);
       const responseGenres = await axios.get(API_URL);
       const responseTrailer = await axios.get(API_URL_TRAILER);
@@ -53,6 +55,8 @@ const DetailsMoviePage = (props) => {
       setRecommends(responseRecommend.data.results);
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   }, [API_URL, API_URL_CAST, API_URL_RECOMMEND, API_URL_TRAILER]);
 
@@ -62,9 +66,17 @@ const DetailsMoviePage = (props) => {
 
   // change title
   useEffect(() => {
-    document.title = movie.original_title || movie.original_name;
-  });
-  
+    let title;
+    if (isLoading) {
+      title = `${titleDetail}`;
+    } else {
+      title = `${titleDetail} | ${
+        movie?.original_title || movie?.original_name
+      }`;
+    }
+    document.title = title;
+  }, [isLoading, movie, titleDetail]);
+
   const releaseTimeMovie = () => {
     if (movie.first_air_date || movie.release_date) {
       return formatDate(movie.first_air_date || movie.release_date);
@@ -93,7 +105,9 @@ const DetailsMoviePage = (props) => {
             />
           </div>
           <div className={`${classes.details_content} px-3 col-md-5`}>
-            <p className={classes.details_title}>{movie.original_title}</p>
+            <p className={classes.details_title}>
+              {movie.original_title || movie.name}
+            </p>
             <p>{movie.overview}</p>
             {/* genres */}
             <ul className="d-flex flex-wrap">

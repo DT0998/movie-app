@@ -44,7 +44,7 @@ const NavDesktop = () => {
                 className={`${classes.nav_list} d-flex flex-row justify-content-md-end align-items-center gap-3 my-0 mx-2`}
               >
                 <li>
-                  <NavLink to="/search" activeClassName={classes.Active}>
+                  <NavLink to="/search" activeClassName={classes.active}>
                     {" "}
                     Search{" "}
                   </NavLink>
