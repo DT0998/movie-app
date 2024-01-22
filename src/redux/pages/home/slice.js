@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/lib/storage";
 
 // get movie and tvshow action
 export const getAllMovieAndTvShow = createAsyncThunk(
@@ -63,10 +65,17 @@ const slice = createSlice({
   },
 });
 
-export const homepageAction = slice.actions;
+const persistConfig = {
+  key: "homepage",
+  storage,
+  whitelist: [],
+};
+
+export const homepageActions = slice.actions;
 export const selectorSlider = (state) => state.page.home.slider;
 export const selectorMovie = (state) => state.page.home.movie;
 export const selectorTvshow = (state) => state.page.home.tvshow;
 export const selectorMovieLegacy = (state) => state.page.home.movieLegacy;
 export const selectorCommunity = (state) => state.page.home.community;
-export default slice.reducer;
+export default persistReducer(persistConfig, slice.reducer);
+
