@@ -1,6 +1,6 @@
 import React from "react";
 // media query hook
-import useMediaQuery from "../../hooks/useMediaquery";
+import useMediaQuery from "../../utility/hooks/MediaQuery/useMediaquery";
 import Card from "../Card";
 import { Link } from "react-router-dom";
 import classes from "./style.module.css";

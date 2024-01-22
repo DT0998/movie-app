@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import classes from "./style.module.css";
 import Footer from "./Footer";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import useMediaQuery from "../hooks/useMediaquery";
+import useMediaQuery from "../utility/hooks/MediaQuery/useMediaquery";
 import NavDesktop from "../layouts/Nav/NavDesktop";
 import NavMobile from "./Nav/NavMobile";
 import { MdClose } from "react-icons/md";
