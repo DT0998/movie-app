@@ -84,22 +84,31 @@ const TvShowListPage = () => {
             className={`d-flex flex-row flex-wrap gap-4 py-2 justify-content-center`}
           >
             {/* list */}
-            {movies.map((movie, index) => (
-              <div key={index} className={`col-4 col-md-2 col-lg-2 col-xl-2`}>
-                <Card
-                  type="tvshow"
-                  title={movie.title}
-                  id={movie.id}
-                  imgUrl={IMG_URL}
-                  posterPath={movie.poster_path}
-                  originalAlt={movie.original_name}
-                  originalTitle={movie.original_name}
-                  firstAirDate={movie.first_air_date}
-                  releaseDate={movie.release_date}
-                  voteAverage={movie.vote_average}
-                />
-              </div>
-            ))}
+            {movies.map((movie, index) => {
+              if (movie.poster_path === null) {
+                return null;
+              } else {
+                return (
+                  <div
+                    key={index}
+                    className={`col-4 col-md-2 col-lg-2 col-xl-2`}
+                  >
+                    <Card
+                      type="tvshow"
+                      title={movie.title}
+                      id={movie.id}
+                      imgUrl={IMG_URL}
+                      posterPath={movie.poster_path}
+                      originalAlt={movie.original_name}
+                      originalTitle={movie.original_name}
+                      firstAirDate={movie.first_air_date}
+                      releaseDate={movie.release_date}
+                      voteAverage={movie.vote_average}
+                    />
+                  </div>
+                );
+              }
+            })}
           </div>
           {/* button show more */}
           {page < totalPage ? (
