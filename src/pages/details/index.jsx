@@ -20,7 +20,7 @@ const DetailsMoviePage = (props) => {
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
   const API_URL = `/${type}/${id}`;
   const API_URL_TRAILER = `/${type}/${id}/videos`;
-  const API_URL_CAST = `/${type}/${id}/creditsdd`;
+  const API_URL_CAST = `/${type}/${id}/credits`;
   const API_URL_RECOMMEND = `/${type}/${id}/recommendations`;
 
   // format date
