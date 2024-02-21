@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { toast } from "react-toastify";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import classes from "./style.module.css";
 import SliderCard from "../../components/SliderCard";
 import Trailer from "../../components/Trailer";
+import httpService from "../../services/http";
 
 const DetailsMoviePage = (props) => {
   const { type, titleDetail } = props;
@@ -17,15 +16,12 @@ const DetailsMoviePage = (props) => {
   const [recommends, setRecommends] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const API_KEY = "api_key=82cdb0894626ba4286c1d6bd41791249";
-  const BASE_URL = "https://api.themoviedb.org/3";
   const IMG_URL = "http://image.tmdb.org/t/p/w500/";
   const IMG_ORG = "https://image.tmdb.org/t/p/original/";
-  const API_URL = BASE_URL + `/${type}/${id}?` + API_KEY;
-  const API_URL_TRAILER = BASE_URL + `/${type}/${id}/videos?` + API_KEY;
-  const API_URL_CAST = BASE_URL + `/${type}/${id}/credits?` + API_KEY;
-  const API_URL_RECOMMEND =
-    BASE_URL + `/${type}/${id}/recommendations?` + API_KEY;
+  const API_URL = `/${type}/${id}`;
+  const API_URL_TRAILER = `/${type}/${id}/videos`;
+  const API_URL_CAST = `/${type}/${id}/creditsdd`;
+  const API_URL_RECOMMEND = `/${type}/${id}/recommendations`;
 
   // format date
   const formatDate = (date) => {
@@ -43,18 +39,27 @@ const DetailsMoviePage = (props) => {
   const getDetailsMovie = useCallback(async () => {
     try {
       setIsLoading(true);
-      const responseDetails = await axios.get(API_URL);
-      const responseGenres = await axios.get(API_URL);
-      const responseTrailer = await axios.get(API_URL_TRAILER);
-      const responseRecommend = await axios.get(API_URL_RECOMMEND);
-      const responseCast = await axios.get(API_URL_CAST);
-      setMovie(responseDetails.data);
-      setGenres(responseGenres.data.genres);
-      setTrailer(responseTrailer.data.results);
-      setCasts(responseCast.data.cast);
-      setRecommends(responseRecommend.data.results);
+      const responseDetails = await httpService.get(API_URL);
+      const responseGenres = await httpService.get(API_URL);
+      const responseTrailer = await httpService.get(API_URL_TRAILER);
+      const responseRecommend = await httpService.get(API_URL_RECOMMEND);
+      const responseCast = await httpService.get(API_URL_CAST);
+      if (responseDetails) {
+        setMovie(responseDetails);
+      }
+      if (responseGenres) {
+        setGenres(responseGenres.genres);
+      }
+      if (responseTrailer) {
+        setTrailer(responseTrailer.results);
+      }
+      if (responseCast) {
+        setCasts(responseCast.cast);
+      }
+      if (responseRecommend) {
+        setRecommends(responseRecommend.results);
+      }
     } catch (error) {
-      toast.error(error.message);
     } finally {
       setIsLoading(false);
     }

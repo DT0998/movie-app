@@ -11,6 +11,7 @@ import SliderCard from "../../components/SliderCard";
 import classes from "./style.module.css";
 import ShowCase from "../../components/ShowCase";
 
+
 const HomePage = () => {
   const movieData = useSelector(selectorMovie);
   const movieLegacyData = useSelector(selectorMovieLegacy);

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 // use url from .env file
-const baseURL = "URL";
+const baseURL = process.env.REACT_APP_DOMAIN_URL;
 const axiosInstance = axios.create({
   baseURL,
 });
@@ -10,10 +11,12 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     // Add bearer token to the headers if available and where store token
-    // const bearerToken = localStorageService.get("accessToken");
-    // if (bearerToken) {
-    //   config.headers.Authorization = `Bearer ${bearerToken}`;
-    // }
+    const bearerToken = process.env.REACT_APP_BEARER_TOKEN;
+    if (config.headers) {
+      if (bearerToken) {
+        config.headers.Authorization = `Bearer ${bearerToken}`;
+      }
+    }
     return config;
   },
   (error) => {
@@ -30,47 +33,52 @@ axiosInstance.interceptors.response.use(
 );
 
 const httpService = {
-  get: async <T>(url: string, config?: any): Promise<T | undefined> => {
+  updateBaseUrl: (url) => {
+    axiosInstance.defaults.baseURL = url;
+  },
+
+  get: async (url, config) => {
     try {
-      const response = await axiosInstance.get<T>(url, config);
+      const response = await axiosInstance.get(url, config);
       return response.data;
     } catch (error) {
       console.error("HTTP GET Error:", error);
+      toast.error("Failed to fetch data. Please try again.");
     }
   },
 
-  post: async <T>(
-    url: string,
-    data: any,
-    config?: any
-  ): Promise<T | undefined> => {
+  post: async (url, data, config) => {
     try {
-      const response = await axiosInstance.post<T>(url, data, config);
+      const response = await axiosInstance.post(url, data, config);
       return response.data;
     } catch (error) {
       console.error("HTTP POST Error:", error);
     }
   },
 
-  put: async <T>(
-    url: string,
-    data: any,
-    config?: any
-  ): Promise<T | undefined> => {
+  put: async (url, data, config) => {
     try {
-      const response = await axiosInstance.put<T>(url, data, config);
+      const response = await axiosInstance.put(url, data, config);
       return response.data;
     } catch (error) {
       console.error("HTTP PUT Error:", error);
     }
   },
 
-  delete: async <T>(url: string, config?: any): Promise<T | undefined> => {
+  delete: async (url, config) => {
     try {
-      const response = await axiosInstance.delete<T>(url, config);
+      const response = await axiosInstance.delete(url, config);
       return response.data;
     } catch (error) {
       console.error("HTTP DELETE Error:", error);
+    }
+  },
+  all: async (requests) => {
+    try {
+      const response = await axios.all(requests);
+      return response;
+    } catch (error) {
+      console.error("HTTP ALL Error:", error);
     }
   },
 };
